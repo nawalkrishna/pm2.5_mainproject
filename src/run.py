@@ -13,11 +13,13 @@ Steps:
     ground       standardise CPCB + OpenAQ-only PM2.5 into one hourly table
     gee          Earth Engine extraction at stations (resumable; rerun to retry failed chunks)
     stage2       tscheck, ground, gee
+    stage3       exploratory table, missingness, PM2.5 patterns, data-quality candidates
 """
 
 import sys
 
 from src.audit import cpcb_audit, cpcb_timestamp_check, station_audit
+from src.eda import build_daily, data_quality, missingness, pm25_patterns
 from src.ingest import (boundaries, cpcb_hourly, cpcb_stations, gee_extract, ground_pm25, openaq_daily,
                         openaq_inventory, openaq_locations)
 
@@ -48,6 +50,7 @@ STEPS = {
     "ground": ground_pm25.main,
     "gee": gee_extract.main,
     "stage2": lambda: (cpcb_timestamp_check.main(), ground_pm25.main(), gee_extract.main()),
+    "stage3": lambda: (build_daily.main(), missingness.main(), pm25_patterns.main(), data_quality.main()),
 }
 
 if __name__ == "__main__":

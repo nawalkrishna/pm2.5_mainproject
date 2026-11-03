@@ -27,3 +27,10 @@ Stage 3 completes this file.
 | SRTM `USGS/SRTMGL1_003` | `elevation` | m | 30 m | static | https://developers.google.com/earth-engine/datasets/catalog/USGS_SRTMGL1_003 (2026-11-03) |  |
 | ESA WorldCover v200 `ESA/WorldCover/v200` | `Map` class codes → fractions per buffer | fraction | 10 m | 2021 | https://developers.google.com/earth-engine/datasets/catalog/ESA_WorldCover_v200 (2026-11-03) |  |
 | WorldPop R2025A `WorldPop/GP/100m/R2025A/v1/pop` | `population` summed per buffer, 2021–2025 | people | 100 m | annual 2015–2030 | https://developers.google.com/earth-engine/datasets/catalog/WorldPop_GP_100m_R2025A_v1_pop (2026-11-03) | Constrained to settlements; CC BY 4.0. Old `WorldPop/GP/100m/pop` is deprecated |
+| Derived (EDA, `src/eda/build_daily.py`) PM2.5 daily | `pm25` mean of hourly values in the IST day; `pm25_hours`; `pm25_valid` (≥ 18 h, D012) | µg/m³ | station, daily (IST) | 2020-12..2025-12 | this repo | No QC applied in Stage 3 |
+| Derived RH | `rh` from 2 m T and dew point, Magnus formula (a = 17.625, b = 243.04 °C; Alduchov & Eskridge 1996) | % | ERA5-Land cell, daily mean (IST) | 2020-12..2025-12 | this repo | ERA5 used where ERA5-Land is masked (`met_land_share` < 1) |
+| Derived wind speed | `wind_speed` = sqrt(u10² + v10²), averaged hourly → daily | m/s | as ERA5-Land | | this repo | Mean of hourly speeds, not speed of the mean vector |
+| Derived precipitation | `precip_mm` = daily sum of `total_precipitation_hourly` × 1000 | mm/day | ERA5-Land cell | | this repo | Tiny negative values (−0.000) from float rounding |
+| Derived BLH | `blh` daily mean of ERA5 `boundary_layer_height` | m | 0.25° | | this repo | Daily mean; overpass-window BLH to be tested in Stage 4 |
+| Derived MERRA-2 PM2.5 | `merra2_pm25` = (DUSMASS25 + OCSMASS + BCSMASS + SSSMASS25 + SO4SMASS × 132.14/96.06) × 1e9, daily mean | µg/m³ | 0.5° × 0.625° | | GMAO MERRA-2 FAQ | 6 missing days, Sep 2025 |
+| Derived static | `elevation_m` (5 km mean), `built_frac_b5` (WorldCover class 50 share), `population_b5` (mean of 2021–2025 sums) | m; fraction; people | 5 km buffer | static | this repo | |

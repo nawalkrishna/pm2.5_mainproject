@@ -124,7 +124,10 @@ Options and trade-offs were presented to the student before Stage 2 started.
 ## D026 — Point extraction first (brief, Stage 2 task 3)
 - **Decision:** Only station-point/buffer extraction (3a) is done now. The regular grid (3b) waits for separate approval.
 
-## D027 — TROPOMI product level · 2026-11-03 · PROPOSED (needs student sign-off at end of Stage 2)
+## D027 — TROPOMI product level · 2026-11-03 · DECIDED (student: "Approve, keep L3")
 - **Finding:** The Earth Engine S5P "L3" products are pre-filtered by Google (qa_value thresholds: NO2 0.75, AER_AI 0.8, CO/HCHO/CLOUD 0.5, SO2 > 0.5 plus extra criteria) and contain no `qa_value` band. Stage 4 can therefore only make the filter *stricter* (e.g. with `cloud_fraction`), not test looser QA thresholds.
-- **Proposal:** Use the Earth Engine L3 products (already extracted), state the fixed pre-filter in the thesis, and test cloud-fraction thresholds in Stage 4.
+- **Decision:** Use the Earth Engine L3 products (already extracted), state the fixed pre-filter in the thesis as a limitation, and test cloud-fraction thresholds in Stage 4.
 - **Alternative:** Download L2 orbit files from the Copernicus Data Space Ecosystem (with `qa_value`) and grid them ourselves: full QA control, but tens of GB per year and a separate pipeline.
+
+## Stage 2 sign-off · 2026-11-03 · DECIDED (student: "Approve, keep L3")
+- Stage 2 approved. Still open (no answer yet): GRIP4 road download (D025) and the regular-grid extraction (D026). Neither is needed for Stage 3; both will be raised again before Stage 4.

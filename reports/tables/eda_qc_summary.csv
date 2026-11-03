@@ -1,0 +1,14 @@
+level,rule,flagged,share,stations_affected
+hourly,negative,17,1e-05,2
+hourly,zero,58,2e-05,2
+hourly,very_high,1830,0.00062,69
+hourly,at_1000,2,0.0,1
+hourly,flat_6h,26358,0.00889,93
+hourly,flat_12h,16177,0.00546,79
+hourly,flat_24h,8898,0.003,53
+hourly,spike,5549,0.00187,103
+daily,outage_ge_7d,20241,,105
+satellite,negative NO2 column (10 km mean),343,0.0023,93
+satellite,negative SO2 column (10 km mean),55536,0.3901,117
+satellite,negative HCHO column (10 km mean),3205,0.0198,117
+satellite,MAIAC AOD > 3 (10 km mean),5,4e-05,4
