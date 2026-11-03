@@ -95,9 +95,12 @@ The CCR portal gives no coordinates, so CPCB stations are matched to OpenAQ by n
 - **3** have conflicting OpenAQ coordinates: Manali Village, Chennai (entries 363 km apart); ICRISAT Patancheru (27 km); Sanathnagar (5.7 km).
 - **8** are unmatched: City Railway Station and Sanegurava Halli (Bengaluru); Gandhi Nagar_Ennore (Chennai); Meelavittan (Thoothukudi); Jakrama Nagar (Ongole); Anand Kala Kshetram (Rajamahendravaram); Toll Gate (Tirumala); Vaikuntapuram (Tirupati).
 
-**Four usable stations (2021–2025) lack coordinates:** Anand Kala Kshetram (Rajamahendravaram), ICRISAT Patancheru,
-Sanathnagar and Toll Gate (Tirumala). They are not on the map (`cpcb_station_map.png` shows 38 of the 42). Coordinates must
-come from an authoritative list before Stage 2. Per D017: CPCB's official station list first, state boards as fallback.
+**Four usable stations (2021–2025) had no coordinates from OpenAQ:** Anand Kala Kshetram (Rajamahendravaram),
+ICRISAT Patancheru, Sanathnagar and Toll Gate (Tirumala). Per D017 they were taken from CPCB's All India AQI
+Dashboard (`configs/station_coordinates_manual.csv`, with source and date for each). For ICRISAT and
+Sanathnagar the dashboard value equals one of the conflicting OpenAQ entries exactly. Toll Gate is known only
+to 2 decimals (about 1 km). **All 42 usable stations are now located** (`cpcb_station_map.png`).
+Caveat: for Bollaram Industrial Area the dashboard and OpenAQ positions differ by 3.6 km; the OpenAQ value is kept.
 
 ## 6. Duplicates: CPCB vs OpenAQ (rule D015)
 

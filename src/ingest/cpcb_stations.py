@@ -4,7 +4,11 @@ The CCR Data Repository dropdowns give state, city and station name but no
 coordinates. OpenAQ republishes CPCB stations under the same "<site>, <city> - <agency>"
 names, so we match on a normalised name. Unmatched stations are listed, not guessed.
 
-Input:  latest data/raw/cpcb/ccr_repository_station_list_*.json, data/interim/openaq_sensors.csv
+Stations still without coordinates are filled from configs/station_coordinates_manual.csv
+(official CPCB sources, each row with its source; decision D017).
+
+Input:  latest data/raw/cpcb/ccr_repository_station_list_*.json, data/interim/openaq_sensors.csv,
+        configs/station_coordinates_manual.csv
 Output: data/interim/cpcb_stations.csv
 
 Usage:
@@ -27,6 +31,7 @@ from src.utils.paths import DATA_INTERIM, resolve
 log = get_logger("cpcb_stations")
 
 OUT_PATH: Path = DATA_INTERIM / "cpcb_stations.csv"
+MANUAL_COORDS_PATH: Path = resolve("configs/station_coordinates_manual.csv")
 
 
 def normalise_name(name: str) -> str:
@@ -68,6 +73,25 @@ def match_to_openaq(cpcb: pd.DataFrame, openaq_sensors: pd.DataFrame,
     return pd.concat([out, matched], axis=1)
 
 
+def apply_manual_coordinates(stations: pd.DataFrame, manual: pd.DataFrame) -> pd.DataFrame:
+    """Fill coordinates for stations listed in ``manual`` that have none yet (decision D017).
+
+    Stations that already have coordinates are left alone, so a manual entry never
+    silently overrides an OpenAQ match. Filled rows get ``coord_source = "manual:<source>"``.
+    """
+    out = stations.copy()
+    lookup = manual.set_index(manual["station"].map(normalise_name))
+    keys = out["station"].map(normalise_name)
+    fill = keys.isin(lookup.index) & out["latitude"].isna()
+    out.loc[fill, "latitude"] = keys[fill].map(lookup["latitude"])
+    out.loc[fill, "longitude"] = keys[fill].map(lookup["longitude"])
+    out.loc[fill, "coord_source"] = "manual:" + keys[fill].map(lookup["source"])
+    unused = set(lookup.index) - set(keys[fill])
+    if unused:
+        log.warning("Manual coordinates not applied (station absent or already located): %s", sorted(unused))
+    return out
+
+
 def main() -> Path:
     raw_dir = resolve(load_config("sources")["cpcb"]["raw_dir"])
     path = sorted(raw_dir.glob("ccr_repository_station_list_*.json"))[-1]
@@ -78,6 +102,7 @@ def main() -> Path:
     cpcb = pd.DataFrame(payload["stations"])
     cpcb["agency"] = cpcb["station"].str.rsplit(" - ", n=1).str[-1]
     matched = match_to_openaq(cpcb, pd.read_csv(OPENAQ_SENSORS_PATH))
+    matched = apply_manual_coordinates(matched, pd.read_csv(MANUAL_COORDS_PATH))
     matched.insert(0, "station_uid", "cpcb_" + matched.index.astype(str).str.zfill(3))
 
     matched.to_csv(OUT_PATH, index=False)

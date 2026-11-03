@@ -1,6 +1,6 @@
 import pandas as pd
 
-from src.ingest.cpcb_stations import match_to_openaq, normalise_name
+from src.ingest.cpcb_stations import apply_manual_coordinates, match_to_openaq, normalise_name
 
 
 def test_normalise_name_ignores_case_and_punctuation():
@@ -20,3 +20,15 @@ def test_match_accepts_close_duplicates_and_flags_far_ones():
     assert out.loc[0, "openaq_location_ids"] == "1;2"
     assert out.loc[0, "latitude"] == 10.0
     assert pd.isna(out.loc[1, "latitude"])
+
+
+def test_manual_coordinates_fill_only_missing():
+    stations = pd.DataFrame({"station": ["Site A, X - PCB", "Site B, Y - PCB"],
+                             "latitude": [10.0, float("nan")], "longitude": [76.0, float("nan")],
+                             "coord_source": ["openaq_name_match", "coord_conflict"]})
+    manual = pd.DataFrame({"station": ["site a x pcb", "Site B, Y - PCB"], "latitude": [99.0, 12.5],
+                           "longitude": [99.0, 77.5], "source": ["dash", "dash"]})
+    out = apply_manual_coordinates(stations, manual)
+    assert out.loc[0, "latitude"] == 10.0          # existing match not overridden
+    assert out.loc[1, ["latitude", "longitude"]].tolist() == [12.5, 77.5]
+    assert out.loc[1, "coord_source"] == "manual:dash"

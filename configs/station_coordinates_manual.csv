@@ -1,0 +1,5 @@
+station,latitude,longitude,source,retrieved,note
+"Sanathnagar, Hyderabad - TSPCB",17.4559458,78.4332152,CPCB CCR All India AQI Dashboard station map centre (https://airquality.cpcb.gov.in/ccr/all-india-aqi-portal),2026-11-03,Equals OpenAQ location 5647; OpenAQ location 2594 is 5.7 km away and is treated as wrong
+"ICRISAT Patancheru, Hyderabad - TSPCB",17.5184,78.278777,CPCB CCR All India AQI Dashboard station map centre (https://airquality.cpcb.gov.in/ccr/all-india-aqi-portal),2026-11-03,Equals OpenAQ locations 5645 and 10897; OpenAQ location 7583 is 26.7 km away and is treated as wrong
+"Anand Kala Kshetram, Rajamahendravaram - APPCB",16.9872867,81.7363176,CPCB CCR All India AQI Dashboard station map centre (https://airquality.cpcb.gov.in/ccr/all-india-aqi-portal),2026-11-03,Not in OpenAQ
+"Toll Gate, Tirumala - APPCB",13.67,79.35,CPCB CCR All India AQI Dashboard station map centre (https://airquality.cpcb.gov.in/ccr/all-india-aqi-portal),2026-11-03,Not in OpenAQ; portal stores only 2 decimals (about 1 km precision)

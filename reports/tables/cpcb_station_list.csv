@@ -98,9 +98,9 @@ cpcb_095,Andhra Pradesh,Kurnool,"Sita Rama Nagar, Kurnool - APPCB",APPCB,6425298
 cpcb_096,Andhra Pradesh,Machilipatnam,"Srinivas Nagar Colony, Machilipatnam - APPCB",APPCB,6267807,0.0,16.186555,81.13219,openaq_name_match
 cpcb_097,Andhra Pradesh,Nellore,"Ambedkar Nagar, Nellore - APPCB",APPCB,6276317,0.0,14.438164,79.966814,openaq_name_match
 cpcb_098,Andhra Pradesh,Ongole,"Jakrama Nagar, Ongole - APPCB",APPCB,,,,,unmatched
-cpcb_099,Andhra Pradesh,Rajamahendravaram,"Anand Kala Kshetram, Rajamahendravaram - APPCB",APPCB,,,,,unmatched
+cpcb_099,Andhra Pradesh,Rajamahendravaram,"Anand Kala Kshetram, Rajamahendravaram - APPCB",APPCB,,,16.9872867,81.7363176,manual:CPCB CCR All India AQI Dashboard station map centre (https://airquality.cpcb.gov.in/ccr/all-india-aqi-portal)
 cpcb_100,Andhra Pradesh,Srikakulam,"Chinna Bharatham Colony, Srikakulam - APPCB",APPCB,6458518,0.0,18.292191,83.897173,openaq_name_match
-cpcb_101,Andhra Pradesh,Tirumala,"Toll Gate, Tirumala - APPCB",APPCB,,,,,unmatched
+cpcb_101,Andhra Pradesh,Tirumala,"Toll Gate, Tirumala - APPCB",APPCB,,,13.67,79.35,manual:CPCB CCR All India AQI Dashboard station map centre (https://airquality.cpcb.gov.in/ccr/all-india-aqi-portal)
 cpcb_102,Andhra Pradesh,Tirupati,"Vaikuntapuram, Tirupati - APPCB",APPCB,,,,,unmatched
 cpcb_103,Andhra Pradesh,Vijayawada,"HB Colony, Vijayawada - APPCB",APPCB,3409492,0.0,16.536107,80.594233,openaq_name_match
 cpcb_104,Andhra Pradesh,Vijayawada,"Kanuru, Vijayawada - APPCB",APPCB,3409392,0.0,16.486692,80.69943599999999,openaq_name_match
@@ -110,7 +110,7 @@ cpcb_107,Andhra Pradesh,Visakhapatnam,"GVM Corporation, Visakhapatnam - APPCB",A
 cpcb_108,Telangana,Hyderabad,"Bollaram Industrial Area, Hyderabad - TSPCB",TSPCB,5599,0.0,17.540891,78.358528,openaq_name_match
 cpcb_109,Telangana,Hyderabad,"Central University, Hyderabad - TSPCB",TSPCB,5623,0.0,17.460103,78.334361,openaq_name_match
 cpcb_110,Telangana,Hyderabad,"ECIL Kapra, Hyderabad - TSPCB",TSPCB,344103,0.0,17.470431,78.566959,openaq_name_match
-cpcb_111,Telangana,Hyderabad,"ICRISAT Patancheru, Hyderabad - TSPCB",TSPCB,5645;7583;10897,26709.0,,,coord_conflict
+cpcb_111,Telangana,Hyderabad,"ICRISAT Patancheru, Hyderabad - TSPCB",TSPCB,5645;7583;10897,26709.0,17.5184,78.278777,manual:CPCB CCR All India AQI Dashboard station map centre (https://airquality.cpcb.gov.in/ccr/all-india-aqi-portal)
 cpcb_112,Telangana,Hyderabad,"IDA Pashamylaram, Hyderabad - TSPCB",TSPCB,5624,0.0,17.5316895,78.218939,openaq_name_match
 cpcb_113,Telangana,Hyderabad,"IITH Kandi, Hyderabad - TSPCB",TSPCB,344144,0.0,17.585704999999997,78.126199,openaq_name_match
 cpcb_114,Telangana,Hyderabad,"Kokapet, Hyderabad - TSPCB",TSPCB,346258,0.0,17.393559,78.33919399999999,openaq_name_match
@@ -118,6 +118,6 @@ cpcb_115,Telangana,Hyderabad,"Kompally Municipal Office, Hyderabad - TSPCB",TSPC
 cpcb_116,Telangana,Hyderabad,"Nacharam_TSIIC IALA, Hyderabad - TSPCB",TSPCB,344142,0.0,17.429398,78.569354,openaq_name_match
 cpcb_117,Telangana,Hyderabad,"New Malakpet, Hyderabad - TSPCB",TSPCB,352465,0.0,17.37206,78.50864,openaq_name_match
 cpcb_118,Telangana,Hyderabad,"Ramachandrapuram, Hyderabad - TSPCB",TSPCB,346257,0.0,17.528544,78.28619499999999,openaq_name_match
-cpcb_119,Telangana,Hyderabad,"Sanathnagar, Hyderabad - TSPCB",TSPCB,2594;5647,5705.0,,,coord_conflict
+cpcb_119,Telangana,Hyderabad,"Sanathnagar, Hyderabad - TSPCB",TSPCB,2594;5647,5705.0,17.4559458,78.4332152,manual:CPCB CCR All India AQI Dashboard station map centre (https://airquality.cpcb.gov.in/ccr/all-india-aqi-portal)
 cpcb_120,Telangana,Hyderabad,"Somajiguda, Hyderabad - TSPCB",TSPCB,344140,0.0,17.417094,78.457437,openaq_name_match
 cpcb_121,Telangana,Hyderabad,"Zoo Park, Hyderabad - TSPCB",TSPCB,407,0.0,17.349694,78.451437,openaq_name_match

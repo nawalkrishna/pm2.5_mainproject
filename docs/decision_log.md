@@ -86,6 +86,8 @@ Stage 1; the student approved the recommended set. Numbers are from `docs/statio
 ## D017 — Coordinates for stations not located via OpenAQ (was P9)
 - **Decision:** Take coordinates from CPCB's official station list document; state pollution control boards as fallback. Every coordinate added by hand records its source in the station table.
 - **Affected (usable over 2021–2025):** Anand Kala Kshetram (Rajamahendravaram), ICRISAT Patancheru, Sanathnagar, Toll Gate (Tirumala).
+- **Result 2026-11-03:** CPCB's "CAAQMS Stations List All India" PDF (`data/raw/cpcb/station_list/caaqm_stations_all_india_20261103.pdf`) lists names and cities only, with no coordinates. The coordinates were instead read from CPCB's own All India AQI Dashboard, where the station map centres on the selected station. They are stored in `configs/station_coordinates_manual.csv` with source and date, and applied by `src/ingest/cpcb_stations.py` only where no OpenAQ match exists.
+- **Check:** for ICRISAT and Sanathnagar the dashboard coordinates equal one of the conflicting OpenAQ entries exactly, which identifies the others (OpenAQ 7583, 26.7 km off; 2594, 5.7 km off) as wrong. For Bollaram, which was not changed, the dashboard and OpenAQ differ by 3.6 km. Toll Gate (Tirumala) is stored with 2 decimals only (about 1 km precision). All 42 headline and 56 sensitivity stations now have coordinates.
 
 ## D018 — Commit Stage 1
 - **Decision:** Commit code, configs, docs, report tables, figures and the data manifest; never `data/` or `.env`.
