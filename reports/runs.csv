@@ -21,3 +21,4 @@ run_utc,step,git_commit,git_dirty,config_hash,metrics_json,notes
 2026-11-03T18:18:45+00:00,ground_pm25,95ad9f1,True,f063b91af28d,"{""rows"": 2995590, ""stations"": 113}",
 2026-11-03T19:16:37+00:00,build_dataset,95ad9f1,True,059b5395a66d,"{""rows"": 127043, ""stations"": 113}",
 2026-11-03T19:17:24+00:00,build_dataset,95ad9f1,True,059b5395a66d,"{""rows"": 127043, ""stations"": 113}",
+2026-11-03T19:18:51+00:00,build_dataset,24fff61,False,059b5395a66d,"{""rows"": 127043, ""stations"": 113}",
