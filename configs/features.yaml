@@ -1,0 +1,16 @@
+# First-draft feature list. PROVISIONAL: proposed at the end of Stage 1,
+# finalised in Stage 4. Names are descriptive, not final column names.
+
+tier_a:   # full: satellite + reanalysis + meteorology + static + temporal
+  satellite: [no2_trop, co, so2, hcho, uv_aerosol_index, cloud_fraction, maiac_aod_055]
+  satellite_meta: [valid_pixel_count, satellite_available]
+  reanalysis_aerosol: [reanalysis_pm25_or_aod]
+  meteorology: [t2m, rh, u10, v10, precip, blh]
+  temporal: [doy_sin, doy_cos, month, season, pm25_lag1, pm25_lag2, pm25_lag3]
+  static: [elevation, dist_to_coast, land_cover, road_density, population_density]
+
+tier_b:   # fallback for cloudy days: no satellite inputs
+  reanalysis_aerosol: [reanalysis_pm25_or_aod]
+  meteorology: [t2m, rh, u10, v10, precip, blh]
+  temporal: [doy_sin, doy_cos, month, season, pm25_lag1, pm25_lag2, pm25_lag3]
+  static: [elevation, dist_to_coast, land_cover, road_density, population_density]

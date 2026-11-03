@@ -1,0 +1,40 @@
+# Study area and period. Approved at the end of Stage 1 on 2026-11-03
+# (docs/decision_log.md, D010-D011).
+
+states:                       # D010: five states, Kerala as focus region
+  - Kerala
+  - Karnataka
+  - Tamil Nadu
+  - Andhra Pradesh
+  - Telangana
+focus_state: Kerala           # monsoon focus sub-region
+
+# GADM 4.1 level-1 NAME_1 values (no spaces) -> names used in this project.
+gadm_state_names:
+  Kerala: Kerala
+  Karnataka: Karnataka
+  TamilNadu: Tamil Nadu
+  AndhraPradesh: Andhra Pradesh
+  Telangana: Telangana
+
+# Search box for station discovery, WGS84 (min_lon, min_lat, max_lon, max_lat).
+# Deliberately generous: it covers all five states plus a margin. Stations are
+# assigned to states afterwards from their coordinates; the box only limits the query.
+discovery_bbox: [73.5, 7.5, 85.0, 20.0]
+
+# The audit looks at a wider window than the planned period so we can see
+# whether a different period would have better station coverage.
+audit_period:
+  start: "2018-01-01"
+  end: "2025-12-31"           # inclusive
+
+study_period:                 # D011
+  start: "2021-01-01"
+  end: "2025-12-31"           # inclusive
+
+# D016: target grid for Stage 2+ (MAIAC native resolution).
+target_grid:
+  resolution_m: 1000
+  temporal: daily
+
+local_timezone: Asia/Kolkata  # IST, UTC+05:30, no daylight saving

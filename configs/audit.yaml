@@ -1,0 +1,26 @@
+# Thresholds for the station audit. Approved 2026-11-03 (docs/decision_log.md,
+# D012-D015).
+
+# A station-day counts as "valid" if at least this many hourly values exist.
+# 18 of 24 hours (75%) is a common convention for daily means.
+min_hours_per_valid_day: 18
+
+# A station is "usable" over a period if at least this fraction of days are valid.
+# D013: 0.70 for headline results; 0.50 as a sensitivity set.
+min_daily_completeness: 0.70
+sensitivity_daily_completeness: 0.50
+
+# Seasons (calendar months), IMD four-season convention (D014).
+# "Post-monsoon" in the feature plan = ne_monsoon (Oct-Dec).
+seasons:
+  winter: [1, 2]
+  pre_monsoon: [3, 4, 5]
+  sw_monsoon: [6, 7, 8, 9]
+  ne_monsoon: [10, 11, 12]
+
+# D015: a CPCB station and an OpenAQ location are the same site if their
+# normalised names match or they are within this distance; CPCB is kept.
+duplicate_distance_m: 500
+
+# Kerala-only scope is considered sufficient at or above this many usable stations.
+kerala_min_usable_stations: 15

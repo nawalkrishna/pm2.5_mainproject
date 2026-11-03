@@ -1,0 +1,16 @@
+# External data sources. Every endpoint here was checked against the official
+# documentation on the date given; see docs/data_dictionary.md for links.
+
+openaq:
+  base_url: https://api.openaq.org/v3       # checked 2026-11-03
+  api_key_env: OPENAQ_API_KEY               # read from .env, header X-API-Key
+  page_limit: 1000
+  # Free tier: 60 requests/minute, 2000/hour. Stay just under per-minute limit.
+  min_seconds_between_requests: 1.1
+  pm25_parameter_name: pm25                 # ID resolved at runtime via /v3/parameters
+  raw_dir: data/raw/openaq
+
+cpcb:
+  # CPCB CCR portal requires a CAPTCHA, so files are downloaded manually by the
+  # user. Expected file layout is documented in docs/station_audit.md.
+  raw_dir: data/raw/cpcb

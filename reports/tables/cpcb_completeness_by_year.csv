@@ -1,0 +1,929 @@
+cpcb_site,year,valid_days,calendar_days,completeness,state,city,station,usable
+site_1399,2018,332,365,0.9095890410958904,Andhra Pradesh,Rajamahendravaram,"Anand Kala Kshetram, Rajamahendravaram - APPCB",True
+site_1399,2019,355,365,0.9726027397260274,Andhra Pradesh,Rajamahendravaram,"Anand Kala Kshetram, Rajamahendravaram - APPCB",True
+site_1399,2020,341,366,0.9316939890710383,Andhra Pradesh,Rajamahendravaram,"Anand Kala Kshetram, Rajamahendravaram - APPCB",True
+site_1399,2021,349,365,0.9561643835616438,Andhra Pradesh,Rajamahendravaram,"Anand Kala Kshetram, Rajamahendravaram - APPCB",True
+site_1399,2022,345,365,0.9452054794520548,Andhra Pradesh,Rajamahendravaram,"Anand Kala Kshetram, Rajamahendravaram - APPCB",True
+site_1399,2023,320,365,0.8767123287671232,Andhra Pradesh,Rajamahendravaram,"Anand Kala Kshetram, Rajamahendravaram - APPCB",True
+site_1399,2024,340,366,0.9289617486338798,Andhra Pradesh,Rajamahendravaram,"Anand Kala Kshetram, Rajamahendravaram - APPCB",True
+site_1399,2025,353,365,0.9671232876712329,Andhra Pradesh,Rajamahendravaram,"Anand Kala Kshetram, Rajamahendravaram - APPCB",True
+site_1406,2018,259,365,0.7095890410958904,Andhra Pradesh,Amaravati,"Secretariat, Amaravati - APPCB",True
+site_1406,2019,285,365,0.7808219178082192,Andhra Pradesh,Amaravati,"Secretariat, Amaravati - APPCB",True
+site_1406,2020,346,366,0.9453551912568307,Andhra Pradesh,Amaravati,"Secretariat, Amaravati - APPCB",True
+site_1406,2021,355,365,0.9726027397260274,Andhra Pradesh,Amaravati,"Secretariat, Amaravati - APPCB",True
+site_1406,2022,335,365,0.9178082191780822,Andhra Pradesh,Amaravati,"Secretariat, Amaravati - APPCB",True
+site_1406,2023,319,365,0.873972602739726,Andhra Pradesh,Amaravati,"Secretariat, Amaravati - APPCB",True
+site_1406,2024,339,366,0.9262295081967213,Andhra Pradesh,Amaravati,"Secretariat, Amaravati - APPCB",True
+site_1406,2025,341,365,0.9342465753424658,Andhra Pradesh,Amaravati,"Secretariat, Amaravati - APPCB",True
+site_1447,2018,207,365,0.5671232876712329,Karnataka,Hubballi,"Deshpande Nagar, Hubballi - KSPCB",False
+site_1447,2019,187,365,0.5123287671232877,Karnataka,Hubballi,"Deshpande Nagar, Hubballi - KSPCB",False
+site_1447,2020,230,366,0.6284153005464481,Karnataka,Hubballi,"Deshpande Nagar, Hubballi - KSPCB",False
+site_1447,2021,318,365,0.8712328767123287,Karnataka,Hubballi,"Deshpande Nagar, Hubballi - KSPCB",True
+site_1447,2022,290,365,0.7945205479452054,Karnataka,Hubballi,"Deshpande Nagar, Hubballi - KSPCB",True
+site_1447,2023,252,365,0.6904109589041096,Karnataka,Hubballi,"Deshpande Nagar, Hubballi - KSPCB",False
+site_1447,2024,135,366,0.36885245901639346,Karnataka,Hubballi,"Deshpande Nagar, Hubballi - KSPCB",False
+site_1447,2025,34,365,0.09315068493150686,Karnataka,Hubballi,"Deshpande Nagar, Hubballi - KSPCB",False
+site_1551,2018,89,365,0.24383561643835616,Karnataka,Kolar,"Tamaka Ind. Area, Kolar - KSPCB",False
+site_1551,2019,22,365,0.06027397260273973,Karnataka,Kolar,"Tamaka Ind. Area, Kolar - KSPCB",False
+site_1551,2020,0,366,0.0,Karnataka,Kolar,"Tamaka Ind. Area, Kolar - KSPCB",False
+site_1551,2021,103,365,0.2821917808219178,Karnataka,Kolar,"Tamaka Ind. Area, Kolar - KSPCB",False
+site_1551,2022,32,365,0.08767123287671233,Karnataka,Kolar,"Tamaka Ind. Area, Kolar - KSPCB",False
+site_1551,2023,80,365,0.2191780821917808,Karnataka,Kolar,"Tamaka Ind. Area, Kolar - KSPCB",False
+site_1551,2024,119,366,0.3251366120218579,Karnataka,Kolar,"Tamaka Ind. Area, Kolar - KSPCB",False
+site_1551,2025,47,365,0.12876712328767123,Karnataka,Kolar,"Tamaka Ind. Area, Kolar - KSPCB",False
+site_1553,2018,180,365,0.4931506849315068,Karnataka,Bengaluru,"Bapuji Nagar, Bengaluru - KSPCB",False
+site_1553,2019,331,365,0.9068493150684932,Karnataka,Bengaluru,"Bapuji Nagar, Bengaluru - KSPCB",True
+site_1553,2020,289,366,0.7896174863387978,Karnataka,Bengaluru,"Bapuji Nagar, Bengaluru - KSPCB",True
+site_1553,2021,301,365,0.8246575342465754,Karnataka,Bengaluru,"Bapuji Nagar, Bengaluru - KSPCB",True
+site_1553,2022,326,365,0.8931506849315068,Karnataka,Bengaluru,"Bapuji Nagar, Bengaluru - KSPCB",True
+site_1553,2023,310,365,0.8493150684931506,Karnataka,Bengaluru,"Bapuji Nagar, Bengaluru - KSPCB",True
+site_1553,2024,340,366,0.9289617486338798,Karnataka,Bengaluru,"Bapuji Nagar, Bengaluru - KSPCB",True
+site_1553,2025,298,365,0.8164383561643835,Karnataka,Bengaluru,"Bapuji Nagar, Bengaluru - KSPCB",True
+site_1554,2018,122,365,0.33424657534246577,Karnataka,Bengaluru,"Hebbal, Bengaluru - KSPCB",False
+site_1554,2019,331,365,0.9068493150684932,Karnataka,Bengaluru,"Hebbal, Bengaluru - KSPCB",True
+site_1554,2020,339,366,0.9262295081967213,Karnataka,Bengaluru,"Hebbal, Bengaluru - KSPCB",True
+site_1554,2021,310,365,0.8493150684931506,Karnataka,Bengaluru,"Hebbal, Bengaluru - KSPCB",True
+site_1554,2022,286,365,0.7835616438356164,Karnataka,Bengaluru,"Hebbal, Bengaluru - KSPCB",True
+site_1554,2023,264,365,0.7232876712328767,Karnataka,Bengaluru,"Hebbal, Bengaluru - KSPCB",True
+site_1554,2024,323,366,0.8825136612021858,Karnataka,Bengaluru,"Hebbal, Bengaluru - KSPCB",True
+site_1554,2025,335,365,0.9178082191780822,Karnataka,Bengaluru,"Hebbal, Bengaluru - KSPCB",True
+site_1555,2018,172,365,0.4712328767123288,Karnataka,Bengaluru,"Hombegowda Nagar, Bengaluru - KSPCB",False
+site_1555,2019,303,365,0.8301369863013699,Karnataka,Bengaluru,"Hombegowda Nagar, Bengaluru - KSPCB",True
+site_1555,2020,330,366,0.9016393442622951,Karnataka,Bengaluru,"Hombegowda Nagar, Bengaluru - KSPCB",True
+site_1555,2021,349,365,0.9561643835616438,Karnataka,Bengaluru,"Hombegowda Nagar, Bengaluru - KSPCB",True
+site_1555,2022,342,365,0.936986301369863,Karnataka,Bengaluru,"Hombegowda Nagar, Bengaluru - KSPCB",True
+site_1555,2023,325,365,0.8904109589041096,Karnataka,Bengaluru,"Hombegowda Nagar, Bengaluru - KSPCB",True
+site_1555,2024,359,366,0.9808743169398907,Karnataka,Bengaluru,"Hombegowda Nagar, Bengaluru - KSPCB",True
+site_1555,2025,350,365,0.958904109589041,Karnataka,Bengaluru,"Hombegowda Nagar, Bengaluru - KSPCB",True
+site_1556,2018,125,365,0.3424657534246575,Karnataka,Bengaluru,"Jayanagar 5th Block, Bengaluru - KSPCB",False
+site_1556,2019,307,365,0.8410958904109589,Karnataka,Bengaluru,"Jayanagar 5th Block, Bengaluru - KSPCB",True
+site_1556,2020,322,366,0.8797814207650273,Karnataka,Bengaluru,"Jayanagar 5th Block, Bengaluru - KSPCB",True
+site_1556,2021,320,365,0.8767123287671232,Karnataka,Bengaluru,"Jayanagar 5th Block, Bengaluru - KSPCB",True
+site_1556,2022,272,365,0.7452054794520548,Karnataka,Bengaluru,"Jayanagar 5th Block, Bengaluru - KSPCB",True
+site_1556,2023,314,365,0.8602739726027397,Karnataka,Bengaluru,"Jayanagar 5th Block, Bengaluru - KSPCB",True
+site_1556,2024,343,366,0.9371584699453552,Karnataka,Bengaluru,"Jayanagar 5th Block, Bengaluru - KSPCB",True
+site_1556,2025,325,365,0.8904109589041096,Karnataka,Bengaluru,"Jayanagar 5th Block, Bengaluru - KSPCB",True
+site_1557,2018,160,365,0.4383561643835616,Karnataka,Chikkaballapur,"Chikkaballapur Rural, Chikkaballapur - KSPCB",False
+site_1557,2019,290,365,0.7945205479452054,Karnataka,Chikkaballapur,"Chikkaballapur Rural, Chikkaballapur - KSPCB",True
+site_1557,2020,324,366,0.8852459016393442,Karnataka,Chikkaballapur,"Chikkaballapur Rural, Chikkaballapur - KSPCB",True
+site_1557,2021,344,365,0.9424657534246575,Karnataka,Chikkaballapur,"Chikkaballapur Rural, Chikkaballapur - KSPCB",True
+site_1557,2022,328,365,0.8986301369863013,Karnataka,Chikkaballapur,"Chikkaballapur Rural, Chikkaballapur - KSPCB",True
+site_1557,2023,327,365,0.8958904109589041,Karnataka,Chikkaballapur,"Chikkaballapur Rural, Chikkaballapur - KSPCB",True
+site_1557,2024,345,366,0.9426229508196722,Karnataka,Chikkaballapur,"Chikkaballapur Rural, Chikkaballapur - KSPCB",True
+site_1557,2025,255,365,0.6986301369863014,Karnataka,Chikkaballapur,"Chikkaballapur Rural, Chikkaballapur - KSPCB",False
+site_1558,2018,157,365,0.4301369863013699,Karnataka,Bengaluru,"Silk Board, Bengaluru - KSPCB",False
+site_1558,2019,323,365,0.8849315068493151,Karnataka,Bengaluru,"Silk Board, Bengaluru - KSPCB",True
+site_1558,2020,329,366,0.8989071038251366,Karnataka,Bengaluru,"Silk Board, Bengaluru - KSPCB",True
+site_1558,2021,304,365,0.8328767123287671,Karnataka,Bengaluru,"Silk Board, Bengaluru - KSPCB",True
+site_1558,2022,283,365,0.7753424657534247,Karnataka,Bengaluru,"Silk Board, Bengaluru - KSPCB",True
+site_1558,2023,320,365,0.8767123287671232,Karnataka,Bengaluru,"Silk Board, Bengaluru - KSPCB",True
+site_1558,2024,329,366,0.8989071038251366,Karnataka,Bengaluru,"Silk Board, Bengaluru - KSPCB",True
+site_1558,2025,298,365,0.8164383561643835,Karnataka,Bengaluru,"Silk Board, Bengaluru - KSPCB",True
+site_1565,2018,60,365,0.1643835616438356,Karnataka,Kalaburagi,"Lal Bahadur Shastri Nagar, Kalaburagi - KSPCB",False
+site_1565,2019,292,365,0.8,Karnataka,Kalaburagi,"Lal Bahadur Shastri Nagar, Kalaburagi - KSPCB",True
+site_1565,2020,131,366,0.35792349726775957,Karnataka,Kalaburagi,"Lal Bahadur Shastri Nagar, Kalaburagi - KSPCB",False
+site_1565,2021,147,365,0.40273972602739727,Karnataka,Kalaburagi,"Lal Bahadur Shastri Nagar, Kalaburagi - KSPCB",False
+site_1565,2022,255,365,0.6986301369863014,Karnataka,Kalaburagi,"Lal Bahadur Shastri Nagar, Kalaburagi - KSPCB",False
+site_1565,2023,134,365,0.36712328767123287,Karnataka,Kalaburagi,"Lal Bahadur Shastri Nagar, Kalaburagi - KSPCB",False
+site_1565,2024,199,366,0.5437158469945356,Karnataka,Kalaburagi,"Lal Bahadur Shastri Nagar, Kalaburagi - KSPCB",False
+site_1565,2025,139,365,0.38082191780821917,Karnataka,Kalaburagi,"Lal Bahadur Shastri Nagar, Kalaburagi - KSPCB",False
+site_162,2018,303,365,0.8301369863013699,Karnataka,Bengaluru,"BTM Layout, Bengaluru - CPCB",True
+site_162,2019,329,365,0.9013698630136986,Karnataka,Bengaluru,"BTM Layout, Bengaluru - CPCB",True
+site_162,2020,334,366,0.912568306010929,Karnataka,Bengaluru,"BTM Layout, Bengaluru - CPCB",True
+site_162,2021,286,365,0.7835616438356164,Karnataka,Bengaluru,"BTM Layout, Bengaluru - CPCB",True
+site_162,2022,330,365,0.9041095890410958,Karnataka,Bengaluru,"BTM Layout, Bengaluru - CPCB",True
+site_162,2023,320,365,0.8767123287671232,Karnataka,Bengaluru,"BTM Layout, Bengaluru - CPCB",True
+site_162,2024,299,366,0.8169398907103825,Karnataka,Bengaluru,"BTM Layout, Bengaluru - CPCB",True
+site_162,2025,351,365,0.9616438356164384,Karnataka,Bengaluru,"BTM Layout, Bengaluru - CPCB",True
+site_163,2018,256,365,0.7013698630136986,Karnataka,Bengaluru,"Peenya, Bengaluru - CPCB",True
+site_163,2019,313,365,0.8575342465753425,Karnataka,Bengaluru,"Peenya, Bengaluru - CPCB",True
+site_163,2020,349,366,0.953551912568306,Karnataka,Bengaluru,"Peenya, Bengaluru - CPCB",True
+site_163,2021,263,365,0.7205479452054795,Karnataka,Bengaluru,"Peenya, Bengaluru - CPCB",True
+site_163,2022,214,365,0.5863013698630137,Karnataka,Bengaluru,"Peenya, Bengaluru - CPCB",False
+site_163,2023,263,365,0.7205479452054795,Karnataka,Bengaluru,"Peenya, Bengaluru - CPCB",True
+site_163,2024,305,366,0.8333333333333334,Karnataka,Bengaluru,"Peenya, Bengaluru - CPCB",True
+site_163,2025,334,365,0.915068493150685,Karnataka,Bengaluru,"Peenya, Bengaluru - CPCB",True
+site_164,2018,313,365,0.8575342465753425,Karnataka,Bengaluru,"BWSSB Kadabesanahalli, Bengaluru - CPCB",True
+site_164,2019,296,365,0.810958904109589,Karnataka,Bengaluru,"BWSSB Kadabesanahalli, Bengaluru - CPCB",True
+site_164,2020,276,366,0.7540983606557377,Karnataka,Bengaluru,"BWSSB Kadabesanahalli, Bengaluru - CPCB",True
+site_164,2021,301,365,0.8246575342465754,Karnataka,Bengaluru,"BWSSB Kadabesanahalli, Bengaluru - CPCB",True
+site_164,2022,185,365,0.5068493150684932,Karnataka,Bengaluru,"BWSSB Kadabesanahalli, Bengaluru - CPCB",False
+site_164,2023,0,365,0.0,Karnataka,Bengaluru,"BWSSB Kadabesanahalli, Bengaluru - CPCB",False
+site_164,2024,0,366,0.0,Karnataka,Bengaluru,"BWSSB Kadabesanahalli, Bengaluru - CPCB",False
+site_164,2025,54,365,0.14794520547945206,Karnataka,Bengaluru,"BWSSB Kadabesanahalli, Bengaluru - CPCB",False
+site_165,2018,0,365,0.0,Karnataka,Bengaluru,"City Railway Station, Bengaluru - KSPCB",False
+site_165,2019,0,365,0.0,Karnataka,Bengaluru,"City Railway Station, Bengaluru - KSPCB",False
+site_165,2020,0,366,0.0,Karnataka,Bengaluru,"City Railway Station, Bengaluru - KSPCB",False
+site_165,2021,0,365,0.0,Karnataka,Bengaluru,"City Railway Station, Bengaluru - KSPCB",False
+site_165,2022,0,365,0.0,Karnataka,Bengaluru,"City Railway Station, Bengaluru - KSPCB",False
+site_165,2023,0,365,0.0,Karnataka,Bengaluru,"City Railway Station, Bengaluru - KSPCB",False
+site_165,2024,0,366,0.0,Karnataka,Bengaluru,"City Railway Station, Bengaluru - KSPCB",False
+site_165,2025,0,365,0.0,Karnataka,Bengaluru,"City Railway Station, Bengaluru - KSPCB",False
+site_166,2018,0,365,0.0,Karnataka,Bengaluru,"Sanegurava Halli, Bengaluru - KSPCB",False
+site_166,2019,0,365,0.0,Karnataka,Bengaluru,"Sanegurava Halli, Bengaluru - KSPCB",False
+site_166,2020,0,366,0.0,Karnataka,Bengaluru,"Sanegurava Halli, Bengaluru - KSPCB",False
+site_166,2021,0,365,0.0,Karnataka,Bengaluru,"Sanegurava Halli, Bengaluru - KSPCB",False
+site_166,2022,0,365,0.0,Karnataka,Bengaluru,"Sanegurava Halli, Bengaluru - KSPCB",False
+site_166,2023,0,365,0.0,Karnataka,Bengaluru,"Sanegurava Halli, Bengaluru - KSPCB",False
+site_166,2024,0,366,0.0,Karnataka,Bengaluru,"Sanegurava Halli, Bengaluru - KSPCB",False
+site_166,2025,0,365,0.0,Karnataka,Bengaluru,"Sanegurava Halli, Bengaluru - KSPCB",False
+site_199,2018,336,365,0.9205479452054794,Telangana,Hyderabad,"Bollaram Industrial Area, Hyderabad - TSPCB",True
+site_199,2019,309,365,0.8465753424657534,Telangana,Hyderabad,"Bollaram Industrial Area, Hyderabad - TSPCB",True
+site_199,2020,338,366,0.9234972677595629,Telangana,Hyderabad,"Bollaram Industrial Area, Hyderabad - TSPCB",True
+site_199,2021,353,365,0.9671232876712329,Telangana,Hyderabad,"Bollaram Industrial Area, Hyderabad - TSPCB",True
+site_199,2022,333,365,0.9123287671232877,Telangana,Hyderabad,"Bollaram Industrial Area, Hyderabad - TSPCB",True
+site_199,2023,250,365,0.684931506849315,Telangana,Hyderabad,"Bollaram Industrial Area, Hyderabad - TSPCB",False
+site_199,2024,283,366,0.773224043715847,Telangana,Hyderabad,"Bollaram Industrial Area, Hyderabad - TSPCB",True
+site_199,2025,283,365,0.7753424657534247,Telangana,Hyderabad,"Bollaram Industrial Area, Hyderabad - TSPCB",True
+site_251,2018,349,365,0.9561643835616438,Telangana,Hyderabad,"ICRISAT Patancheru, Hyderabad - TSPCB",True
+site_251,2019,336,365,0.9205479452054794,Telangana,Hyderabad,"ICRISAT Patancheru, Hyderabad - TSPCB",True
+site_251,2020,325,366,0.8879781420765027,Telangana,Hyderabad,"ICRISAT Patancheru, Hyderabad - TSPCB",True
+site_251,2021,342,365,0.936986301369863,Telangana,Hyderabad,"ICRISAT Patancheru, Hyderabad - TSPCB",True
+site_251,2022,339,365,0.9287671232876712,Telangana,Hyderabad,"ICRISAT Patancheru, Hyderabad - TSPCB",True
+site_251,2023,320,365,0.8767123287671232,Telangana,Hyderabad,"ICRISAT Patancheru, Hyderabad - TSPCB",True
+site_251,2024,336,366,0.9180327868852459,Telangana,Hyderabad,"ICRISAT Patancheru, Hyderabad - TSPCB",True
+site_251,2025,349,365,0.9561643835616438,Telangana,Hyderabad,"ICRISAT Patancheru, Hyderabad - TSPCB",True
+site_252,2018,308,365,0.8438356164383561,Kerala,Thiruvananthapuram,"Plammoodu, Thiruvananthapuram - Kerala PCB",True
+site_252,2019,269,365,0.736986301369863,Kerala,Thiruvananthapuram,"Plammoodu, Thiruvananthapuram - Kerala PCB",True
+site_252,2020,262,366,0.7158469945355191,Kerala,Thiruvananthapuram,"Plammoodu, Thiruvananthapuram - Kerala PCB",True
+site_252,2021,264,365,0.7232876712328767,Kerala,Thiruvananthapuram,"Plammoodu, Thiruvananthapuram - Kerala PCB",True
+site_252,2022,302,365,0.8273972602739726,Kerala,Thiruvananthapuram,"Plammoodu, Thiruvananthapuram - Kerala PCB",True
+site_252,2023,301,365,0.8246575342465754,Kerala,Thiruvananthapuram,"Plammoodu, Thiruvananthapuram - Kerala PCB",True
+site_252,2024,227,366,0.6202185792349727,Kerala,Thiruvananthapuram,"Plammoodu, Thiruvananthapuram - Kerala PCB",False
+site_252,2025,310,365,0.8493150684931506,Kerala,Thiruvananthapuram,"Plammoodu, Thiruvananthapuram - Kerala PCB",True
+site_258,2018,312,365,0.8547945205479452,Andhra Pradesh,Tirumala,"Toll Gate, Tirumala - APPCB",True
+site_258,2019,347,365,0.9506849315068493,Andhra Pradesh,Tirumala,"Toll Gate, Tirumala - APPCB",True
+site_258,2020,350,366,0.9562841530054644,Andhra Pradesh,Tirumala,"Toll Gate, Tirumala - APPCB",True
+site_258,2021,331,365,0.9068493150684932,Andhra Pradesh,Tirumala,"Toll Gate, Tirumala - APPCB",True
+site_258,2022,312,365,0.8547945205479452,Andhra Pradesh,Tirumala,"Toll Gate, Tirumala - APPCB",True
+site_258,2023,349,365,0.9561643835616438,Andhra Pradesh,Tirumala,"Toll Gate, Tirumala - APPCB",True
+site_258,2024,0,366,0.0,Andhra Pradesh,Tirumala,"Toll Gate, Tirumala - APPCB",False
+site_258,2025,348,365,0.9534246575342465,Andhra Pradesh,Tirumala,"Toll Gate, Tirumala - APPCB",True
+site_260,2018,274,365,0.7506849315068493,Andhra Pradesh,Visakhapatnam,"GVM Corporation, Visakhapatnam - APPCB",True
+site_260,2019,290,365,0.7945205479452054,Andhra Pradesh,Visakhapatnam,"GVM Corporation, Visakhapatnam - APPCB",True
+site_260,2020,318,366,0.8688524590163934,Andhra Pradesh,Visakhapatnam,"GVM Corporation, Visakhapatnam - APPCB",True
+site_260,2021,328,365,0.8986301369863013,Andhra Pradesh,Visakhapatnam,"GVM Corporation, Visakhapatnam - APPCB",True
+site_260,2022,333,365,0.9123287671232877,Andhra Pradesh,Visakhapatnam,"GVM Corporation, Visakhapatnam - APPCB",True
+site_260,2023,317,365,0.8684931506849315,Andhra Pradesh,Visakhapatnam,"GVM Corporation, Visakhapatnam - APPCB",True
+site_260,2024,338,366,0.9234972677595629,Andhra Pradesh,Visakhapatnam,"GVM Corporation, Visakhapatnam - APPCB",True
+site_260,2025,352,365,0.9643835616438357,Andhra Pradesh,Visakhapatnam,"GVM Corporation, Visakhapatnam - APPCB",True
+site_262,2018,332,365,0.9095890410958904,Telangana,Hyderabad,"Central University, Hyderabad - TSPCB",True
+site_262,2019,337,365,0.9232876712328767,Telangana,Hyderabad,"Central University, Hyderabad - TSPCB",True
+site_262,2020,334,366,0.912568306010929,Telangana,Hyderabad,"Central University, Hyderabad - TSPCB",True
+site_262,2021,312,365,0.8547945205479452,Telangana,Hyderabad,"Central University, Hyderabad - TSPCB",True
+site_262,2022,307,365,0.8410958904109589,Telangana,Hyderabad,"Central University, Hyderabad - TSPCB",True
+site_262,2023,310,365,0.8493150684931506,Telangana,Hyderabad,"Central University, Hyderabad - TSPCB",True
+site_262,2024,329,366,0.8989071038251366,Telangana,Hyderabad,"Central University, Hyderabad - TSPCB",True
+site_262,2025,271,365,0.7424657534246575,Telangana,Hyderabad,"Central University, Hyderabad - TSPCB",True
+site_275,2018,327,365,0.8958904109589041,Telangana,Hyderabad,"IDA Pashamylaram, Hyderabad - TSPCB",True
+site_275,2019,302,365,0.8273972602739726,Telangana,Hyderabad,"IDA Pashamylaram, Hyderabad - TSPCB",True
+site_275,2020,311,366,0.8497267759562842,Telangana,Hyderabad,"IDA Pashamylaram, Hyderabad - TSPCB",True
+site_275,2021,313,365,0.8575342465753425,Telangana,Hyderabad,"IDA Pashamylaram, Hyderabad - TSPCB",True
+site_275,2022,294,365,0.8054794520547945,Telangana,Hyderabad,"IDA Pashamylaram, Hyderabad - TSPCB",True
+site_275,2023,243,365,0.6657534246575343,Telangana,Hyderabad,"IDA Pashamylaram, Hyderabad - TSPCB",False
+site_275,2024,164,366,0.44808743169398907,Telangana,Hyderabad,"IDA Pashamylaram, Hyderabad - TSPCB",False
+site_275,2025,247,365,0.6767123287671233,Telangana,Hyderabad,"IDA Pashamylaram, Hyderabad - TSPCB",False
+site_288,2018,363,365,0.9945205479452055,Tamil Nadu,Chennai,"Velachery Res. Area, Chennai - CPCB",True
+site_288,2019,339,365,0.9287671232876712,Tamil Nadu,Chennai,"Velachery Res. Area, Chennai - CPCB",True
+site_288,2020,355,366,0.9699453551912568,Tamil Nadu,Chennai,"Velachery Res. Area, Chennai - CPCB",True
+site_288,2021,334,365,0.915068493150685,Tamil Nadu,Chennai,"Velachery Res. Area, Chennai - CPCB",True
+site_288,2022,334,365,0.915068493150685,Tamil Nadu,Chennai,"Velachery Res. Area, Chennai - CPCB",True
+site_288,2023,323,365,0.8849315068493151,Tamil Nadu,Chennai,"Velachery Res. Area, Chennai - CPCB",True
+site_288,2024,339,366,0.9262295081967213,Tamil Nadu,Chennai,"Velachery Res. Area, Chennai - CPCB",True
+site_288,2025,329,365,0.9013698630136986,Tamil Nadu,Chennai,"Velachery Res. Area, Chennai - CPCB",True
+site_293,2018,200,365,0.547945205479452,Tamil Nadu,Chennai,"Alandur Bus Depot, Chennai - CPCB",False
+site_293,2019,331,365,0.9068493150684932,Tamil Nadu,Chennai,"Alandur Bus Depot, Chennai - CPCB",True
+site_293,2020,332,366,0.907103825136612,Tamil Nadu,Chennai,"Alandur Bus Depot, Chennai - CPCB",True
+site_293,2021,310,365,0.8493150684931506,Tamil Nadu,Chennai,"Alandur Bus Depot, Chennai - CPCB",True
+site_293,2022,322,365,0.8821917808219178,Tamil Nadu,Chennai,"Alandur Bus Depot, Chennai - CPCB",True
+site_293,2023,310,365,0.8493150684931506,Tamil Nadu,Chennai,"Alandur Bus Depot, Chennai - CPCB",True
+site_293,2024,348,366,0.9508196721311475,Tamil Nadu,Chennai,"Alandur Bus Depot, Chennai - CPCB",True
+site_293,2025,250,365,0.684931506849315,Tamil Nadu,Chennai,"Alandur Bus Depot, Chennai - CPCB",False
+site_294,2018,344,365,0.9424657534246575,Telangana,Hyderabad,"Sanathnagar, Hyderabad - TSPCB",True
+site_294,2019,300,365,0.821917808219178,Telangana,Hyderabad,"Sanathnagar, Hyderabad - TSPCB",True
+site_294,2020,307,366,0.8387978142076503,Telangana,Hyderabad,"Sanathnagar, Hyderabad - TSPCB",True
+site_294,2021,339,365,0.9287671232876712,Telangana,Hyderabad,"Sanathnagar, Hyderabad - TSPCB",True
+site_294,2022,346,365,0.947945205479452,Telangana,Hyderabad,"Sanathnagar, Hyderabad - TSPCB",True
+site_294,2023,336,365,0.9205479452054794,Telangana,Hyderabad,"Sanathnagar, Hyderabad - TSPCB",True
+site_294,2024,365,366,0.9972677595628415,Telangana,Hyderabad,"Sanathnagar, Hyderabad - TSPCB",True
+site_294,2025,345,365,0.9452054794520548,Telangana,Hyderabad,"Sanathnagar, Hyderabad - TSPCB",True
+site_298,2018,304,365,0.8328767123287671,Telangana,Hyderabad,"Zoo Park, Hyderabad - TSPCB",True
+site_298,2019,300,365,0.821917808219178,Telangana,Hyderabad,"Zoo Park, Hyderabad - TSPCB",True
+site_298,2020,300,366,0.819672131147541,Telangana,Hyderabad,"Zoo Park, Hyderabad - TSPCB",True
+site_298,2021,207,365,0.5671232876712329,Telangana,Hyderabad,"Zoo Park, Hyderabad - TSPCB",False
+site_298,2022,337,365,0.9232876712328767,Telangana,Hyderabad,"Zoo Park, Hyderabad - TSPCB",True
+site_298,2023,279,365,0.7643835616438356,Telangana,Hyderabad,"Zoo Park, Hyderabad - TSPCB",True
+site_298,2024,323,366,0.8825136612021858,Telangana,Hyderabad,"Zoo Park, Hyderabad - TSPCB",True
+site_298,2025,335,365,0.9178082191780822,Telangana,Hyderabad,"Zoo Park, Hyderabad - TSPCB",True
+site_306,2018,358,365,0.9808219178082191,Tamil Nadu,Chennai,"Manali, Chennai - CPCB",True
+site_306,2019,286,365,0.7835616438356164,Tamil Nadu,Chennai,"Manali, Chennai - CPCB",True
+site_306,2020,347,366,0.9480874316939891,Tamil Nadu,Chennai,"Manali, Chennai - CPCB",True
+site_306,2021,310,365,0.8493150684931506,Tamil Nadu,Chennai,"Manali, Chennai - CPCB",True
+site_306,2022,316,365,0.8657534246575342,Tamil Nadu,Chennai,"Manali, Chennai - CPCB",True
+site_306,2023,281,365,0.7698630136986301,Tamil Nadu,Chennai,"Manali, Chennai - CPCB",True
+site_306,2024,306,366,0.8360655737704918,Tamil Nadu,Chennai,"Manali, Chennai - CPCB",True
+site_306,2025,234,365,0.6410958904109589,Tamil Nadu,Chennai,"Manali, Chennai - CPCB",False
+site_5092,2018,0,365,0.0,Tamil Nadu,Chennai,"Manali Village, Chennai - TNPCB",False
+site_5092,2019,192,365,0.5260273972602739,Tamil Nadu,Chennai,"Manali Village, Chennai - TNPCB",False
+site_5092,2020,304,366,0.8306010928961749,Tamil Nadu,Chennai,"Manali Village, Chennai - TNPCB",True
+site_5092,2021,228,365,0.6246575342465753,Tamil Nadu,Chennai,"Manali Village, Chennai - TNPCB",False
+site_5092,2022,249,365,0.6821917808219178,Tamil Nadu,Chennai,"Manali Village, Chennai - TNPCB",False
+site_5092,2023,0,365,0.0,Tamil Nadu,Chennai,"Manali Village, Chennai - TNPCB",False
+site_5092,2024,107,366,0.2923497267759563,Tamil Nadu,Chennai,"Manali Village, Chennai - TNPCB",False
+site_5092,2025,316,365,0.8657534246575342,Tamil Nadu,Chennai,"Manali Village, Chennai - TNPCB",True
+site_5094,2018,0,365,0.0,Tamil Nadu,Coimbatore,"SIDCO Kurichi, Coimbatore - TNPCB",False
+site_5094,2019,152,365,0.41643835616438357,Tamil Nadu,Coimbatore,"SIDCO Kurichi, Coimbatore - TNPCB",False
+site_5094,2020,242,366,0.6612021857923497,Tamil Nadu,Coimbatore,"SIDCO Kurichi, Coimbatore - TNPCB",False
+site_5094,2021,74,365,0.20273972602739726,Tamil Nadu,Coimbatore,"SIDCO Kurichi, Coimbatore - TNPCB",False
+site_5094,2022,262,365,0.7178082191780822,Tamil Nadu,Coimbatore,"SIDCO Kurichi, Coimbatore - TNPCB",True
+site_5094,2023,116,365,0.3178082191780822,Tamil Nadu,Coimbatore,"SIDCO Kurichi, Coimbatore - TNPCB",False
+site_5094,2024,121,366,0.33060109289617484,Tamil Nadu,Coimbatore,"SIDCO Kurichi, Coimbatore - TNPCB",False
+site_5094,2025,279,365,0.7643835616438356,Tamil Nadu,Coimbatore,"SIDCO Kurichi, Coimbatore - TNPCB",True
+site_5105,2018,0,365,0.0,Kerala,Eloor,"Udyogamandal, Eloor - Kerala PCB",False
+site_5105,2019,194,365,0.5315068493150685,Kerala,Eloor,"Udyogamandal, Eloor - Kerala PCB",False
+site_5105,2020,336,366,0.9180327868852459,Kerala,Eloor,"Udyogamandal, Eloor - Kerala PCB",True
+site_5105,2021,291,365,0.7972602739726027,Kerala,Eloor,"Udyogamandal, Eloor - Kerala PCB",True
+site_5105,2022,310,365,0.8493150684931506,Kerala,Eloor,"Udyogamandal, Eloor - Kerala PCB",True
+site_5105,2023,186,365,0.5095890410958904,Kerala,Eloor,"Udyogamandal, Eloor - Kerala PCB",False
+site_5105,2024,277,366,0.7568306010928961,Kerala,Eloor,"Udyogamandal, Eloor - Kerala PCB",True
+site_5105,2025,261,365,0.7150684931506849,Kerala,Eloor,"Udyogamandal, Eloor - Kerala PCB",True
+site_5124,2018,0,365,0.0,Karnataka,Chamarajanagar,"Urban, Chamarajanagar - KSPCB",False
+site_5124,2019,8,365,0.021917808219178082,Karnataka,Chamarajanagar,"Urban, Chamarajanagar - KSPCB",False
+site_5124,2020,42,366,0.11475409836065574,Karnataka,Chamarajanagar,"Urban, Chamarajanagar - KSPCB",False
+site_5124,2021,295,365,0.8082191780821918,Karnataka,Chamarajanagar,"Urban, Chamarajanagar - KSPCB",True
+site_5124,2022,316,365,0.8657534246575342,Karnataka,Chamarajanagar,"Urban, Chamarajanagar - KSPCB",True
+site_5124,2023,359,365,0.9835616438356164,Karnataka,Chamarajanagar,"Urban, Chamarajanagar - KSPCB",True
+site_5124,2024,346,366,0.9453551912568307,Karnataka,Chamarajanagar,"Urban, Chamarajanagar - KSPCB",True
+site_5124,2025,322,365,0.8821917808219178,Karnataka,Chamarajanagar,"Urban, Chamarajanagar - KSPCB",True
+site_5125,2018,0,365,0.0,Karnataka,Mysuru,"Hebbal 1st Stage, Mysuru - KSPCB",False
+site_5125,2019,116,365,0.3178082191780822,Karnataka,Mysuru,"Hebbal 1st Stage, Mysuru - KSPCB",False
+site_5125,2020,258,366,0.7049180327868853,Karnataka,Mysuru,"Hebbal 1st Stage, Mysuru - KSPCB",True
+site_5125,2021,306,365,0.8383561643835616,Karnataka,Mysuru,"Hebbal 1st Stage, Mysuru - KSPCB",True
+site_5125,2022,359,365,0.9835616438356164,Karnataka,Mysuru,"Hebbal 1st Stage, Mysuru - KSPCB",True
+site_5125,2023,357,365,0.9780821917808219,Karnataka,Mysuru,"Hebbal 1st Stage, Mysuru - KSPCB",True
+site_5125,2024,359,366,0.9808743169398907,Karnataka,Mysuru,"Hebbal 1st Stage, Mysuru - KSPCB",True
+site_5125,2025,319,365,0.873972602739726,Karnataka,Mysuru,"Hebbal 1st Stage, Mysuru - KSPCB",True
+site_5264,2018,0,365,0.0,Karnataka,Bagalkot,"Vidayagiri, Bagalkot - KSPCB",False
+site_5264,2019,0,365,0.0,Karnataka,Bagalkot,"Vidayagiri, Bagalkot - KSPCB",False
+site_5264,2020,308,366,0.8415300546448088,Karnataka,Bagalkot,"Vidayagiri, Bagalkot - KSPCB",True
+site_5264,2021,312,365,0.8547945205479452,Karnataka,Bagalkot,"Vidayagiri, Bagalkot - KSPCB",True
+site_5264,2022,343,365,0.9397260273972603,Karnataka,Bagalkot,"Vidayagiri, Bagalkot - KSPCB",True
+site_5264,2023,362,365,0.9917808219178083,Karnataka,Bagalkot,"Vidayagiri, Bagalkot - KSPCB",True
+site_5264,2024,353,366,0.9644808743169399,Karnataka,Bagalkot,"Vidayagiri, Bagalkot - KSPCB",True
+site_5264,2025,307,365,0.8410958904109589,Karnataka,Bagalkot,"Vidayagiri, Bagalkot - KSPCB",True
+site_5265,2018,0,365,0.0,Karnataka,Chikkamagaluru,"Kalyana Nagara, Chikkamagaluru - KSPCB",False
+site_5265,2019,0,365,0.0,Karnataka,Chikkamagaluru,"Kalyana Nagara, Chikkamagaluru - KSPCB",False
+site_5265,2020,298,366,0.8142076502732241,Karnataka,Chikkamagaluru,"Kalyana Nagara, Chikkamagaluru - KSPCB",True
+site_5265,2021,304,365,0.8328767123287671,Karnataka,Chikkamagaluru,"Kalyana Nagara, Chikkamagaluru - KSPCB",True
+site_5265,2022,288,365,0.7890410958904109,Karnataka,Chikkamagaluru,"Kalyana Nagara, Chikkamagaluru - KSPCB",True
+site_5265,2023,283,365,0.7753424657534247,Karnataka,Chikkamagaluru,"Kalyana Nagara, Chikkamagaluru - KSPCB",True
+site_5265,2024,300,366,0.819672131147541,Karnataka,Chikkamagaluru,"Kalyana Nagara, Chikkamagaluru - KSPCB",True
+site_5265,2025,242,365,0.663013698630137,Karnataka,Chikkamagaluru,"Kalyana Nagara, Chikkamagaluru - KSPCB",False
+site_5266,2018,0,365,0.0,Karnataka,Shivamogga,"Vinoba Nagara, Shivamogga - KSPCB",False
+site_5266,2019,0,365,0.0,Karnataka,Shivamogga,"Vinoba Nagara, Shivamogga - KSPCB",False
+site_5266,2020,123,366,0.3360655737704918,Karnataka,Shivamogga,"Vinoba Nagara, Shivamogga - KSPCB",False
+site_5266,2021,285,365,0.7808219178082192,Karnataka,Shivamogga,"Vinoba Nagara, Shivamogga - KSPCB",True
+site_5266,2022,347,365,0.9506849315068493,Karnataka,Shivamogga,"Vinoba Nagara, Shivamogga - KSPCB",True
+site_5266,2023,336,365,0.9205479452054794,Karnataka,Shivamogga,"Vinoba Nagara, Shivamogga - KSPCB",True
+site_5266,2024,350,366,0.9562841530054644,Karnataka,Shivamogga,"Vinoba Nagara, Shivamogga - KSPCB",True
+site_5266,2025,338,365,0.9260273972602739,Karnataka,Shivamogga,"Vinoba Nagara, Shivamogga - KSPCB",True
+site_5267,2018,0,365,0.0,Karnataka,Vijayapura,"Ibrahimpur, Vijayapura - KSPCB",False
+site_5267,2019,0,365,0.0,Karnataka,Vijayapura,"Ibrahimpur, Vijayapura - KSPCB",False
+site_5267,2020,269,366,0.7349726775956285,Karnataka,Vijayapura,"Ibrahimpur, Vijayapura - KSPCB",True
+site_5267,2021,274,365,0.7506849315068493,Karnataka,Vijayapura,"Ibrahimpur, Vijayapura - KSPCB",True
+site_5267,2022,347,365,0.9506849315068493,Karnataka,Vijayapura,"Ibrahimpur, Vijayapura - KSPCB",True
+site_5267,2023,357,365,0.9780821917808219,Karnataka,Vijayapura,"Ibrahimpur, Vijayapura - KSPCB",True
+site_5267,2024,349,366,0.953551912568306,Karnataka,Vijayapura,"Ibrahimpur, Vijayapura - KSPCB",True
+site_5267,2025,239,365,0.6547945205479452,Karnataka,Vijayapura,"Ibrahimpur, Vijayapura - KSPCB",False
+site_5270,2018,0,365,0.0,Kerala,Kochi,"Vyttila, Kochi - Kerala PCB",False
+site_5270,2019,0,365,0.0,Kerala,Kochi,"Vyttila, Kochi - Kerala PCB",False
+site_5270,2020,258,366,0.7049180327868853,Kerala,Kochi,"Vyttila, Kochi - Kerala PCB",True
+site_5270,2021,227,365,0.6219178082191781,Kerala,Kochi,"Vyttila, Kochi - Kerala PCB",False
+site_5270,2022,278,365,0.7616438356164383,Kerala,Kochi,"Vyttila, Kochi - Kerala PCB",True
+site_5270,2023,303,365,0.8301369863013699,Kerala,Kochi,"Vyttila, Kochi - Kerala PCB",True
+site_5270,2024,51,366,0.13934426229508196,Kerala,Kochi,"Vyttila, Kochi - Kerala PCB",False
+site_5270,2025,0,365,0.0,Kerala,Kochi,"Vyttila, Kochi - Kerala PCB",False
+site_5271,2018,0,365,0.0,Kerala,Kozhikode,"Palayam, Kozhikode - Kerala PCB",False
+site_5271,2019,0,365,0.0,Kerala,Kozhikode,"Palayam, Kozhikode - Kerala PCB",False
+site_5271,2020,285,366,0.7786885245901639,Kerala,Kozhikode,"Palayam, Kozhikode - Kerala PCB",True
+site_5271,2021,324,365,0.8876712328767123,Kerala,Kozhikode,"Palayam, Kozhikode - Kerala PCB",True
+site_5271,2022,292,365,0.8,Kerala,Kozhikode,"Palayam, Kozhikode - Kerala PCB",True
+site_5271,2023,58,365,0.1589041095890411,Kerala,Kozhikode,"Palayam, Kozhikode - Kerala PCB",False
+site_5271,2024,0,366,0.0,Kerala,Kozhikode,"Palayam, Kozhikode - Kerala PCB",False
+site_5271,2025,0,365,0.0,Kerala,Kozhikode,"Palayam, Kozhikode - Kerala PCB",False
+site_5276,2018,0,365,0.0,Kerala,Kannur,"Thavakkara, Kannur - Kerala PCB",False
+site_5276,2019,0,365,0.0,Kerala,Kannur,"Thavakkara, Kannur - Kerala PCB",False
+site_5276,2020,305,366,0.8333333333333334,Kerala,Kannur,"Thavakkara, Kannur - Kerala PCB",True
+site_5276,2021,318,365,0.8712328767123287,Kerala,Kannur,"Thavakkara, Kannur - Kerala PCB",True
+site_5276,2022,333,365,0.9123287671232877,Kerala,Kannur,"Thavakkara, Kannur - Kerala PCB",True
+site_5276,2023,256,365,0.7013698630136986,Kerala,Kannur,"Thavakkara, Kannur - Kerala PCB",True
+site_5276,2024,220,366,0.6010928961748634,Kerala,Kannur,"Thavakkara, Kannur - Kerala PCB",False
+site_5276,2025,272,365,0.7452054794520548,Kerala,Kannur,"Thavakkara, Kannur - Kerala PCB",True
+site_5331,2018,0,365,0.0,Kerala,Thiruvananthapuram,"Kariavattom, Thiruvananthapuram - Kerala PCB",False
+site_5331,2019,0,365,0.0,Kerala,Thiruvananthapuram,"Kariavattom, Thiruvananthapuram - Kerala PCB",False
+site_5331,2020,245,366,0.6693989071038251,Kerala,Thiruvananthapuram,"Kariavattom, Thiruvananthapuram - Kerala PCB",False
+site_5331,2021,331,365,0.9068493150684932,Kerala,Thiruvananthapuram,"Kariavattom, Thiruvananthapuram - Kerala PCB",True
+site_5331,2022,256,365,0.7013698630136986,Kerala,Thiruvananthapuram,"Kariavattom, Thiruvananthapuram - Kerala PCB",True
+site_5331,2023,283,365,0.7753424657534247,Kerala,Thiruvananthapuram,"Kariavattom, Thiruvananthapuram - Kerala PCB",True
+site_5331,2024,366,366,1.0,Kerala,Thiruvananthapuram,"Kariavattom, Thiruvananthapuram - Kerala PCB",True
+site_5331,2025,315,365,0.863013698630137,Kerala,Thiruvananthapuram,"Kariavattom, Thiruvananthapuram - Kerala PCB",True
+site_5334,2018,0,365,0.0,Kerala,Kollam,"Polayathode, Kollam - Kerala PCB",False
+site_5334,2019,0,365,0.0,Kerala,Kollam,"Polayathode, Kollam - Kerala PCB",False
+site_5334,2020,167,366,0.4562841530054645,Kerala,Kollam,"Polayathode, Kollam - Kerala PCB",False
+site_5334,2021,321,365,0.8794520547945206,Kerala,Kollam,"Polayathode, Kollam - Kerala PCB",True
+site_5334,2022,321,365,0.8794520547945206,Kerala,Kollam,"Polayathode, Kollam - Kerala PCB",True
+site_5334,2023,282,365,0.7726027397260274,Kerala,Kollam,"Polayathode, Kollam - Kerala PCB",True
+site_5334,2024,236,366,0.644808743169399,Kerala,Kollam,"Polayathode, Kollam - Kerala PCB",False
+site_5334,2025,169,365,0.46301369863013697,Kerala,Kollam,"Polayathode, Kollam - Kerala PCB",False
+site_5361,2018,0,365,0.0,Tamil Nadu,Chennai,"Arumbakkam, Chennai - TNPCB",False
+site_5361,2019,0,365,0.0,Tamil Nadu,Chennai,"Arumbakkam, Chennai - TNPCB",False
+site_5361,2020,25,366,0.06830601092896176,Tamil Nadu,Chennai,"Arumbakkam, Chennai - TNPCB",False
+site_5361,2021,305,365,0.8356164383561644,Tamil Nadu,Chennai,"Arumbakkam, Chennai - TNPCB",True
+site_5361,2022,337,365,0.9232876712328767,Tamil Nadu,Chennai,"Arumbakkam, Chennai - TNPCB",True
+site_5361,2023,344,365,0.9424657534246575,Tamil Nadu,Chennai,"Arumbakkam, Chennai - TNPCB",True
+site_5361,2024,332,366,0.907103825136612,Tamil Nadu,Chennai,"Arumbakkam, Chennai - TNPCB",True
+site_5361,2025,242,365,0.663013698630137,Tamil Nadu,Chennai,"Arumbakkam, Chennai - TNPCB",False
+site_5362,2018,0,365,0.0,Tamil Nadu,Gummidipoondi,"Anthoni Pillai Nagar, Gummidipoondi - TNPCB",False
+site_5362,2019,0,365,0.0,Tamil Nadu,Gummidipoondi,"Anthoni Pillai Nagar, Gummidipoondi - TNPCB",False
+site_5362,2020,0,366,0.0,Tamil Nadu,Gummidipoondi,"Anthoni Pillai Nagar, Gummidipoondi - TNPCB",False
+site_5362,2021,223,365,0.6109589041095891,Tamil Nadu,Gummidipoondi,"Anthoni Pillai Nagar, Gummidipoondi - TNPCB",False
+site_5362,2022,163,365,0.4465753424657534,Tamil Nadu,Gummidipoondi,"Anthoni Pillai Nagar, Gummidipoondi - TNPCB",False
+site_5362,2023,285,365,0.7808219178082192,Tamil Nadu,Gummidipoondi,"Anthoni Pillai Nagar, Gummidipoondi - TNPCB",True
+site_5362,2024,346,366,0.9453551912568307,Tamil Nadu,Gummidipoondi,"Anthoni Pillai Nagar, Gummidipoondi - TNPCB",True
+site_5362,2025,340,365,0.9315068493150684,Tamil Nadu,Gummidipoondi,"Anthoni Pillai Nagar, Gummidipoondi - TNPCB",True
+site_5363,2018,0,365,0.0,Tamil Nadu,Chennai,"Perungudi, Chennai - TNPCB",False
+site_5363,2019,0,365,0.0,Tamil Nadu,Chennai,"Perungudi, Chennai - TNPCB",False
+site_5363,2020,10,366,0.0273224043715847,Tamil Nadu,Chennai,"Perungudi, Chennai - TNPCB",False
+site_5363,2021,289,365,0.7917808219178082,Tamil Nadu,Chennai,"Perungudi, Chennai - TNPCB",True
+site_5363,2022,319,365,0.873972602739726,Tamil Nadu,Chennai,"Perungudi, Chennai - TNPCB",True
+site_5363,2023,346,365,0.947945205479452,Tamil Nadu,Chennai,"Perungudi, Chennai - TNPCB",True
+site_5363,2024,333,366,0.9098360655737705,Tamil Nadu,Chennai,"Perungudi, Chennai - TNPCB",True
+site_5363,2025,351,365,0.9616438356164384,Tamil Nadu,Chennai,"Perungudi, Chennai - TNPCB",True
+site_5364,2018,0,365,0.0,Tamil Nadu,Chennai,"Royapuram, Chennai - TNPCB",False
+site_5364,2019,0,365,0.0,Tamil Nadu,Chennai,"Royapuram, Chennai - TNPCB",False
+site_5364,2020,47,366,0.1284153005464481,Tamil Nadu,Chennai,"Royapuram, Chennai - TNPCB",False
+site_5364,2021,342,365,0.936986301369863,Tamil Nadu,Chennai,"Royapuram, Chennai - TNPCB",True
+site_5364,2022,321,365,0.8794520547945206,Tamil Nadu,Chennai,"Royapuram, Chennai - TNPCB",True
+site_5364,2023,323,365,0.8849315068493151,Tamil Nadu,Chennai,"Royapuram, Chennai - TNPCB",True
+site_5364,2024,288,366,0.7868852459016393,Tamil Nadu,Chennai,"Royapuram, Chennai - TNPCB",True
+site_5364,2025,299,365,0.8191780821917808,Tamil Nadu,Chennai,"Royapuram, Chennai - TNPCB",True
+site_5365,2018,0,365,0.0,Tamil Nadu,Chennai,"Kodungaiyur, Chennai - TNPCB",False
+site_5365,2019,0,365,0.0,Tamil Nadu,Chennai,"Kodungaiyur, Chennai - TNPCB",False
+site_5365,2020,38,366,0.10382513661202186,Tamil Nadu,Chennai,"Kodungaiyur, Chennai - TNPCB",False
+site_5365,2021,288,365,0.7890410958904109,Tamil Nadu,Chennai,"Kodungaiyur, Chennai - TNPCB",True
+site_5365,2022,213,365,0.5835616438356165,Tamil Nadu,Chennai,"Kodungaiyur, Chennai - TNPCB",False
+site_5365,2023,315,365,0.863013698630137,Tamil Nadu,Chennai,"Kodungaiyur, Chennai - TNPCB",True
+site_5365,2024,365,366,0.9972677595628415,Tamil Nadu,Chennai,"Kodungaiyur, Chennai - TNPCB",True
+site_5365,2025,326,365,0.8931506849315068,Tamil Nadu,Chennai,"Kodungaiyur, Chennai - TNPCB",True
+site_5367,2018,0,365,0.0,Tamil Nadu,Thoothukudi,"Meelavittan, Thoothukudi - TNPCB",False
+site_5367,2019,0,365,0.0,Tamil Nadu,Thoothukudi,"Meelavittan, Thoothukudi - TNPCB",False
+site_5367,2020,0,366,0.0,Tamil Nadu,Thoothukudi,"Meelavittan, Thoothukudi - TNPCB",False
+site_5367,2021,0,365,0.0,Tamil Nadu,Thoothukudi,"Meelavittan, Thoothukudi - TNPCB",False
+site_5367,2022,0,365,0.0,Tamil Nadu,Thoothukudi,"Meelavittan, Thoothukudi - TNPCB",False
+site_5367,2023,0,365,0.0,Tamil Nadu,Thoothukudi,"Meelavittan, Thoothukudi - TNPCB",False
+site_5367,2024,0,366,0.0,Tamil Nadu,Thoothukudi,"Meelavittan, Thoothukudi - TNPCB",False
+site_5367,2025,0,365,0.0,Tamil Nadu,Thoothukudi,"Meelavittan, Thoothukudi - TNPCB",False
+site_5390,2018,0,365,0.0,Kerala,Thrissur,"Corporation Ground, Thrissur - Kerala PCB",False
+site_5390,2019,0,365,0.0,Kerala,Thrissur,"Corporation Ground, Thrissur - Kerala PCB",False
+site_5390,2020,79,366,0.21584699453551912,Kerala,Thrissur,"Corporation Ground, Thrissur - Kerala PCB",False
+site_5390,2021,295,365,0.8082191780821918,Kerala,Thrissur,"Corporation Ground, Thrissur - Kerala PCB",True
+site_5390,2022,199,365,0.5452054794520548,Kerala,Thrissur,"Corporation Ground, Thrissur - Kerala PCB",False
+site_5390,2023,300,365,0.821917808219178,Kerala,Thrissur,"Corporation Ground, Thrissur - Kerala PCB",True
+site_5390,2024,287,366,0.7841530054644809,Kerala,Thrissur,"Corporation Ground, Thrissur - Kerala PCB",True
+site_5390,2025,301,365,0.8246575342465754,Kerala,Thrissur,"Corporation Ground, Thrissur - Kerala PCB",True
+site_5595,2018,0,365,0.0,Telangana,Hyderabad,"New Malakpet, Hyderabad - TSPCB",False
+site_5595,2019,0,365,0.0,Telangana,Hyderabad,"New Malakpet, Hyderabad - TSPCB",False
+site_5595,2020,0,366,0.0,Telangana,Hyderabad,"New Malakpet, Hyderabad - TSPCB",False
+site_5595,2021,0,365,0.0,Telangana,Hyderabad,"New Malakpet, Hyderabad - TSPCB",False
+site_5595,2022,189,365,0.5178082191780822,Telangana,Hyderabad,"New Malakpet, Hyderabad - TSPCB",False
+site_5595,2023,288,365,0.7890410958904109,Telangana,Hyderabad,"New Malakpet, Hyderabad - TSPCB",True
+site_5595,2024,305,366,0.8333333333333334,Telangana,Hyderabad,"New Malakpet, Hyderabad - TSPCB",True
+site_5595,2025,276,365,0.7561643835616438,Telangana,Hyderabad,"New Malakpet, Hyderabad - TSPCB",True
+site_5596,2018,0,365,0.0,Telangana,Hyderabad,"ECIL Kapra, Hyderabad - TSPCB",False
+site_5596,2019,0,365,0.0,Telangana,Hyderabad,"ECIL Kapra, Hyderabad - TSPCB",False
+site_5596,2020,0,366,0.0,Telangana,Hyderabad,"ECIL Kapra, Hyderabad - TSPCB",False
+site_5596,2021,0,365,0.0,Telangana,Hyderabad,"ECIL Kapra, Hyderabad - TSPCB",False
+site_5596,2022,163,365,0.4465753424657534,Telangana,Hyderabad,"ECIL Kapra, Hyderabad - TSPCB",False
+site_5596,2023,309,365,0.8465753424657534,Telangana,Hyderabad,"ECIL Kapra, Hyderabad - TSPCB",True
+site_5596,2024,265,366,0.7240437158469946,Telangana,Hyderabad,"ECIL Kapra, Hyderabad - TSPCB",True
+site_5596,2025,307,365,0.8410958904109589,Telangana,Hyderabad,"ECIL Kapra, Hyderabad - TSPCB",True
+site_5597,2018,0,365,0.0,Telangana,Hyderabad,"IITH Kandi, Hyderabad - TSPCB",False
+site_5597,2019,0,365,0.0,Telangana,Hyderabad,"IITH Kandi, Hyderabad - TSPCB",False
+site_5597,2020,0,366,0.0,Telangana,Hyderabad,"IITH Kandi, Hyderabad - TSPCB",False
+site_5597,2021,0,365,0.0,Telangana,Hyderabad,"IITH Kandi, Hyderabad - TSPCB",False
+site_5597,2022,195,365,0.5342465753424658,Telangana,Hyderabad,"IITH Kandi, Hyderabad - TSPCB",False
+site_5597,2023,221,365,0.6054794520547945,Telangana,Hyderabad,"IITH Kandi, Hyderabad - TSPCB",False
+site_5597,2024,167,366,0.4562841530054645,Telangana,Hyderabad,"IITH Kandi, Hyderabad - TSPCB",False
+site_5597,2025,250,365,0.684931506849315,Telangana,Hyderabad,"IITH Kandi, Hyderabad - TSPCB",False
+site_5598,2018,0,365,0.0,Telangana,Hyderabad,"Somajiguda, Hyderabad - TSPCB",False
+site_5598,2019,0,365,0.0,Telangana,Hyderabad,"Somajiguda, Hyderabad - TSPCB",False
+site_5598,2020,0,366,0.0,Telangana,Hyderabad,"Somajiguda, Hyderabad - TSPCB",False
+site_5598,2021,0,365,0.0,Telangana,Hyderabad,"Somajiguda, Hyderabad - TSPCB",False
+site_5598,2022,185,365,0.5068493150684932,Telangana,Hyderabad,"Somajiguda, Hyderabad - TSPCB",False
+site_5598,2023,263,365,0.7205479452054795,Telangana,Hyderabad,"Somajiguda, Hyderabad - TSPCB",True
+site_5598,2024,156,366,0.4262295081967213,Telangana,Hyderabad,"Somajiguda, Hyderabad - TSPCB",False
+site_5598,2025,294,365,0.8054794520547945,Telangana,Hyderabad,"Somajiguda, Hyderabad - TSPCB",True
+site_5599,2018,0,365,0.0,Telangana,Hyderabad,"Kompally Municipal Office, Hyderabad - TSPCB",False
+site_5599,2019,0,365,0.0,Telangana,Hyderabad,"Kompally Municipal Office, Hyderabad - TSPCB",False
+site_5599,2020,0,366,0.0,Telangana,Hyderabad,"Kompally Municipal Office, Hyderabad - TSPCB",False
+site_5599,2021,0,365,0.0,Telangana,Hyderabad,"Kompally Municipal Office, Hyderabad - TSPCB",False
+site_5599,2022,152,365,0.41643835616438357,Telangana,Hyderabad,"Kompally Municipal Office, Hyderabad - TSPCB",False
+site_5599,2023,233,365,0.6383561643835617,Telangana,Hyderabad,"Kompally Municipal Office, Hyderabad - TSPCB",False
+site_5599,2024,232,366,0.6338797814207651,Telangana,Hyderabad,"Kompally Municipal Office, Hyderabad - TSPCB",False
+site_5599,2025,296,365,0.810958904109589,Telangana,Hyderabad,"Kompally Municipal Office, Hyderabad - TSPCB",True
+site_5600,2018,0,365,0.0,Telangana,Hyderabad,"Nacharam_TSIIC IALA, Hyderabad - TSPCB",False
+site_5600,2019,0,365,0.0,Telangana,Hyderabad,"Nacharam_TSIIC IALA, Hyderabad - TSPCB",False
+site_5600,2020,0,366,0.0,Telangana,Hyderabad,"Nacharam_TSIIC IALA, Hyderabad - TSPCB",False
+site_5600,2021,0,365,0.0,Telangana,Hyderabad,"Nacharam_TSIIC IALA, Hyderabad - TSPCB",False
+site_5600,2022,189,365,0.5178082191780822,Telangana,Hyderabad,"Nacharam_TSIIC IALA, Hyderabad - TSPCB",False
+site_5600,2023,275,365,0.7534246575342466,Telangana,Hyderabad,"Nacharam_TSIIC IALA, Hyderabad - TSPCB",True
+site_5600,2024,292,366,0.7978142076502732,Telangana,Hyderabad,"Nacharam_TSIIC IALA, Hyderabad - TSPCB",True
+site_5600,2025,311,365,0.852054794520548,Telangana,Hyderabad,"Nacharam_TSIIC IALA, Hyderabad - TSPCB",True
+site_5602,2018,0,365,0.0,Telangana,Hyderabad,"Ramachandrapuram, Hyderabad - TSPCB",False
+site_5602,2019,0,365,0.0,Telangana,Hyderabad,"Ramachandrapuram, Hyderabad - TSPCB",False
+site_5602,2020,0,366,0.0,Telangana,Hyderabad,"Ramachandrapuram, Hyderabad - TSPCB",False
+site_5602,2021,0,365,0.0,Telangana,Hyderabad,"Ramachandrapuram, Hyderabad - TSPCB",False
+site_5602,2022,159,365,0.43561643835616437,Telangana,Hyderabad,"Ramachandrapuram, Hyderabad - TSPCB",False
+site_5602,2023,215,365,0.589041095890411,Telangana,Hyderabad,"Ramachandrapuram, Hyderabad - TSPCB",False
+site_5602,2024,196,366,0.5355191256830601,Telangana,Hyderabad,"Ramachandrapuram, Hyderabad - TSPCB",False
+site_5602,2025,232,365,0.6356164383561644,Telangana,Hyderabad,"Ramachandrapuram, Hyderabad - TSPCB",False
+site_5604,2018,0,365,0.0,Telangana,Hyderabad,"Kokapet, Hyderabad - TSPCB",False
+site_5604,2019,0,365,0.0,Telangana,Hyderabad,"Kokapet, Hyderabad - TSPCB",False
+site_5604,2020,0,366,0.0,Telangana,Hyderabad,"Kokapet, Hyderabad - TSPCB",False
+site_5604,2021,0,365,0.0,Telangana,Hyderabad,"Kokapet, Hyderabad - TSPCB",False
+site_5604,2022,168,365,0.4602739726027397,Telangana,Hyderabad,"Kokapet, Hyderabad - TSPCB",False
+site_5604,2023,237,365,0.6493150684931507,Telangana,Hyderabad,"Kokapet, Hyderabad - TSPCB",False
+site_5604,2024,244,366,0.6666666666666666,Telangana,Hyderabad,"Kokapet, Hyderabad - TSPCB",False
+site_5604,2025,328,365,0.8986301369863013,Telangana,Hyderabad,"Kokapet, Hyderabad - TSPCB",True
+site_5605,2018,0,365,0.0,Tamil Nadu,Chengalpattu,"Crescent University, Chengalpattu - TNPCB",False
+site_5605,2019,0,365,0.0,Tamil Nadu,Chengalpattu,"Crescent University, Chengalpattu - TNPCB",False
+site_5605,2020,0,366,0.0,Tamil Nadu,Chengalpattu,"Crescent University, Chengalpattu - TNPCB",False
+site_5605,2021,0,365,0.0,Tamil Nadu,Chengalpattu,"Crescent University, Chengalpattu - TNPCB",False
+site_5605,2022,18,365,0.049315068493150684,Tamil Nadu,Chengalpattu,"Crescent University, Chengalpattu - TNPCB",False
+site_5605,2023,67,365,0.18356164383561643,Tamil Nadu,Chengalpattu,"Crescent University, Chengalpattu - TNPCB",False
+site_5605,2024,150,366,0.4098360655737705,Tamil Nadu,Chengalpattu,"Crescent University, Chengalpattu - TNPCB",False
+site_5605,2025,218,365,0.5972602739726027,Tamil Nadu,Chengalpattu,"Crescent University, Chengalpattu - TNPCB",False
+site_5606,2018,0,365,0.0,Tamil Nadu,Ariyalur,"Keelapalur, Ariyalur - TNPCB",False
+site_5606,2019,0,365,0.0,Tamil Nadu,Ariyalur,"Keelapalur, Ariyalur - TNPCB",False
+site_5606,2020,0,366,0.0,Tamil Nadu,Ariyalur,"Keelapalur, Ariyalur - TNPCB",False
+site_5606,2021,0,365,0.0,Tamil Nadu,Ariyalur,"Keelapalur, Ariyalur - TNPCB",False
+site_5606,2022,10,365,0.0273972602739726,Tamil Nadu,Ariyalur,"Keelapalur, Ariyalur - TNPCB",False
+site_5606,2023,286,365,0.7835616438356164,Tamil Nadu,Ariyalur,"Keelapalur, Ariyalur - TNPCB",True
+site_5606,2024,246,366,0.6721311475409836,Tamil Nadu,Ariyalur,"Keelapalur, Ariyalur - TNPCB",False
+site_5606,2025,255,365,0.6986301369863014,Tamil Nadu,Ariyalur,"Keelapalur, Ariyalur - TNPCB",False
+site_5607,2018,0,365,0.0,Tamil Nadu,Tirupur,"Kumaran College, Tirupur - TNPCB",False
+site_5607,2019,0,365,0.0,Tamil Nadu,Tirupur,"Kumaran College, Tirupur - TNPCB",False
+site_5607,2020,0,366,0.0,Tamil Nadu,Tirupur,"Kumaran College, Tirupur - TNPCB",False
+site_5607,2021,0,365,0.0,Tamil Nadu,Tirupur,"Kumaran College, Tirupur - TNPCB",False
+site_5607,2022,99,365,0.27123287671232876,Tamil Nadu,Tirupur,"Kumaran College, Tirupur - TNPCB",False
+site_5607,2023,55,365,0.1506849315068493,Tamil Nadu,Tirupur,"Kumaran College, Tirupur - TNPCB",False
+site_5607,2024,195,366,0.5327868852459017,Tamil Nadu,Tirupur,"Kumaran College, Tirupur - TNPCB",False
+site_5607,2025,263,365,0.7205479452054795,Tamil Nadu,Tirupur,"Kumaran College, Tirupur - TNPCB",True
+site_5608,2018,0,365,0.0,Tamil Nadu,Dindigul,"Mendonsa Colony, Dindigul - TNPCB",False
+site_5608,2019,0,365,0.0,Tamil Nadu,Dindigul,"Mendonsa Colony, Dindigul - TNPCB",False
+site_5608,2020,0,366,0.0,Tamil Nadu,Dindigul,"Mendonsa Colony, Dindigul - TNPCB",False
+site_5608,2021,0,365,0.0,Tamil Nadu,Dindigul,"Mendonsa Colony, Dindigul - TNPCB",False
+site_5608,2022,47,365,0.12876712328767123,Tamil Nadu,Dindigul,"Mendonsa Colony, Dindigul - TNPCB",False
+site_5608,2023,54,365,0.14794520547945206,Tamil Nadu,Dindigul,"Mendonsa Colony, Dindigul - TNPCB",False
+site_5608,2024,122,366,0.3333333333333333,Tamil Nadu,Dindigul,"Mendonsa Colony, Dindigul - TNPCB",False
+site_5608,2025,284,365,0.7780821917808219,Tamil Nadu,Dindigul,"Mendonsa Colony, Dindigul - TNPCB",True
+site_5609,2018,0,365,0.0,Tamil Nadu,Tirunelveli,"Municipal Corporation Office, Tirunelveli - TNPCB",False
+site_5609,2019,0,365,0.0,Tamil Nadu,Tirunelveli,"Municipal Corporation Office, Tirunelveli - TNPCB",False
+site_5609,2020,0,366,0.0,Tamil Nadu,Tirunelveli,"Municipal Corporation Office, Tirunelveli - TNPCB",False
+site_5609,2021,0,365,0.0,Tamil Nadu,Tirunelveli,"Municipal Corporation Office, Tirunelveli - TNPCB",False
+site_5609,2022,0,365,0.0,Tamil Nadu,Tirunelveli,"Municipal Corporation Office, Tirunelveli - TNPCB",False
+site_5609,2023,0,365,0.0,Tamil Nadu,Tirunelveli,"Municipal Corporation Office, Tirunelveli - TNPCB",False
+site_5609,2024,116,366,0.31693989071038253,Tamil Nadu,Tirunelveli,"Municipal Corporation Office, Tirunelveli - TNPCB",False
+site_5609,2025,283,365,0.7753424657534247,Tamil Nadu,Tirunelveli,"Municipal Corporation Office, Tirunelveli - TNPCB",True
+site_5610,2018,0,365,0.0,Tamil Nadu,Thanjavur,"Parisutham Nagar, Thanjavur - TNPCB",False
+site_5610,2019,0,365,0.0,Tamil Nadu,Thanjavur,"Parisutham Nagar, Thanjavur - TNPCB",False
+site_5610,2020,0,366,0.0,Tamil Nadu,Thanjavur,"Parisutham Nagar, Thanjavur - TNPCB",False
+site_5610,2021,0,365,0.0,Tamil Nadu,Thanjavur,"Parisutham Nagar, Thanjavur - TNPCB",False
+site_5610,2022,0,365,0.0,Tamil Nadu,Thanjavur,"Parisutham Nagar, Thanjavur - TNPCB",False
+site_5610,2023,0,365,0.0,Tamil Nadu,Thanjavur,"Parisutham Nagar, Thanjavur - TNPCB",False
+site_5610,2024,69,366,0.1885245901639344,Tamil Nadu,Thanjavur,"Parisutham Nagar, Thanjavur - TNPCB",False
+site_5610,2025,260,365,0.7123287671232876,Tamil Nadu,Thanjavur,"Parisutham Nagar, Thanjavur - TNPCB",True
+site_5611,2018,0,365,0.0,Tamil Nadu,Cuddalore,"Semmandalam, Cuddalore - TNPCB",False
+site_5611,2019,0,365,0.0,Tamil Nadu,Cuddalore,"Semmandalam, Cuddalore - TNPCB",False
+site_5611,2020,0,366,0.0,Tamil Nadu,Cuddalore,"Semmandalam, Cuddalore - TNPCB",False
+site_5611,2021,0,365,0.0,Tamil Nadu,Cuddalore,"Semmandalam, Cuddalore - TNPCB",False
+site_5611,2022,0,365,0.0,Tamil Nadu,Cuddalore,"Semmandalam, Cuddalore - TNPCB",False
+site_5611,2023,183,365,0.5013698630136987,Tamil Nadu,Cuddalore,"Semmandalam, Cuddalore - TNPCB",False
+site_5611,2024,210,366,0.5737704918032787,Tamil Nadu,Cuddalore,"Semmandalam, Cuddalore - TNPCB",False
+site_5611,2025,263,365,0.7205479452054795,Tamil Nadu,Cuddalore,"Semmandalam, Cuddalore - TNPCB",True
+site_5612,2018,0,365,0.0,Tamil Nadu,Hosur,"SIPCOT Phase-1, Hosur - TNPCB",False
+site_5612,2019,0,365,0.0,Tamil Nadu,Hosur,"SIPCOT Phase-1, Hosur - TNPCB",False
+site_5612,2020,0,366,0.0,Tamil Nadu,Hosur,"SIPCOT Phase-1, Hosur - TNPCB",False
+site_5612,2021,0,365,0.0,Tamil Nadu,Hosur,"SIPCOT Phase-1, Hosur - TNPCB",False
+site_5612,2022,92,365,0.25205479452054796,Tamil Nadu,Hosur,"SIPCOT Phase-1, Hosur - TNPCB",False
+site_5612,2023,231,365,0.6328767123287671,Tamil Nadu,Hosur,"SIPCOT Phase-1, Hosur - TNPCB",False
+site_5612,2024,0,366,0.0,Tamil Nadu,Hosur,"SIPCOT Phase-1, Hosur - TNPCB",False
+site_5612,2025,174,365,0.4767123287671233,Tamil Nadu,Hosur,"SIPCOT Phase-1, Hosur - TNPCB",False
+site_5614,2018,0,365,0.0,Tamil Nadu,Madurai,"Uchapatti, Madurai - TNPCB",False
+site_5614,2019,0,365,0.0,Tamil Nadu,Madurai,"Uchapatti, Madurai - TNPCB",False
+site_5614,2020,0,366,0.0,Tamil Nadu,Madurai,"Uchapatti, Madurai - TNPCB",False
+site_5614,2021,0,365,0.0,Tamil Nadu,Madurai,"Uchapatti, Madurai - TNPCB",False
+site_5614,2022,0,365,0.0,Tamil Nadu,Madurai,"Uchapatti, Madurai - TNPCB",False
+site_5614,2023,0,365,0.0,Tamil Nadu,Madurai,"Uchapatti, Madurai - TNPCB",False
+site_5614,2024,74,366,0.20218579234972678,Tamil Nadu,Madurai,"Uchapatti, Madurai - TNPCB",False
+site_5614,2025,266,365,0.7287671232876712,Tamil Nadu,Madurai,"Uchapatti, Madurai - TNPCB",True
+site_5615,2018,0,365,0.0,Tamil Nadu,Vellore,"Vasanthapuram, Vellore - TNPCB",False
+site_5615,2019,0,365,0.0,Tamil Nadu,Vellore,"Vasanthapuram, Vellore - TNPCB",False
+site_5615,2020,0,366,0.0,Tamil Nadu,Vellore,"Vasanthapuram, Vellore - TNPCB",False
+site_5615,2021,0,365,0.0,Tamil Nadu,Vellore,"Vasanthapuram, Vellore - TNPCB",False
+site_5615,2022,50,365,0.136986301369863,Tamil Nadu,Vellore,"Vasanthapuram, Vellore - TNPCB",False
+site_5615,2023,57,365,0.15616438356164383,Tamil Nadu,Vellore,"Vasanthapuram, Vellore - TNPCB",False
+site_5615,2024,151,366,0.412568306010929,Tamil Nadu,Vellore,"Vasanthapuram, Vellore - TNPCB",False
+site_5615,2025,237,365,0.6493150684931507,Tamil Nadu,Vellore,"Vasanthapuram, Vellore - TNPCB",False
+site_5616,2018,0,365,0.0,Tamil Nadu,Nagapattinam,"Velippalayam, Nagapattinam - TNPCB",False
+site_5616,2019,0,365,0.0,Tamil Nadu,Nagapattinam,"Velippalayam, Nagapattinam - TNPCB",False
+site_5616,2020,0,366,0.0,Tamil Nadu,Nagapattinam,"Velippalayam, Nagapattinam - TNPCB",False
+site_5616,2021,0,365,0.0,Tamil Nadu,Nagapattinam,"Velippalayam, Nagapattinam - TNPCB",False
+site_5616,2022,0,365,0.0,Tamil Nadu,Nagapattinam,"Velippalayam, Nagapattinam - TNPCB",False
+site_5616,2023,0,365,0.0,Tamil Nadu,Nagapattinam,"Velippalayam, Nagapattinam - TNPCB",False
+site_5616,2024,39,366,0.10655737704918032,Tamil Nadu,Nagapattinam,"Velippalayam, Nagapattinam - TNPCB",False
+site_5616,2025,169,365,0.46301369863013697,Tamil Nadu,Nagapattinam,"Velippalayam, Nagapattinam - TNPCB",False
+site_5617,2018,0,365,0.0,Tamil Nadu,Ranipet,"VOC Nagar_SIPCOT, Ranipet - TNPCB",False
+site_5617,2019,0,365,0.0,Tamil Nadu,Ranipet,"VOC Nagar_SIPCOT, Ranipet - TNPCB",False
+site_5617,2020,0,366,0.0,Tamil Nadu,Ranipet,"VOC Nagar_SIPCOT, Ranipet - TNPCB",False
+site_5617,2021,0,365,0.0,Tamil Nadu,Ranipet,"VOC Nagar_SIPCOT, Ranipet - TNPCB",False
+site_5617,2022,0,365,0.0,Tamil Nadu,Ranipet,"VOC Nagar_SIPCOT, Ranipet - TNPCB",False
+site_5617,2023,0,365,0.0,Tamil Nadu,Ranipet,"VOC Nagar_SIPCOT, Ranipet - TNPCB",False
+site_5617,2024,51,366,0.13934426229508196,Tamil Nadu,Ranipet,"VOC Nagar_SIPCOT, Ranipet - TNPCB",False
+site_5617,2025,139,365,0.38082191780821917,Tamil Nadu,Ranipet,"VOC Nagar_SIPCOT, Ranipet - TNPCB",False
+site_5618,2018,0,365,0.0,Tamil Nadu,Chennai,"Gandhi Nagar_Ennore, Chennai - TNPCB",False
+site_5618,2019,0,365,0.0,Tamil Nadu,Chennai,"Gandhi Nagar_Ennore, Chennai - TNPCB",False
+site_5618,2020,0,366,0.0,Tamil Nadu,Chennai,"Gandhi Nagar_Ennore, Chennai - TNPCB",False
+site_5618,2021,0,365,0.0,Tamil Nadu,Chennai,"Gandhi Nagar_Ennore, Chennai - TNPCB",False
+site_5618,2022,114,365,0.31232876712328766,Tamil Nadu,Chennai,"Gandhi Nagar_Ennore, Chennai - TNPCB",False
+site_5618,2023,218,365,0.5972602739726027,Tamil Nadu,Chennai,"Gandhi Nagar_Ennore, Chennai - TNPCB",False
+site_5618,2024,37,366,0.10109289617486339,Tamil Nadu,Chennai,"Gandhi Nagar_Ennore, Chennai - TNPCB",False
+site_5618,2025,23,365,0.06301369863013699,Tamil Nadu,Chennai,"Gandhi Nagar_Ennore, Chennai - TNPCB",False
+site_5619,2018,0,365,0.0,Tamil Nadu,Kanchipuram,"Kilambi, Kanchipuram - TNPCB",False
+site_5619,2019,0,365,0.0,Tamil Nadu,Kanchipuram,"Kilambi, Kanchipuram - TNPCB",False
+site_5619,2020,0,366,0.0,Tamil Nadu,Kanchipuram,"Kilambi, Kanchipuram - TNPCB",False
+site_5619,2021,0,365,0.0,Tamil Nadu,Kanchipuram,"Kilambi, Kanchipuram - TNPCB",False
+site_5619,2022,45,365,0.1232876712328767,Tamil Nadu,Kanchipuram,"Kilambi, Kanchipuram - TNPCB",False
+site_5619,2023,188,365,0.5150684931506849,Tamil Nadu,Kanchipuram,"Kilambi, Kanchipuram - TNPCB",False
+site_5619,2024,84,366,0.22950819672131148,Tamil Nadu,Kanchipuram,"Kilambi, Kanchipuram - TNPCB",False
+site_5619,2025,204,365,0.5589041095890411,Tamil Nadu,Kanchipuram,"Kilambi, Kanchipuram - TNPCB",False
+site_5621,2018,0,365,0.0,Tamil Nadu,Cuddalore,"Kudikadu, Cuddalore - TNPCB",False
+site_5621,2019,0,365,0.0,Tamil Nadu,Cuddalore,"Kudikadu, Cuddalore - TNPCB",False
+site_5621,2020,0,366,0.0,Tamil Nadu,Cuddalore,"Kudikadu, Cuddalore - TNPCB",False
+site_5621,2021,0,365,0.0,Tamil Nadu,Cuddalore,"Kudikadu, Cuddalore - TNPCB",False
+site_5621,2022,0,365,0.0,Tamil Nadu,Cuddalore,"Kudikadu, Cuddalore - TNPCB",False
+site_5621,2023,164,365,0.44931506849315067,Tamil Nadu,Cuddalore,"Kudikadu, Cuddalore - TNPCB",False
+site_5621,2024,227,366,0.6202185792349727,Tamil Nadu,Cuddalore,"Kudikadu, Cuddalore - TNPCB",False
+site_5621,2025,235,365,0.6438356164383562,Tamil Nadu,Cuddalore,"Kudikadu, Cuddalore - TNPCB",False
+site_5622,2018,0,365,0.0,Tamil Nadu,Salem,"Sona College of Technology, Salem - TNPCB",False
+site_5622,2019,0,365,0.0,Tamil Nadu,Salem,"Sona College of Technology, Salem - TNPCB",False
+site_5622,2020,0,366,0.0,Tamil Nadu,Salem,"Sona College of Technology, Salem - TNPCB",False
+site_5622,2021,0,365,0.0,Tamil Nadu,Salem,"Sona College of Technology, Salem - TNPCB",False
+site_5622,2022,53,365,0.14520547945205478,Tamil Nadu,Salem,"Sona College of Technology, Salem - TNPCB",False
+site_5622,2023,140,365,0.3835616438356164,Tamil Nadu,Salem,"Sona College of Technology, Salem - TNPCB",False
+site_5622,2024,129,366,0.3524590163934426,Tamil Nadu,Salem,"Sona College of Technology, Salem - TNPCB",False
+site_5622,2025,231,365,0.6328767123287671,Tamil Nadu,Salem,"Sona College of Technology, Salem - TNPCB",False
+site_5623,2018,0,365,0.0,Tamil Nadu,Coimbatore,"PSG College of Arts and Science, Coimbatore - TNPCB",False
+site_5623,2019,0,365,0.0,Tamil Nadu,Coimbatore,"PSG College of Arts and Science, Coimbatore - TNPCB",False
+site_5623,2020,0,366,0.0,Tamil Nadu,Coimbatore,"PSG College of Arts and Science, Coimbatore - TNPCB",False
+site_5623,2021,0,365,0.0,Tamil Nadu,Coimbatore,"PSG College of Arts and Science, Coimbatore - TNPCB",False
+site_5623,2022,8,365,0.021917808219178082,Tamil Nadu,Coimbatore,"PSG College of Arts and Science, Coimbatore - TNPCB",False
+site_5623,2023,18,365,0.049315068493150684,Tamil Nadu,Coimbatore,"PSG College of Arts and Science, Coimbatore - TNPCB",False
+site_5623,2024,260,366,0.7103825136612022,Tamil Nadu,Coimbatore,"PSG College of Arts and Science, Coimbatore - TNPCB",True
+site_5623,2025,271,365,0.7424657534246575,Tamil Nadu,Coimbatore,"PSG College of Arts and Science, Coimbatore - TNPCB",True
+site_5624,2018,0,365,0.0,Tamil Nadu,Ooty,"Bombay Castel, Ooty - TNPCB",False
+site_5624,2019,0,365,0.0,Tamil Nadu,Ooty,"Bombay Castel, Ooty - TNPCB",False
+site_5624,2020,0,366,0.0,Tamil Nadu,Ooty,"Bombay Castel, Ooty - TNPCB",False
+site_5624,2021,0,365,0.0,Tamil Nadu,Ooty,"Bombay Castel, Ooty - TNPCB",False
+site_5624,2022,100,365,0.273972602739726,Tamil Nadu,Ooty,"Bombay Castel, Ooty - TNPCB",False
+site_5624,2023,285,365,0.7808219178082192,Tamil Nadu,Ooty,"Bombay Castel, Ooty - TNPCB",True
+site_5624,2024,174,366,0.47540983606557374,Tamil Nadu,Ooty,"Bombay Castel, Ooty - TNPCB",False
+site_5624,2025,175,365,0.4794520547945205,Tamil Nadu,Ooty,"Bombay Castel, Ooty - TNPCB",False
+site_5625,2018,0,365,0.0,Tamil Nadu,Ramanathapuram,"Chalai Bazaar, Ramanathapuram - TNPCB",False
+site_5625,2019,0,365,0.0,Tamil Nadu,Ramanathapuram,"Chalai Bazaar, Ramanathapuram - TNPCB",False
+site_5625,2020,0,366,0.0,Tamil Nadu,Ramanathapuram,"Chalai Bazaar, Ramanathapuram - TNPCB",False
+site_5625,2021,0,365,0.0,Tamil Nadu,Ramanathapuram,"Chalai Bazaar, Ramanathapuram - TNPCB",False
+site_5625,2022,134,365,0.36712328767123287,Tamil Nadu,Ramanathapuram,"Chalai Bazaar, Ramanathapuram - TNPCB",False
+site_5625,2023,279,365,0.7643835616438356,Tamil Nadu,Ramanathapuram,"Chalai Bazaar, Ramanathapuram - TNPCB",True
+site_5625,2024,261,366,0.7131147540983607,Tamil Nadu,Ramanathapuram,"Chalai Bazaar, Ramanathapuram - TNPCB",True
+site_5625,2025,286,365,0.7835616438356164,Tamil Nadu,Ramanathapuram,"Chalai Bazaar, Ramanathapuram - TNPCB",True
+site_5626,2018,0,365,0.0,Tamil Nadu,Palkalaiperur,"Bharathidasan University, Palkalaiperur - TNPCB",False
+site_5626,2019,0,365,0.0,Tamil Nadu,Palkalaiperur,"Bharathidasan University, Palkalaiperur - TNPCB",False
+site_5626,2020,0,366,0.0,Tamil Nadu,Palkalaiperur,"Bharathidasan University, Palkalaiperur - TNPCB",False
+site_5626,2021,0,365,0.0,Tamil Nadu,Palkalaiperur,"Bharathidasan University, Palkalaiperur - TNPCB",False
+site_5626,2022,0,365,0.0,Tamil Nadu,Palkalaiperur,"Bharathidasan University, Palkalaiperur - TNPCB",False
+site_5626,2023,155,365,0.4246575342465753,Tamil Nadu,Palkalaiperur,"Bharathidasan University, Palkalaiperur - TNPCB",False
+site_5626,2024,224,366,0.6120218579234973,Tamil Nadu,Palkalaiperur,"Bharathidasan University, Palkalaiperur - TNPCB",False
+site_5626,2025,267,365,0.7315068493150685,Tamil Nadu,Palkalaiperur,"Bharathidasan University, Palkalaiperur - TNPCB",True
+site_5627,2018,0,365,0.0,Tamil Nadu,Karur,"Kamadenu Nagar, Karur - TNPCB",False
+site_5627,2019,0,365,0.0,Tamil Nadu,Karur,"Kamadenu Nagar, Karur - TNPCB",False
+site_5627,2020,0,366,0.0,Tamil Nadu,Karur,"Kamadenu Nagar, Karur - TNPCB",False
+site_5627,2021,0,365,0.0,Tamil Nadu,Karur,"Kamadenu Nagar, Karur - TNPCB",False
+site_5627,2022,0,365,0.0,Tamil Nadu,Karur,"Kamadenu Nagar, Karur - TNPCB",False
+site_5627,2023,0,365,0.0,Tamil Nadu,Karur,"Kamadenu Nagar, Karur - TNPCB",False
+site_5627,2024,64,366,0.17486338797814208,Tamil Nadu,Karur,"Kamadenu Nagar, Karur - TNPCB",False
+site_5627,2025,216,365,0.5917808219178082,Tamil Nadu,Karur,"Kamadenu Nagar, Karur - TNPCB",False
+site_5630,2018,0,365,0.0,Tamil Nadu,Tiruchirappalli,"St Joseph College, Tiruchirappalli - TNPCB",False
+site_5630,2019,0,365,0.0,Tamil Nadu,Tiruchirappalli,"St Joseph College, Tiruchirappalli - TNPCB",False
+site_5630,2020,0,366,0.0,Tamil Nadu,Tiruchirappalli,"St Joseph College, Tiruchirappalli - TNPCB",False
+site_5630,2021,0,365,0.0,Tamil Nadu,Tiruchirappalli,"St Joseph College, Tiruchirappalli - TNPCB",False
+site_5630,2022,0,365,0.0,Tamil Nadu,Tiruchirappalli,"St Joseph College, Tiruchirappalli - TNPCB",False
+site_5630,2023,5,365,0.0136986301369863,Tamil Nadu,Tiruchirappalli,"St Joseph College, Tiruchirappalli - TNPCB",False
+site_5630,2024,73,366,0.1994535519125683,Tamil Nadu,Tiruchirappalli,"St Joseph College, Tiruchirappalli - TNPCB",False
+site_5630,2025,285,365,0.7808219178082192,Tamil Nadu,Tiruchirappalli,"St Joseph College, Tiruchirappalli - TNPCB",True
+site_5632,2018,0,365,0.0,Andhra Pradesh,Anantapur,"Gulzarpet, Anantapur - APPCB",False
+site_5632,2019,0,365,0.0,Andhra Pradesh,Anantapur,"Gulzarpet, Anantapur - APPCB",False
+site_5632,2020,0,366,0.0,Andhra Pradesh,Anantapur,"Gulzarpet, Anantapur - APPCB",False
+site_5632,2021,0,365,0.0,Andhra Pradesh,Anantapur,"Gulzarpet, Anantapur - APPCB",False
+site_5632,2022,124,365,0.33972602739726027,Andhra Pradesh,Anantapur,"Gulzarpet, Anantapur - APPCB",False
+site_5632,2023,297,365,0.8136986301369863,Andhra Pradesh,Anantapur,"Gulzarpet, Anantapur - APPCB",True
+site_5632,2024,250,366,0.6830601092896175,Andhra Pradesh,Anantapur,"Gulzarpet, Anantapur - APPCB",False
+site_5632,2025,293,365,0.8027397260273973,Andhra Pradesh,Anantapur,"Gulzarpet, Anantapur - APPCB",True
+site_5638,2018,0,365,0.0,Karnataka,Dharwad,"Kalabhavan, Dharwad - KSPCB",False
+site_5638,2019,0,365,0.0,Karnataka,Dharwad,"Kalabhavan, Dharwad - KSPCB",False
+site_5638,2020,0,366,0.0,Karnataka,Dharwad,"Kalabhavan, Dharwad - KSPCB",False
+site_5638,2021,0,365,0.0,Karnataka,Dharwad,"Kalabhavan, Dharwad - KSPCB",False
+site_5638,2022,22,365,0.06027397260273973,Karnataka,Dharwad,"Kalabhavan, Dharwad - KSPCB",False
+site_5638,2023,225,365,0.6164383561643836,Karnataka,Dharwad,"Kalabhavan, Dharwad - KSPCB",False
+site_5638,2024,301,366,0.8224043715846995,Karnataka,Dharwad,"Kalabhavan, Dharwad - KSPCB",True
+site_5638,2025,217,365,0.5945205479452055,Karnataka,Dharwad,"Kalabhavan, Dharwad - KSPCB",False
+site_5665,2018,0,365,0.0,Andhra Pradesh,Chittoor,"Gangineni Cheruvu, Chittoor - APPCB",False
+site_5665,2019,0,365,0.0,Andhra Pradesh,Chittoor,"Gangineni Cheruvu, Chittoor - APPCB",False
+site_5665,2020,0,366,0.0,Andhra Pradesh,Chittoor,"Gangineni Cheruvu, Chittoor - APPCB",False
+site_5665,2021,0,365,0.0,Andhra Pradesh,Chittoor,"Gangineni Cheruvu, Chittoor - APPCB",False
+site_5665,2022,20,365,0.0547945205479452,Andhra Pradesh,Chittoor,"Gangineni Cheruvu, Chittoor - APPCB",False
+site_5665,2023,353,365,0.9671232876712329,Andhra Pradesh,Chittoor,"Gangineni Cheruvu, Chittoor - APPCB",True
+site_5665,2024,245,366,0.6693989071038251,Andhra Pradesh,Chittoor,"Gangineni Cheruvu, Chittoor - APPCB",False
+site_5665,2025,312,365,0.8547945205479452,Andhra Pradesh,Chittoor,"Gangineni Cheruvu, Chittoor - APPCB",True
+site_5666,2018,0,365,0.0,Andhra Pradesh,Tirupati,"Vaikuntapuram, Tirupati - APPCB",False
+site_5666,2019,0,365,0.0,Andhra Pradesh,Tirupati,"Vaikuntapuram, Tirupati - APPCB",False
+site_5666,2020,0,366,0.0,Andhra Pradesh,Tirupati,"Vaikuntapuram, Tirupati - APPCB",False
+site_5666,2021,0,365,0.0,Andhra Pradesh,Tirupati,"Vaikuntapuram, Tirupati - APPCB",False
+site_5666,2022,46,365,0.12602739726027398,Andhra Pradesh,Tirupati,"Vaikuntapuram, Tirupati - APPCB",False
+site_5666,2023,255,365,0.6986301369863014,Andhra Pradesh,Tirupati,"Vaikuntapuram, Tirupati - APPCB",False
+site_5666,2024,204,366,0.5573770491803278,Andhra Pradesh,Tirupati,"Vaikuntapuram, Tirupati - APPCB",False
+site_5666,2025,227,365,0.6219178082191781,Andhra Pradesh,Tirupati,"Vaikuntapuram, Tirupati - APPCB",False
+site_5678,2018,0,365,0.0,Karnataka,Bengaluru,"RVCE-Mailasandra, Bengaluru - KSPCB",False
+site_5678,2019,0,365,0.0,Karnataka,Bengaluru,"RVCE-Mailasandra, Bengaluru - KSPCB",False
+site_5678,2020,0,366,0.0,Karnataka,Bengaluru,"RVCE-Mailasandra, Bengaluru - KSPCB",False
+site_5678,2021,0,365,0.0,Karnataka,Bengaluru,"RVCE-Mailasandra, Bengaluru - KSPCB",False
+site_5678,2022,15,365,0.0410958904109589,Karnataka,Bengaluru,"RVCE-Mailasandra, Bengaluru - KSPCB",False
+site_5678,2023,241,365,0.6602739726027397,Karnataka,Bengaluru,"RVCE-Mailasandra, Bengaluru - KSPCB",False
+site_5678,2024,274,366,0.7486338797814208,Karnataka,Bengaluru,"RVCE-Mailasandra, Bengaluru - KSPCB",True
+site_5678,2025,238,365,0.6520547945205479,Karnataka,Bengaluru,"RVCE-Mailasandra, Bengaluru - KSPCB",False
+site_5679,2018,0,365,0.0,Karnataka,Kalaburagi,"Mahatma Basaveswar Colony, Kalaburgi - KSPCB",False
+site_5679,2019,0,365,0.0,Karnataka,Kalaburagi,"Mahatma Basaveswar Colony, Kalaburgi - KSPCB",False
+site_5679,2020,0,366,0.0,Karnataka,Kalaburagi,"Mahatma Basaveswar Colony, Kalaburgi - KSPCB",False
+site_5679,2021,0,365,0.0,Karnataka,Kalaburagi,"Mahatma Basaveswar Colony, Kalaburgi - KSPCB",False
+site_5679,2022,13,365,0.03561643835616438,Karnataka,Kalaburagi,"Mahatma Basaveswar Colony, Kalaburgi - KSPCB",False
+site_5679,2023,188,365,0.5150684931506849,Karnataka,Kalaburagi,"Mahatma Basaveswar Colony, Kalaburgi - KSPCB",False
+site_5679,2024,331,366,0.9043715846994536,Karnataka,Kalaburagi,"Mahatma Basaveswar Colony, Kalaburgi - KSPCB",True
+site_5679,2025,346,365,0.947945205479452,Karnataka,Kalaburagi,"Mahatma Basaveswar Colony, Kalaburgi - KSPCB",True
+site_5680,2018,0,365,0.0,Karnataka,Hubballi,"Lingaraj Nagar, Hubballi - KSPCB",False
+site_5680,2019,0,365,0.0,Karnataka,Hubballi,"Lingaraj Nagar, Hubballi - KSPCB",False
+site_5680,2020,0,366,0.0,Karnataka,Hubballi,"Lingaraj Nagar, Hubballi - KSPCB",False
+site_5680,2021,0,365,0.0,Karnataka,Hubballi,"Lingaraj Nagar, Hubballi - KSPCB",False
+site_5680,2022,14,365,0.038356164383561646,Karnataka,Hubballi,"Lingaraj Nagar, Hubballi - KSPCB",False
+site_5680,2023,301,365,0.8246575342465754,Karnataka,Hubballi,"Lingaraj Nagar, Hubballi - KSPCB",True
+site_5680,2024,337,366,0.9207650273224044,Karnataka,Hubballi,"Lingaraj Nagar, Hubballi - KSPCB",True
+site_5680,2025,347,365,0.9506849315068493,Karnataka,Hubballi,"Lingaraj Nagar, Hubballi - KSPCB",True
+site_5681,2018,0,365,0.0,Karnataka,Bengaluru,"Kasturi Nagar, Bengaluru - KSPCB",False
+site_5681,2019,0,365,0.0,Karnataka,Bengaluru,"Kasturi Nagar, Bengaluru - KSPCB",False
+site_5681,2020,0,366,0.0,Karnataka,Bengaluru,"Kasturi Nagar, Bengaluru - KSPCB",False
+site_5681,2021,0,365,0.0,Karnataka,Bengaluru,"Kasturi Nagar, Bengaluru - KSPCB",False
+site_5681,2022,0,365,0.0,Karnataka,Bengaluru,"Kasturi Nagar, Bengaluru - KSPCB",False
+site_5681,2023,246,365,0.673972602739726,Karnataka,Bengaluru,"Kasturi Nagar, Bengaluru - KSPCB",False
+site_5681,2024,338,366,0.9234972677595629,Karnataka,Bengaluru,"Kasturi Nagar, Bengaluru - KSPCB",True
+site_5681,2025,303,365,0.8301369863013699,Karnataka,Bengaluru,"Kasturi Nagar, Bengaluru - KSPCB",True
+site_5682,2018,0,365,0.0,Karnataka,Tumakuru,"Thimmalapura, Tumakuru - KSPCB",False
+site_5682,2019,0,365,0.0,Karnataka,Tumakuru,"Thimmalapura, Tumakuru - KSPCB",False
+site_5682,2020,0,366,0.0,Karnataka,Tumakuru,"Thimmalapura, Tumakuru - KSPCB",False
+site_5682,2021,0,365,0.0,Karnataka,Tumakuru,"Thimmalapura, Tumakuru - KSPCB",False
+site_5682,2022,15,365,0.0410958904109589,Karnataka,Tumakuru,"Thimmalapura, Tumakuru - KSPCB",False
+site_5682,2023,204,365,0.5589041095890411,Karnataka,Tumakuru,"Thimmalapura, Tumakuru - KSPCB",False
+site_5682,2024,267,366,0.7295081967213115,Karnataka,Tumakuru,"Thimmalapura, Tumakuru - KSPCB",True
+site_5682,2025,159,365,0.43561643835616437,Karnataka,Tumakuru,"Thimmalapura, Tumakuru - KSPCB",False
+site_5685,2018,0,365,0.0,Andhra Pradesh,Vijayawada,"Kanuru, Vijayawada - APPCB",False
+site_5685,2019,0,365,0.0,Andhra Pradesh,Vijayawada,"Kanuru, Vijayawada - APPCB",False
+site_5685,2020,0,366,0.0,Andhra Pradesh,Vijayawada,"Kanuru, Vijayawada - APPCB",False
+site_5685,2021,0,365,0.0,Andhra Pradesh,Vijayawada,"Kanuru, Vijayawada - APPCB",False
+site_5685,2022,0,365,0.0,Andhra Pradesh,Vijayawada,"Kanuru, Vijayawada - APPCB",False
+site_5685,2023,209,365,0.5726027397260274,Andhra Pradesh,Vijayawada,"Kanuru, Vijayawada - APPCB",False
+site_5685,2024,245,366,0.6693989071038251,Andhra Pradesh,Vijayawada,"Kanuru, Vijayawada - APPCB",False
+site_5685,2025,147,365,0.40273972602739727,Andhra Pradesh,Vijayawada,"Kanuru, Vijayawada - APPCB",False
+site_5686,2018,0,365,0.0,Karnataka,Bengaluru,"Shivapura_Peenya, Bengaluru - KSPCB",False
+site_5686,2019,0,365,0.0,Karnataka,Bengaluru,"Shivapura_Peenya, Bengaluru - KSPCB",False
+site_5686,2020,0,366,0.0,Karnataka,Bengaluru,"Shivapura_Peenya, Bengaluru - KSPCB",False
+site_5686,2021,0,365,0.0,Karnataka,Bengaluru,"Shivapura_Peenya, Bengaluru - KSPCB",False
+site_5686,2022,0,365,0.0,Karnataka,Bengaluru,"Shivapura_Peenya, Bengaluru - KSPCB",False
+site_5686,2023,276,365,0.7561643835616438,Karnataka,Bengaluru,"Shivapura_Peenya, Bengaluru - KSPCB",True
+site_5686,2024,330,366,0.9016393442622951,Karnataka,Bengaluru,"Shivapura_Peenya, Bengaluru - KSPCB",True
+site_5686,2025,258,365,0.7068493150684931,Karnataka,Bengaluru,"Shivapura_Peenya, Bengaluru - KSPCB",True
+site_5693,2018,0,365,0.0,Andhra Pradesh,Kadapa,"Yerramukkapalli, Kadapa - APPCB",False
+site_5693,2019,0,365,0.0,Andhra Pradesh,Kadapa,"Yerramukkapalli, Kadapa - APPCB",False
+site_5693,2020,0,366,0.0,Andhra Pradesh,Kadapa,"Yerramukkapalli, Kadapa - APPCB",False
+site_5693,2021,0,365,0.0,Andhra Pradesh,Kadapa,"Yerramukkapalli, Kadapa - APPCB",False
+site_5693,2022,0,365,0.0,Andhra Pradesh,Kadapa,"Yerramukkapalli, Kadapa - APPCB",False
+site_5693,2023,280,365,0.7671232876712328,Andhra Pradesh,Kadapa,"Yerramukkapalli, Kadapa - APPCB",True
+site_5693,2024,233,366,0.6366120218579235,Andhra Pradesh,Kadapa,"Yerramukkapalli, Kadapa - APPCB",False
+site_5693,2025,311,365,0.852054794520548,Andhra Pradesh,Kadapa,"Yerramukkapalli, Kadapa - APPCB",True
+site_5254,2018,0,365,0.0,Karnataka,Yadgir,"Collector Office, Yadgir - KSPCB",False
+site_5254,2019,98,365,0.2684931506849315,Karnataka,Yadgir,"Collector Office, Yadgir - KSPCB",False
+site_5254,2020,188,366,0.5136612021857924,Karnataka,Yadgir,"Collector Office, Yadgir - KSPCB",False
+site_5254,2021,340,365,0.9315068493150684,Karnataka,Yadgir,"Collector Office, Yadgir - KSPCB",True
+site_5254,2022,326,365,0.8931506849315068,Karnataka,Yadgir,"Collector Office, Yadgir - KSPCB",True
+site_5254,2023,328,365,0.8986301369863013,Karnataka,Yadgir,"Collector Office, Yadgir - KSPCB",True
+site_5254,2024,293,366,0.8005464480874317,Karnataka,Yadgir,"Collector Office, Yadgir - KSPCB",True
+site_5254,2025,298,365,0.8164383561643835,Karnataka,Yadgir,"Collector Office, Yadgir - KSPCB",True
+site_5255,2018,0,365,0.0,Karnataka,Ramanagara,"Vijay Nagar, Ramanagara - KSPCB",False
+site_5255,2019,90,365,0.2465753424657534,Karnataka,Ramanagara,"Vijay Nagar, Ramanagara - KSPCB",False
+site_5255,2020,329,366,0.8989071038251366,Karnataka,Ramanagara,"Vijay Nagar, Ramanagara - KSPCB",True
+site_5255,2021,283,365,0.7753424657534247,Karnataka,Ramanagara,"Vijay Nagar, Ramanagara - KSPCB",True
+site_5255,2022,332,365,0.9095890410958904,Karnataka,Ramanagara,"Vijay Nagar, Ramanagara - KSPCB",True
+site_5255,2023,349,365,0.9561643835616438,Karnataka,Ramanagara,"Vijay Nagar, Ramanagara - KSPCB",True
+site_5255,2024,325,366,0.8879781420765027,Karnataka,Ramanagara,"Vijay Nagar, Ramanagara - KSPCB",True
+site_5255,2025,153,365,0.4191780821917808,Karnataka,Ramanagara,"Vijay Nagar, Ramanagara - KSPCB",False
+site_5272,2018,0,365,0.0,Kerala,Ernakulam,"Kacheripady, Ernakulam - Kerala PCB",False
+site_5272,2019,0,365,0.0,Kerala,Ernakulam,"Kacheripady, Ernakulam - Kerala PCB",False
+site_5272,2020,265,366,0.7240437158469946,Kerala,Ernakulam,"Kacheripady, Ernakulam - Kerala PCB",True
+site_5272,2021,274,365,0.7506849315068493,Kerala,Ernakulam,"Kacheripady, Ernakulam - Kerala PCB",True
+site_5272,2022,239,365,0.6547945205479452,Kerala,Ernakulam,"Kacheripady, Ernakulam - Kerala PCB",False
+site_5272,2023,0,365,0.0,Kerala,Ernakulam,"Kacheripady, Ernakulam - Kerala PCB",False
+site_5272,2024,0,366,0.0,Kerala,Ernakulam,"Kacheripady, Ernakulam - Kerala PCB",False
+site_5272,2025,0,365,0.0,Kerala,Ernakulam,"Kacheripady, Ernakulam - Kerala PCB",False
+site_5391,2018,0,365,0.0,Karnataka,Madikeri,"Stuart Hill, Madikeri - KSPCB",False
+site_5391,2019,0,365,0.0,Karnataka,Madikeri,"Stuart Hill, Madikeri - KSPCB",False
+site_5391,2020,52,366,0.14207650273224043,Karnataka,Madikeri,"Stuart Hill, Madikeri - KSPCB",False
+site_5391,2021,338,365,0.9260273972602739,Karnataka,Madikeri,"Stuart Hill, Madikeri - KSPCB",True
+site_5391,2022,330,365,0.9041095890410958,Karnataka,Madikeri,"Stuart Hill, Madikeri - KSPCB",True
+site_5391,2023,340,365,0.9315068493150684,Karnataka,Madikeri,"Stuart Hill, Madikeri - KSPCB",True
+site_5391,2024,356,366,0.9726775956284153,Karnataka,Madikeri,"Stuart Hill, Madikeri - KSPCB",True
+site_5391,2025,341,365,0.9342465753424658,Karnataka,Madikeri,"Stuart Hill, Madikeri - KSPCB",True
+site_5414,2018,0,365,0.0,Karnataka,Raichur,"Haji Colony, Raichur - KSPCB",False
+site_5414,2019,0,365,0.0,Karnataka,Raichur,"Haji Colony, Raichur - KSPCB",False
+site_5414,2020,11,366,0.030054644808743168,Karnataka,Raichur,"Haji Colony, Raichur - KSPCB",False
+site_5414,2021,252,365,0.6904109589041096,Karnataka,Raichur,"Haji Colony, Raichur - KSPCB",False
+site_5414,2022,213,365,0.5835616438356165,Karnataka,Raichur,"Haji Colony, Raichur - KSPCB",False
+site_5414,2023,197,365,0.5397260273972603,Karnataka,Raichur,"Haji Colony, Raichur - KSPCB",False
+site_5414,2024,198,366,0.5409836065573771,Karnataka,Raichur,"Haji Colony, Raichur - KSPCB",False
+site_5414,2025,20,365,0.0547945205479452,Karnataka,Raichur,"Haji Colony, Raichur - KSPCB",False
+site_5415,2018,0,365,0.0,Karnataka,Koppal,"Diwator Nagar, Koppal - KSPCB",False
+site_5415,2019,0,365,0.0,Karnataka,Koppal,"Diwator Nagar, Koppal - KSPCB",False
+site_5415,2020,12,366,0.03278688524590164,Karnataka,Koppal,"Diwator Nagar, Koppal - KSPCB",False
+site_5415,2021,260,365,0.7123287671232876,Karnataka,Koppal,"Diwator Nagar, Koppal - KSPCB",True
+site_5415,2022,278,365,0.7616438356164383,Karnataka,Koppal,"Diwator Nagar, Koppal - KSPCB",True
+site_5415,2023,235,365,0.6438356164383562,Karnataka,Koppal,"Diwator Nagar, Koppal - KSPCB",False
+site_5415,2024,236,366,0.644808743169399,Karnataka,Koppal,"Diwator Nagar, Koppal - KSPCB",False
+site_5415,2025,155,365,0.4246575342465753,Karnataka,Koppal,"Diwator Nagar, Koppal - KSPCB",False
+site_5418,2018,0,365,0.0,Karnataka,Bidar,"Naubad, Bidar - KSPCB",False
+site_5418,2019,0,365,0.0,Karnataka,Bidar,"Naubad, Bidar - KSPCB",False
+site_5418,2020,0,366,0.0,Karnataka,Bidar,"Naubad, Bidar - KSPCB",False
+site_5418,2021,95,365,0.2602739726027397,Karnataka,Bidar,"Naubad, Bidar - KSPCB",False
+site_5418,2022,0,365,0.0,Karnataka,Bidar,"Naubad, Bidar - KSPCB",False
+site_5418,2023,64,365,0.17534246575342466,Karnataka,Bidar,"Naubad, Bidar - KSPCB",False
+site_5418,2024,202,366,0.5519125683060109,Karnataka,Bidar,"Naubad, Bidar - KSPCB",False
+site_5418,2025,26,365,0.07123287671232877,Karnataka,Bidar,"Naubad, Bidar - KSPCB",False
+site_5419,2018,0,365,0.0,Karnataka,Gadag,"Panchal Nagar, Gadag - KSPCB",False
+site_5419,2019,0,365,0.0,Karnataka,Gadag,"Panchal Nagar, Gadag - KSPCB",False
+site_5419,2020,0,366,0.0,Karnataka,Gadag,"Panchal Nagar, Gadag - KSPCB",False
+site_5419,2021,179,365,0.4904109589041096,Karnataka,Gadag,"Panchal Nagar, Gadag - KSPCB",False
+site_5419,2022,241,365,0.6602739726027397,Karnataka,Gadag,"Panchal Nagar, Gadag - KSPCB",False
+site_5419,2023,263,365,0.7205479452054795,Karnataka,Gadag,"Panchal Nagar, Gadag - KSPCB",True
+site_5419,2024,322,366,0.8797814207650273,Karnataka,Gadag,"Panchal Nagar, Gadag - KSPCB",True
+site_5419,2025,136,365,0.3726027397260274,Karnataka,Gadag,"Panchal Nagar, Gadag - KSPCB",False
+site_5421,2018,0,365,0.0,Karnataka,Mangalore,"Kadri, Mangalore - KSPCB",False
+site_5421,2019,0,365,0.0,Karnataka,Mangalore,"Kadri, Mangalore - KSPCB",False
+site_5421,2020,0,366,0.0,Karnataka,Mangalore,"Kadri, Mangalore - KSPCB",False
+site_5421,2021,231,365,0.6328767123287671,Karnataka,Mangalore,"Kadri, Mangalore - KSPCB",False
+site_5421,2022,324,365,0.8876712328767123,Karnataka,Mangalore,"Kadri, Mangalore - KSPCB",True
+site_5421,2023,342,365,0.936986301369863,Karnataka,Mangalore,"Kadri, Mangalore - KSPCB",True
+site_5421,2024,318,366,0.8688524590163934,Karnataka,Mangalore,"Kadri, Mangalore - KSPCB",True
+site_5421,2025,304,365,0.8328767123287671,Karnataka,Mangalore,"Kadri, Mangalore - KSPCB",True
+site_5422,2018,0,365,0.0,Karnataka,Davanagere,"Devaraj Urs Badavane, Davanagere - KSPCB",False
+site_5422,2019,0,365,0.0,Karnataka,Davanagere,"Devaraj Urs Badavane, Davanagere - KSPCB",False
+site_5422,2020,0,366,0.0,Karnataka,Davanagere,"Devaraj Urs Badavane, Davanagere - KSPCB",False
+site_5422,2021,233,365,0.6383561643835617,Karnataka,Davanagere,"Devaraj Urs Badavane, Davanagere - KSPCB",False
+site_5422,2022,285,365,0.7808219178082192,Karnataka,Davanagere,"Devaraj Urs Badavane, Davanagere - KSPCB",True
+site_5422,2023,263,365,0.7205479452054795,Karnataka,Davanagere,"Devaraj Urs Badavane, Davanagere - KSPCB",True
+site_5422,2024,276,366,0.7540983606557377,Karnataka,Davanagere,"Devaraj Urs Badavane, Davanagere - KSPCB",True
+site_5422,2025,269,365,0.736986301369863,Karnataka,Davanagere,"Devaraj Urs Badavane, Davanagere - KSPCB",True
+site_5433,2018,0,365,0.0,Karnataka,Udupi,"Brahmagiri, Udupi - KSPCB",False
+site_5433,2019,0,365,0.0,Karnataka,Udupi,"Brahmagiri, Udupi - KSPCB",False
+site_5433,2020,0,366,0.0,Karnataka,Udupi,"Brahmagiri, Udupi - KSPCB",False
+site_5433,2021,0,365,0.0,Karnataka,Udupi,"Brahmagiri, Udupi - KSPCB",False
+site_5433,2022,0,365,0.0,Karnataka,Udupi,"Brahmagiri, Udupi - KSPCB",False
+site_5433,2023,4,365,0.010958904109589041,Karnataka,Udupi,"Brahmagiri, Udupi - KSPCB",False
+site_5433,2024,191,366,0.5218579234972678,Karnataka,Udupi,"Brahmagiri, Udupi - KSPCB",False
+site_5433,2025,57,365,0.15616438356164383,Karnataka,Udupi,"Brahmagiri, Udupi - KSPCB",False
+site_5448,2018,0,365,0.0,Karnataka,Hassan,"B.Katihalli, Hassan - KSPCB",False
+site_5448,2019,0,365,0.0,Karnataka,Hassan,"B.Katihalli, Hassan - KSPCB",False
+site_5448,2020,0,366,0.0,Karnataka,Hassan,"B.Katihalli, Hassan - KSPCB",False
+site_5448,2021,222,365,0.6082191780821918,Karnataka,Hassan,"B.Katihalli, Hassan - KSPCB",False
+site_5448,2022,268,365,0.7342465753424657,Karnataka,Hassan,"B.Katihalli, Hassan - KSPCB",True
+site_5448,2023,157,365,0.4301369863013699,Karnataka,Hassan,"B.Katihalli, Hassan - KSPCB",False
+site_5448,2024,203,366,0.5546448087431693,Karnataka,Hassan,"B.Katihalli, Hassan - KSPCB",False
+site_5448,2025,99,365,0.27123287671232876,Karnataka,Hassan,"B.Katihalli, Hassan - KSPCB",False
+site_5420,2018,0,365,0.0,Karnataka,Haveri,"Ashwini Nagar, Haveri - KSPCB",False
+site_5420,2019,0,365,0.0,Karnataka,Haveri,"Ashwini Nagar, Haveri - KSPCB",False
+site_5420,2020,0,366,0.0,Karnataka,Haveri,"Ashwini Nagar, Haveri - KSPCB",False
+site_5420,2021,0,365,0.0,Karnataka,Haveri,"Ashwini Nagar, Haveri - KSPCB",False
+site_5420,2022,190,365,0.5205479452054794,Karnataka,Haveri,"Ashwini Nagar, Haveri - KSPCB",False
+site_5420,2023,263,365,0.7205479452054795,Karnataka,Haveri,"Ashwini Nagar, Haveri - KSPCB",True
+site_5420,2024,218,366,0.5956284153005464,Karnataka,Haveri,"Ashwini Nagar, Haveri - KSPCB",False
+site_5420,2025,67,365,0.18356164383561643,Karnataka,Haveri,"Ashwini Nagar, Haveri - KSPCB",False
+site_5432,2018,0,365,0.0,Karnataka,Belgaum,"Ramteerth Nagar, Belgaum - KSPCB",False
+site_5432,2019,0,365,0.0,Karnataka,Belgaum,"Ramteerth Nagar, Belgaum - KSPCB",False
+site_5432,2020,0,366,0.0,Karnataka,Belgaum,"Ramteerth Nagar, Belgaum - KSPCB",False
+site_5432,2021,0,365,0.0,Karnataka,Belgaum,"Ramteerth Nagar, Belgaum - KSPCB",False
+site_5432,2022,125,365,0.3424657534246575,Karnataka,Belgaum,"Ramteerth Nagar, Belgaum - KSPCB",False
+site_5432,2023,323,365,0.8849315068493151,Karnataka,Belgaum,"Ramteerth Nagar, Belgaum - KSPCB",True
+site_5432,2024,303,366,0.8278688524590164,Karnataka,Belgaum,"Ramteerth Nagar, Belgaum - KSPCB",True
+site_5432,2025,123,365,0.336986301369863,Karnataka,Belgaum,"Ramteerth Nagar, Belgaum - KSPCB",False
+site_5729,2018,0,365,0.0,Karnataka,Bengaluru,"Jigani, Bengaluru - KSPCB",False
+site_5729,2019,0,365,0.0,Karnataka,Bengaluru,"Jigani, Bengaluru - KSPCB",False
+site_5729,2020,0,366,0.0,Karnataka,Bengaluru,"Jigani, Bengaluru - KSPCB",False
+site_5729,2021,0,365,0.0,Karnataka,Bengaluru,"Jigani, Bengaluru - KSPCB",False
+site_5729,2022,0,365,0.0,Karnataka,Bengaluru,"Jigani, Bengaluru - KSPCB",False
+site_5729,2023,243,365,0.6657534246575343,Karnataka,Bengaluru,"Jigani, Bengaluru - KSPCB",False
+site_5729,2024,270,366,0.7377049180327869,Karnataka,Bengaluru,"Jigani, Bengaluru - KSPCB",True
+site_5729,2025,327,365,0.8958904109589041,Karnataka,Bengaluru,"Jigani, Bengaluru - KSPCB",True
+site_5848,2018,0,365,0.0,Andhra Pradesh,Vijayawada,"HB Colony, Vijayawada - APPCB",False
+site_5848,2019,0,365,0.0,Andhra Pradesh,Vijayawada,"HB Colony, Vijayawada - APPCB",False
+site_5848,2020,0,366,0.0,Andhra Pradesh,Vijayawada,"HB Colony, Vijayawada - APPCB",False
+site_5848,2021,0,365,0.0,Andhra Pradesh,Vijayawada,"HB Colony, Vijayawada - APPCB",False
+site_5848,2022,0,365,0.0,Andhra Pradesh,Vijayawada,"HB Colony, Vijayawada - APPCB",False
+site_5848,2023,115,365,0.3150684931506849,Andhra Pradesh,Vijayawada,"HB Colony, Vijayawada - APPCB",False
+site_5848,2024,332,366,0.907103825136612,Andhra Pradesh,Vijayawada,"HB Colony, Vijayawada - APPCB",True
+site_5848,2025,354,365,0.9698630136986301,Andhra Pradesh,Vijayawada,"HB Colony, Vijayawada - APPCB",True
+site_5849,2018,0,365,0.0,Andhra Pradesh,Vijayawada,"Rajiv Gandhi Park, Vijayawada - APPCB",False
+site_5849,2019,0,365,0.0,Andhra Pradesh,Vijayawada,"Rajiv Gandhi Park, Vijayawada - APPCB",False
+site_5849,2020,0,366,0.0,Andhra Pradesh,Vijayawada,"Rajiv Gandhi Park, Vijayawada - APPCB",False
+site_5849,2021,0,365,0.0,Andhra Pradesh,Vijayawada,"Rajiv Gandhi Park, Vijayawada - APPCB",False
+site_5849,2022,0,365,0.0,Andhra Pradesh,Vijayawada,"Rajiv Gandhi Park, Vijayawada - APPCB",False
+site_5849,2023,118,365,0.3232876712328767,Andhra Pradesh,Vijayawada,"Rajiv Gandhi Park, Vijayawada - APPCB",False
+site_5849,2024,340,366,0.9289617486338798,Andhra Pradesh,Vijayawada,"Rajiv Gandhi Park, Vijayawada - APPCB",True
+site_5849,2025,351,365,0.9616438356164384,Andhra Pradesh,Vijayawada,"Rajiv Gandhi Park, Vijayawada - APPCB",True
+site_5853,2018,0,365,0.0,Karnataka,Karwar,"KHB Colony, Karwar - KSPCB",False
+site_5853,2019,0,365,0.0,Karnataka,Karwar,"KHB Colony, Karwar - KSPCB",False
+site_5853,2020,0,366,0.0,Karnataka,Karwar,"KHB Colony, Karwar - KSPCB",False
+site_5853,2021,0,365,0.0,Karnataka,Karwar,"KHB Colony, Karwar - KSPCB",False
+site_5853,2022,0,365,0.0,Karnataka,Karwar,"KHB Colony, Karwar - KSPCB",False
+site_5853,2023,11,365,0.030136986301369864,Karnataka,Karwar,"KHB Colony, Karwar - KSPCB",False
+site_5853,2024,257,366,0.7021857923497268,Karnataka,Karwar,"KHB Colony, Karwar - KSPCB",True
+site_5853,2025,66,365,0.18082191780821918,Karnataka,Karwar,"KHB Colony, Karwar - KSPCB",False
+site_5978,2018,0,365,0.0,Tamil Nadu,Pudukottai,"SIPCOT Nathampannai, Pudukottai - TNPCB",False
+site_5978,2019,0,365,0.0,Tamil Nadu,Pudukottai,"SIPCOT Nathampannai, Pudukottai - TNPCB",False
+site_5978,2020,0,366,0.0,Tamil Nadu,Pudukottai,"SIPCOT Nathampannai, Pudukottai - TNPCB",False
+site_5978,2021,0,365,0.0,Tamil Nadu,Pudukottai,"SIPCOT Nathampannai, Pudukottai - TNPCB",False
+site_5978,2022,0,365,0.0,Tamil Nadu,Pudukottai,"SIPCOT Nathampannai, Pudukottai - TNPCB",False
+site_5978,2023,0,365,0.0,Tamil Nadu,Pudukottai,"SIPCOT Nathampannai, Pudukottai - TNPCB",False
+site_5978,2024,64,366,0.17486338797814208,Tamil Nadu,Pudukottai,"SIPCOT Nathampannai, Pudukottai - TNPCB",False
+site_5978,2025,301,365,0.8246575342465754,Tamil Nadu,Pudukottai,"SIPCOT Nathampannai, Pudukottai - TNPCB",True
+site_5979,2018,0,365,0.0,Tamil Nadu,Virudhunagar,"Collectorate Office, Virudhunagar - TNPCB",False
+site_5979,2019,0,365,0.0,Tamil Nadu,Virudhunagar,"Collectorate Office, Virudhunagar - TNPCB",False
+site_5979,2020,0,366,0.0,Tamil Nadu,Virudhunagar,"Collectorate Office, Virudhunagar - TNPCB",False
+site_5979,2021,0,365,0.0,Tamil Nadu,Virudhunagar,"Collectorate Office, Virudhunagar - TNPCB",False
+site_5979,2022,0,365,0.0,Tamil Nadu,Virudhunagar,"Collectorate Office, Virudhunagar - TNPCB",False
+site_5979,2023,0,365,0.0,Tamil Nadu,Virudhunagar,"Collectorate Office, Virudhunagar - TNPCB",False
+site_5979,2024,194,366,0.5300546448087432,Tamil Nadu,Virudhunagar,"Collectorate Office, Virudhunagar - TNPCB",False
+site_5979,2025,276,365,0.7561643835616438,Tamil Nadu,Virudhunagar,"Collectorate Office, Virudhunagar - TNPCB",True
+site_5981,2018,0,365,0.0,Andhra Pradesh,Vijayawada,"Rajiv Nagar, Vijayawada - APPCB",False
+site_5981,2019,0,365,0.0,Andhra Pradesh,Vijayawada,"Rajiv Nagar, Vijayawada - APPCB",False
+site_5981,2020,0,366,0.0,Andhra Pradesh,Vijayawada,"Rajiv Nagar, Vijayawada - APPCB",False
+site_5981,2021,0,365,0.0,Andhra Pradesh,Vijayawada,"Rajiv Nagar, Vijayawada - APPCB",False
+site_5981,2022,0,365,0.0,Andhra Pradesh,Vijayawada,"Rajiv Nagar, Vijayawada - APPCB",False
+site_5981,2023,0,365,0.0,Andhra Pradesh,Vijayawada,"Rajiv Nagar, Vijayawada - APPCB",False
+site_5981,2024,276,366,0.7540983606557377,Andhra Pradesh,Vijayawada,"Rajiv Nagar, Vijayawada - APPCB",True
+site_5981,2025,236,365,0.6465753424657534,Andhra Pradesh,Vijayawada,"Rajiv Nagar, Vijayawada - APPCB",False
+site_5997,2018,0,365,0.0,Tamil Nadu,Perundurai,"SIPCOT Industrial Park, Perundurai - TNPCB",False
+site_5997,2019,0,365,0.0,Tamil Nadu,Perundurai,"SIPCOT Industrial Park, Perundurai - TNPCB",False
+site_5997,2020,0,366,0.0,Tamil Nadu,Perundurai,"SIPCOT Industrial Park, Perundurai - TNPCB",False
+site_5997,2021,0,365,0.0,Tamil Nadu,Perundurai,"SIPCOT Industrial Park, Perundurai - TNPCB",False
+site_5997,2022,0,365,0.0,Tamil Nadu,Perundurai,"SIPCOT Industrial Park, Perundurai - TNPCB",False
+site_5997,2023,0,365,0.0,Tamil Nadu,Perundurai,"SIPCOT Industrial Park, Perundurai - TNPCB",False
+site_5997,2024,68,366,0.18579234972677597,Tamil Nadu,Perundurai,"SIPCOT Industrial Park, Perundurai - TNPCB",False
+site_5997,2025,320,365,0.8767123287671232,Tamil Nadu,Perundurai,"SIPCOT Industrial Park, Perundurai - TNPCB",True
+site_6032,2018,0,365,0.0,Tamil Nadu,Namakkal,"Ponnusamy Nagar, Namakkal - TNPCB",False
+site_6032,2019,0,365,0.0,Tamil Nadu,Namakkal,"Ponnusamy Nagar, Namakkal - TNPCB",False
+site_6032,2020,0,366,0.0,Tamil Nadu,Namakkal,"Ponnusamy Nagar, Namakkal - TNPCB",False
+site_6032,2021,0,365,0.0,Tamil Nadu,Namakkal,"Ponnusamy Nagar, Namakkal - TNPCB",False
+site_6032,2022,0,365,0.0,Tamil Nadu,Namakkal,"Ponnusamy Nagar, Namakkal - TNPCB",False
+site_6032,2023,0,365,0.0,Tamil Nadu,Namakkal,"Ponnusamy Nagar, Namakkal - TNPCB",False
+site_6032,2024,0,366,0.0,Tamil Nadu,Namakkal,"Ponnusamy Nagar, Namakkal - TNPCB",False
+site_6032,2025,117,365,0.32054794520547947,Tamil Nadu,Namakkal,"Ponnusamy Nagar, Namakkal - TNPCB",False
+site_6085,2018,0,365,0.0,Andhra Pradesh,Machilipatnam,"Srinivas Nagar Colony, Machilipatnam - APPCB",False
+site_6085,2019,0,365,0.0,Andhra Pradesh,Machilipatnam,"Srinivas Nagar Colony, Machilipatnam - APPCB",False
+site_6085,2020,0,366,0.0,Andhra Pradesh,Machilipatnam,"Srinivas Nagar Colony, Machilipatnam - APPCB",False
+site_6085,2021,0,365,0.0,Andhra Pradesh,Machilipatnam,"Srinivas Nagar Colony, Machilipatnam - APPCB",False
+site_6085,2022,0,365,0.0,Andhra Pradesh,Machilipatnam,"Srinivas Nagar Colony, Machilipatnam - APPCB",False
+site_6085,2023,0,365,0.0,Andhra Pradesh,Machilipatnam,"Srinivas Nagar Colony, Machilipatnam - APPCB",False
+site_6085,2024,0,366,0.0,Andhra Pradesh,Machilipatnam,"Srinivas Nagar Colony, Machilipatnam - APPCB",False
+site_6085,2025,0,365,0.0,Andhra Pradesh,Machilipatnam,"Srinivas Nagar Colony, Machilipatnam - APPCB",False
+site_6086,2018,0,365,0.0,Andhra Pradesh,Eluru,"District Court, Eluru - APPCB",False
+site_6086,2019,0,365,0.0,Andhra Pradesh,Eluru,"District Court, Eluru - APPCB",False
+site_6086,2020,0,366,0.0,Andhra Pradesh,Eluru,"District Court, Eluru - APPCB",False
+site_6086,2021,0,365,0.0,Andhra Pradesh,Eluru,"District Court, Eluru - APPCB",False
+site_6086,2022,0,365,0.0,Andhra Pradesh,Eluru,"District Court, Eluru - APPCB",False
+site_6086,2023,0,365,0.0,Andhra Pradesh,Eluru,"District Court, Eluru - APPCB",False
+site_6086,2024,0,366,0.0,Andhra Pradesh,Eluru,"District Court, Eluru - APPCB",False
+site_6086,2025,0,365,0.0,Andhra Pradesh,Eluru,"District Court, Eluru - APPCB",False

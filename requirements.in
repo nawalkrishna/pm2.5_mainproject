@@ -1,0 +1,17 @@
+# Top-level dependencies. Exact pinned versions live in requirements.txt
+# (generated with `pip freeze` after installing these). Install from requirements.txt.
+pandas
+numpy
+pyarrow
+pyyaml
+requests
+python-dotenv
+geopandas
+shapely
+matplotlib
+scikit-learn
+xarray
+netCDF4
+earthengine-api
+cdsapi
+pytest

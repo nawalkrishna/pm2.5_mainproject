@@ -1,0 +1,7 @@
+state,cpcb_ccr_stations,openaq_sensors,openaq_sites,openaq_reference_sites,openaq_low_cost_sites,openaq_usable_sites_study_period,openaq_usable_reference_sites_study_period
+Kerala,9,16,10,9,1,0,0
+Karnataka,42,78,48,41,7,0,0
+Tamil Nadu,37,61,43,39,4,0,0
+Andhra Pradesh,20,25,20,13,7,0,0
+Telangana,14,34,19,18,1,0,0
+ALL,122,214,140,120,20,0,0

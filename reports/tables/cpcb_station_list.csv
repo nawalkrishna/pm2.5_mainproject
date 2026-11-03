@@ -1,0 +1,123 @@
+station_uid,state,city,station,agency,openaq_location_ids,openaq_coord_spread_m,latitude,longitude,coord_source
+cpcb_000,Kerala,Eloor,"Udyogamandal, Eloor - Kerala PCB",Kerala PCB,6966,0.0,10.073232,76.302765,openaq_name_match
+cpcb_001,Kerala,Ernakulam,"Kacheripady, Ernakulam - Kerala PCB",Kerala PCB,10916,0.0,9.985653,76.281342,openaq_name_match
+cpcb_002,Kerala,Kannur,"Thavakkara, Kannur - Kerala PCB",Kerala PCB,10747,0.0,11.875,75.3732,openaq_name_match
+cpcb_003,Kerala,Kochi,"Vyttila, Kochi - Kerala PCB",Kerala PCB,8916,0.0,9.969447,76.321186,openaq_name_match
+cpcb_004,Kerala,Kollam,"Polayathode, Kollam - Kerala PCB",Kerala PCB,10915,0.0,8.8787,76.6073,openaq_name_match
+cpcb_005,Kerala,Kozhikode,"Palayam, Kozhikode - Kerala PCB",Kerala PCB,10898,0.0,11.249077,75.78437099999998,openaq_name_match
+cpcb_006,Kerala,Thiruvananthapuram,"Kariavattom, Thiruvananthapuram - Kerala PCB",Kerala PCB,8190,0.0,8.5637,76.8865,openaq_name_match
+cpcb_007,Kerala,Thiruvananthapuram,"Plammoodu, Thiruvananthapuram - Kerala PCB",Kerala PCB,5646,0.0,8.5149093,76.9435879,openaq_name_match
+cpcb_008,Kerala,Thrissur,"Corporation Ground, Thrissur - Kerala PCB",Kerala PCB,7901,0.0,10.522198,76.24085,openaq_name_match
+cpcb_009,Karnataka,Bagalkot,"Vidayagiri, Bagalkot - KSPCB",KSPCB,10537,0.0,16.172806,75.659694,openaq_name_match
+cpcb_010,Karnataka,Belgaum,"Ramteerth Nagar, Belgaum - KSPCB",KSPCB,358665,0.0,15.888653,74.541751,openaq_name_match
+cpcb_011,Karnataka,Bengaluru,"Bapuji Nagar, Bengaluru - KSPCB",KSPCB,6974,0.0,12.951913,77.539784,openaq_name_match
+cpcb_012,Karnataka,Bengaluru,"BTM Layout, Bengaluru - CPCB",CPCB,5548,0.0,12.9135218,77.5950804,openaq_name_match
+cpcb_013,Karnataka,Bengaluru,"BWSSB Kadabesanahalli, Bengaluru - CPCB",CPCB,5547;3409312,0.0,12.9352049,77.6814488,openaq_name_match
+cpcb_014,Karnataka,Bengaluru,"City Railway Station, Bengaluru - KSPCB",KSPCB,,,,,unmatched
+cpcb_015,Karnataka,Bengaluru,"Hebbal, Bengaluru - KSPCB",KSPCB,6984,0.0,13.029152,77.585901,openaq_name_match
+cpcb_016,Karnataka,Bengaluru,"Hombegowda Nagar, Bengaluru - KSPCB",KSPCB,6983,0.0,12.938539,77.5901,openaq_name_match
+cpcb_017,Karnataka,Bengaluru,"Jayanagar 5th Block, Bengaluru - KSPCB",KSPCB,6973,0.0,12.920984,77.584908,openaq_name_match
+cpcb_018,Karnataka,Bengaluru,"Jigani, Bengaluru - KSPCB",KSPCB,3409434,0.0,12.7816279,77.6299145,openaq_name_match
+cpcb_019,Karnataka,Bengaluru,"Kasturi Nagar, Bengaluru - KSPCB",KSPCB,3409388,0.0,13.003872,77.664217,openaq_name_match
+cpcb_020,Karnataka,Bengaluru,"Peenya, Bengaluru - CPCB",CPCB,5607,0.0,13.0270199,77.494094,openaq_name_match
+cpcb_021,Karnataka,Bengaluru,"RVCE-Mailasandra, Bengaluru - KSPCB",KSPCB,3409385,0.0,12.921418,77.502466,openaq_name_match
+cpcb_022,Karnataka,Bengaluru,"Sanegurava Halli, Bengaluru - KSPCB",KSPCB,,,,,unmatched
+cpcb_023,Karnataka,Bengaluru,"Shivapura_Peenya, Bengaluru - KSPCB",KSPCB,3409393,0.0,13.0246342,77.5080115,openaq_name_match
+cpcb_024,Karnataka,Bengaluru,"Silk Board, Bengaluru - KSPCB",KSPCB,6975,0.0,12.917348,77.622813,openaq_name_match
+cpcb_025,Karnataka,Bidar,"Naubad, Bidar - KSPCB",KSPCB,44514,0.0,17.930306,77.482194,openaq_name_match
+cpcb_026,Karnataka,Chamarajanagar,"Urban, Chamarajanagar - KSPCB",KSPCB,8153,0.0,11.55358,76.55521,openaq_name_match
+cpcb_027,Karnataka,Chikkaballapur,"Chikkaballapur Rural, Chikkaballapur - KSPCB",KSPCB,6954,0.0,13.428828,77.731418,openaq_name_match
+cpcb_028,Karnataka,Chikkamagaluru,"Kalyana Nagara, Chikkamagaluru - KSPCB",KSPCB,10902,0.0,13.328028,75.797056,openaq_name_match
+cpcb_029,Karnataka,Davanagere,"Devaraj Urs Badavane, Davanagere - KSPCB",KSPCB,60657,0.0,14.4758,75.9052,openaq_name_match
+cpcb_030,Karnataka,Dharwad,"Kalabhavan, Dharwad - KSPCB",KSPCB,3409359,0.0,15.459706,75.008381,openaq_name_match
+cpcb_031,Karnataka,Gadag,"Panchal Nagar, Gadag - KSPCB",KSPCB,44515,0.0,15.411456,75.638133,openaq_name_match
+cpcb_032,Karnataka,Hassan,"B.Katihalli, Hassan - KSPCB",KSPCB,223145;3409335,0.0,13.008556,76.12525800000002,openaq_name_match
+cpcb_033,Karnataka,Haveri,"Ashwini Nagar, Haveri - KSPCB",KSPCB,309803;3409334,0.0,14.7918,75.38959999999999,openaq_name_match
+cpcb_034,Karnataka,Hubballi,"Deshpande Nagar, Hubballi - KSPCB",KSPCB,6982,0.0,15.351773,75.140726,openaq_name_match
+cpcb_035,Karnataka,Hubballi,"Lingaraj Nagar, Hubballi - KSPCB",KSPCB,3409387,0.0,15.3714823,75.1160168,openaq_name_match
+cpcb_036,Karnataka,Kalaburagi,"Lal Bahadur Shastri Nagar, Kalaburagi - KSPCB",KSPCB,6955;7777,0.0,17.321993,76.822628,openaq_name_match
+cpcb_037,Karnataka,Kalaburagi,"Mahatma Basaveswar Colony, Kalaburgi - KSPCB",KSPCB,3409386,0.0,17.336318,76.847397,openaq_name_match
+cpcb_038,Karnataka,Karwar,"KHB Colony, Karwar - KSPCB",KSPCB,3409497,0.0,14.816666,74.141003,openaq_name_match
+cpcb_039,Karnataka,Kolar,"Tamaka Ind. Area, Kolar - KSPCB",KSPCB,60656,0.0,13.1276288,78.1570122,openaq_name_match
+cpcb_040,Karnataka,Koppal,"Diwator Nagar, Koppal - KSPCB",KSPCB,12041,0.0,15.34763,76.181767,openaq_name_match
+cpcb_041,Karnataka,Madikeri,"Stuart Hill, Madikeri - KSPCB",KSPCB,11582,0.0,12.415911,75.73505,openaq_name_match
+cpcb_042,Karnataka,Mangalore,"Kadri, Mangalore - KSPCB",KSPCB,44513,0.0,12.88925,74.853,openaq_name_match
+cpcb_043,Karnataka,Mysuru,"Hebbal 1st Stage, Mysuru - KSPCB",KSPCB,7289;10609,0.0,12.21041,76.37376,openaq_name_match
+cpcb_044,Karnataka,Raichur,"Haji Colony, Raichur - KSPCB",KSPCB,12043,0.0,16.208139,77.348417,openaq_name_match
+cpcb_045,Karnataka,Ramanagara,"Vijay Nagar, Ramanagara - KSPCB",KSPCB,10909,0.0,12.733409,77.298051,openaq_name_match
+cpcb_046,Karnataka,Shivamogga,"Vinoba Nagara, Shivamogga - KSPCB",KSPCB,11577,0.0,13.94,75.555917,openaq_name_match
+cpcb_047,Karnataka,Tumakuru,"Thimmalapura, Tumakuru - KSPCB",KSPCB,3409389,0.0,13.377516,77.09907199999999,openaq_name_match
+cpcb_048,Karnataka,Udupi,"Brahmagiri, Udupi - KSPCB",KSPCB,220353,0.0,13.34194,74.74694,openaq_name_match
+cpcb_049,Karnataka,Vijayapura,"Ibrahimpur, Vijayapura - KSPCB",KSPCB,8035,0.0,16.802639,75.722694,openaq_name_match
+cpcb_050,Karnataka,Yadgir,"Collector Office, Yadgir - KSPCB",KSPCB,301670,0.0,16.7602,77.1428,openaq_name_match
+cpcb_051,Tamil Nadu,Ariyalur,"Keelapalur, Ariyalur - TNPCB",TNPCB,3409343,0.0,11.06825,79.07033,openaq_name_match
+cpcb_052,Tamil Nadu,Chengalpattu,"Crescent University, Chengalpattu - TNPCB",TNPCB,358627,0.0,12.877731599999999,80.08348070000001,openaq_name_match
+cpcb_053,Tamil Nadu,Chennai,"Alandur Bus Depot, Chennai - CPCB",CPCB,5558;3409319,0.0,12.909916100000002,80.1076538,openaq_name_match
+cpcb_054,Tamil Nadu,Chennai,"Arumbakkam, Chennai - TNPCB",TNPCB,11581,0.0,13.0664,80.2112,openaq_name_match
+cpcb_055,Tamil Nadu,Chennai,"Gandhi Nagar_Ennore, Chennai - TNPCB",TNPCB,,,,,unmatched
+cpcb_056,Tamil Nadu,Chennai,"Kodungaiyur, Chennai - TNPCB",TNPCB,11579,0.0,13.1278,80.2642,openaq_name_match
+cpcb_057,Tamil Nadu,Chennai,"Manali, Chennai - CPCB",CPCB,2586,0.0,13.164544,80.26285,openaq_name_match
+cpcb_058,Tamil Nadu,Chennai,"Manali Village, Chennai - TNPCB",TNPCB,6920;10780,362607.0,,,coord_conflict
+cpcb_059,Tamil Nadu,Chennai,"Perungudi, Chennai - TNPCB",TNPCB,12046,0.0,12.9533,80.2357,openaq_name_match
+cpcb_060,Tamil Nadu,Chennai,"Royapuram, Chennai - TNPCB",TNPCB,11578,0.0,13.1036,80.2909,openaq_name_match
+cpcb_061,Tamil Nadu,Chennai,"Velachery Res. Area, Chennai - CPCB",CPCB,5655,0.0,13.0052189,80.2398125,openaq_name_match
+cpcb_062,Tamil Nadu,Coimbatore,"PSG College of Arts and Science, Coimbatore - TNPCB",TNPCB,358457,0.0,11.0328,77.0349,openaq_name_match
+cpcb_063,Tamil Nadu,Coimbatore,"SIDCO Kurichi, Coimbatore - TNPCB",TNPCB,8914,0.0,10.942451,76.978996,openaq_name_match
+cpcb_064,Tamil Nadu,Cuddalore,"Kudikadu, Cuddalore - TNPCB",TNPCB,3409354,0.0,11.6829898,79.7532099,openaq_name_match
+cpcb_065,Tamil Nadu,Cuddalore,"Semmandalam, Cuddalore - TNPCB",TNPCB,3409346,0.0,11.7637683,79.7499835,openaq_name_match
+cpcb_066,Tamil Nadu,Dindigul,"Mendonsa Colony, Dindigul - TNPCB",TNPCB,358453,0.0,10.358535,77.984321,openaq_name_match
+cpcb_067,Tamil Nadu,Gummidipoondi,"Anthoni Pillai Nagar, Gummidipoondi - TNPCB",TNPCB,45008,0.0,13.4127,80.1081,openaq_name_match
+cpcb_068,Tamil Nadu,Hosur,"SIPCOT Phase-1, Hosur - TNPCB",TNPCB,358454;3409347,0.0,12.746998,77.813811,openaq_name_match
+cpcb_069,Tamil Nadu,Kanchipuram,"Kilambi, Kanchipuram - TNPCB",TNPCB,3409353,0.0,12.864618,79.659968,openaq_name_match
+cpcb_070,Tamil Nadu,Karur,"Kamadenu Nagar, Karur - TNPCB",TNPCB,3409357,0.0,10.96782,78.080882,openaq_name_match
+cpcb_071,Tamil Nadu,Madurai,"Uchapatti, Madurai - TNPCB",TNPCB,3409348,0.0,9.865935,78.022669,openaq_name_match
+cpcb_072,Tamil Nadu,Nagapattinam,"Velippalayam, Nagapattinam - TNPCB",TNPCB,3409350,0.0,10.798548,79.838212,openaq_name_match
+cpcb_073,Tamil Nadu,Namakkal,"Ponnusamy Nagar, Namakkal - TNPCB",TNPCB,3774726,0.0,11.273992,78.163545,openaq_name_match
+cpcb_074,Tamil Nadu,Ooty,"Bombay Castel, Ooty - TNPCB",TNPCB,358450,0.0,11.4068288,76.7138973,openaq_name_match
+cpcb_075,Tamil Nadu,Palkalaiperur,"Bharathidasan University, Palkalaiperur - TNPCB",TNPCB,3409356,0.0,10.681158,78.74174599999999,openaq_name_match
+cpcb_076,Tamil Nadu,Perundurai,"SIPCOT Industrial Park, Perundurai - TNPCB",TNPCB,3409527,0.0,11.258242,77.552761,openaq_name_match
+cpcb_077,Tamil Nadu,Pudukottai,"SIPCOT Nathampannai, Pudukottai - TNPCB",TNPCB,3409516,0.0,10.423417,78.784889,openaq_name_match
+cpcb_078,Tamil Nadu,Ramanathapuram,"Chalai Bazaar, Ramanathapuram - TNPCB",TNPCB,358452,0.0,9.36399,78.831977,openaq_name_match
+cpcb_079,Tamil Nadu,Ranipet,"VOC Nagar_SIPCOT, Ranipet - TNPCB",TNPCB,3409351,0.0,12.952707,79.30394,openaq_name_match
+cpcb_080,Tamil Nadu,Salem,"Sona College of Technology, Salem - TNPCB",TNPCB,358455;3409355,0.0,11.679111,78.125052,openaq_name_match
+cpcb_081,Tamil Nadu,Thanjavur,"Parisutham Nagar, Thanjavur - TNPCB",TNPCB,3409345,0.0,10.7654824,79.1389968,openaq_name_match
+cpcb_082,Tamil Nadu,Thoothukudi,"Meelavittan, Thoothukudi - TNPCB",TNPCB,,,,,unmatched
+cpcb_083,Tamil Nadu,Tiruchirappalli,"St Joseph College, Tiruchirappalli - TNPCB",TNPCB,3409358,0.0,10.830158,78.691849,openaq_name_match
+cpcb_084,Tamil Nadu,Tirunelveli,"Municipal Corporation Office, Tirunelveli - TNPCB",TNPCB,3409344,0.0,8.728442,77.6962,openaq_name_match
+cpcb_085,Tamil Nadu,Tirupur,"Kumaran College, Tirupur - TNPCB",TNPCB,358448,0.0,11.0973603,77.3228673,openaq_name_match
+cpcb_086,Tamil Nadu,Vellore,"Vasanthapuram, Vellore - TNPCB",TNPCB,358451;3409349,0.0,12.909494,79.131861,openaq_name_match
+cpcb_087,Tamil Nadu,Virudhunagar,"Collectorate Office, Virudhunagar - TNPCB",TNPCB,3409517,0.0,9.559382,77.948828,openaq_name_match
+cpcb_088,Andhra Pradesh,Amaravati,"Secretariat, Amaravati - APPCB",APPCB,5408;5596,0.0,16.5150833,80.5181667,openaq_name_match
+cpcb_089,Andhra Pradesh,Anantapur,"Gulzarpet, Anantapur - APPCB",APPCB,358456,0.0,14.675885999999998,77.593027,openaq_name_match
+cpcb_090,Andhra Pradesh,Chittoor,"Gangineni Cheruvu, Chittoor - APPCB",APPCB,3409372,0.0,13.20488,79.097889,openaq_name_match
+cpcb_091,Andhra Pradesh,Eluru,"District Court, Eluru - APPCB",APPCB,6267808,0.0,16.711754,81.092095,openaq_name_match
+cpcb_092,Andhra Pradesh,Guntur,"Rajendra Nagar North, Guntur - APPCB",APPCB,6267806,0.0,16.316553,80.413302,openaq_name_match
+cpcb_093,Andhra Pradesh,Kadapa,"Yerramukkapalli, Kadapa - APPCB",APPCB,3409400,0.0,14.465051999999998,78.824187,openaq_name_match
+cpcb_094,Andhra Pradesh,Kakinada,"Rama Rao Peta, Kakinada - APPCB",APPCB,6458519,0.0,16.962488,82.229513,openaq_name_match
+cpcb_095,Andhra Pradesh,Kurnool,"Sita Rama Nagar, Kurnool - APPCB",APPCB,6425298,0.0,15.83411,78.028546,openaq_name_match
+cpcb_096,Andhra Pradesh,Machilipatnam,"Srinivas Nagar Colony, Machilipatnam - APPCB",APPCB,6267807,0.0,16.186555,81.13219,openaq_name_match
+cpcb_097,Andhra Pradesh,Nellore,"Ambedkar Nagar, Nellore - APPCB",APPCB,6276317,0.0,14.438164,79.966814,openaq_name_match
+cpcb_098,Andhra Pradesh,Ongole,"Jakrama Nagar, Ongole - APPCB",APPCB,,,,,unmatched
+cpcb_099,Andhra Pradesh,Rajamahendravaram,"Anand Kala Kshetram, Rajamahendravaram - APPCB",APPCB,,,,,unmatched
+cpcb_100,Andhra Pradesh,Srikakulam,"Chinna Bharatham Colony, Srikakulam - APPCB",APPCB,6458518,0.0,18.292191,83.897173,openaq_name_match
+cpcb_101,Andhra Pradesh,Tirumala,"Toll Gate, Tirumala - APPCB",APPCB,,,,,unmatched
+cpcb_102,Andhra Pradesh,Tirupati,"Vaikuntapuram, Tirupati - APPCB",APPCB,,,,,unmatched
+cpcb_103,Andhra Pradesh,Vijayawada,"HB Colony, Vijayawada - APPCB",APPCB,3409492,0.0,16.536107,80.594233,openaq_name_match
+cpcb_104,Andhra Pradesh,Vijayawada,"Kanuru, Vijayawada - APPCB",APPCB,3409392,0.0,16.486692,80.69943599999999,openaq_name_match
+cpcb_105,Andhra Pradesh,Vijayawada,"Rajiv Gandhi Park, Vijayawada - APPCB",APPCB,3409493,0.0,16.509717,80.612222,openaq_name_match
+cpcb_106,Andhra Pradesh,Vijayawada,"Rajiv Nagar, Vijayawada - APPCB",APPCB,3409518,0.0,16.554731,80.64911,openaq_name_match
+cpcb_107,Andhra Pradesh,Visakhapatnam,"GVM Corporation, Visakhapatnam - APPCB",APPCB,5628,0.0,17.722682,83.308197,openaq_name_match
+cpcb_108,Telangana,Hyderabad,"Bollaram Industrial Area, Hyderabad - TSPCB",TSPCB,5599,0.0,17.540891,78.358528,openaq_name_match
+cpcb_109,Telangana,Hyderabad,"Central University, Hyderabad - TSPCB",TSPCB,5623,0.0,17.460103,78.334361,openaq_name_match
+cpcb_110,Telangana,Hyderabad,"ECIL Kapra, Hyderabad - TSPCB",TSPCB,344103,0.0,17.470431,78.566959,openaq_name_match
+cpcb_111,Telangana,Hyderabad,"ICRISAT Patancheru, Hyderabad - TSPCB",TSPCB,5645;7583;10897,26709.0,,,coord_conflict
+cpcb_112,Telangana,Hyderabad,"IDA Pashamylaram, Hyderabad - TSPCB",TSPCB,5624,0.0,17.5316895,78.218939,openaq_name_match
+cpcb_113,Telangana,Hyderabad,"IITH Kandi, Hyderabad - TSPCB",TSPCB,344144,0.0,17.585704999999997,78.126199,openaq_name_match
+cpcb_114,Telangana,Hyderabad,"Kokapet, Hyderabad - TSPCB",TSPCB,346258,0.0,17.393559,78.33919399999999,openaq_name_match
+cpcb_115,Telangana,Hyderabad,"Kompally Municipal Office, Hyderabad - TSPCB",TSPCB,344104,0.0,17.544898999999997,78.486949,openaq_name_match
+cpcb_116,Telangana,Hyderabad,"Nacharam_TSIIC IALA, Hyderabad - TSPCB",TSPCB,344142,0.0,17.429398,78.569354,openaq_name_match
+cpcb_117,Telangana,Hyderabad,"New Malakpet, Hyderabad - TSPCB",TSPCB,352465,0.0,17.37206,78.50864,openaq_name_match
+cpcb_118,Telangana,Hyderabad,"Ramachandrapuram, Hyderabad - TSPCB",TSPCB,346257,0.0,17.528544,78.28619499999999,openaq_name_match
+cpcb_119,Telangana,Hyderabad,"Sanathnagar, Hyderabad - TSPCB",TSPCB,2594;5647,5705.0,,,coord_conflict
+cpcb_120,Telangana,Hyderabad,"Somajiguda, Hyderabad - TSPCB",TSPCB,344140,0.0,17.417094,78.457437,openaq_name_match
+cpcb_121,Telangana,Hyderabad,"Zoo Park, Hyderabad - TSPCB",TSPCB,407,0.0,17.349694,78.451437,openaq_name_match

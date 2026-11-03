@@ -1,0 +1,19 @@
+# Data is never committed; manifests in reports/tables record what exists.
+data/raw/*
+data/interim/*
+data/processed/*
+!data/**/.gitkeep
+
+# Secrets
+.env
+
+# Environment / tooling
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Run logs (the run summary CSV in reports/ is committed)
+logs/*
+!logs/.gitkeep

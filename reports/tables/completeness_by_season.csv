@@ -1,0 +1,501 @@
+site_id,season,valid_days,calendar_days,completeness,state,name,grade
+site_0017,ne_monsoon,150,460,0.32608695652173914,Andhra Pradesh,"Anam Kala Kendram, Rajamahendravaram - APPCB",reference
+site_0017,pre_monsoon,136,460,0.2956521739130435,Andhra Pradesh,"Anam Kala Kendram, Rajamahendravaram - APPCB",reference
+site_0017,sw_monsoon,176,610,0.28852459016393445,Andhra Pradesh,"Anam Kala Kendram, Rajamahendravaram - APPCB",reference
+site_0017,winter,25,296,0.08445945945945946,Andhra Pradesh,"Anam Kala Kendram, Rajamahendravaram - APPCB",reference
+site_0011,ne_monsoon,157,460,0.34130434782608693,Andhra Pradesh,"Secretariat, Amaravati - APPCB",reference
+site_0011,pre_monsoon,136,460,0.2956521739130435,Andhra Pradesh,"Secretariat, Amaravati - APPCB",reference
+site_0011,sw_monsoon,168,610,0.2754098360655738,Andhra Pradesh,"Secretariat, Amaravati - APPCB",reference
+site_0011,winter,31,296,0.10472972972972973,Andhra Pradesh,"Secretariat, Amaravati - APPCB",reference
+site_0034,ne_monsoon,2,460,0.004347826086956522,Karnataka,"Deshpande Nagar, Hubballi - KSPCB",reference
+site_0034,pre_monsoon,0,460,0.0,Karnataka,"Deshpande Nagar, Hubballi - KSPCB",reference
+site_0034,sw_monsoon,5,610,0.00819672131147541,Karnataka,"Deshpande Nagar, Hubballi - KSPCB",reference
+site_0034,winter,2,296,0.006756756756756757,Karnataka,"Deshpande Nagar, Hubballi - KSPCB",reference
+site_0067,ne_monsoon,30,460,0.06521739130434782,Karnataka,"Tamaka Ind. Area, Kolar - KSPCB",reference
+site_0067,pre_monsoon,16,460,0.034782608695652174,Karnataka,"Tamaka Ind. Area, Kolar - KSPCB",reference
+site_0067,sw_monsoon,5,610,0.00819672131147541,Karnataka,"Tamaka Ind. Area, Kolar - KSPCB",reference
+site_0067,winter,6,296,0.02027027027027027,Karnataka,"Tamaka Ind. Area, Kolar - KSPCB",reference
+site_0032,ne_monsoon,89,460,0.1934782608695652,Karnataka,"Bapuji Nagar, Bengaluru - KSPCB",reference
+site_0032,pre_monsoon,112,460,0.24347826086956523,Karnataka,"Bapuji Nagar, Bengaluru - KSPCB",reference
+site_0032,sw_monsoon,155,610,0.2540983606557377,Karnataka,"Bapuji Nagar, Bengaluru - KSPCB",reference
+site_0032,winter,15,296,0.05067567567567568,Karnataka,"Bapuji Nagar, Bengaluru - KSPCB",reference
+site_0036,ne_monsoon,122,460,0.26521739130434785,Karnataka,"Hebbal, Bengaluru - KSPCB",reference
+site_0036,pre_monsoon,125,460,0.2717391304347826,Karnataka,"Hebbal, Bengaluru - KSPCB",reference
+site_0036,sw_monsoon,139,610,0.2278688524590164,Karnataka,"Hebbal, Bengaluru - KSPCB",reference
+site_0036,winter,15,296,0.05067567567567568,Karnataka,"Hebbal, Bengaluru - KSPCB",reference
+site_0035,ne_monsoon,160,460,0.34782608695652173,Karnataka,"Hombegowda Nagar, Bengaluru - KSPCB",reference
+site_0035,pre_monsoon,124,460,0.26956521739130435,Karnataka,"Hombegowda Nagar, Bengaluru - KSPCB",reference
+site_0035,sw_monsoon,170,610,0.2786885245901639,Karnataka,"Hombegowda Nagar, Bengaluru - KSPCB",reference
+site_0035,winter,16,296,0.05405405405405406,Karnataka,"Hombegowda Nagar, Bengaluru - KSPCB",reference
+site_0031,ne_monsoon,134,460,0.29130434782608694,Karnataka,"Jayanagar 5th Block, Bengaluru - KSPCB",reference
+site_0031,pre_monsoon,100,460,0.21739130434782608,Karnataka,"Jayanagar 5th Block, Bengaluru - KSPCB",reference
+site_0031,sw_monsoon,140,610,0.22950819672131148,Karnataka,"Jayanagar 5th Block, Bengaluru - KSPCB",reference
+site_0031,winter,14,296,0.0472972972972973,Karnataka,"Jayanagar 5th Block, Bengaluru - KSPCB",reference
+site_0028,ne_monsoon,65,460,0.14130434782608695,Karnataka,"Chikkaballapur Rural, Chikkaballapur - KSPCB",reference
+site_0028,pre_monsoon,131,460,0.2847826086956522,Karnataka,"Chikkaballapur Rural, Chikkaballapur - KSPCB",reference
+site_0028,sw_monsoon,155,610,0.2540983606557377,Karnataka,"Chikkaballapur Rural, Chikkaballapur - KSPCB",reference
+site_0028,winter,20,296,0.06756756756756757,Karnataka,"Chikkaballapur Rural, Chikkaballapur - KSPCB",reference
+site_0033,ne_monsoon,125,460,0.2717391304347826,Karnataka,"Silk Board, Bengaluru - KSPCB",reference
+site_0033,pre_monsoon,96,460,0.20869565217391303,Karnataka,"Silk Board, Bengaluru - KSPCB",reference
+site_0033,sw_monsoon,147,610,0.24098360655737705,Karnataka,"Silk Board, Bengaluru - KSPCB",reference
+site_0033,winter,16,296,0.05405405405405406,Karnataka,"Silk Board, Bengaluru - KSPCB",reference
+site_0013,ne_monsoon,85,460,0.18478260869565216,Karnataka,"BTM Layout, Bengaluru - CPCB",reference
+site_0013,pre_monsoon,111,460,0.24130434782608695,Karnataka,"BTM Layout, Bengaluru - CPCB",reference
+site_0013,sw_monsoon,119,610,0.19508196721311474,Karnataka,"BTM Layout, Bengaluru - CPCB",reference
+site_0013,winter,13,296,0.04391891891891892,Karnataka,"BTM Layout, Bengaluru - CPCB",reference
+site_0016,ne_monsoon,133,460,0.2891304347826087,Karnataka,"Peenya, Bengaluru - CPCB",reference
+site_0016,pre_monsoon,136,460,0.2956521739130435,Karnataka,"Peenya, Bengaluru - CPCB",reference
+site_0016,sw_monsoon,122,610,0.2,Karnataka,"Peenya, Bengaluru - CPCB",reference
+site_0016,winter,27,296,0.09121621621621621,Karnataka,"Peenya, Bengaluru - CPCB",reference
+site_0015,ne_monsoon,108,460,0.23478260869565218,Telangana,"Bollaram Industrial Area, Hyderabad - TSPCB",reference
+site_0015,pre_monsoon,111,460,0.24130434782608695,Telangana,"Bollaram Industrial Area, Hyderabad - TSPCB",reference
+site_0015,sw_monsoon,149,610,0.2442622950819672,Telangana,"Bollaram Industrial Area, Hyderabad - TSPCB",reference
+site_0015,winter,22,296,0.07432432432432433,Telangana,"Bollaram Industrial Area, Hyderabad - TSPCB",reference
+site_0021,ne_monsoon,157,460,0.34130434782608693,Telangana,"ICRISAT Patancheru, Hyderabad - TSPCB",reference
+site_0021,pre_monsoon,128,460,0.2782608695652174,Telangana,"ICRISAT Patancheru, Hyderabad - TSPCB",reference
+site_0021,sw_monsoon,167,610,0.27377049180327867,Telangana,"ICRISAT Patancheru, Hyderabad - TSPCB",reference
+site_0021,winter,27,296,0.09121621621621621,Telangana,"ICRISAT Patancheru, Hyderabad - TSPCB",reference
+site_0022,ne_monsoon,155,460,0.33695652173913043,Kerala,"Plammoodu, Thiruvananthapuram - Kerala PCB",reference
+site_0022,pre_monsoon,132,460,0.28695652173913044,Kerala,"Plammoodu, Thiruvananthapuram - Kerala PCB",reference
+site_0022,sw_monsoon,188,610,0.3081967213114754,Kerala,"Plammoodu, Thiruvananthapuram - Kerala PCB",reference
+site_0022,winter,28,296,0.0945945945945946,Kerala,"Plammoodu, Thiruvananthapuram - Kerala PCB",reference
+site_0024,ne_monsoon,158,460,0.34347826086956523,Andhra Pradesh,"Tirumala, Tirupati - APPCB",reference
+site_0024,pre_monsoon,140,460,0.30434782608695654,Andhra Pradesh,"Tirumala, Tirupati - APPCB",reference
+site_0024,sw_monsoon,166,610,0.2721311475409836,Andhra Pradesh,"Tirumala, Tirupati - APPCB",reference
+site_0024,winter,30,296,0.10135135135135136,Andhra Pradesh,"Tirumala, Tirupati - APPCB",reference
+site_0020,ne_monsoon,151,460,0.3282608695652174,Andhra Pradesh,"GVM Corporation, Visakhapatnam - APPCB",reference
+site_0020,pre_monsoon,128,460,0.2782608695652174,Andhra Pradesh,"GVM Corporation, Visakhapatnam - APPCB",reference
+site_0020,sw_monsoon,170,610,0.2786885245901639,Andhra Pradesh,"GVM Corporation, Visakhapatnam - APPCB",reference
+site_0020,winter,21,296,0.07094594594594594,Andhra Pradesh,"GVM Corporation, Visakhapatnam - APPCB",reference
+site_0019,ne_monsoon,70,460,0.15217391304347827,Telangana,"IDA Pashamylaram, Hyderabad - TSPCB",reference
+site_0019,pre_monsoon,100,460,0.21739130434782608,Telangana,"IDA Pashamylaram, Hyderabad - TSPCB",reference
+site_0019,sw_monsoon,120,610,0.19672131147540983,Telangana,"IDA Pashamylaram, Hyderabad - TSPCB",reference
+site_0019,winter,15,296,0.05067567567567568,Telangana,"IDA Pashamylaram, Hyderabad - TSPCB",reference
+site_0025,ne_monsoon,153,460,0.33260869565217394,Tamil Nadu,"Velachery Res. Area, Chennai - CPCB",reference
+site_0025,pre_monsoon,116,460,0.25217391304347825,Tamil Nadu,"Velachery Res. Area, Chennai - CPCB",reference
+site_0025,sw_monsoon,157,610,0.2573770491803279,Tamil Nadu,"Velachery Res. Area, Chennai - CPCB",reference
+site_0025,winter,24,296,0.08108108108108109,Tamil Nadu,"Velachery Res. Area, Chennai - CPCB",reference
+site_0014,ne_monsoon,122,460,0.26521739130434785,Tamil Nadu,"Alandur Bus Depot, Chennai - CPCB",reference
+site_0014,pre_monsoon,114,460,0.24782608695652175,Tamil Nadu,"Alandur Bus Depot, Chennai - CPCB",reference
+site_0014,sw_monsoon,165,610,0.27049180327868855,Tamil Nadu,"Alandur Bus Depot, Chennai - CPCB",reference
+site_0014,winter,25,296,0.08445945945945946,Tamil Nadu,"Alandur Bus Depot, Chennai - CPCB",reference
+site_0002,ne_monsoon,159,460,0.3456521739130435,Telangana,"Zoo Park, Hyderabad - TSPCB",reference
+site_0002,pre_monsoon,126,460,0.27391304347826084,Telangana,"Zoo Park, Hyderabad - TSPCB",reference
+site_0002,sw_monsoon,152,610,0.24918032786885247,Telangana,"Zoo Park, Hyderabad - TSPCB",reference
+site_0002,winter,19,296,0.06418918918918919,Telangana,"Zoo Park, Hyderabad - TSPCB",reference
+site_0008,ne_monsoon,150,460,0.32608695652173914,Tamil Nadu,"Manali, Chennai - CPCB",reference
+site_0008,pre_monsoon,114,460,0.24782608695652175,Tamil Nadu,"Manali, Chennai - CPCB",reference
+site_0008,sw_monsoon,167,610,0.27377049180327867,Tamil Nadu,"Manali, Chennai - CPCB",reference
+site_0008,winter,16,296,0.05405405405405406,Tamil Nadu,"Manali, Chennai - CPCB",reference
+site_0049,ne_monsoon,122,460,0.26521739130434785,Tamil Nadu,"Manali Village, Chennai - TNPCB",reference
+site_0049,pre_monsoon,133,460,0.2891304347826087,Tamil Nadu,"Manali Village, Chennai - TNPCB",reference
+site_0049,sw_monsoon,148,610,0.24262295081967214,Tamil Nadu,"Manali Village, Chennai - TNPCB",reference
+site_0049,winter,16,296,0.05405405405405406,Tamil Nadu,"Manali Village, Chennai - TNPCB",reference
+site_0045,ne_monsoon,87,460,0.1891304347826087,Tamil Nadu,"SIDCO Kurichi, Coimbatore - TNPCB",reference
+site_0045,pre_monsoon,69,460,0.15,Tamil Nadu,"SIDCO Kurichi, Coimbatore - TNPCB",reference
+site_0045,sw_monsoon,105,610,0.1721311475409836,Tamil Nadu,"SIDCO Kurichi, Coimbatore - TNPCB",reference
+site_0045,winter,10,296,0.033783783783783786,Tamil Nadu,"SIDCO Kurichi, Coimbatore - TNPCB",reference
+site_0030,ne_monsoon,97,460,0.2108695652173913,Kerala,"Udyogamandal, Eloor - Kerala PCB",reference
+site_0030,pre_monsoon,106,460,0.23043478260869565,Kerala,"Udyogamandal, Eloor - Kerala PCB",reference
+site_0030,sw_monsoon,148,610,0.24262295081967214,Kerala,"Udyogamandal, Eloor - Kerala PCB",reference
+site_0030,winter,14,296,0.0472972972972973,Kerala,"Udyogamandal, Eloor - Kerala PCB",reference
+site_0041,ne_monsoon,154,460,0.3347826086956522,Tamil Nadu,"Urban, Chamarajanagar - KSPCB",reference
+site_0041,pre_monsoon,109,460,0.23695652173913043,Tamil Nadu,"Urban, Chamarajanagar - KSPCB",reference
+site_0041,sw_monsoon,152,610,0.24918032786885247,Tamil Nadu,"Urban, Chamarajanagar - KSPCB",reference
+site_0041,winter,16,296,0.05405405405405406,Tamil Nadu,"Urban, Chamarajanagar - KSPCB",reference
+site_0072,ne_monsoon,66,460,0.14347826086956522,Karnataka,"Collector Office, Yadgir - KSPCB",reference
+site_0072,pre_monsoon,67,460,0.14565217391304347,Karnataka,"Collector Office, Yadgir - KSPCB",reference
+site_0072,sw_monsoon,93,610,0.15245901639344261,Karnataka,"Collector Office, Yadgir - KSPCB",reference
+site_0072,winter,9,296,0.030405405405405407,Karnataka,"Collector Office, Yadgir - KSPCB",reference
+site_0052,ne_monsoon,81,460,0.17608695652173914,Karnataka,"Vijay Nagar, Ramanagara - KSPCB",reference
+site_0052,pre_monsoon,114,460,0.24782608695652175,Karnataka,"Vijay Nagar, Ramanagara - KSPCB",reference
+site_0052,sw_monsoon,76,610,0.12459016393442623,Karnataka,"Vijay Nagar, Ramanagara - KSPCB",reference
+site_0052,winter,14,296,0.0472972972972973,Karnataka,"Vijay Nagar, Ramanagara - KSPCB",reference
+site_0051,ne_monsoon,126,460,0.27391304347826084,Karnataka,"Kalyana Nagara, Chikkamagaluru - KSPCB",reference
+site_0051,pre_monsoon,65,460,0.14130434782608695,Karnataka,"Kalyana Nagara, Chikkamagaluru - KSPCB",reference
+site_0051,sw_monsoon,148,610,0.24262295081967214,Karnataka,"Kalyana Nagara, Chikkamagaluru - KSPCB",reference
+site_0051,winter,10,296,0.033783783783783786,Karnataka,"Kalyana Nagara, Chikkamagaluru - KSPCB",reference
+site_0055,ne_monsoon,142,460,0.30869565217391304,Karnataka,"Vinoba Nagara, Shivamogga - KSPCB",reference
+site_0055,pre_monsoon,130,460,0.2826086956521739,Karnataka,"Vinoba Nagara, Shivamogga - KSPCB",reference
+site_0055,sw_monsoon,171,610,0.28032786885245903,Karnataka,"Vinoba Nagara, Shivamogga - KSPCB",reference
+site_0055,winter,16,296,0.05405405405405406,Karnataka,"Vinoba Nagara, Shivamogga - KSPCB",reference
+site_0040,ne_monsoon,112,460,0.24347826086956523,Karnataka,"Ibrahimpur, Vijayapura - KSPCB",reference
+site_0040,pre_monsoon,76,460,0.16521739130434782,Karnataka,"Ibrahimpur, Vijayapura - KSPCB",reference
+site_0040,sw_monsoon,172,610,0.2819672131147541,Karnataka,"Ibrahimpur, Vijayapura - KSPCB",reference
+site_0040,winter,16,296,0.05405405405405406,Karnataka,"Ibrahimpur, Vijayapura - KSPCB",reference
+site_0042,ne_monsoon,129,460,0.28043478260869564,Kerala,"Kariavattom, Thiruvananthapuram - Kerala PCB",reference
+site_0042,pre_monsoon,125,460,0.2717391304347826,Kerala,"Kariavattom, Thiruvananthapuram - Kerala PCB",reference
+site_0042,sw_monsoon,157,610,0.2573770491803279,Kerala,"Kariavattom, Thiruvananthapuram - Kerala PCB",reference
+site_0042,winter,18,296,0.060810810810810814,Kerala,"Kariavattom, Thiruvananthapuram - Kerala PCB",reference
+site_0058,ne_monsoon,154,460,0.3347826086956522,Tamil Nadu,"Arumbakkam, Chennai - TNPCB",reference
+site_0058,pre_monsoon,57,460,0.12391304347826088,Tamil Nadu,"Arumbakkam, Chennai - TNPCB",reference
+site_0058,sw_monsoon,156,610,0.25573770491803277,Tamil Nadu,"Arumbakkam, Chennai - TNPCB",reference
+site_0058,winter,12,296,0.04054054054054054,Tamil Nadu,"Arumbakkam, Chennai - TNPCB",reference
+site_0066,ne_monsoon,105,460,0.22826086956521738,Tamil Nadu,"Anthoni Pillai Nagar, Gummidipoondi - TNPCB",reference
+site_0066,pre_monsoon,126,460,0.27391304347826084,Tamil Nadu,"Anthoni Pillai Nagar, Gummidipoondi - TNPCB",reference
+site_0066,sw_monsoon,161,610,0.2639344262295082,Tamil Nadu,"Anthoni Pillai Nagar, Gummidipoondi - TNPCB",reference
+site_0066,winter,16,296,0.05405405405405406,Tamil Nadu,"Anthoni Pillai Nagar, Gummidipoondi - TNPCB",reference
+site_0062,ne_monsoon,78,460,0.16956521739130434,Tamil Nadu,"Perungudi, Chennai - TNPCB",reference
+site_0062,pre_monsoon,83,460,0.18043478260869567,Tamil Nadu,"Perungudi, Chennai - TNPCB",reference
+site_0062,sw_monsoon,115,610,0.1885245901639344,Tamil Nadu,"Perungudi, Chennai - TNPCB",reference
+site_0062,winter,9,296,0.030405405405405407,Tamil Nadu,"Perungudi, Chennai - TNPCB",reference
+site_0056,ne_monsoon,104,460,0.22608695652173913,Tamil Nadu,"Royapuram, Chennai - TNPCB",reference
+site_0056,pre_monsoon,122,460,0.26521739130434785,Tamil Nadu,"Royapuram, Chennai - TNPCB",reference
+site_0056,sw_monsoon,173,610,0.2836065573770492,Tamil Nadu,"Royapuram, Chennai - TNPCB",reference
+site_0056,winter,13,296,0.04391891891891892,Tamil Nadu,"Royapuram, Chennai - TNPCB",reference
+site_0057,ne_monsoon,133,460,0.2891304347826087,Tamil Nadu,"Kodungaiyur, Chennai - TNPCB",reference
+site_0057,pre_monsoon,72,460,0.1565217391304348,Tamil Nadu,"Kodungaiyur, Chennai - TNPCB",reference
+site_0057,sw_monsoon,159,610,0.260655737704918,Tamil Nadu,"Kodungaiyur, Chennai - TNPCB",reference
+site_0057,winter,7,296,0.02364864864864865,Tamil Nadu,"Kodungaiyur, Chennai - TNPCB",reference
+site_0039,ne_monsoon,99,460,0.21521739130434783,Kerala,"Corporation Ground, Thrissur- Kerala PCB",reference
+site_0039,pre_monsoon,89,460,0.1934782608695652,Kerala,"Corporation Ground, Thrissur- Kerala PCB",reference
+site_0039,sw_monsoon,143,610,0.23442622950819672,Kerala,"Corporation Ground, Thrissur- Kerala PCB",reference
+site_0039,winter,16,296,0.05405405405405406,Kerala,"Corporation Ground, Thrissur- Kerala PCB",reference
+site_0059,ne_monsoon,142,460,0.30869565217391304,Karnataka,"Stuart Hill, Madikeri - KSPCB",reference
+site_0059,pre_monsoon,135,460,0.29347826086956524,Karnataka,"Stuart Hill, Madikeri - KSPCB",reference
+site_0059,sw_monsoon,179,610,0.2934426229508197,Karnataka,"Stuart Hill, Madikeri - KSPCB",reference
+site_0059,winter,18,296,0.060810810810810814,Karnataka,"Stuart Hill, Madikeri - KSPCB",reference
+site_0063,ne_monsoon,124,460,0.26956521739130435,Karnataka,"Kadri, Mangalore - KSPCB",reference
+site_0063,pre_monsoon,115,460,0.25,Karnataka,"Kadri, Mangalore - KSPCB",reference
+site_0063,sw_monsoon,154,610,0.25245901639344265,Karnataka,"Kadri, Mangalore - KSPCB",reference
+site_0063,winter,15,296,0.05067567567567568,Karnataka,"Kadri, Mangalore - KSPCB",reference
+site_0070,ne_monsoon,73,460,0.15869565217391304,Karnataka,"B.Katihalli, Hassan - KSPCB",reference
+site_0070,pre_monsoon,68,460,0.14782608695652175,Karnataka,"B.Katihalli, Hassan - KSPCB",reference
+site_0070,sw_monsoon,85,610,0.13934426229508196,Karnataka,"B.Katihalli, Hassan - KSPCB",reference
+site_0070,winter,9,296,0.030405405405405407,Karnataka,"B.Katihalli, Hassan - KSPCB",reference
+site_0081,ne_monsoon,104,460,0.22608695652173913,Telangana,"New Malakpet, Hyderabad - TSPCB",reference
+site_0081,pre_monsoon,68,460,0.14782608695652175,Telangana,"New Malakpet, Hyderabad - TSPCB",reference
+site_0081,sw_monsoon,142,610,0.23278688524590163,Telangana,"New Malakpet, Hyderabad - TSPCB",reference
+site_0081,winter,10,296,0.033783783783783786,Telangana,"New Malakpet, Hyderabad - TSPCB",reference
+site_0074,ne_monsoon,92,460,0.2,Telangana,"ECIL Kapra, Hyderabad - TSPCB",reference
+site_0074,pre_monsoon,76,460,0.16521739130434782,Telangana,"ECIL Kapra, Hyderabad - TSPCB",reference
+site_0074,sw_monsoon,151,610,0.24754098360655738,Telangana,"ECIL Kapra, Hyderabad - TSPCB",reference
+site_0074,winter,10,296,0.033783783783783786,Telangana,"ECIL Kapra, Hyderabad - TSPCB",reference
+site_0078,ne_monsoon,68,460,0.14782608695652175,Telangana,"IITH Kandi, Hyderabad - TSPCB",reference
+site_0078,pre_monsoon,82,460,0.1782608695652174,Telangana,"IITH Kandi, Hyderabad - TSPCB",reference
+site_0078,sw_monsoon,136,610,0.22295081967213115,Telangana,"IITH Kandi, Hyderabad - TSPCB",reference
+site_0078,winter,10,296,0.033783783783783786,Telangana,"IITH Kandi, Hyderabad - TSPCB",reference
+site_0076,ne_monsoon,88,460,0.19130434782608696,Telangana,"Somajiguda, Hyderabad - TSPCB",reference
+site_0076,pre_monsoon,66,460,0.14347826086956522,Telangana,"Somajiguda, Hyderabad - TSPCB",reference
+site_0076,sw_monsoon,157,610,0.2573770491803279,Telangana,"Somajiguda, Hyderabad - TSPCB",reference
+site_0076,winter,8,296,0.02702702702702703,Telangana,"Somajiguda, Hyderabad - TSPCB",reference
+site_0075,ne_monsoon,85,460,0.18478260869565216,Telangana,"Kompally Municipal Office, Hyderabad - TSPCB",reference
+site_0075,pre_monsoon,67,460,0.14565217391304347,Telangana,"Kompally Municipal Office, Hyderabad - TSPCB",reference
+site_0075,sw_monsoon,128,610,0.2098360655737705,Telangana,"Kompally Municipal Office, Hyderabad - TSPCB",reference
+site_0075,winter,9,296,0.030405405405405407,Telangana,"Kompally Municipal Office, Hyderabad - TSPCB",reference
+site_0077,ne_monsoon,65,460,0.14130434782608695,Telangana,"Nacharam_TSIIC IALA, Hyderabad - TSPCB",reference
+site_0077,pre_monsoon,77,460,0.1673913043478261,Telangana,"Nacharam_TSIIC IALA, Hyderabad - TSPCB",reference
+site_0077,sw_monsoon,150,610,0.2459016393442623,Telangana,"Nacharam_TSIIC IALA, Hyderabad - TSPCB",reference
+site_0077,winter,10,296,0.033783783783783786,Telangana,"Nacharam_TSIIC IALA, Hyderabad - TSPCB",reference
+site_0080,ne_monsoon,80,460,0.17391304347826086,Telangana,"Kokapet, Hyderabad - TSPCB",reference
+site_0080,pre_monsoon,71,460,0.15434782608695652,Telangana,"Kokapet, Hyderabad - TSPCB",reference
+site_0080,sw_monsoon,132,610,0.21639344262295082,Telangana,"Kokapet, Hyderabad - TSPCB",reference
+site_0080,winter,10,296,0.033783783783783786,Telangana,"Kokapet, Hyderabad - TSPCB",reference
+site_0091,ne_monsoon,32,460,0.06956521739130435,Tamil Nadu,"Crescent University, Chengalpattu - TNPCB",reference
+site_0091,pre_monsoon,49,460,0.10652173913043478,Tamil Nadu,"Crescent University, Chengalpattu - TNPCB",reference
+site_0091,sw_monsoon,89,610,0.14590163934426228,Tamil Nadu,"Crescent University, Chengalpattu - TNPCB",reference
+site_0091,winter,0,296,0.0,Tamil Nadu,"Crescent University, Chengalpattu - TNPCB",reference
+site_0094,ne_monsoon,54,460,0.11739130434782609,Tamil Nadu,"Keelapalur, Ariyalur - TNPCB",reference
+site_0094,pre_monsoon,67,460,0.14565217391304347,Tamil Nadu,"Keelapalur, Ariyalur - TNPCB",reference
+site_0094,sw_monsoon,99,610,0.16229508196721312,Tamil Nadu,"Keelapalur, Ariyalur - TNPCB",reference
+site_0094,winter,9,296,0.030405405405405407,Tamil Nadu,"Keelapalur, Ariyalur - TNPCB",reference
+site_0082,ne_monsoon,63,460,0.13695652173913042,Tamil Nadu,"Kumaran College, Tirupur - TNPCB",reference
+site_0082,pre_monsoon,58,460,0.12608695652173912,Tamil Nadu,"Kumaran College, Tirupur - TNPCB",reference
+site_0082,sw_monsoon,110,610,0.18032786885245902,Tamil Nadu,"Kumaran College, Tirupur - TNPCB",reference
+site_0082,winter,8,296,0.02702702702702703,Tamil Nadu,"Kumaran College, Tirupur - TNPCB",reference
+site_0086,ne_monsoon,52,460,0.11304347826086956,Tamil Nadu,"Mendonsa Colony, Dindigul - TNPCB",reference
+site_0086,pre_monsoon,74,460,0.1608695652173913,Tamil Nadu,"Mendonsa Colony, Dindigul - TNPCB",reference
+site_0086,sw_monsoon,112,610,0.18360655737704917,Tamil Nadu,"Mendonsa Colony, Dindigul - TNPCB",reference
+site_0086,winter,9,296,0.030405405405405407,Tamil Nadu,"Mendonsa Colony, Dindigul - TNPCB",reference
+site_0095,ne_monsoon,45,460,0.09782608695652174,Tamil Nadu,"Municipal Corporation Office, Tirunelveli - TNPCB",reference
+site_0095,pre_monsoon,77,460,0.1673913043478261,Tamil Nadu,"Municipal Corporation Office, Tirunelveli - TNPCB",reference
+site_0095,sw_monsoon,101,610,0.16557377049180327,Tamil Nadu,"Municipal Corporation Office, Tirunelveli - TNPCB",reference
+site_0095,winter,6,296,0.02027027027027027,Tamil Nadu,"Municipal Corporation Office, Tirunelveli - TNPCB",reference
+site_0096,ne_monsoon,0,460,0.0,Tamil Nadu,"Parisutham Nagar, Thanjavur - TNPCB",reference
+site_0096,pre_monsoon,57,460,0.12391304347826088,Tamil Nadu,"Parisutham Nagar, Thanjavur - TNPCB",reference
+site_0096,sw_monsoon,0,610,0.0,Tamil Nadu,"Parisutham Nagar, Thanjavur - TNPCB",reference
+site_0096,winter,8,296,0.02702702702702703,Tamil Nadu,"Parisutham Nagar, Thanjavur - TNPCB",reference
+site_0097,ne_monsoon,70,460,0.15217391304347827,Tamil Nadu,"Semmandalam, Cuddalore - TNPCB",reference
+site_0097,pre_monsoon,66,460,0.14347826086956522,Tamil Nadu,"Semmandalam, Cuddalore - TNPCB",reference
+site_0097,sw_monsoon,98,610,0.16065573770491803,Tamil Nadu,"Semmandalam, Cuddalore - TNPCB",reference
+site_0097,winter,10,296,0.033783783783783786,Tamil Nadu,"Semmandalam, Cuddalore - TNPCB",reference
+site_0098,ne_monsoon,4,460,0.008695652173913044,Tamil Nadu,"Uchapatti, Madurai - TNPCB",reference
+site_0098,pre_monsoon,67,460,0.14565217391304347,Tamil Nadu,"Uchapatti, Madurai - TNPCB",reference
+site_0098,sw_monsoon,106,610,0.1737704918032787,Tamil Nadu,"Uchapatti, Madurai - TNPCB",reference
+site_0098,winter,9,296,0.030405405405405407,Tamil Nadu,"Uchapatti, Madurai - TNPCB",reference
+site_0084,ne_monsoon,29,460,0.06304347826086956,Tamil Nadu,"Vasanthapuram, Vellore - TNPCB",reference
+site_0084,pre_monsoon,70,460,0.15217391304347827,Tamil Nadu,"Vasanthapuram, Vellore - TNPCB",reference
+site_0084,sw_monsoon,93,610,0.15245901639344261,Tamil Nadu,"Vasanthapuram, Vellore - TNPCB",reference
+site_0084,winter,9,296,0.030405405405405407,Tamil Nadu,"Vasanthapuram, Vellore - TNPCB",reference
+site_0099,ne_monsoon,42,460,0.09130434782608696,Tamil Nadu,"Velippalayam, Nagapattinam - TNPCB",reference
+site_0099,pre_monsoon,52,460,0.11304347826086956,Tamil Nadu,"Velippalayam, Nagapattinam - TNPCB",reference
+site_0099,sw_monsoon,65,610,0.10655737704918032,Tamil Nadu,"Velippalayam, Nagapattinam - TNPCB",reference
+site_0099,winter,7,296,0.02364864864864865,Tamil Nadu,"Velippalayam, Nagapattinam - TNPCB",reference
+site_0100,ne_monsoon,26,460,0.05652173913043478,Tamil Nadu,"VOC Nagar_SIPCOT, Ranipet - TNPCB",reference
+site_0100,pre_monsoon,40,460,0.08695652173913043,Tamil Nadu,"VOC Nagar_SIPCOT, Ranipet - TNPCB",reference
+site_0100,sw_monsoon,52,610,0.08524590163934426,Tamil Nadu,"VOC Nagar_SIPCOT, Ranipet - TNPCB",reference
+site_0100,winter,6,296,0.02027027027027027,Tamil Nadu,"VOC Nagar_SIPCOT, Ranipet - TNPCB",reference
+site_0101,ne_monsoon,32,460,0.06956521739130435,Tamil Nadu,"Kilambi, Kanchipuram - TNPCB",reference
+site_0101,pre_monsoon,60,460,0.13043478260869565,Tamil Nadu,"Kilambi, Kanchipuram - TNPCB",reference
+site_0101,sw_monsoon,80,610,0.13114754098360656,Tamil Nadu,"Kilambi, Kanchipuram - TNPCB",reference
+site_0101,winter,6,296,0.02027027027027027,Tamil Nadu,"Kilambi, Kanchipuram - TNPCB",reference
+site_0088,ne_monsoon,40,460,0.08695652173913043,Tamil Nadu,"Sona College of Technology, Salem - TNPCB",reference
+site_0088,pre_monsoon,63,460,0.13695652173913042,Tamil Nadu,"Sona College of Technology, Salem - TNPCB",reference
+site_0088,sw_monsoon,82,610,0.13442622950819672,Tamil Nadu,"Sona College of Technology, Salem - TNPCB",reference
+site_0088,winter,4,296,0.013513513513513514,Tamil Nadu,"Sona College of Technology, Salem - TNPCB",reference
+site_0083,ne_monsoon,47,460,0.10217391304347827,Tamil Nadu,"Bombay Castel, Ooty - TNPCB",reference
+site_0083,pre_monsoon,40,460,0.08695652173913043,Tamil Nadu,"Bombay Castel, Ooty - TNPCB",reference
+site_0083,sw_monsoon,68,610,0.11147540983606558,Tamil Nadu,"Bombay Castel, Ooty - TNPCB",reference
+site_0083,winter,9,296,0.030405405405405407,Tamil Nadu,"Bombay Castel, Ooty - TNPCB",reference
+site_0085,ne_monsoon,39,460,0.08478260869565217,Tamil Nadu,"Chalai Bazaar, Ramanathapuram - TNPCB",reference
+site_0085,pre_monsoon,75,460,0.16304347826086957,Tamil Nadu,"Chalai Bazaar, Ramanathapuram - TNPCB",reference
+site_0085,sw_monsoon,114,610,0.18688524590163935,Tamil Nadu,"Chalai Bazaar, Ramanathapuram - TNPCB",reference
+site_0085,winter,10,296,0.033783783783783786,Tamil Nadu,"Chalai Bazaar, Ramanathapuram - TNPCB",reference
+site_0103,ne_monsoon,4,460,0.008695652173913044,Tamil Nadu,"Bharathidasan University, Palkalaiperur - TNPCB",reference
+site_0103,pre_monsoon,64,460,0.1391304347826087,Tamil Nadu,"Bharathidasan University, Palkalaiperur - TNPCB",reference
+site_0103,sw_monsoon,97,610,0.15901639344262294,Tamil Nadu,"Bharathidasan University, Palkalaiperur - TNPCB",reference
+site_0103,winter,9,296,0.030405405405405407,Tamil Nadu,"Bharathidasan University, Palkalaiperur - TNPCB",reference
+site_0104,ne_monsoon,67,460,0.14565217391304347,Tamil Nadu,"Kamadenu Nagar, Karur - TNPCB",reference
+site_0104,pre_monsoon,34,460,0.07391304347826087,Tamil Nadu,"Kamadenu Nagar, Karur - TNPCB",reference
+site_0104,sw_monsoon,73,610,0.11967213114754098,Tamil Nadu,"Kamadenu Nagar, Karur - TNPCB",reference
+site_0104,winter,9,296,0.030405405405405407,Tamil Nadu,"Kamadenu Nagar, Karur - TNPCB",reference
+site_0105,ne_monsoon,39,460,0.08478260869565217,Tamil Nadu,"St Joseph College, Tiruchirappalli - TNPCB",reference
+site_0105,pre_monsoon,76,460,0.16521739130434782,Tamil Nadu,"St Joseph College, Tiruchirappalli - TNPCB",reference
+site_0105,sw_monsoon,106,610,0.1737704918032787,Tamil Nadu,"St Joseph College, Tiruchirappalli - TNPCB",reference
+site_0105,winter,10,296,0.033783783783783786,Tamil Nadu,"St Joseph College, Tiruchirappalli - TNPCB",reference
+site_0089,ne_monsoon,85,460,0.18478260869565216,Andhra Pradesh,"Gulzarpet, Anantapur - APPCB",reference
+site_0089,pre_monsoon,75,460,0.16304347826086957,Andhra Pradesh,"Gulzarpet, Anantapur - APPCB",reference
+site_0089,sw_monsoon,99,610,0.16229508196721312,Andhra Pradesh,"Gulzarpet, Anantapur - APPCB",reference
+site_0089,winter,10,296,0.033783783783783786,Andhra Pradesh,"Gulzarpet, Anantapur - APPCB",reference
+site_0106,ne_monsoon,72,460,0.1565217391304348,Karnataka,"Kalabhavan, Dharwad - KSPCB",reference
+site_0106,pre_monsoon,77,460,0.1673913043478261,Karnataka,"Kalabhavan, Dharwad - KSPCB",reference
+site_0106,sw_monsoon,102,610,0.16721311475409836,Karnataka,"Kalabhavan, Dharwad - KSPCB",reference
+site_0106,winter,8,296,0.02702702702702703,Karnataka,"Kalabhavan, Dharwad - KSPCB",reference
+site_0107,ne_monsoon,52,460,0.11304347826086956,Andhra Pradesh,"Gangineni Cheruvu, Chittoor - APPCB",reference
+site_0107,pre_monsoon,5,460,0.010869565217391304,Andhra Pradesh,"Gangineni Cheruvu, Chittoor - APPCB",reference
+site_0107,sw_monsoon,51,610,0.08360655737704918,Andhra Pradesh,"Gangineni Cheruvu, Chittoor - APPCB",reference
+site_0107,winter,0,296,0.0,Andhra Pradesh,"Gangineni Cheruvu, Chittoor - APPCB",reference
+site_0108,ne_monsoon,57,460,0.12391304347826088,Andhra Pradesh,"Vaikuntapuram, Tirupathi - APPCB",reference
+site_0108,pre_monsoon,50,460,0.10869565217391304,Andhra Pradesh,"Vaikuntapuram, Tirupathi - APPCB",reference
+site_0108,sw_monsoon,83,610,0.1360655737704918,Andhra Pradesh,"Vaikuntapuram, Tirupathi - APPCB",reference
+site_0108,winter,7,296,0.02364864864864865,Andhra Pradesh,"Vaikuntapuram, Tirupathi - APPCB",reference
+site_0109,ne_monsoon,80,460,0.17391304347826086,Karnataka,"RVCE-Mailasandra, Bengaluru - KSPCB",reference
+site_0109,pre_monsoon,79,460,0.17173913043478262,Karnataka,"RVCE-Mailasandra, Bengaluru - KSPCB",reference
+site_0109,sw_monsoon,79,610,0.12950819672131147,Karnataka,"RVCE-Mailasandra, Bengaluru - KSPCB",reference
+site_0109,winter,10,296,0.033783783783783786,Karnataka,"RVCE-Mailasandra, Bengaluru - KSPCB",reference
+site_0110,ne_monsoon,84,460,0.1826086956521739,Karnataka,"Mahatma Basaveswar Colony, Kalaburgi - KSPCB",reference
+site_0110,pre_monsoon,76,460,0.16521739130434782,Karnataka,"Mahatma Basaveswar Colony, Kalaburgi - KSPCB",reference
+site_0110,sw_monsoon,116,610,0.1901639344262295,Karnataka,"Mahatma Basaveswar Colony, Kalaburgi - KSPCB",reference
+site_0110,winter,10,296,0.033783783783783786,Karnataka,"Mahatma Basaveswar Colony, Kalaburgi - KSPCB",reference
+site_0111,ne_monsoon,88,460,0.19130434782608696,Karnataka,"Lingaraj Nagar, Hubballi - KSPCB",reference
+site_0111,pre_monsoon,77,460,0.1673913043478261,Karnataka,"Lingaraj Nagar, Hubballi - KSPCB",reference
+site_0111,sw_monsoon,110,610,0.18032786885245902,Karnataka,"Lingaraj Nagar, Hubballi - KSPCB",reference
+site_0111,winter,10,296,0.033783783783783786,Karnataka,"Lingaraj Nagar, Hubballi - KSPCB",reference
+site_0112,ne_monsoon,67,460,0.14565217391304347,Karnataka,"Kasturi Nagar, Bengaluru - KSPCB",reference
+site_0112,pre_monsoon,66,460,0.14347826086956522,Karnataka,"Kasturi Nagar, Bengaluru - KSPCB",reference
+site_0112,sw_monsoon,59,610,0.09672131147540984,Karnataka,"Kasturi Nagar, Bengaluru - KSPCB",reference
+site_0112,winter,7,296,0.02364864864864865,Karnataka,"Kasturi Nagar, Bengaluru - KSPCB",reference
+site_0113,ne_monsoon,10,460,0.021739130434782608,Karnataka,"Thimmalapura, Tumakuru - KSPCB",reference
+site_0113,pre_monsoon,41,460,0.0891304347826087,Karnataka,"Thimmalapura, Tumakuru - KSPCB",reference
+site_0113,sw_monsoon,49,610,0.08032786885245902,Karnataka,"Thimmalapura, Tumakuru - KSPCB",reference
+site_0113,winter,10,296,0.033783783783783786,Karnataka,"Thimmalapura, Tumakuru - KSPCB",reference
+site_0114,ne_monsoon,12,460,0.02608695652173913,Andhra Pradesh,"Kanuru, Vijayawada - APPCB",reference
+site_0114,pre_monsoon,55,460,0.11956521739130435,Andhra Pradesh,"Kanuru, Vijayawada - APPCB",reference
+site_0114,sw_monsoon,13,610,0.021311475409836064,Andhra Pradesh,"Kanuru, Vijayawada - APPCB",reference
+site_0114,winter,7,296,0.02364864864864865,Andhra Pradesh,"Kanuru, Vijayawada - APPCB",reference
+site_0115,ne_monsoon,75,460,0.16304347826086957,Karnataka,"Shivapura_Peenya, Bengaluru - KSPCB",reference
+site_0115,pre_monsoon,67,460,0.14565217391304347,Karnataka,"Shivapura_Peenya, Bengaluru - KSPCB",reference
+site_0115,sw_monsoon,92,610,0.15081967213114755,Karnataka,"Shivapura_Peenya, Bengaluru - KSPCB",reference
+site_0115,winter,2,296,0.006756756756756757,Karnataka,"Shivapura_Peenya, Bengaluru - KSPCB",reference
+site_0116,ne_monsoon,73,460,0.15869565217391304,Andhra Pradesh,"Yerramukkapalli, Kadapa - APPCB",reference
+site_0116,pre_monsoon,69,460,0.15,Andhra Pradesh,"Yerramukkapalli, Kadapa - APPCB",reference
+site_0116,sw_monsoon,90,610,0.14754098360655737,Andhra Pradesh,"Yerramukkapalli, Kadapa - APPCB",reference
+site_0116,winter,10,296,0.033783783783783786,Andhra Pradesh,"Yerramukkapalli, Kadapa - APPCB",reference
+site_0118,ne_monsoon,76,460,0.16521739130434782,Andhra Pradesh,"HB Colony, Vijayawada - APPCB",reference
+site_0118,pre_monsoon,76,460,0.16521739130434782,Andhra Pradesh,"HB Colony, Vijayawada - APPCB",reference
+site_0118,sw_monsoon,103,610,0.16885245901639345,Andhra Pradesh,"HB Colony, Vijayawada - APPCB",reference
+site_0118,winter,10,296,0.033783783783783786,Andhra Pradesh,"HB Colony, Vijayawada - APPCB",reference
+site_0119,ne_monsoon,61,460,0.13260869565217392,Andhra Pradesh,"Rajiv Gandhi Park, Vijayawada - APPCB",reference
+site_0119,pre_monsoon,73,460,0.15869565217391304,Andhra Pradesh,"Rajiv Gandhi Park, Vijayawada - APPCB",reference
+site_0119,sw_monsoon,93,610,0.15245901639344261,Andhra Pradesh,"Rajiv Gandhi Park, Vijayawada - APPCB",reference
+site_0119,winter,10,296,0.033783783783783786,Andhra Pradesh,"Rajiv Gandhi Park, Vijayawada - APPCB",reference
+site_0120,ne_monsoon,0,460,0.0,Karnataka,"KHB Colony, Karwar - KSPCB",reference
+site_0120,pre_monsoon,4,460,0.008695652173913044,Karnataka,"KHB Colony, Karwar - KSPCB",reference
+site_0120,sw_monsoon,0,610,0.0,Karnataka,"KHB Colony, Karwar - KSPCB",reference
+site_0120,winter,4,296,0.013513513513513514,Karnataka,"KHB Colony, Karwar - KSPCB",reference
+site_0122,ne_monsoon,0,460,0.0,Tamil Nadu,"Collectorate Office, Virudhunagar - TNPCB",reference
+site_0122,pre_monsoon,21,460,0.04565217391304348,Tamil Nadu,"Collectorate Office, Virudhunagar - TNPCB",reference
+site_0122,sw_monsoon,0,610,0.0,Tamil Nadu,"Collectorate Office, Virudhunagar - TNPCB",reference
+site_0122,winter,10,296,0.033783783783783786,Tamil Nadu,"Collectorate Office, Virudhunagar - TNPCB",reference
+site_0123,ne_monsoon,70,460,0.15217391304347827,Andhra Pradesh,"Rajiv Nagar, Vijayawada - APPCB",reference
+site_0123,pre_monsoon,78,460,0.16956521739130434,Andhra Pradesh,"Rajiv Nagar, Vijayawada - APPCB",reference
+site_0123,sw_monsoon,82,610,0.13442622950819672,Andhra Pradesh,"Rajiv Nagar, Vijayawada - APPCB",reference
+site_0123,winter,10,296,0.033783783783783786,Andhra Pradesh,"Rajiv Nagar, Vijayawada - APPCB",reference
+site_0124,ne_monsoon,77,460,0.1673913043478261,Tamil Nadu,"SIPCOT Industrial Park, Perundurai - TNPCB",reference
+site_0124,pre_monsoon,67,460,0.14565217391304347,Tamil Nadu,"SIPCOT Industrial Park, Perundurai - TNPCB",reference
+site_0124,sw_monsoon,107,610,0.17540983606557378,Tamil Nadu,"SIPCOT Industrial Park, Perundurai - TNPCB",reference
+site_0124,winter,9,296,0.030405405405405407,Tamil Nadu,"SIPCOT Industrial Park, Perundurai - TNPCB",reference
+site_0037,ne_monsoon,102,460,0.2217391304347826,Karnataka,"Hebbal 1st Stage, Mysuru - KSPCB",reference
+site_0037,pre_monsoon,63,460,0.13695652173913042,Karnataka,"Hebbal 1st Stage, Mysuru - KSPCB",reference
+site_0037,sw_monsoon,70,610,0.11475409836065574,Karnataka,"Hebbal 1st Stage, Mysuru - KSPCB",reference
+site_0037,winter,5,296,0.016891891891891893,Karnataka,"Hebbal 1st Stage, Mysuru - KSPCB",reference
+site_0048,ne_monsoon,128,460,0.2782608695652174,Kerala,"Thavakkara, Kannur - Kerala PCB",reference
+site_0048,pre_monsoon,105,460,0.22826086956521738,Kerala,"Thavakkara, Kannur - Kerala PCB",reference
+site_0048,sw_monsoon,151,610,0.24754098360655738,Kerala,"Thavakkara, Kannur - Kerala PCB",reference
+site_0048,winter,15,296,0.05067567567567568,Kerala,"Thavakkara, Kannur - Kerala PCB",reference
+site_0018,ne_monsoon,131,460,0.2847826086956522,Telangana,"Central University, Hyderabad - TSPCB",reference
+site_0018,pre_monsoon,115,460,0.25,Telangana,"Central University, Hyderabad - TSPCB",reference
+site_0018,sw_monsoon,135,610,0.22131147540983606,Telangana,"Central University, Hyderabad - TSPCB",reference
+site_0018,winter,22,296,0.07432432432432433,Telangana,"Central University, Hyderabad - TSPCB",reference
+site_0023,ne_monsoon,144,460,0.3130434782608696,Telangana,"Sanathnagar, Hyderabad - TSPCB",reference
+site_0023,pre_monsoon,128,460,0.2782608695652174,Telangana,"Sanathnagar, Hyderabad - TSPCB",reference
+site_0023,sw_monsoon,172,610,0.2819672131147541,Telangana,"Sanathnagar, Hyderabad - TSPCB",reference
+site_0023,winter,23,296,0.0777027027027027,Telangana,"Sanathnagar, Hyderabad - TSPCB",reference
+site_0079,ne_monsoon,85,460,0.18478260869565216,Telangana,"Ramachandrapuram, Hyderabad - TSPCB",reference
+site_0079,pre_monsoon,43,460,0.09347826086956522,Telangana,"Ramachandrapuram, Hyderabad - TSPCB",reference
+site_0079,sw_monsoon,113,610,0.18524590163934426,Telangana,"Ramachandrapuram, Hyderabad - TSPCB",reference
+site_0079,winter,7,296,0.02364864864864865,Telangana,"Ramachandrapuram, Hyderabad - TSPCB",reference
+site_0053,ne_monsoon,108,460,0.23478260869565218,Kerala,"Polayathode, Kollam - Kerala PCB",reference
+site_0053,pre_monsoon,101,460,0.21956521739130436,Kerala,"Polayathode, Kollam - Kerala PCB",reference
+site_0053,sw_monsoon,123,610,0.20163934426229507,Kerala,"Polayathode, Kollam - Kerala PCB",reference
+site_0053,winter,10,296,0.033783783783783786,Kerala,"Polayathode, Kollam - Kerala PCB",reference
+site_0117,ne_monsoon,70,460,0.15217391304347827,Karnataka,"Jigani, Bengaluru - KSPCB",low_cost
+site_0117,pre_monsoon,55,460,0.11956521739130435,Karnataka,"Jigani, Bengaluru - KSPCB",low_cost
+site_0117,sw_monsoon,65,610,0.10655737704918032,Karnataka,"Jigani, Bengaluru - KSPCB",low_cost
+site_0117,winter,8,296,0.02702702702702703,Karnataka,"Jigani, Bengaluru - KSPCB",low_cost
+site_0102,ne_monsoon,75,460,0.16304347826086957,Tamil Nadu,"Kudikadu, Cuddalore - TNPCB",low_cost
+site_0102,pre_monsoon,47,460,0.10217391304347827,Tamil Nadu,"Kudikadu, Cuddalore - TNPCB",low_cost
+site_0102,sw_monsoon,87,610,0.14262295081967213,Tamil Nadu,"Kudikadu, Cuddalore - TNPCB",low_cost
+site_0102,winter,2,296,0.006756756756756757,Tamil Nadu,"Kudikadu, Cuddalore - TNPCB",low_cost
+site_0121,ne_monsoon,0,460,0.0,Tamil Nadu,"SIPCOT Nathampannai, Pudukottai - TNPCB",reference
+site_0121,pre_monsoon,0,460,0.0,Tamil Nadu,"SIPCOT Nathampannai, Pudukottai - TNPCB",reference
+site_0121,sw_monsoon,0,610,0.0,Tamil Nadu,"SIPCOT Nathampannai, Pudukottai - TNPCB",reference
+site_0121,winter,0,296,0.0,Tamil Nadu,"SIPCOT Nathampannai, Pudukottai - TNPCB",reference
+site_0061,ne_monsoon,49,460,0.10652173913043478,Karnataka,"Haji Colony, Raichur - KSPCB",reference
+site_0061,pre_monsoon,5,460,0.010869565217391304,Karnataka,"Haji Colony, Raichur - KSPCB",reference
+site_0061,sw_monsoon,17,610,0.027868852459016394,Karnataka,"Haji Colony, Raichur - KSPCB",reference
+site_0061,winter,8,296,0.02702702702702703,Karnataka,"Haji Colony, Raichur - KSPCB",reference
+site_0092,ne_monsoon,52,460,0.11304347826086956,Karnataka,"Ramteerth Nagar, Belgaum - KSPCB",reference
+site_0092,pre_monsoon,38,460,0.08260869565217391,Karnataka,"Ramteerth Nagar, Belgaum - KSPCB",reference
+site_0092,sw_monsoon,21,610,0.03442622950819672,Karnataka,"Ramteerth Nagar, Belgaum - KSPCB",reference
+site_0092,winter,5,296,0.016891891891891893,Karnataka,"Ramteerth Nagar, Belgaum - KSPCB",reference
+site_0090,ne_monsoon,1,460,0.002173913043478261,Tamil Nadu,"PSG College of Arts and Science, Coimbatore - TNPCB",reference
+site_0090,pre_monsoon,0,460,0.0,Tamil Nadu,"PSG College of Arts and Science, Coimbatore - TNPCB",reference
+site_0090,sw_monsoon,0,610,0.0,Tamil Nadu,"PSG College of Arts and Science, Coimbatore - TNPCB",reference
+site_0090,winter,0,296,0.0,Tamil Nadu,"PSG College of Arts and Science, Coimbatore - TNPCB",reference
+site_0069,ne_monsoon,0,460,0.0,Karnataka,"Brahmagiri, Udupi - KSPCB",reference
+site_0069,pre_monsoon,0,460,0.0,Karnataka,"Brahmagiri, Udupi - KSPCB",reference
+site_0069,sw_monsoon,0,610,0.0,Karnataka,"Brahmagiri, Udupi - KSPCB",reference
+site_0069,winter,0,296,0.0,Karnataka,"Brahmagiri, Udupi - KSPCB",reference
+site_0068,ne_monsoon,38,460,0.08260869565217391,Karnataka,"Devaraj Urs Badavane, Davanagere - KSPCB",reference
+site_0068,pre_monsoon,34,460,0.07391304347826087,Karnataka,"Devaraj Urs Badavane, Davanagere - KSPCB",reference
+site_0068,sw_monsoon,27,610,0.04426229508196721,Karnataka,"Devaraj Urs Badavane, Davanagere - KSPCB",reference
+site_0068,winter,0,296,0.0,Karnataka,"Devaraj Urs Badavane, Davanagere - KSPCB",reference
+site_0073,ne_monsoon,24,460,0.05217391304347826,Karnataka,"Ashwini Nagar, Haveri - KSPCB",reference
+site_0073,pre_monsoon,37,460,0.08043478260869565,Karnataka,"Ashwini Nagar, Haveri - KSPCB",reference
+site_0073,sw_monsoon,63,610,0.10327868852459017,Karnataka,"Ashwini Nagar, Haveri - KSPCB",reference
+site_0073,winter,1,296,0.0033783783783783786,Karnataka,"Ashwini Nagar, Haveri - KSPCB",reference
+site_0060,ne_monsoon,98,460,0.21304347826086956,Karnataka,"Diwator Nagar, Koppal - KSPCB",reference
+site_0060,pre_monsoon,84,460,0.1826086956521739,Karnataka,"Diwator Nagar, Koppal - KSPCB",reference
+site_0060,sw_monsoon,72,610,0.1180327868852459,Karnataka,"Diwator Nagar, Koppal - KSPCB",reference
+site_0060,winter,4,296,0.013513513513513514,Karnataka,"Diwator Nagar, Koppal - KSPCB",reference
+site_0064,ne_monsoon,0,460,0.0,Karnataka,"Naubad, Bidar - KSPCB",reference
+site_0064,pre_monsoon,3,460,0.006521739130434782,Karnataka,"Naubad, Bidar - KSPCB",reference
+site_0064,sw_monsoon,9,610,0.014754098360655738,Karnataka,"Naubad, Bidar - KSPCB",reference
+site_0064,winter,4,296,0.013513513513513514,Karnataka,"Naubad, Bidar - KSPCB",reference
+site_0029,ne_monsoon,78,460,0.16956521739130434,Karnataka,"Lal Bahadur Shastri Nagar, Kalaburagi - KSPCB",reference
+site_0029,pre_monsoon,81,460,0.17608695652173914,Karnataka,"Lal Bahadur Shastri Nagar, Kalaburagi - KSPCB",reference
+site_0029,sw_monsoon,115,610,0.1885245901639344,Karnataka,"Lal Bahadur Shastri Nagar, Kalaburagi - KSPCB",reference
+site_0029,winter,2,296,0.006756756756756757,Karnataka,"Lal Bahadur Shastri Nagar, Kalaburagi - KSPCB",reference
+site_0087,ne_monsoon,22,460,0.04782608695652174,Tamil Nadu,"SIPCOT Phase-1, Hosur - TNPCB",reference
+site_0087,pre_monsoon,47,460,0.10217391304347827,Tamil Nadu,"SIPCOT Phase-1, Hosur - TNPCB",reference
+site_0087,sw_monsoon,97,610,0.15901639344262294,Tamil Nadu,"SIPCOT Phase-1, Hosur - TNPCB",reference
+site_0087,winter,0,296,0.0,Tamil Nadu,"SIPCOT Phase-1, Hosur - TNPCB",reference
+site_0065,ne_monsoon,61,460,0.13260869565217392,Karnataka,"Panchal Nagar, Gadag - KSPCB",reference
+site_0065,pre_monsoon,77,460,0.1673913043478261,Karnataka,"Panchal Nagar, Gadag - KSPCB",reference
+site_0065,sw_monsoon,81,610,0.13278688524590163,Karnataka,"Panchal Nagar, Gadag - KSPCB",reference
+site_0065,winter,8,296,0.02702702702702703,Karnataka,"Panchal Nagar, Gadag - KSPCB",reference
+site_0125,ne_monsoon,30,460,0.06521739130434782,Tamil Nadu,"Ponnusamy Nagar, Namakkal - TNPCB",low_cost
+site_0125,pre_monsoon,50,460,0.10869565217391304,Tamil Nadu,"Ponnusamy Nagar, Namakkal - TNPCB",low_cost
+site_0125,sw_monsoon,22,610,0.036065573770491806,Tamil Nadu,"Ponnusamy Nagar, Namakkal - TNPCB",low_cost
+site_0125,winter,0,296,0.0,Tamil Nadu,"Ponnusamy Nagar, Namakkal - TNPCB",low_cost
+site_0047,ne_monsoon,119,460,0.25869565217391305,Karnataka,"Vidayagiri, Bagalkot - KSPCB",reference
+site_0047,pre_monsoon,92,460,0.2,Karnataka,"Vidayagiri, Bagalkot - KSPCB",reference
+site_0047,sw_monsoon,177,610,0.2901639344262295,Karnataka,"Vidayagiri, Bagalkot - KSPCB",reference
+site_0047,winter,6,296,0.02027027027027027,Karnataka,"Vidayagiri, Bagalkot - KSPCB",reference
+site_0126,ne_monsoon,0,460,0.0,Telangana,Hyderabad,low_cost
+site_0126,pre_monsoon,0,460,0.0,Telangana,Hyderabad,low_cost
+site_0126,sw_monsoon,21,610,0.03442622950819672,Telangana,Hyderabad,low_cost
+site_0126,winter,0,296,0.0,Telangana,Hyderabad,low_cost
+site_0004,ne_monsoon,0,460,0.0,Karnataka,"BTM Layout, Bengaluru - KSPCB",reference
+site_0004,pre_monsoon,0,460,0.0,Karnataka,"BTM Layout, Bengaluru - KSPCB",reference
+site_0004,sw_monsoon,0,610,0.0,Karnataka,"BTM Layout, Bengaluru - KSPCB",reference
+site_0004,winter,0,296,0.0,Karnataka,"BTM Layout, Bengaluru - KSPCB",reference
+site_0003,ne_monsoon,0,460,0.0,Karnataka,"Peenya, Bengaluru - KSPCB",reference
+site_0003,pre_monsoon,0,460,0.0,Karnataka,"Peenya, Bengaluru - KSPCB",reference
+site_0003,sw_monsoon,0,610,0.0,Karnataka,"Peenya, Bengaluru - KSPCB",reference
+site_0003,winter,0,296,0.0,Karnataka,"Peenya, Bengaluru - KSPCB",reference
+site_0009,ne_monsoon,0,460,0.0,Karnataka,"BWSSB Kadabesanahalli, Bengaluru - KSPCB",reference
+site_0009,pre_monsoon,0,460,0.0,Karnataka,"BWSSB Kadabesanahalli, Bengaluru - KSPCB",reference
+site_0009,sw_monsoon,0,610,0.0,Karnataka,"BWSSB Kadabesanahalli, Bengaluru - KSPCB",reference
+site_0009,winter,0,296,0.0,Karnataka,"BWSSB Kadabesanahalli, Bengaluru - KSPCB",reference
+site_0001,ne_monsoon,0,460,0.0,Tamil Nadu,Alandur Bus Depot,reference
+site_0001,pre_monsoon,0,460,0.0,Tamil Nadu,Alandur Bus Depot,reference
+site_0001,sw_monsoon,0,610,0.0,Tamil Nadu,Alandur Bus Depot,reference
+site_0001,winter,0,296,0.0,Tamil Nadu,Alandur Bus Depot,reference
+site_0007,ne_monsoon,0,460,0.0,Tamil Nadu,IIT,reference
+site_0007,pre_monsoon,0,460,0.0,Tamil Nadu,IIT,reference
+site_0007,sw_monsoon,0,610,0.0,Tamil Nadu,IIT,reference
+site_0007,winter,0,296,0.0,Tamil Nadu,IIT,reference
+site_0012,ne_monsoon,117,460,0.2543478260869565,Karnataka,"BWSSB Kadabesanahalli, Bengaluru - CPCB",reference
+site_0012,pre_monsoon,39,460,0.08478260869565217,Karnataka,"BWSSB Kadabesanahalli, Bengaluru - CPCB",reference
+site_0012,sw_monsoon,47,610,0.07704918032786885,Karnataka,"BWSSB Kadabesanahalli, Bengaluru - CPCB",reference
+site_0012,winter,24,296,0.08108108108108109,Karnataka,"BWSSB Kadabesanahalli, Bengaluru - CPCB",reference
+site_0127,ne_monsoon,28,460,0.06086956521739131,Karnataka,Kumaraswamy Layout,low_cost
+site_0127,pre_monsoon,0,460,0.0,Karnataka,Kumaraswamy Layout,low_cost
+site_0127,sw_monsoon,0,610,0.0,Karnataka,Kumaraswamy Layout,low_cost
+site_0127,winter,0,296,0.0,Karnataka,Kumaraswamy Layout,low_cost
+site_0128,ne_monsoon,8,460,0.017391304347826087,Karnataka,Bellandur,low_cost
+site_0128,pre_monsoon,0,460,0.0,Karnataka,Bellandur,low_cost
+site_0128,sw_monsoon,0,610,0.0,Karnataka,Bellandur,low_cost
+site_0128,winter,0,296,0.0,Karnataka,Bellandur,low_cost
+site_0027,ne_monsoon,0,460,0.0,Tamil Nadu,"Manali Village, Chennai - TNPCB",reference
+site_0027,pre_monsoon,0,460,0.0,Tamil Nadu,"Manali Village, Chennai - TNPCB",reference
+site_0027,sw_monsoon,0,610,0.0,Tamil Nadu,"Manali Village, Chennai - TNPCB",reference
+site_0027,winter,0,296,0.0,Tamil Nadu,"Manali Village, Chennai - TNPCB",reference
+site_0026,ne_monsoon,0,460,0.0,Andhra Pradesh,"PWD Grounds, Vijayawada - APPCB",reference
+site_0026,pre_monsoon,0,460,0.0,Andhra Pradesh,"PWD Grounds, Vijayawada - APPCB",reference
+site_0026,sw_monsoon,0,610,0.0,Andhra Pradesh,"PWD Grounds, Vijayawada - APPCB",reference
+site_0026,winter,0,296,0.0,Andhra Pradesh,"PWD Grounds, Vijayawada - APPCB",reference
+site_0038,ne_monsoon,0,460,0.0,Telangana,"ICRISAT Patancheru, Hyderabad - TSPCB",reference
+site_0038,pre_monsoon,0,460,0.0,Telangana,"ICRISAT Patancheru, Hyderabad - TSPCB",reference
+site_0038,sw_monsoon,0,610,0.0,Telangana,"ICRISAT Patancheru, Hyderabad - TSPCB",reference
+site_0038,winter,0,296,0.0,Telangana,"ICRISAT Patancheru, Hyderabad - TSPCB",reference
+site_0043,ne_monsoon,353,460,0.7673913043478261,Telangana,Hyderabad,reference
+site_0043,pre_monsoon,231,460,0.5021739130434782,Telangana,Hyderabad,reference
+site_0043,sw_monsoon,411,610,0.6737704918032786,Telangana,Hyderabad,reference
+site_0043,winter,205,296,0.6925675675675675,Telangana,Hyderabad,reference
+site_0046,ne_monsoon,58,460,0.12608695652173912,Kerala,"Vyttila, Kochi - Kerala PCB",reference
+site_0046,pre_monsoon,50,460,0.10869565217391304,Kerala,"Vyttila, Kochi - Kerala PCB",reference
+site_0046,sw_monsoon,70,610,0.11475409836065574,Kerala,"Vyttila, Kochi - Kerala PCB",reference
+site_0046,winter,4,296,0.013513513513513514,Kerala,"Vyttila, Kochi - Kerala PCB",reference
+site_0054,ne_monsoon,55,460,0.11956521739130435,Kerala,"Kacheripady, Ernakulam - Kerala PCB",reference
+site_0054,pre_monsoon,50,460,0.10869565217391304,Kerala,"Kacheripady, Ernakulam - Kerala PCB",reference
+site_0054,sw_monsoon,54,610,0.08852459016393442,Kerala,"Kacheripady, Ernakulam - Kerala PCB",reference
+site_0054,winter,7,296,0.02364864864864865,Kerala,"Kacheripady, Ernakulam - Kerala PCB",reference
+site_0050,ne_monsoon,60,460,0.13043478260869565,Kerala,"Palayam, Kozhikode - Kerala PCB",reference
+site_0050,pre_monsoon,54,460,0.11739130434782609,Kerala,"Palayam, Kozhikode - Kerala PCB",reference
+site_0050,sw_monsoon,64,610,0.10491803278688525,Kerala,"Palayam, Kozhikode - Kerala PCB",reference
+site_0050,winter,7,296,0.02364864864864865,Kerala,"Palayam, Kozhikode - Kerala PCB",reference
+site_0044,ne_monsoon,38,460,0.08260869565217391,Tamil Nadu,Chennai,reference
+site_0044,pre_monsoon,185,460,0.40217391304347827,Tamil Nadu,Chennai,reference
+site_0044,sw_monsoon,202,610,0.33114754098360655,Tamil Nadu,Chennai,reference
+site_0044,winter,117,296,0.3952702702702703,Tamil Nadu,Chennai,reference
+site_0093,ne_monsoon,18,460,0.0391304347826087,Karnataka,SiriJaya,low_cost
+site_0093,pre_monsoon,139,460,0.30217391304347824,Karnataka,SiriJaya,low_cost
+site_0093,sw_monsoon,115,610,0.1885245901639344,Karnataka,SiriJaya,low_cost
+site_0093,winter,27,296,0.09121621621621621,Karnataka,SiriJaya,low_cost
+site_0010,ne_monsoon,0,460,0.0,Telangana,"Sanathnagar, Hyderabad - TSPCB",reference
+site_0010,pre_monsoon,0,460,0.0,Telangana,"Sanathnagar, Hyderabad - TSPCB",reference
+site_0010,sw_monsoon,0,610,0.0,Telangana,"Sanathnagar, Hyderabad - TSPCB",reference
+site_0010,winter,0,296,0.0,Telangana,"Sanathnagar, Hyderabad - TSPCB",reference
