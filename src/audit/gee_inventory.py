@@ -1,7 +1,7 @@
 """Check the Earth Engine extraction is complete and summarise availability (Stage 2 deliverable).
 
-Checks per chunk file: expected row count (stations x days, or stations x hours) and no
-duplicate keys. Summaries: share of station-days (or station-hours) with a value, per
+Checks per chunk file: expected row count (stations x days, or stations x hours), no
+duplicate keys, and at least one non-null value (an all-null chunk means a failed extraction). Summaries: share of station-days (or station-hours) with a value, per
 product, layer, geometry and year; and the same for Kerala in June-September.
 
 Outputs (reports/tables/):
@@ -51,9 +51,12 @@ def chunk_check(product: str, spec: dict, n_stations: int) -> list[dict]:
             full_month = df["time_utc"].nunique() == span_h
         else:
             expected, dups, full_month = n_stations, int(df.duplicated("station_id").sum()), True
+        values = df[value_columns(df, spec["kind"]) if spec["kind"] != "static" else
+                    [c for c in df.columns if c not in ("station_id", "geometry")]]
+        has_values = bool(values.notna().any().any())
         rows.append({"product": product, "file": f.name, "rows": len(df), "expected_rows": expected,
-                     "duplicates": dups, "complete_time_axis": bool(full_month),
-                     "ok": len(df) == expected and dups == 0 and full_month})
+                     "duplicates": dups, "complete_time_axis": bool(full_month), "has_values": has_values,
+                     "ok": len(df) == expected and dups == 0 and full_month and has_values})
     return rows
 
 

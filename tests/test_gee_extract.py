@@ -24,3 +24,12 @@ def test_grid_transform_parses_wkt():
     wkt = ('PARAM_MT["Affine", PARAMETER["num_row", 3], PARAMETER["num_col", 3], PARAMETER["elt_0_0", 0.1], '
            'PARAMETER["elt_0_2", -360.05], PARAMETER["elt_1_1", -0.1], PARAMETER["elt_1_2", 90.05]]')
     assert grid_transform(wkt) == [0.1, 0.0, -360.05, 0.0, -0.1, 90.05]
+
+
+def test_only_minus_360_grids_are_shifted():
+    from src.ingest.gee_extract import needs_lon_shift
+
+    assert needs_lon_shift(-360.05)                       # ERA5-Land from 2024
+    assert not needs_lon_shift(-180.05)                   # ERA5-Land before 2024
+    assert not needs_lon_shift(-180.125)                  # ERA5
+    assert not needs_lon_shift(-180.3125)                 # MERRA-2

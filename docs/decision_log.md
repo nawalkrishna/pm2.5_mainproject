@@ -131,3 +131,57 @@ Options and trade-offs were presented to the student before Stage 2 started.
 
 ## Stage 2 sign-off · 2026-11-03 · DECIDED (student: "Approve, keep L3")
 - Stage 2 approved. Still open (no answer yet): GRIP4 road download (D025) and the regular-grid extraction (D026). Neither is needed for Stage 3; both will be raised again before Stage 4.
+
+## Stage 3 sign-off · 2026-11-03 · DECIDED (student: "Approve Stage 3")
+- Stage 3 approved. Stage 4 starts by proposing QC rules and satellite thresholds with their effect on retention (brief, Stage 4 tasks 1–2); nothing is applied before the student decides.
+
+## Stage 4 proposals · 2026-11-03 · DECIDED (student chose the recommended option for D028–D032 and dropped road density)
+Retention numbers: `reports/tables/qc_pm25_scenarios.csv`, `reports/tables/qc_satellite_options.csv`
+(`src/clean/qc_options.py`). Valid days are counted over all 113 stations with data (114,258 as received);
+Stage 3's 112,234 excludes 3 stations without coordinates (2,024 days), see D032.
+
+## D028 — PM2.5 QC rules (brief, Stage 4 task 1)
+- **Decision:** S3a = remove negative, zero and exactly-1000 values; remove flat-line runs ≥ 24 h; remove isolated spikes (1–2 h runs > 4 × centred 25 h median and > 100 µg/m³). Sensitivity: flat-line ≥ 12 h (S2b).
+- **Effect (valid days kept):** all 113,726 of 114,258 (−532, −0.47 %); Kerala Jun–Sep 3,306 of 3,315 (−9).
+- **Options:** S1 (invalid only, −2 days) / S2a–S2c (flat ≥ 24 / 12 / 6 h: −418 / −851 / −1,644) / **S3a** / S3b (all spikes, −599).
+
+## D029 — MAIAC QA (task 2)
+- **Decision:** "clear" (cloud mask = clear) as the main AOD; "best" as sensitivity.
+- **Effect (Kerala Jun–Sep, valid days with AOD in 10 km):** clear 36.9 %, best 25.1 %. "Any" equals "clear" (MAIAC retrieves only clear pixels).
+
+## D030 — TROPOMI cloud filter (task 2; L3 pre-filter fixed by D027)
+- **Decision:** No extra cloud filter; keep `cloud_fraction` (and NO2-product cloud fraction) as features. Sensitivity: drop station-days with 10 km mean cloud fraction > 0.3.
+- **Effect (Kerala Jun–Sep, NO2 in 10 km):** none 56.1 %; ≤ 0.5 55.2 %; ≤ 0.3 50.3 %; ≤ 0.2 40.2 %. The qa ≥ 0.75 pre-filter already removes most cloudy NO2 pixels: at the station pixel the filter changes almost nothing (37.9 % → 37.0 % at ≤ 0.2).
+- **Note:** this is a day-level filter on the buffer mean; a per-pixel filter needs re-extraction.
+
+## D031 — Minimum valid pixels in a buffer (task 4)
+- **Decision:** No hard minimum; store the valid-pixel count as a feature (as the brief asks) and test ≥ 10 % / ≥ 25 % in Stage 5.
+- **Effect (Kerala Jun–Sep, AOD clear in 10 km):** any 36.9 %; ≥ 10 % 22.4 %; ≥ 25 % 15.4 %; ≥ 50 % 8.7 %. A minimum removes monsoon days first, which is the regime the thesis studies.
+
+## D032 — Coordinates for 3 more stations with data
+- **Finding:** Gandhi Nagar_Ennore (Chennai), Manali Village (Chennai, OpenAQ coordinate conflict) and Vaikuntapuram (Tirupati; in OpenAQ as "Vaikuntapuram, Tirupathi") have 2,024 valid days in 2021–2025 but no coordinates, so they have no satellite data.
+- **Decision:** Take coordinates from the CPCB All India AQI Dashboard as in D017 (needs the student to pass the CAPTCHA), then extract Earth Engine data for these 3 stations.
+
+## D033 — Road density dropped for Phase 1 (updates D025) · 2026-11-03 · DECIDED (student)
+- **Decision:** No GRIP4 download. Urban intensity is represented by population and built-up fraction; road density may be added in Phase 2.
+
+## D032 result · 2026-11-04
+- Coordinates from the CPCB All India AQI Dashboard: Gandhi Nagar_Ennore 13.218341, 80.32027 (not in OpenAQ); Manali Village 13.1662, 80.2584 (equals OpenAQ 10780; OpenAQ 6920 is 363 km off); Vaikuntapuram 13.615387, 79.40923 (equals OpenAQ 3409373). 120 stations now located; Earth Engine re-extracted for all 120 (values for the original 117 identical to the previous run).
+
+## Stage 4 proposals, part 2 · 2026-11-04 · PROPOSED (waiting for student)
+Numbers: `reports/tables/target_comparison.csv`, `reports/tables/buffer_coverage.csv`.
+
+## D034 — Overpass-window target
+- **Proposal:** Mean of QC-passed hours starting 12:00, 13:00, 14:00 IST; valid with ≥ 2 of 3 hours. Window confirmed from Earth Engine overpass times over Kochi and Hyderabad: TROPOMI 12:09–14:11 IST, MAIAC Aqua 13:15–15:00 IST (Terra 10:15–11:15 is outside).
+- **Effect:** 124,342 valid overpass station-days vs 113,727 valid daily (2021–2025). Requiring 3 of 3 hours is the stricter alternative.
+
+## D035 — Satellite buffer for model features
+- **Proposal:** 10 km buffer (b10) as the main Tier A input; station pixel and 5 km as sensitivity runs in Stage 5.
+- **Evidence (valid daily-target days with a value / Spearman ρ with PM2.5):** NO2 pt 52.9 % / 0.32, b5 63.4 % / 0.34, b10 68.9 % / 0.35; AOD pt 32.4 % / 0.22, b5 48.5 % / 0.24, b10 55.0 % / 0.25. Exception: in the SW monsoon AOD ρ falls with buffer size (pt 0.23, b10 0.16), so the trade-off is reported per season.
+
+## D036 — Primary target
+- **Proposal:** Daily mean (24 h, IST) as the primary target (policy-relevant: India's PM2.5 standard is a 24 h mean); overpass-window target as the secondary, satellite-matched comparison. Both are in the dataset.
+- **Evidence:** the two agree closely (Spearman ρ 0.88; overpass/daily median ratio 0.96, 0.90 in winter).
+
+## D037 — PM2.5 lag features
+- **Proposal:** Keep PM2.5 lags 1–3 in Tier A and B (brief, task 6), and add a "no PM2.5 lags" variant of each tier in Stage 5. Reason: lags exist only where a monitor exists, so a model meant for unmonitored locations (mapping, leave-one-station-out) must be evaluated without them, otherwise spatial skill is overstated.

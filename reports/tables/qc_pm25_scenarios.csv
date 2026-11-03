@@ -1,0 +1,29 @@
+scenario,region,hours_removed,valid_days,valid_days_lost,share_kept
+S0 as received,all,0,114258,0,1.0
+S0 as received,kerala,0,10436,0,1.0
+S0 as received,kerala_jjas,0,3315,0,1.0
+S0 as received,other_jjas,0,33776,0,1.0
+S1 invalid values,all,77,114256,2,1.0
+S1 invalid values,kerala,0,10436,0,1.0
+S1 invalid values,kerala_jjas,0,3315,0,1.0
+S1 invalid values,other_jjas,39,33775,1,1.0
+S2a S1 + flat >= 24 h,all,8975,113840,418,0.9963
+S2a S1 + flat >= 24 h,kerala,2349,10322,114,0.9891
+S2a S1 + flat >= 24 h,kerala_jjas,134,3306,9,0.9973
+S2a S1 + flat >= 24 h,other_jjas,1707,33692,84,0.9975
+S2b S1 + flat >= 12 h,all,16254,113407,851,0.9926
+S2b S1 + flat >= 12 h,kerala,4226,10208,228,0.9782
+S2b S1 + flat >= 12 h,kerala_jjas,1185,3230,85,0.9744
+S2b S1 + flat >= 12 h,other_jjas,3469,33586,190,0.9944
+S2c S1 + flat >= 6 h,all,26435,112614,1644,0.9856
+S2c S1 + flat >= 6 h,kerala,6945,9976,460,0.9559
+S2c S1 + flat >= 6 h,kerala_jjas,2082,3148,167,0.9496
+S2c S1 + flat >= 6 h,other_jjas,5965,33421,355,0.9895
+S3a S2a + isolated spikes,all,12873,113726,532,0.9953
+S3a S2a + isolated spikes,kerala,2722,10316,120,0.9885
+S3a S2a + isolated spikes,kerala_jjas,263,3306,9,0.9973
+S3a S2a + isolated spikes,other_jjas,2687,33661,115,0.9966
+S3b S2a + all spikes,all,14522,113659,599,0.9948
+S3b S2a + all spikes,kerala,2925,10306,130,0.9875
+S3b S2a + all spikes,kerala_jjas,327,3303,12,0.9964
+S3b S2a + all spikes,other_jjas,2974,33649,127,0.9962

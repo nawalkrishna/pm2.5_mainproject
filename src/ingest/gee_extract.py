@@ -159,8 +159,18 @@ def grid_transform(transform_wkt: str) -> list[float]:
     return [get("0_0", 1), get("0_1", 0), get("0_2", 0), get("1_0", 0), get("1_1", 1), get("1_2", 0)]
 
 
+def needs_lon_shift(x_origin: float) -> bool:
+    """True for grids stored on 0..360 longitudes with origin near -360 (ERA5-Land from 2024).
+
+    Ordinary global grids start just west of -180 by half a cell (ERA5-Land -180.05,
+    ERA5 -180.125, MERRA-2 -180.3125) and must NOT be shifted. An earlier threshold of
+    -180.1 shifted ERA5 and MERRA-2 by mistake and blanked them (caught 2026-11-04).
+    """
+    return x_origin < -270
+
+
 def fix_lon_origin(img: ee.Image, transform: list[float]) -> ee.Image:
-    """Re-label a grid stored with x origin < -180 so it lines up with -180..180 longitudes.
+    """Re-label a grid stored with origin near -360 so it lines up with -180..180 longitudes.
 
     ERA5-Land images in Earth Engine from mid-January 2024 carry the grid origin -360.05
     instead of -180.05. ``reduceRegion`` on a single point still finds the pixel, but
@@ -168,7 +178,7 @@ def fix_lon_origin(img: ee.Image, transform: list[float]) -> ee.Image:
     +360 degrees (same longitudes) gives values identical to ``reduceRegion``
     (checked at three stations, 2026-11-03).
     """
-    if transform[2] >= -180.1:
+    if not needs_lon_shift(transform[2]):
         return img
     proj = img.select(0).projection()
     shifted = transform[:2] + [transform[2] + 360] + transform[3:]

@@ -1,0 +1,89 @@
+group,option,region,station_days,with_value,share
+MAIAC QA (pt),any,all,112234,36517,0.325
+MAIAC QA (pt),any,kerala,10436,3229,0.309
+MAIAC QA (pt),any,kerala_jjas,3315,390,0.118
+MAIAC QA (pt),any,other_jjas,33195,2689,0.081
+MAIAC QA (pt),clear,all,112234,36509,0.325
+MAIAC QA (pt),clear,kerala,10436,3229,0.309
+MAIAC QA (pt),clear,kerala_jjas,3315,390,0.118
+MAIAC QA (pt),clear,other_jjas,33195,2685,0.081
+MAIAC QA (pt),best,all,112234,30092,0.268
+MAIAC QA (pt),best,kerala,10436,2458,0.236
+MAIAC QA (pt),best,kerala_jjas,3315,236,0.071
+MAIAC QA (pt),best,other_jjas,33195,1710,0.052
+MAIAC QA (b10),any,all,112234,61650,0.549
+MAIAC QA (b10),any,kerala,10436,6056,0.58
+MAIAC QA (b10),any,kerala_jjas,3315,1229,0.371
+MAIAC QA (b10),any,other_jjas,33195,8572,0.258
+MAIAC QA (b10),clear,all,112234,61616,0.549
+MAIAC QA (b10),clear,kerala,10436,6041,0.579
+MAIAC QA (b10),clear,kerala_jjas,3315,1223,0.369
+MAIAC QA (b10),clear,other_jjas,33195,8564,0.258
+MAIAC QA (b10),best,all,112234,53721,0.479
+MAIAC QA (b10),best,kerala,10436,5033,0.482
+MAIAC QA (b10),best,kerala_jjas,3315,832,0.251
+MAIAC QA (b10),best,other_jjas,33195,6023,0.181
+NO2 day-level cloud filter (pt),none,all,112234,59359,0.529
+NO2 day-level cloud filter (pt),none,kerala,10436,5956,0.571
+NO2 day-level cloud filter (pt),none,kerala_jjas,3315,1256,0.379
+NO2 day-level cloud filter (pt),none,other_jjas,33195,9314,0.281
+NO2 day-level cloud filter (pt),cloud <= 0.5,all,112234,59350,0.529
+NO2 day-level cloud filter (pt),cloud <= 0.5,kerala,10436,5956,0.571
+NO2 day-level cloud filter (pt),cloud <= 0.5,kerala_jjas,3315,1256,0.379
+NO2 day-level cloud filter (pt),cloud <= 0.5,other_jjas,33195,9309,0.28
+NO2 day-level cloud filter (pt),cloud <= 0.3,all,112234,59143,0.527
+NO2 day-level cloud filter (pt),cloud <= 0.3,kerala,10436,5947,0.57
+NO2 day-level cloud filter (pt),cloud <= 0.3,kerala_jjas,3315,1255,0.379
+NO2 day-level cloud filter (pt),cloud <= 0.3,other_jjas,33195,9226,0.278
+NO2 day-level cloud filter (pt),cloud <= 0.2,all,112234,57614,0.513
+NO2 day-level cloud filter (pt),cloud <= 0.2,kerala,10436,5841,0.56
+NO2 day-level cloud filter (pt),cloud <= 0.2,kerala_jjas,3315,1225,0.37
+NO2 day-level cloud filter (pt),cloud <= 0.2,other_jjas,33195,8710,0.262
+NO2 day-level cloud filter (b10),none,all,112234,77281,0.689
+NO2 day-level cloud filter (b10),none,kerala,10436,7577,0.726
+NO2 day-level cloud filter (b10),none,kerala_jjas,3315,1860,0.561
+NO2 day-level cloud filter (b10),none,other_jjas,33195,16141,0.486
+NO2 day-level cloud filter (b10),cloud <= 0.5,all,112234,76288,0.68
+NO2 day-level cloud filter (b10),cloud <= 0.5,kerala,10436,7506,0.719
+NO2 day-level cloud filter (b10),cloud <= 0.5,kerala_jjas,3315,1830,0.552
+NO2 day-level cloud filter (b10),cloud <= 0.5,other_jjas,33195,15689,0.473
+NO2 day-level cloud filter (b10),cloud <= 0.3,all,112234,70490,0.628
+NO2 day-level cloud filter (b10),cloud <= 0.3,kerala,10436,7097,0.68
+NO2 day-level cloud filter (b10),cloud <= 0.3,kerala_jjas,3315,1669,0.503
+NO2 day-level cloud filter (b10),cloud <= 0.3,other_jjas,33195,13117,0.395
+NO2 day-level cloud filter (b10),cloud <= 0.2,all,112234,60453,0.539
+NO2 day-level cloud filter (b10),cloud <= 0.2,kerala,10436,6217,0.596
+NO2 day-level cloud filter (b10),cloud <= 0.2,kerala_jjas,3315,1332,0.402
+NO2 day-level cloud filter (b10),cloud <= 0.2,other_jjas,33195,9348,0.282
+NO2: min valid-pixel share (b10),>= 0 %,all,112234,77281,0.689
+NO2: min valid-pixel share (b10),>= 0 %,kerala,10436,7577,0.726
+NO2: min valid-pixel share (b10),>= 0 %,kerala_jjas,3315,1860,0.561
+NO2: min valid-pixel share (b10),>= 0 %,other_jjas,33195,16141,0.486
+NO2: min valid-pixel share (b10),>= 10 %,all,112234,72923,0.65
+NO2: min valid-pixel share (b10),>= 10 %,kerala,10436,7204,0.69
+NO2: min valid-pixel share (b10),>= 10 %,kerala_jjas,3315,1696,0.512
+NO2: min valid-pixel share (b10),>= 10 %,other_jjas,33195,14341,0.432
+NO2: min valid-pixel share (b10),>= 25 %,all,112234,68161,0.607
+NO2: min valid-pixel share (b10),>= 25 %,kerala,10436,6818,0.653
+NO2: min valid-pixel share (b10),>= 25 %,kerala_jjas,3315,1539,0.464
+NO2: min valid-pixel share (b10),>= 25 %,other_jjas,33195,12431,0.374
+NO2: min valid-pixel share (b10),>= 50 %,all,112234,61873,0.551
+NO2: min valid-pixel share (b10),>= 50 %,kerala,10436,6190,0.593
+NO2: min valid-pixel share (b10),>= 50 %,kerala_jjas,3315,1295,0.391
+NO2: min valid-pixel share (b10),>= 50 %,other_jjas,33195,10074,0.303
+MAIAC AOD clear: min valid-pixel share (b10),>= 0 %,all,112234,61616,0.549
+MAIAC AOD clear: min valid-pixel share (b10),>= 0 %,kerala,10436,6041,0.579
+MAIAC AOD clear: min valid-pixel share (b10),>= 0 %,kerala_jjas,3315,1223,0.369
+MAIAC AOD clear: min valid-pixel share (b10),>= 0 %,other_jjas,33195,8564,0.258
+MAIAC AOD clear: min valid-pixel share (b10),>= 10 %,all,112234,50628,0.451
+MAIAC AOD clear: min valid-pixel share (b10),>= 10 %,kerala,10436,4670,0.447
+MAIAC AOD clear: min valid-pixel share (b10),>= 10 %,kerala_jjas,3315,743,0.224
+MAIAC AOD clear: min valid-pixel share (b10),>= 10 %,other_jjas,33195,5373,0.162
+MAIAC AOD clear: min valid-pixel share (b10),>= 25 %,all,112234,44772,0.399
+MAIAC AOD clear: min valid-pixel share (b10),>= 25 %,kerala,10436,3903,0.374
+MAIAC AOD clear: min valid-pixel share (b10),>= 25 %,kerala_jjas,3315,510,0.154
+MAIAC AOD clear: min valid-pixel share (b10),>= 25 %,other_jjas,33195,4092,0.123
+MAIAC AOD clear: min valid-pixel share (b10),>= 50 %,all,112234,37949,0.338
+MAIAC AOD clear: min valid-pixel share (b10),>= 50 %,kerala,10436,2980,0.286
+MAIAC AOD clear: min valid-pixel share (b10),>= 50 %,kerala_jjas,3315,288,0.087
+MAIAC AOD clear: min valid-pixel share (b10),>= 50 %,other_jjas,33195,2751,0.083

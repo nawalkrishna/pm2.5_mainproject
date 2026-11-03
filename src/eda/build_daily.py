@@ -25,6 +25,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+from src.align.reanalysis import merra2_pm25, relative_humidity  # noqa: F401  (canonical home; re-exported for tests)
 from src.ingest.gee_extract import OUT_DIR as GEE_DIR
 from src.ingest.ground_pm25 import HOURLY_PATH, STATIONS_PATH
 from src.utils.config import load_config
@@ -35,19 +36,6 @@ log = get_logger("build_daily")
 
 OUT_PATH: Path = DATA_INTERIM / "eda_daily.parquet"
 IST = "Asia/Kolkata"
-
-
-def relative_humidity(t_k: pd.Series, td_k: pd.Series) -> pd.Series:
-    """RH in percent from temperature and dew point (K), Magnus form over water."""
-    t, td = t_k - 273.15, td_k - 273.15
-    a, b = 17.625, 243.04
-    return 100 * np.exp(a * td / (b + td)) / np.exp(a * t / (b + t))
-
-
-def merra2_pm25(df: pd.DataFrame) -> pd.Series:
-    """Reconstructed MERRA-2 surface PM2.5 in µg/m³ (GMAO MERRA-2 FAQ)."""
-    kg_m3 = df["DUSMASS25"] + df["OCSMASS"] + df["BCSMASS"] + df["SSSMASS25"] + df["SO4SMASS"] * (132.14 / 96.06)
-    return kg_m3 * 1e9
 
 
 def daily_pm25(min_hours: int) -> pd.DataFrame:

@@ -1,0 +1,18 @@
+# PM2.5 QC rules applied in Stage 4 (decision D028, scenario S3a). Sensitivity: flat_run_hours 12.
+invalid:
+  negative: true          # pm25 < 0
+  zero: true              # pm25 == 0
+  exact_values: [1000]    # instrument ceiling
+flat_run_hours: 24        # remove runs of >= N consecutive identical hourly values
+spike:
+  factor: 4.0             # > factor x centred rolling median
+  min_value: 100.0        # and > this (µg/m³)
+  window_hours: 25
+  min_periods: 12
+  max_isolated_run: 2     # only spike runs of <= N hours are removed
+
+# Satellite settings (D029-D031)
+maiac_variant: aod_clear
+maiac_sensitivity_variant: aod_best
+no2_cloud_filter: null           # none; sensitivity 0.3 (10 km mean)
+min_valid_pixel_share: 0         # none; sensitivity 0.10, 0.25

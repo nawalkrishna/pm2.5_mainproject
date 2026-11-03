@@ -1,0 +1,6 @@
+step,rule,rows_before,rows_removed,rows_after
+pm25_qc,invalid_negative,2995590,17,2995573
+pm25_qc,invalid_zero,2995573,58,2995515
+pm25_qc,invalid_exact,2995515,2,2995513
+pm25_qc,flat_run,2995513,8964,2986549
+pm25_qc,spike_isolated,2986549,3926,2982623

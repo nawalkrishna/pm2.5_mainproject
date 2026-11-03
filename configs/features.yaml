@@ -1,16 +1,50 @@
-# First-draft feature list. PROVISIONAL: proposed at the end of Stage 1,
-# finalised in Stage 4. Names are descriptive, not final column names.
+# Tier A and Tier B feature sets (Stage 4, task 8). Column names are those of
+# data/processed/pm25_dataset_v<version>.parquet.
+#
+# Tier A (full): satellite gases + AOD + reanalysis aerosol + meteorology + temporal + static.
+# Tier B (fallback for cloudy days): everything except satellite inputs.
+# Satellite columns use the buffer named in `satellite_geometry` (PROPOSED D035: b10);
+# `{g}` is replaced by it. Missing satellite values stay NaN, with availability flags (task 7).
+# Road density is not used (D033).
 
-tier_a:   # full: satellite + reanalysis + meteorology + static + temporal
-  satellite: [no2_trop, co, so2, hcho, uv_aerosol_index, cloud_fraction, maiac_aod_055]
-  satellite_meta: [valid_pixel_count, satellite_available]
-  reanalysis_aerosol: [reanalysis_pm25_or_aod]
-  meteorology: [t2m, rh, u10, v10, precip, blh]
-  temporal: [doy_sin, doy_cos, month, season, pm25_lag1, pm25_lag2, pm25_lag3]
-  static: [elevation, dist_to_coast, land_cover, road_density, population_density]
+satellite_geometry: b10          # pt | b5 | b10
 
-tier_b:   # fallback for cloudy days: no satellite inputs
-  reanalysis_aerosol: [reanalysis_pm25_or_aod]
-  meteorology: [t2m, rh, u10, v10, precip, blh]
-  temporal: [doy_sin, doy_cos, month, season, pm25_lag1, pm25_lag2, pm25_lag3]
-  static: [elevation, dist_to_coast, land_cover, road_density, population_density]
+targets:
+  daily: pm25_daily
+  overpass: pm25_overpass
+
+groups:
+  satellite:
+    - no2_trop_{g}
+    - co_{g}
+    - so2_{g}
+    - hcho_{g}
+    - uvai_{g}
+    - cloud_frac_{g}
+    - no2_cloud_{g}
+    - aod_clear_{g}
+  satellite_meta:
+    - no2_trop_n_{g}
+    - aod_clear_n_{g}
+    - sat_no2_{g}
+    - sat_aod_{g}
+  reanalysis_aerosol: [merra2_pm25, merra2_aod]
+  meteorology: [t2m_c, rh, u10, v10, wind_speed, precip_mm, blh]
+  temporal: [doy_sin, doy_cos, month, season_code]
+  lags_pm25: [pm25_daily_lag1, pm25_daily_lag2, pm25_daily_lag3]
+  lags_met: [t2m_c_lag1, rh_lag1, wind_speed_lag1, precip_mm_lag1, blh_lag1,
+             precip_mm_lag2, precip_mm_lag3]
+  static: [elevation_m, dist_to_coast_km, lc_tree, lc_crop, lc_built, lc_water, lc_grass_shrub, population_b5]
+
+# For the overpass target, these daily columns are replaced by their 12-15 IST versions.
+overpass_substitutes:
+  t2m_c: t2m_c_op
+  rh: rh_op
+  wind_speed: wind_speed_op
+  blh: blh_op
+  merra2_pm25: merra2_pm25_op
+  merra2_aod: merra2_aod_op
+
+tiers:
+  tier_a: [satellite, satellite_meta, reanalysis_aerosol, meteorology, temporal, lags_pm25, lags_met, static]
+  tier_b: [reanalysis_aerosol, meteorology, temporal, lags_pm25, lags_met, static]

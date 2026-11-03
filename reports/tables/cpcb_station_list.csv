@@ -54,10 +54,10 @@ cpcb_051,Tamil Nadu,Ariyalur,"Keelapalur, Ariyalur - TNPCB",TNPCB,3409343,0.0,11
 cpcb_052,Tamil Nadu,Chengalpattu,"Crescent University, Chengalpattu - TNPCB",TNPCB,358627,0.0,12.877731599999999,80.08348070000001,openaq_name_match
 cpcb_053,Tamil Nadu,Chennai,"Alandur Bus Depot, Chennai - CPCB",CPCB,5558;3409319,0.0,12.909916100000002,80.1076538,openaq_name_match
 cpcb_054,Tamil Nadu,Chennai,"Arumbakkam, Chennai - TNPCB",TNPCB,11581,0.0,13.0664,80.2112,openaq_name_match
-cpcb_055,Tamil Nadu,Chennai,"Gandhi Nagar_Ennore, Chennai - TNPCB",TNPCB,,,,,unmatched
+cpcb_055,Tamil Nadu,Chennai,"Gandhi Nagar_Ennore, Chennai - TNPCB",TNPCB,,,13.218341,80.32027,manual:CPCB CCR All India AQI Dashboard station map centre (https://airquality.cpcb.gov.in/ccr/all-india-aqi-portal)
 cpcb_056,Tamil Nadu,Chennai,"Kodungaiyur, Chennai - TNPCB",TNPCB,11579,0.0,13.1278,80.2642,openaq_name_match
 cpcb_057,Tamil Nadu,Chennai,"Manali, Chennai - CPCB",CPCB,2586,0.0,13.164544,80.26285,openaq_name_match
-cpcb_058,Tamil Nadu,Chennai,"Manali Village, Chennai - TNPCB",TNPCB,6920;10780,362607.0,,,coord_conflict
+cpcb_058,Tamil Nadu,Chennai,"Manali Village, Chennai - TNPCB",TNPCB,6920;10780,362607.0,13.1662,80.2584,manual:CPCB CCR All India AQI Dashboard station map centre (https://airquality.cpcb.gov.in/ccr/all-india-aqi-portal)
 cpcb_059,Tamil Nadu,Chennai,"Perungudi, Chennai - TNPCB",TNPCB,12046,0.0,12.9533,80.2357,openaq_name_match
 cpcb_060,Tamil Nadu,Chennai,"Royapuram, Chennai - TNPCB",TNPCB,11578,0.0,13.1036,80.2909,openaq_name_match
 cpcb_061,Tamil Nadu,Chennai,"Velachery Res. Area, Chennai - CPCB",CPCB,5655,0.0,13.0052189,80.2398125,openaq_name_match
@@ -101,7 +101,7 @@ cpcb_098,Andhra Pradesh,Ongole,"Jakrama Nagar, Ongole - APPCB",APPCB,,,,,unmatch
 cpcb_099,Andhra Pradesh,Rajamahendravaram,"Anand Kala Kshetram, Rajamahendravaram - APPCB",APPCB,,,16.9872867,81.7363176,manual:CPCB CCR All India AQI Dashboard station map centre (https://airquality.cpcb.gov.in/ccr/all-india-aqi-portal)
 cpcb_100,Andhra Pradesh,Srikakulam,"Chinna Bharatham Colony, Srikakulam - APPCB",APPCB,6458518,0.0,18.292191,83.897173,openaq_name_match
 cpcb_101,Andhra Pradesh,Tirumala,"Toll Gate, Tirumala - APPCB",APPCB,,,13.67,79.35,manual:CPCB CCR All India AQI Dashboard station map centre (https://airquality.cpcb.gov.in/ccr/all-india-aqi-portal)
-cpcb_102,Andhra Pradesh,Tirupati,"Vaikuntapuram, Tirupati - APPCB",APPCB,,,,,unmatched
+cpcb_102,Andhra Pradesh,Tirupati,"Vaikuntapuram, Tirupati - APPCB",APPCB,,,13.615387,79.40923,manual:CPCB CCR All India AQI Dashboard station map centre (https://airquality.cpcb.gov.in/ccr/all-india-aqi-portal)
 cpcb_103,Andhra Pradesh,Vijayawada,"HB Colony, Vijayawada - APPCB",APPCB,3409492,0.0,16.536107,80.594233,openaq_name_match
 cpcb_104,Andhra Pradesh,Vijayawada,"Kanuru, Vijayawada - APPCB",APPCB,3409392,0.0,16.486692,80.69943599999999,openaq_name_match
 cpcb_105,Andhra Pradesh,Vijayawada,"Rajiv Gandhi Park, Vijayawada - APPCB",APPCB,3409493,0.0,16.509717,80.612222,openaq_name_match
