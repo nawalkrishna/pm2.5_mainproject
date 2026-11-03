@@ -14,3 +14,6 @@ cpcb:
   # CPCB CCR portal requires a CAPTCHA, so files are downloaded manually by the
   # user. Expected file layout is documented in docs/station_audit.md.
   raw_dir: data/raw/cpcb
+
+gee:
+  project: pm25main                         # Google Cloud project registered for Earth Engine

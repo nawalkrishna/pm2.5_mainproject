@@ -32,6 +32,11 @@ study_period:                 # D011
   start: "2021-01-01"
   end: "2025-12-31"           # inclusive
 
+# D023: extraction window = study period plus December 2020 for 1-3 day lags.
+extraction_period:
+  start: "2020-12-01"
+  end: "2025-12-31"           # inclusive, IST calendar days
+
 # D016: target grid for Stage 2+ (MAIAC native resolution).
 target_grid:
   resolution_m: 1000

@@ -91,3 +91,40 @@ Stage 1; the student approved the recommended set. Numbers are from `docs/statio
 
 ## D018 — Commit Stage 1
 - **Decision:** Commit code, configs, docs, report tables, figures and the data manifest; never `data/` or `.env`.
+
+---
+
+## Stage 2 source choices · 2026-11-03 · DECIDED (student: "Approve all")
+
+Options and trade-offs were presented to the student before Stage 2 started.
+
+## D019 — Reanalysis aerosol product (S1)
+- **Decision:** MERRA-2 aerosol diagnostics, Earth Engine `NASA/GSFC/MERRA/aer/2` (hourly, ~0.5° × 0.625°). Surface PM2.5 is reconstructed from the species bands (formula and citation recorded in `docs/data_dictionary.md` once verified); total AOD from `TOTEXTTAU`.
+- **Options:** **MERRA-2** / CAMS EAC4 via the Atmosphere Data Store (separate pipeline; 2025 coverage unverified) / CAMS near-real-time `ECMWF/CAMS/NRT` (rejected: a forecast whose model version changes over time).
+
+## D020 — Meteorology source (S2)
+- **Decision:** ERA5-Land hourly (`ECMWF/ERA5_LAND/HOURLY`) for 2 m temperature, 2 m dew point (→ RH), 10 m wind u/v and precipitation; ERA5 hourly (`ECMWF/ERA5/HOURLY`, band `boundary_layer_height`) for boundary-layer height. Both via Earth Engine. CDS is a fallback only.
+
+## D021 — Stations to extract (S3)
+- **Decision:** All CPCB stations in the five states that have coordinates: 115 of 122. The 7 without (6 unmatched, 1 unresolved coordinate conflict) are all not usable. (The figure of 117 given to the student was a miscount.) Extra points are cheap and keep the sensitivity set (D013) open.
+
+## D022 — Satellite sampling (S4)
+- **Decision:** For TROPOMI and MAIAC, store the centre-pixel value and the 5 km and 10 km buffer means, each with its valid-pixel count and the QA/cloud rule used. Buffer choice is made in Stage 4.
+
+## D023 — Time window and time handling (S5)
+- **Decision:** Extract 2020-12-01 to 2025-12-31 (December 2020 provides the 1–3 day lags for 1 January 2021). Hourly products are extracted in UTC and aggregated locally, so both a daily IST mean and a 12:00–15:00 IST overpass-window value can be built in Stage 4.
+
+## D024 — CPCB timestamp convention (S6)
+- **Decision:** Settle empirically by aligning CPCB hourly values with OpenAQ hourly values (which carry explicit UTC start/end times) for the same monitors. Result recorded below when known.
+- **Result 2026-11-03:** CPCB labels are **IST hour-start** times: the hour labelled `HH:00` covers HH:00–HH+1:00 IST, i.e. UTC start = label − 5:30. Evidence (`reports/tables/cpcb_timestamp_check.csv`, `src/audit/cpcb_timestamp_check.py`): for 5 stations (one per state) and two weeks of 2025 (March, July), the offset k = 0 gives the highest correlation at every station (median r 0.986 vs 0.944 at k = −1 and 0.878 at k = +1). Median absolute difference at k = 0 is 0.75 µg/m³, so OpenAQ is not a byte-identical copy, but the alignment is unambiguous.
+
+## D025 — Static layers (S7)
+- **Decision:** SRTM elevation, ESA WorldCover 2021 land cover, WorldPop population, distance to coast computed locally from the GADM boundaries. Road density: GRIP4 global roads, pending a separate download approval; otherwise dropped from Phase 1.
+
+## D026 — Point extraction first (brief, Stage 2 task 3)
+- **Decision:** Only station-point/buffer extraction (3a) is done now. The regular grid (3b) waits for separate approval.
+
+## D027 — TROPOMI product level · 2026-11-03 · PROPOSED (needs student sign-off at end of Stage 2)
+- **Finding:** The Earth Engine S5P "L3" products are pre-filtered by Google (qa_value thresholds: NO2 0.75, AER_AI 0.8, CO/HCHO/CLOUD 0.5, SO2 > 0.5 plus extra criteria) and contain no `qa_value` band. Stage 4 can therefore only make the filter *stricter* (e.g. with `cloud_fraction`), not test looser QA thresholds.
+- **Proposal:** Use the Earth Engine L3 products (already extracted), state the fixed pre-filter in the thesis, and test cloud-fraction thresholds in Stage 4.
+- **Alternative:** Download L2 orbit files from the Copernicus Data Space Ecosystem (with `qa_value`) and grid them ourselves: full QA control, but tens of GB per year and a separate pipeline.

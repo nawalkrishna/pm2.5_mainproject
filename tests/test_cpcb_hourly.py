@@ -20,3 +20,25 @@ def test_daily_counts_hours_with_pm25(tmp_path):
     assert daily["pm25_daily_mean"].tolist() == [10.0, 20.0]
     assert info["pm25_hours"] == 34
     assert (daily["cpcb_site"] == "site_1").all()
+
+
+def test_timestamp_check_recovers_known_offset():
+    import numpy as np
+    from src.audit.cpcb_timestamp_check import compare
+
+    rng = np.random.default_rng(0)
+    labels = pd.date_range("2025-03-01 00:00", periods=200, freq="h")       # naive IST labels
+    values = pd.Series(rng.gamma(2, 20, 200), index=labels, name="cpcb")
+    # OpenAQ copy indexed by UTC hour start, built under the "IST hour-start" convention.
+    openaq = pd.Series(values.to_numpy(), index=labels - pd.Timedelta(hours=5, minutes=30), name="openaq")
+    res = compare(values, openaq)
+    assert res.loc[res["pearson_r"].idxmax(), "offset_h"] == 0
+    assert res.set_index("offset_h").loc[0, "share_within_0_5"] == 1.0
+
+
+def test_ist_hour_start_label_converts_to_previous_utc_day():
+    from src.ingest.ground_pm25 import ist_labels_to_utc
+
+    utc = ist_labels_to_utc(pd.Series(["2025-01-01 00:00:00", "2025-01-01 05:00:00", "2025-01-01 06:00:00"]))
+    assert [str(t) for t in utc] == ["2024-12-31 18:30:00+00:00", "2024-12-31 23:30:00+00:00",
+                                     "2025-01-01 00:30:00+00:00"]

@@ -1,0 +1,86 @@
+# Earth Engine products extracted at station points/buffers (Stage 2).
+# Every ID and band was checked on 2026-11-03 against the Earth Engine catalog page
+# given in `docs` and against the live asset (bandNames). See docs/data_dictionary.md.
+#
+# kind:
+#   daily_mean   images falling in each IST calendar day are averaged (after masking),
+#                then the station point / buffer mean and valid-pixel count are taken.
+#   hourly       every image (hour) is sampled at the station point (no buffer: the
+#                grid cell is far larger than the buffers).
+#   static       single images, sampled once.
+
+geometries:          # D022
+  pt: 0              # centre pixel (the pixel containing the station)
+  b5: 5000           # buffer radius, metres
+  b10: 10000
+
+products:
+  tropomi:
+    kind: daily_mean
+    geometries: [pt, b5, b10]
+    # Native L3 grid of the S5P OFFL products (0.01 degree).
+    projection_from: COPERNICUS/S5P/OFFL/L3_NO2
+    layers:
+      no2_trop:   {collection: COPERNICUS/S5P/OFFL/L3_NO2,    band: tropospheric_NO2_column_number_density, unit: mol/m2, prefilter: "qa_value >= 0.75 (applied by Google)"}
+      no2_cloud:  {collection: COPERNICUS/S5P/OFFL/L3_NO2,    band: cloud_fraction, unit: fraction, prefilter: "as no2_trop"}
+      co:         {collection: COPERNICUS/S5P/OFFL/L3_CO,     band: CO_column_number_density, unit: mol/m2, prefilter: "qa_value >= 0.5 (applied by Google)"}
+      so2:        {collection: COPERNICUS/S5P/OFFL/L3_SO2,    band: SO2_column_number_density, unit: mol/m2, prefilter: "qa_value > 0.5 plus further criteria (applied by Google)"}
+      hcho:       {collection: COPERNICUS/S5P/OFFL/L3_HCHO,   band: tropospheric_HCHO_column_number_density, unit: mol/m2, prefilter: "qa_value >= 0.5 (applied by Google)"}
+      uvai:       {collection: COPERNICUS/S5P/OFFL/L3_AER_AI, band: absorbing_aerosol_index, unit: unitless (354/388 nm), prefilter: "qa_value >= 0.8 (applied by Google)"}
+      cloud_frac: {collection: COPERNICUS/S5P/OFFL/L3_CLOUD,  band: cloud_fraction, unit: fraction, prefilter: "qa_value >= 0.5 (applied by Google)"}
+    docs: https://developers.google.com/earth-engine/datasets/catalog/sentinel-5p
+
+  maiac:
+    kind: daily_mean
+    geometries: [pt, b5, b10]
+    projection_from: MODIS/061/MCD19A2_GRANULES
+    collection: MODIS/061/MCD19A2_GRANULES
+    band: Optical_Depth_055
+    scale_factor: 0.001
+    qa_band: AOD_QA
+    # Three QA variants are stored so Stage 4 can compare retention (brief, Stage 4 task 2).
+    variants:
+      aod_any:   "no QA filter (any retrieved AOD)"
+      aod_clear: "AOD_QA bits 0-2 (cloud mask) == 1 (clear)"
+      aod_best:  "AOD_QA bits 0-2 == 1 and bits 8-11 (QA for AOD) == 0 (best quality)"
+    docs: https://developers.google.com/earth-engine/datasets/catalog/MODIS_061_MCD19A2_GRANULES
+
+  era5_land:
+    kind: hourly
+    collection: ECMWF/ERA5_LAND/HOURLY
+    bands: [temperature_2m, dewpoint_temperature_2m, u_component_of_wind_10m, v_component_of_wind_10m,
+            surface_pressure, total_precipitation_hourly]
+    docs: https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_LAND_HOURLY
+
+  era5:
+    kind: hourly
+    collection: ECMWF/ERA5/HOURLY
+    # BLH is the reason for this product (D020); the other bands are a fallback for
+    # coastal stations whose ERA5-Land cell is masked as sea.
+    bands: [boundary_layer_height, temperature_2m, dewpoint_temperature_2m, u_component_of_wind_10m,
+            v_component_of_wind_10m, total_precipitation]
+    docs: https://developers.google.com/earth-engine/datasets/catalog/ECMWF_ERA5_HOURLY
+
+  merra2:
+    kind: hourly
+    collection: NASA/GSFC/MERRA/aer/2
+    # Surface PM2.5 (kg/m3) = DUSMASS25 + OCSMASS + BCSMASS + SSSMASS25 + SO4SMASS * 132.14/96.06
+    # (GMAO MERRA-2 FAQ, https://gmao.gsfc.nasa.gov/gmao-products/merra-2/faq_merra-2/). Built in Stage 4.
+    bands: [DUSMASS25, OCSMASS, BCSMASS, SSSMASS25, SO4SMASS, TOTEXTTAU]
+    docs: https://developers.google.com/earth-engine/datasets/catalog/NASA_GSFC_MERRA_aer_2
+
+  static:
+    kind: static
+    geometries: [pt, b5, b10]
+    layers:
+      elevation:  {image: USGS/SRTMGL1_003, band: elevation, reducer: mean, scale: 30, unit: m,
+                   docs: https://developers.google.com/earth-engine/datasets/catalog/USGS_SRTMGL1_003}
+      worldcover: {collection: ESA/WorldCover/v200, band: Map, reducer: histogram, scale: 10, unit: class fractions (2021),
+                   docs: https://developers.google.com/earth-engine/datasets/catalog/ESA_WorldCover_v200}
+      population: {collection: WorldPop/GP/100m/R2025A/v1/pop, band: population, reducer: sum, scale: 100,
+                   years: [2021, 2022, 2023, 2024, 2025], unit: people in buffer (constrained),
+                   docs: https://developers.google.com/earth-engine/datasets/catalog/WorldPop_GP_100m_R2025A_v1_pop}
+
+# Requests in flight at once; Earth Engine allows more, this keeps the quota safe.
+max_workers: 6
+hourly_chunk_days: 8

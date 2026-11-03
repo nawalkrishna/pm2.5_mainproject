@@ -6,6 +6,7 @@ so we can later prove which exact inputs produced a result.
 
 import csv
 import hashlib
+import threading
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -13,6 +14,9 @@ from src.utils.paths import PROJECT_ROOT, REPORTS_TABLES
 
 MANIFEST_PATH: Path = REPORTS_TABLES / "data_manifest.csv"
 FIELDS = ["file", "source", "date_range", "rows", "bytes", "sha256", "retrieved_utc", "notes"]
+# Extraction runs in worker threads; without this lock concurrent read-modify-write
+# cycles interleaved and corrupted the manifest (2026-11-03).
+_LOCK = threading.Lock()
 
 
 def sha256_of(path: Path) -> str:
@@ -52,14 +56,17 @@ def record_file(
         "notes": notes,
     }
 
-    existing: list[dict[str, str]] = []
-    if manifest_path.exists():
-        with open(manifest_path, newline="", encoding="utf-8") as fh:
-            existing = [r for r in csv.DictReader(fh) if r["file"] != rel]
+    with _LOCK:
+        existing: list[dict[str, str]] = []
+        if manifest_path.exists():
+            with open(manifest_path, newline="", encoding="utf-8") as fh:
+                existing = [r for r in csv.DictReader(fh) if r["file"] != rel]
 
-    manifest_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(manifest_path, "w", newline="", encoding="utf-8") as fh:
-        writer = csv.DictWriter(fh, fieldnames=FIELDS)
-        writer.writeheader()
-        writer.writerows(existing)
-        writer.writerow(entry)
+        manifest_path.parent.mkdir(parents=True, exist_ok=True)
+        tmp = manifest_path.with_suffix(".tmp")
+        with open(tmp, "w", newline="", encoding="utf-8") as fh:
+            writer = csv.DictWriter(fh, fieldnames=FIELDS)
+            writer.writeheader()
+            writer.writerows(existing)
+            writer.writerow(entry)
+        tmp.replace(manifest_path)
