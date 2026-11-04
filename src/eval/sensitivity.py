@@ -6,7 +6,7 @@ and keeps the column names, so the main feature lists apply unchanged:
     satellite variants   change Tier A's inputs and rows (which rows have AOD); Tier A and
                          Tier A no-lag are refitted, Tier B is taken from the main run
                          (same rows, folds, seed and features, so it is identical)
-    target variants      change the target (overpass window, QC S2b); all four tiers are refitted
+    target variants      change the target (overpass window, QC flat-line rule); all four tiers are refitted
 
 Output: data/processed/predictions_sensitivity_v<version>.parquet (column ``variant``).
 
@@ -49,7 +49,7 @@ def mask_satellite(df: pd.DataFrame, g: str, rows: pd.Series, layers: list[str])
     return df
 
 
-def qc_s2b_targets(flat_hours: int) -> pd.DataFrame:
+def qc_targets(flat_hours: int) -> pd.DataFrame:
     """Daily target and PM2.5 lags rebuilt with a different flat-line rule (D028 sensitivity)."""
     qc = load_config("qc") | {"flat_run_hours": flat_hours}
     h = apply_qc(pd.read_parquet(HOURLY_PATH, columns=["station_id", "timestamp_utc", "pm25"]), qc)
@@ -76,7 +76,7 @@ def variant_data(base: pd.DataFrame, spec: dict) -> tuple[pd.DataFrame, str, str
         df = mask_satellite(df, g, df[f"aod_clear_n_{g}"] < s * B10_PIXELS["aod_clear"], ["aod_clear"])
         df = mask_satellite(df, g, df[f"no2_trop_n_{g}"] < s * B10_PIXELS["no2_trop"], ["no2_trop"])
     if "flat_run_hours" in spec:
-        new = qc_s2b_targets(spec["flat_run_hours"])
+        new = qc_targets(spec["flat_run_hours"])
         cols = ["pm25_daily", "pm25_daily_lag1", "pm25_daily_lag2", "pm25_daily_lag3"]
         df = df.drop(columns=cols).merge(new[["station_id", "date_ist", *cols]], on=["station_id", "date_ist"],
                                          how="left")

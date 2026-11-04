@@ -10,7 +10,7 @@ Figures (reports/figures/):
     target_daily_vs_overpass.png, buffer_coverage.png
 
 Usage:
-    python -m src.features.compare [--version 1]
+    python -m src.features.compare [--version 2]
 """
 
 import argparse
@@ -97,7 +97,7 @@ def plot_buffers(bc: pd.DataFrame, path) -> None:
     style.save(fig, path)
 
 
-def main(version: int = 1) -> None:
+def main(version: int = 2) -> None:
     style.apply()
     df = pd.read_parquet(DATA_PROCESSED / f"pm25_dataset_v{version}.parquet")
     tc = target_comparison(df)
@@ -111,5 +111,5 @@ def main(version: int = 1) -> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--version", type=int, default=1)
+    parser.add_argument("--version", type=int, default=2)
     main(parser.parse_args().version)

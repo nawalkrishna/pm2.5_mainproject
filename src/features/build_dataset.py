@@ -22,7 +22,7 @@ Outputs:
     reports/tables/dataset_reconciliation.csv       hours -> QC -> days -> final rows
 
 Usage:
-    python -m src.features.build_dataset [--version 1]
+    python -m src.features.build_dataset [--version 2]
 """
 
 import argparse
@@ -93,7 +93,7 @@ def reconciliation(final: pd.DataFrame, targets: pd.DataFrame, period: dict) -> 
     return pd.DataFrame(rows, columns=["step", "count"])
 
 
-def main(version: int = 1) -> Path:
+def main(version: int = 2) -> Path:
     area = load_config("study_area")
     align = load_config("alignment")
     seasons = load_config("audit")["seasons"]
@@ -146,5 +146,5 @@ def main(version: int = 1) -> Path:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--version", type=int, default=1)
+    parser.add_argument("--version", type=int, default=2)
     main(parser.parse_args().version)

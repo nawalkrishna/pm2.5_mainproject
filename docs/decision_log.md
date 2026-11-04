@@ -213,7 +213,10 @@ Configured in `configs/experiments.yaml`. The brief fixes the split types, metri
 - **Proposal:** Percentile 95 % intervals from 1,000 bootstrap resamples of the 46 spatial blocks (D038), keeping every row of a drawn block (`src/eval/bootstrap.py`). Differences between models are bootstrapped on the same rows (paired). Reason: errors are correlated within a city and across days, so resampling rows would give intervals far too narrow.
 - **Alternatives:** station bootstrap (113 clusters, narrower); block-by-month bootstrap (also accounts for time correlation in the temporal split; more complex).
 
-## D028 review — QC flat-line rule, 24 h (S3a) or 12 h (S2b) · 2026-11-04 · OPEN
+## D028 review — QC flat-line rule, 24 h (S3a) or 12 h · 2026-11-04 · DECIDED (student: "Adopt S2b, rerun")
 - **Finding (D042 sensitivity):** S2b flags 20,318 hours (S3a 12,967) and removes 432 of 113,727 valid days. Those days carry 11–30 % of the Random Forest's squared error; temporal R² rises from 0.34 to 0.41 without PM2.5 lags and from 0.58 to 0.65 with them. The extra 7,370 hours are 12–23 h runs of identical values, with repeated round values (45.0 occurs 379 times) and 3.5 × the usual share above 100 µg/m³, which points to stuck instruments.
 - **Recommendation:** adopt S2b as the main rule on instrument-plausibility grounds and keep S3a as the sensitivity, stating in the thesis that the change was examined after seeing its effect on skill. Adopting it means rerunning Stage 4 targets and the Stage 5 runs (about 1.5 h).
 - **Alternative:** keep S3a (decided before any model results) and report S2b as sensitivity only.
+- **Decision:** the main QC rule becomes **S3a-12h**: invalid values, flat-line runs ≥ 12 h, and isolated spikes (as S3a). This is the variant tested in D042, labelled "S2b" in the Stage 5 summary; strictly, S2b in the Stage 4 option table had no spike rule, so the adopted rule is named S3a-12h. S3a (flat-line ≥ 24 h) becomes the sensitivity variant `qc_flat24`.
+- **Disclosure for the thesis:** the change was made after seeing its effect on model skill; the justification is instrument plausibility (12–23 h runs of identical hourly values), and S3a results are reported alongside.
+- **Effect on files:** dataset v2 (`pm25_dataset_v2.parquet`), predictions v2; v1 files stay on disk and in git history (configs at commit a013019).
