@@ -204,3 +204,16 @@ Configured in `configs/experiments.yaml`. The brief fixes the split types, metri
 
 ## D041 — Reporting bins
 - **Proposal:** Cloud-fraction bins 0–0.2, 0.2–0.5, 0.5–0.8, 0.8–1.0 (TROPOMI, 10 km mean) plus "missing".
+
+## D042 — Sensitivity runs for the Stage 4 choices · 2026-11-04 · PROPOSED
+- **Proposal:** Random Forest, temporal and blocked splits (as the ablation), `src/eval/sensitivity.py`, configured in `configs/experiments.yaml` (`sensitivity`). Satellite variants (MAIAC "best" QA, D029; station pixel and 5 km buffer, D035; no satellite input when the 10 km cloud fraction > 0.3, D030; ≥ 10 % / ≥ 25 % valid pixels for AOD and NO2, D031) refit Tier A on the variant's rows and reuse Tier B from the main run (same rows, folds, seed and features). Target variants (overpass target, D036; QC S2b flat-line ≥ 12 h, D028) refit all four tiers. LOSO and linear regression are not rerun (cost; the main run shows blocked and LOSO agree).
+- **Alternatives:** all splits and models (about 8 h); or the temporal split only.
+
+## D043 — Confidence intervals · 2026-11-04 · PROPOSED
+- **Proposal:** Percentile 95 % intervals from 1,000 bootstrap resamples of the 46 spatial blocks (D038), keeping every row of a drawn block (`src/eval/bootstrap.py`). Differences between models are bootstrapped on the same rows (paired). Reason: errors are correlated within a city and across days, so resampling rows would give intervals far too narrow.
+- **Alternatives:** station bootstrap (113 clusters, narrower); block-by-month bootstrap (also accounts for time correlation in the temporal split; more complex).
+
+## D028 review — QC flat-line rule, 24 h (S3a) or 12 h (S2b) · 2026-11-04 · OPEN
+- **Finding (D042 sensitivity):** S2b flags 20,318 hours (S3a 12,967) and removes 432 of 113,727 valid days. Those days carry 11–30 % of the Random Forest's squared error; temporal R² rises from 0.34 to 0.41 without PM2.5 lags and from 0.58 to 0.65 with them. The extra 7,370 hours are 12–23 h runs of identical values, with repeated round values (45.0 occurs 379 times) and 3.5 × the usual share above 100 µg/m³, which points to stuck instruments.
+- **Recommendation:** adopt S2b as the main rule on instrument-plausibility grounds and keep S3a as the sensitivity, stating in the thesis that the change was examined after seeing its effect on skill. Adopting it means rerunning Stage 4 targets and the Stage 5 runs (about 1.5 h).
+- **Alternative:** keep S3a (decided before any model results) and report S2b as sensitivity only.

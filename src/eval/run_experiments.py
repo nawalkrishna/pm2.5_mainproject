@@ -33,9 +33,14 @@ log = get_logger("run_experiments")
 META = ["station_id", "date_ist", "state", "year", "month", "season", "cloud_frac_b10", "sat_aod_b10", "sat_no2_b10"]
 
 
-def load(cfg: dict) -> pd.DataFrame:
-    df = pd.read_parquet(DATA_PROCESSED / f"pm25_dataset_v{cfg['dataset_version']}.parquet")
-    return df[df[cfg["target"]].notna()].reset_index(drop=True)
+def load(cfg: dict, df: pd.DataFrame | None = None, target: str | None = None) -> pd.DataFrame:
+    """Rows with a valid target, with station coordinates (for the spatial blocks)."""
+    target = target or cfg["target"]
+    if df is None:
+        df = pd.read_parquet(DATA_PROCESSED / f"pm25_dataset_v{cfg['dataset_version']}.parquet")
+    df = df[df[target].notna()].reset_index(drop=True)
+    stations = pd.read_csv(DATA_PROCESSED.parent / "interim" / "ground_stations.csv")[["station_id", "latitude", "longitude"]]
+    return df.merge(stations, on="station_id", how="left")
 
 
 def make_folds(df: pd.DataFrame, cfg: dict, names: list[str]) -> tuple[list[S.Fold], pd.Series]:
@@ -97,8 +102,6 @@ def main(split_names: list[str] | None = None) -> Path:
     cfg = load_config("experiments")
     split_names = split_names or ["temporal", "blocked", "loso", "combined", "ablation"]
     df = load(cfg)
-    stations = pd.read_csv(DATA_PROCESSED.parent / "interim" / "ground_stations.csv")[["station_id", "latitude", "longitude"]]
-    df = df.merge(stations, on="station_id", how="left")
 
     preds = []
     base_names = [s for s in split_names if s != "ablation"]

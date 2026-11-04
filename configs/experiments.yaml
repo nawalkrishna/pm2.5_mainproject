@@ -45,3 +45,24 @@ ablation_groups:
   gases: ["no2_trop_{g}", "co_{g}", "so2_{g}", "hcho_{g}", "uvai_{g}", "cloud_frac_{g}", "no2_cloud_{g}",
           "no2_trop_n_{g}", "sat_no2_{g}"]
   aod: ["aod_clear_{g}", "aod_clear_n_{g}", "sat_aod_{g}"]
+
+# D042: sensitivity runs for the Stage 4 choices. Random Forest, temporal and blocked splits
+# (as the ablation). A satellite variant changes only Tier A's inputs and rows, so Tier B is
+# reused from the main run; a target variant changes the target, so both tiers are refitted.
+sensitivity:
+  splits: [temporal, blocked]
+  satellite_variants:
+    aod_best: {aod_variant: aod_best}           # D029: MAIAC "best" QA instead of "clear"
+    geometry_pt: {geometry: pt}                 # D035: station pixel
+    geometry_b5: {geometry: b5}                 # D035: 5 km buffer
+    cloud_le_0.3: {max_cloud_fraction: 0.3}     # D030: no satellite input when 10 km cloud > 0.3
+    min_pixels_10: {min_pixel_share: 0.10}      # D031: AOD / NO2 need >= 10 % valid pixels
+    min_pixels_25: {min_pixel_share: 0.25}      # D031: >= 25 %
+  target_variants:
+    overpass: {target: pm25_overpass}           # D036: 12-15 IST target
+    qc_s2b: {flat_run_hours: 12}                # D028: flat-line rule at 12 h
+
+# D043: confidence intervals by resampling spatial blocks (D038) with replacement.
+bootstrap:
+  n: 1000
+  seed: 42

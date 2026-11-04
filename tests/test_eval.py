@@ -61,3 +61,27 @@ def test_cloud_bin_labels_missing_as_string():
     p = pd.DataFrame({"cloud_frac_b10": [0.1, 0.9, np.nan, 1.0]})
     out = cloud_bin(p, [0, 0.2, 0.5, 0.8, 1.0001]).tolist()
     assert out == ["0.0-0.2", "0.8-1.0", "missing", "0.8-1.0"]
+
+
+def test_bootstrap_matches_metrics_and_zero_difference():
+    from src.eval.bootstrap import paired_ci
+
+    rng = np.random.default_rng(1)
+    df = pd.DataFrame({"block": np.repeat(np.arange(20), 30), "y": rng.normal(30, 10, 600)})
+    df["p1"] = df["y"] + rng.normal(0, 5, 600)
+    df["p2"] = df["p1"]
+    out = paired_ci(df, "block", "y", ["p1", "p2"], n=200, seed=0)
+    ref = metrics(df["y"], df["p1"])
+    assert np.isclose(out["r2_p1"], ref["r2"]) and np.isclose(out["rmse_p1"], ref["rmse"])
+    assert out["r2_p1_lo"] < out["r2_p1"] < out["r2_p1_hi"]
+    assert out["d_r2"] == 0 and out["d_r2_lo"] == 0 and out["d_r2_hi"] == 0
+
+
+def test_sensitivity_mask_recomputes_flags():
+    from src.eval.sensitivity import mask_satellite
+
+    df = pd.DataFrame({"aod_clear_b10": [0.3, 0.4], "aod_clear_n_b10": [100, 5],
+                       "no2_trop_b10": [1e-5, 2e-5], "no2_trop_n_b10": [200, 200]})
+    out = mask_satellite(df, "b10", df["aod_clear_n_b10"] < 10, ["aod_clear"])
+    assert out["sat_aod_b10"].tolist() == [1, 0] and out["sat_no2_b10"].tolist() == [1, 1]
+    assert np.isnan(out.loc[1, "aod_clear_b10"]) and df.loc[1, "aod_clear_b10"] == 0.4   # input untouched

@@ -8,7 +8,8 @@ Derived "tiers":
 Tables (reports/tables/):
     results_overall.csv, results_station_sets.csv (D013 subsets), results_persistence_rows.csv,
     results_by_season.csv, results_by_cloud.csv, results_by_station.csv,
-    results_kerala_jjas.csv, results_ablation.csv
+    results_kerala_jjas.csv, results_ablation.csv,
+    results_ci.csv (block-bootstrap CIs, D043), results_sensitivity.csv (D042, if run)
 Figures (reports/figures/):
     results_pred_vs_obs.png, results_residuals_by_season.png, results_station_spread.png,
     results_skill_by_cloud.png, results_ablation.png
@@ -22,6 +23,7 @@ import numpy as np
 import pandas as pd
 
 from src.eda import style
+from src.eval.bootstrap import paired_ci
 from src.eval.metrics import grouped
 from src.utils.config import load_config
 from src.utils.logging_setup import get_logger
@@ -162,6 +164,69 @@ def plot_ablation(ab: pd.DataFrame, path) -> None:
     style.save(fig, path)
 
 
+ROW_ID = ["split", "fold", "station_id", "date_ist"]
+CI_COMPARISONS = [   # (label, first, second): CI of each R² and of R²(first) − R²(second), same rows
+    ("Tier A − Tier B, same rows, lags", ("random_forest", "tier_a"), ("random_forest", "tier_b_satrows")),
+    ("Tier A − Tier B, same rows, no lags", ("random_forest", "tier_a_nolag"), ("random_forest", "tier_b_nolag_satrows")),
+    ("Linear: Tier A − Tier B, same rows, no lags", ("linear", "tier_a_nolag"), ("linear", "tier_b_nolag_satrows")),
+    ("Two-tier no lags − climatology", ("random_forest", "two_tier_nolag"), ("climatology", "none")),
+    ("Two-tier with lags − persistence", ("random_forest", "two_tier"), ("persistence", "none")),
+    ("RF − linear, two-tier no lags", ("random_forest", "two_tier_nolag"), ("linear", "two_tier_nolag")),
+]
+
+
+def paired_rows(p: pd.DataFrame, first: tuple, second: tuple) -> pd.DataFrame:
+    """Rows scored by both (model, tier) pairs: columns y, a, b plus the row keys."""
+    def one(m, t, name):
+        return p[(p["model"] == m) & (p["tier"] == t)].set_index(ROW_ID)[["y", "pred", "state", "season"]].rename(
+            columns={"pred": name})
+    a = one(*first, "a")
+    return a.join(one(*second, "b")[["b"]], how="inner").dropna(subset=["y", "a", "b"]).reset_index()
+
+
+def ci_rows(w: pd.DataFrame, blocks: pd.Series, cfg: dict) -> dict:
+    return paired_ci(w.assign(block=w["station_id"].map(blocks)), "block", "y", ["a", "b"],
+                     cfg["bootstrap"]["n"], cfg["bootstrap"]["seed"])
+
+
+def ci_table(base: pd.DataFrame, blocks: pd.Series, cfg: dict) -> pd.DataFrame:
+    rows = []
+    for split in SPLIT_ORDER:
+        s = base[base["split"] == split]
+        for label, first, second in CI_COMPARISONS:
+            w = paired_rows(s, first, second)
+            for subset, ww in [("all", w), ("sw_monsoon", w[w["season"] == "sw_monsoon"])]:
+                if len(ww):
+                    rows.append({"split": split, "comparison": label, "subset": subset, **ci_rows(ww, blocks, cfg)})
+    return pd.DataFrame(rows)
+
+
+def sensitivity_table(main_rf: pd.DataFrame, sens: pd.DataFrame, blocks: pd.Series, cfg: dict) -> pd.DataFrame:
+    """Tier A vs Tier B on each variant's Tier A rows, and the two-tier R², with CIs."""
+    variants = [("main", main_rf)] + [(v, sens[sens["variant"] == v]) for v in sens["variant"].unique()]
+    rows = []
+    for name, v in variants:
+        b_src = v if (v["tier"] == "tier_b").any() else main_rf      # satellite variants reuse Tier B
+        for split in cfg["sensitivity"]["splits"]:
+            for suffix, lags in [("_nolag", "no"), ("", "yes")]:
+                a = v[(v["split"] == split) & (v["tier"] == f"tier_a{suffix}")]
+                b = b_src[(b_src["split"] == split) & (b_src["tier"] == f"tier_b{suffix}")]
+                both = pd.concat([a, b])
+                same = paired_rows(both, ("random_forest", f"tier_a{suffix}"), ("random_forest", f"tier_b{suffix}"))
+                two = b.set_index(ROW_ID)[["y", "pred"]].join(a.set_index(ROW_ID)["pred"].rename("pred_a"), how="left")
+                two["a"] = two["pred_a"].fillna(two["pred"])
+                two = two.rename(columns={"pred": "b"}).reset_index()
+                ci_same, ci_two = ci_rows(same, blocks, cfg), ci_rows(two, blocks, cfg)
+                rows.append({"variant": name, "split": split, "pm25_lags": lags,
+                             "tier_a_rows": ci_same["n_rows"], "r2_tier_a": ci_same["r2_a"],
+                             "r2_tier_b_same_rows": ci_same["r2_b"], "d_r2": ci_same["d_r2"],
+                             "d_r2_lo": ci_same["d_r2_lo"], "d_r2_hi": ci_same["d_r2_hi"],
+                             "rows": ci_two["n_rows"], "r2_two_tier": ci_two["r2_a"],
+                             "r2_two_tier_lo": ci_two["r2_a_lo"], "r2_two_tier_hi": ci_two["r2_a_hi"],
+                             "r2_tier_b_all_rows": ci_two["r2_b"]})
+    return pd.DataFrame(rows)
+
+
 def main() -> None:
     style.apply()
     cfg = load_config("experiments")
@@ -198,6 +263,15 @@ def main() -> None:
                     grouped(ab[ab["season"] == "sw_monsoon"], [], KEYS).assign(subset="sw_monsoon")])
     ab = fmt(ab)
     ab.to_csv(T / "results_ablation.csv", index=False)
+
+    blocks = pd.read_csv(T / "spatial_blocks.csv").set_index("station_id")["block"]
+    ci = ci_table(base, blocks, cfg)
+    ci.round(4).to_csv(T / "results_ci.csv", index=False)
+    sens_path = DATA_PROCESSED / f"predictions_sensitivity_v{cfg['dataset_version']}.parquet"
+    if sens_path.exists():
+        main_rf = base[(base["model"] == "random_forest") & base["split"].isin(cfg["sensitivity"]["splits"])]
+        sensitivity_table(main_rf, pd.read_parquet(sens_path), blocks, cfg).round(4).to_csv(
+            T / "results_sensitivity.csv", index=False)
 
     plot_pred_vs_obs(base, F / "results_pred_vs_obs.png")
     plot_residuals(base, F / "results_residuals_by_season.png")

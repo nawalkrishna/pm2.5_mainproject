@@ -1,6 +1,6 @@
 # Phase 1 report: satellite-based ground-level PM2.5 in South India
 
-**Status: Stages 1–5 complete; Stage 5 awaiting sign-off (D038–D041 proposed).**
+**Status: Stages 1–5 complete; Stage 5 awaiting sign-off (D038–D043 proposed; QC rule S3a vs S2b open).**
 Every number below comes from a file in `reports/tables/` or the dataset's data card, and can be
 regenerated with `python -m src.run stage5` (after `stage2` and `stage4`). Stage details are in
 `station_audit.md`, `stage2_acquisition.md`, `stage3_exploration.md`, `feasibility_summary.md`
@@ -115,9 +115,10 @@ Random Forest, held-out R² (RMSE in µg/m³). All 113 stations; the D013 headli
 - **Without lags, skill at an unseen station is low:** LOSO R² 0.29, against 0.21 for
   climatology. This matches the Stage 3 finding that stations within 10 km correlate only at
   median ρ 0.49.
-- **Linear regression matches or beats the RF in the spatial no-lag splits** (LOSO 0.32 against
-  0.29). The untuned RF appears to learn station-specific patterns that do not transfer; Phase 2
-  tuning should check this.
+- **Linear regression and the RF are indistinguishable in the spatial no-lag splits.** LOSO R²
+  is 0.32 against 0.29, but the difference is not significant: RF − linear −0.026, 95 % CI
+  [−0.092, +0.036] (`results_ci.csv`). In the temporal split the RF is clearly better
+  (+0.137, CI [+0.059, +0.239]).
 - **Per station (LOSO, no lags):** median R² 0.19. It is below 0 at 34 of 113 stations and below
   −1.5 at 10. Medians by state: Tamil Nadu 0.36, Karnataka 0.29, Andhra Pradesh 0.11, Kerala 0.03,
   Telangana −0.19.
@@ -136,9 +137,12 @@ RF R² on the 62,544 rows where MAIAC AOD exists within 10 km (15,419 in the 202
 | LOSO | 0.248 | 0.226 | 0.698 | 0.699 |
 | Combined | 0.154 | 0.142 | 0.568 | 0.569 |
 
-- **With MERRA-2 and meteorology already in the model, the satellite inputs add little.** The
-  gain is about +0.02 R² in the spatial splits without lags, and none in the temporal split or
-  with lags.
+- **With MERRA-2 and meteorology already in the model, the satellite inputs add little, but the
+  gain is real where it matters.** At an unseen location (no lags) Tier A beats Tier B on the same
+  rows by +0.022 R² in both the blocked split (95 % CI [+0.009, +0.035]) and LOSO
+  ([+0.009, +0.038]). In the SW monsoon the gain is larger: LOSO +0.047 [+0.015, +0.086] and
+  blocked +0.036 [+0.003, +0.060]. There is no gain in the temporal split (−0.007
+  [−0.015, −0.001]) or with PM2.5 lags (|Δ| ≤ 0.002 everywhere).
 - **The ablation explains why** (`results_ablation.csv`; RF, no lags, blocked split, rows with
   AOD). R² rises from 0.12 (met only) to 0.17 (+ gases), 0.19 (+ AOD) and 0.24 (+ MERRA-2).
   The satellite inputs do carry signal, about +0.07 R² over meteorology alone, but MERRA-2
@@ -185,12 +189,63 @@ Without the station's own recent measurements, no model beats a monthly mean in 
 monsoon. This confirms the Stage 3 finding that no predictor correlates with PM2.5 there
 at |ρ| > 0.1.
 
-### 7.4 Headline answer for Phase 1
+### 7.4 Confidence intervals (D043, `results_ci.csv`)
+
+Intervals come from 1,000 resamples of the 46 spatial blocks. Model differences are
+bootstrapped on the same rows.
+
+- **Absolute R² is uncertain because blocks differ a lot.** Two-tier without lags: LOSO 0.29
+  [0.22, 0.36], temporal 0.34 [0.19, 0.53]. Tier A with lags (AOD rows): LOSO 0.70 [0.58, 0.78].
+- **Differences between models on the same rows are much tighter.** The comparisons in 7.1–7.2
+  are reported with these paired intervals.
+- **Against the simple baselines:** the RF beats climatology without lags (LOSO +0.086
+  [+0.008, +0.160]) and persistence with lags (temporal +0.072 [+0.027, +0.169]).
+- **In the SW monsoon the no-lag model is no better than climatology** (blocked −0.005
+  [−0.151, +0.064], LOSO +0.012 [−0.061, +0.089]).
+
+### 7.5 Sensitivity to the Stage 4 choices (D042, `results_sensitivity.csv`)
+
+Random Forest, no PM2.5 lags. "Δ" is Tier A − Tier B on the variant's Tier A rows, with a 95 %
+block-bootstrap CI.
+
+| Variant | Tier A rows (blocked) | Δ R², blocked | Δ R², temporal | Two-tier R², blocked / temporal |
+|---|---|---|---|---|
+| Main (clear AOD, 10 km, no filters) | 62,544 | +0.022 [+0.009, +0.035] | −0.007 [−0.015, −0.001] | 0.290 / 0.341 |
+| MAIAC "best" QA (D029) | 54,427 | +0.019 [+0.009, +0.033] | −0.007 [−0.019, +0.001] | 0.287 / 0.341 |
+| Station pixel (D035) | 36,867 | +0.008 [−0.012, +0.026] | −0.009 [−0.034, +0.005] | 0.279 / 0.342 |
+| 5 km buffer (D035) | 55,188 | +0.020 [+0.009, +0.029] | −0.011 [−0.032, +0.002] | 0.287 / 0.339 |
+| No satellite when cloud > 0.3 (D030) | 47,714 | +0.017 [+0.004, +0.035] | −0.002 [−0.018, +0.010] | 0.284 / 0.344 |
+| ≥ 10 % valid pixels (D031) | 51,287 | +0.016 [+0.004, +0.031] | −0.009 [−0.026, +0.002] | 0.285 / 0.341 |
+| ≥ 25 % valid pixels (D031) | 45,306 | +0.018 [+0.005, +0.032] | −0.008 [−0.027, +0.004] | 0.284 / 0.341 |
+| Overpass target 12–15 IST (D036) | 67,849 | +0.018 [+0.011, +0.030] | +0.005 [−0.002, +0.016] | 0.181 / 0.190 |
+| QC S2b, flat-line ≥ 12 h (D028) | 62,342 | +0.011 [−0.014, +0.030] | −0.008 [−0.017, −0.000] | 0.314 / 0.410 |
+
+- **The satellite choices do not change the conclusion.** Every buffer, QA or filter variant
+  gives the same small spatial gain (+0.016 to +0.022) and no temporal gain. The main choices
+  (clear AOD, 10 km, no filters) are at least as good as the alternatives. The station pixel
+  is weakest: it has the fewest rows and no significant gain.
+- **The overpass target is much harder to predict** than the daily mean: two-tier R² 0.18–0.19
+  without lags and 0.35–0.41 with lags, because a 3-hour mean is noisier. The satellite gain is
+  similar, so it does not favour the satellite-matched target.
+- **QC S2b raises skill substantially:** temporal R² 0.34 → 0.41 without lags and 0.58 → 0.65
+  with lags.
+  - It flags 20,318 hours instead of 12,967 and removes 432 of 113,727 days (0.4 %). Those
+    days carry 11–30 % of all squared error, including one at 770 µg/m³.
+  - The extra hours are runs of 12–23 identical hourly values (7,370 hours). Repeated round
+    values such as 45.0 occur 379 times, and values above 100 µg/m³ are 3.5 times more common
+    than elsewhere.
+  - This points to stuck instruments, an argument for the stricter rule on QC grounds rather
+    than because it improves the score. **Whether to adopt S2b as the main rule is an open
+    decision (D028 revision).** If adopted, the main runs are repeated.
+
+### 7.6 Headline answer for Phase 1
 
 1. Cloud and the monsoon act mainly by **removing** satellite coverage: AOD exists on 9 % of
    days with cloud fraction > 0.8 and on 37 % of Kerala monsoon days within 10 km.
-2. Where satellite data exist, they add little skill once MERRA-2 and meteorology are present
-   (+0.02 R² in spatial splits).
+2. Where satellite data exist, they add a small but significant amount of skill at unmonitored
+   locations once MERRA-2 and meteorology are present: +0.022 R² [+0.009, +0.035] in the spatial
+   splits, and about +0.04 in the SW monsoon. They add none for gap filling at a monitored
+   station. This holds for every buffer, QA and filter variant tested.
 3. **Tier B therefore recovers essentially all of the two-tier skill.** For an unmonitored
    location, though, that skill is low: LOSO R² 0.29 (0.35 on the 43 headline stations), and
    no skill in the Kerala monsoon.
@@ -201,9 +256,11 @@ at |ρ| > 0.1.
   signal, which may understate what a pixel-level model could do.
 - **Untuned baselines** (D040). Tuning, gradient boosting and spatial features such as
   neighbour-station values or distance-weighted PM2.5 are Phase 2 work.
-- **Sensitivity runs promised in Stage 4 have not been run**: MAIAC "best" QA (D029), cloud
-  filter ≤ 0.3 (D030), minimum pixel share (D031), pixel and 5 km buffers (D035), the overpass
-  target (D036), and QC S2b (D028). They need only config changes and a rerun of `run_experiments`.
+- **Sensitivity coverage.** The sensitivity runs (7.5) use the Random Forest on the temporal
+  and blocked splits only. LOSO and linear regression were not rerun. The QC choice (S3a vs S2b)
+  changes absolute skill noticeably and is still open.
+- **Bootstrap clusters.** The bootstrap resamples spatial blocks only. In the temporal split,
+  errors are also correlated across days, so those intervals may still be somewhat narrow.
 - **Uneven station coverage.** Kerala has 9 stations (6 at ≥ 70 %), so its per-state numbers rest
   on few sites. Several Tamil Nadu and Andhra Pradesh stations start in 2024, so they have little
   training data in the temporal split.
@@ -211,12 +268,10 @@ at |ρ| > 0.1.
   within-station variance. Per-station metrics are in `results_by_station.csv`.
 - **Data caveats.** CPCB may still revise 2025 data. Earth Engine MERRA-2 is missing 6 days in
   September 2025. TROPOMI L3 uses Google's fixed pre-filter (D027).
-- **No uncertainty intervals yet.** Fold-to-fold spread and bootstrap intervals are needed
-  before differences of about 0.02 R² are claimed as significant.
 
 ## 9. Proposed for Phase 2
 
-1. Run the Stage 4 sensitivity set listed above, and add bootstrap confidence intervals.
+1. Settle the QC rule (S3a or S2b) and, if it changes, repeat the main runs.
 2. Add spatial predictors for unmonitored sites (inverse-distance PM2.5 from other stations on
    the same day; this needs care to avoid leakage in LOSO).
 3. Tune models with nested validation, and add gradient boosting.
