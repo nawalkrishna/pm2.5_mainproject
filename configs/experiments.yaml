@@ -1,0 +1,47 @@
+# Stage 5 evaluation framework and baselines. Method choices marked D038-D041 are
+# proposed in docs/decision_log.md and confirmed at the end of Stage 5.
+
+seed: 42
+dataset_version: 1
+target: pm25_daily              # D036 (overpass target: secondary, not run in Phase 1 baselines)
+
+splits:
+  temporal:                     # train on earlier years, test on the last year
+    train_years: [2021, 2022, 2023, 2024]
+    test_years: [2025]
+  spatial_blocks:               # D038: stations within block_km (single linkage) form one block
+    block_km: 50
+    n_folds: 5
+  loso: true                    # leave-one-station-out
+  combined:                     # held-out blocks AND the final year
+    n_folds: 5
+
+# D039: Tier A is applied where MAIAC AOD (10 km) exists; Tier B everywhere.
+# "two_tier" = Tier A where available, else Tier B.
+tier_a_requires: sat_aod_b10
+
+tiers: [tier_a, tier_b, tier_a_nolag, tier_b_nolag]     # *_nolag: without PM2.5 lags (D037)
+
+models:
+  persistence: {}               # yesterday's PM2.5 at the same station (temporal split only)
+  climatology: {}               # train mean by station x month; unseen station: state x month; then month
+  linear:                       # OLS on median-imputed (train only), standardised features
+    impute: median
+  random_forest:                # D040: fixed, untuned hyperparameters for a baseline
+    n_estimators: 200
+    min_samples_leaf: 5
+    max_features: 0.5
+    max_samples: 0.5
+
+# D041: cloud-fraction bins for reporting (TROPOMI cloud fraction, 10 km mean)
+cloud_bins: [0.0, 0.2, 0.5, 0.8, 1.0001]
+
+ablation:                       # Random Forest, no PM2.5 lags, temporal and blocked spatial splits
+  met_only: [meteorology, temporal, static, lags_met]
+  met_gases: [meteorology, temporal, static, lags_met, gases]
+  met_gases_aod: [meteorology, temporal, static, lags_met, gases, aod]
+  all_no_lag: [meteorology, temporal, static, lags_met, gases, aod, reanalysis_aerosol]
+ablation_groups:
+  gases: ["no2_trop_{g}", "co_{g}", "so2_{g}", "hcho_{g}", "uvai_{g}", "cloud_frac_{g}", "no2_cloud_{g}",
+          "no2_trop_n_{g}", "sat_no2_{g}"]
+  aod: ["aod_clear_{g}", "aod_clear_n_{g}", "sat_aod_{g}"]

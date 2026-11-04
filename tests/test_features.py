@@ -47,3 +47,12 @@ def test_distance_to_coast_known_cities():
     c = pd.DataFrame({"latitude": [17.39, 9.98], "longitude": [78.47, 76.28]})      # Hyderabad, Kochi
     km = distance_to_coast_km(c).tolist()
     assert 230 < km[0] < 320 and km[1] < 15
+
+
+def test_nolag_variant_drops_only_pm25_lags():
+    from src.features.feature_sets import feature_columns
+
+    a, a0 = feature_columns("tier_a"), feature_columns("tier_a_nolag")
+    assert set(a) - set(a0) == {"pm25_daily_lag1", "pm25_daily_lag2", "pm25_daily_lag3"}
+    abl = feature_columns(["meteorology", "aod"], extra_groups={"aod": ["aod_clear_{g}"]})
+    assert abl[-1] == "aod_clear_b10" and "t2m_c" in abl

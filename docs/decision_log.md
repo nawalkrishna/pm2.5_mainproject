@@ -168,20 +168,39 @@ Stage 3's 112,234 excludes 3 stations without coordinates (2,024 days), see D032
 ## D032 result · 2026-11-04
 - Coordinates from the CPCB All India AQI Dashboard: Gandhi Nagar_Ennore 13.218341, 80.32027 (not in OpenAQ); Manali Village 13.1662, 80.2584 (equals OpenAQ 10780; OpenAQ 6920 is 363 km off); Vaikuntapuram 13.615387, 79.40923 (equals OpenAQ 3409373). 120 stations now located; Earth Engine re-extracted for all 120 (values for the original 117 identical to the previous run).
 
-## Stage 4 proposals, part 2 · 2026-11-04 · PROPOSED (waiting for student)
+## Stage 4 proposals, part 2 · 2026-11-04 · DECIDED (student: "Approve all", Stage 4 approved)
 Numbers: `reports/tables/target_comparison.csv`, `reports/tables/buffer_coverage.csv`.
 
 ## D034 — Overpass-window target
-- **Proposal:** Mean of QC-passed hours starting 12:00, 13:00, 14:00 IST; valid with ≥ 2 of 3 hours. Window confirmed from Earth Engine overpass times over Kochi and Hyderabad: TROPOMI 12:09–14:11 IST, MAIAC Aqua 13:15–15:00 IST (Terra 10:15–11:15 is outside).
+- **Decision:** Mean of QC-passed hours starting 12:00, 13:00, 14:00 IST; valid with ≥ 2 of 3 hours. Window confirmed from Earth Engine overpass times over Kochi and Hyderabad: TROPOMI 12:09–14:11 IST, MAIAC Aqua 13:15–15:00 IST (Terra 10:15–11:15 is outside).
 - **Effect:** 124,342 valid overpass station-days vs 113,727 valid daily (2021–2025). Requiring 3 of 3 hours is the stricter alternative.
 
 ## D035 — Satellite buffer for model features
-- **Proposal:** 10 km buffer (b10) as the main Tier A input; station pixel and 5 km as sensitivity runs in Stage 5.
+- **Decision:** 10 km buffer (b10) as the main Tier A input; station pixel and 5 km as sensitivity runs in Stage 5.
 - **Evidence (valid daily-target days with a value / Spearman ρ with PM2.5):** NO2 pt 52.9 % / 0.32, b5 63.4 % / 0.34, b10 68.9 % / 0.35; AOD pt 32.4 % / 0.22, b5 48.5 % / 0.24, b10 55.0 % / 0.25. Exception: in the SW monsoon AOD ρ falls with buffer size (pt 0.23, b10 0.16), so the trade-off is reported per season.
 
 ## D036 — Primary target
-- **Proposal:** Daily mean (24 h, IST) as the primary target (policy-relevant: India's PM2.5 standard is a 24 h mean); overpass-window target as the secondary, satellite-matched comparison. Both are in the dataset.
+- **Decision:** Daily mean (24 h, IST) as the primary target (policy-relevant: India's PM2.5 standard is a 24 h mean); overpass-window target as the secondary, satellite-matched comparison. Both are in the dataset.
 - **Evidence:** the two agree closely (Spearman ρ 0.88; overpass/daily median ratio 0.96, 0.90 in winter).
 
 ## D037 — PM2.5 lag features
-- **Proposal:** Keep PM2.5 lags 1–3 in Tier A and B (brief, task 6), and add a "no PM2.5 lags" variant of each tier in Stage 5. Reason: lags exist only where a monitor exists, so a model meant for unmonitored locations (mapping, leave-one-station-out) must be evaluated without them, otherwise spatial skill is overstated.
+- **Decision:** Keep PM2.5 lags 1–3 in Tier A and B (brief, task 6), and add a "no PM2.5 lags" variant of each tier in Stage 5. Reason: lags exist only where a monitor exists, so a model meant for unmonitored locations (mapping, leave-one-station-out) must be evaluated without them, otherwise spatial skill is overstated.
+
+## Stage 4 sign-off · 2026-11-04 · DECIDED (student: "Approve all")
+
+## Stage 5 method choices · 2026-11-04 · PROPOSED (confirmed at the end of Stage 5)
+Configured in `configs/experiments.yaml`. The brief fixes the split types, metrics and baselines; these are the remaining choices.
+
+## D038 — Spatial blocks
+- **Proposal:** Stations linked within 50 km (single linkage) form a block, so each city's cluster of monitors is held out together; 46 blocks, assigned to 5 folds balancing rows (`reports/tables/spatial_blocks.csv`). Reason: nearby stations share local sources (Stage 3: median ρ 0.49 within 10 km); holding them out together avoids leakage through a neighbouring monitor.
+- **Alternatives:** 25 km or 100 km linkage; k-means clusters.
+
+## D039 — Where Tier A applies
+- **Proposal:** Tier A is trained and evaluated on rows where MAIAC AOD (10 km) exists; Tier B on all rows; the two-tier system uses A where available, else B. Tier B is also scored on exactly Tier A's rows, so A and B are compared on the same days.
+- **Alternative:** require NO2 instead (more rows, but AOD is the main satellite aerosol proxy).
+
+## D040 — Random Forest settings
+- **Proposal:** Fixed, untuned baseline: 200 trees, min_samples_leaf 5, max_features 0.5, max_samples 0.5, seed 42. Tuning belongs to Phase 2 and would need a nested validation split.
+
+## D041 — Reporting bins
+- **Proposal:** Cloud-fraction bins 0–0.2, 0.2–0.5, 0.5–0.8, 0.8–1.0 (TROPOMI, 10 km mean) plus "missing".

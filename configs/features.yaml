@@ -3,11 +3,11 @@
 #
 # Tier A (full): satellite gases + AOD + reanalysis aerosol + meteorology + temporal + static.
 # Tier B (fallback for cloudy days): everything except satellite inputs.
-# Satellite columns use the buffer named in `satellite_geometry` (PROPOSED D035: b10);
+# Satellite columns use the buffer named in `satellite_geometry` (D035: b10);
 # `{g}` is replaced by it. Missing satellite values stay NaN, with availability flags (task 7).
 # Road density is not used (D033).
 
-satellite_geometry: b10          # pt | b5 | b10
+satellite_geometry: b10          # pt | b5 | b10 (D035)
 
 targets:
   daily: pm25_daily

@@ -22,3 +22,5 @@ run_utc,step,git_commit,git_dirty,config_hash,metrics_json,notes
 2026-11-03T19:16:37+00:00,build_dataset,95ad9f1,True,059b5395a66d,"{""rows"": 127043, ""stations"": 113}",
 2026-11-03T19:17:24+00:00,build_dataset,95ad9f1,True,059b5395a66d,"{""rows"": 127043, ""stations"": 113}",
 2026-11-03T19:18:51+00:00,build_dataset,24fff61,False,059b5395a66d,"{""rows"": 127043, ""stations"": 113}",
+2026-11-04T13:44:12+00:00,run_experiments,976ca79,True,f5a885522345,"{""prediction_rows"": 226994}",temporal
+2026-11-04T15:01:56+00:00,run_experiments,976ca79,True,f5a885522345,"{""prediction_rows"": 2629177}","temporal,blocked,loso,combined,ablation"

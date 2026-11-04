@@ -16,6 +16,7 @@ Steps:
     stage3       exploratory table, missingness, PM2.5 patterns, data-quality candidates
     qcoptions    retention of candidate QC rules and satellite thresholds (Stage 4 proposal)
     stage4       PM2.5 QC, targets, reanalysis daily, dataset v1, target/buffer comparison
+    stage5       baselines under all splits + ablation, then results tables and figures
 """
 
 import sys
@@ -24,6 +25,7 @@ from src.audit import cpcb_audit, cpcb_timestamp_check, station_audit
 from src.align import reanalysis, targets
 from src.clean import pm25_qc, qc_options
 from src.eda import build_daily, data_quality, missingness, pm25_patterns
+from src.eval import report, run_experiments
 from src.features import build_dataset, compare
 from src.ingest import (boundaries, cpcb_hourly, cpcb_stations, gee_extract, ground_pm25, openaq_daily,
                         openaq_inventory, openaq_locations)
@@ -58,6 +60,7 @@ STEPS = {
     "stage3": lambda: (build_daily.main(), missingness.main(), pm25_patterns.main(), data_quality.main()),
     "qcoptions": qc_options.main,
     "stage4": lambda: (pm25_qc.main(), targets.main(), reanalysis.main(), build_dataset.main(), compare.main()),
+    "stage5": lambda: (run_experiments.main(), report.main()),
 }
 
 if __name__ == "__main__":

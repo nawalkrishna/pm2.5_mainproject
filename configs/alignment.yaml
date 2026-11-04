@@ -7,7 +7,7 @@ timezone: Asia/Kolkata
 overpass_window:
   start_hour: 12            # IST, hours whose START is in [start_hour, end_hour)
   end_hour: 15
-  min_valid_hours: 2        # of 3 (PROPOSED, D034)
+  min_valid_hours: 2        # of 3 (D034)
 daily:
   min_valid_hours: 18       # D012
 lags_days: [1, 2, 3]
