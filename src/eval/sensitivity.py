@@ -6,12 +6,13 @@ and keeps the column names, so the main feature lists apply unchanged:
     satellite variants   change Tier A's inputs and rows (which rows have AOD); Tier A and
                          Tier A no-lag are refitted, Tier B is taken from the main run
                          (same rows, folds, seed and features, so it is identical)
-    target variants      change the target (overpass window, QC flat-line rule); all four tiers are refitted
+    target variants      change the target (overpass window, QC flat-line rule: dataset rebuilt);
+                         all four tiers are refitted
 
 Output: data/processed/predictions_sensitivity_v<version>.parquet (column ``variant``).
 
 Usage:
-    python -m src.eval.sensitivity [--variants aod_best qc_s2b ...]
+    python -m src.eval.sensitivity [--variants aod_best qc_flat24 ...]
 """
 
 import argparse
@@ -23,7 +24,7 @@ import pandas as pd
 from src.align.targets import build_targets
 from src.clean.pm25_qc import apply_qc
 from src.eval import run_experiments as R
-from src.features.build_dataset import add_lags
+from src.features.build_dataset import assemble
 from src.features.feature_sets import feature_columns
 from src.ingest.ground_pm25 import HOURLY_PATH
 from src.models.baselines import RandomForest
@@ -49,13 +50,13 @@ def mask_satellite(df: pd.DataFrame, g: str, rows: pd.Series, layers: list[str])
     return df
 
 
-def qc_targets(flat_hours: int) -> pd.DataFrame:
-    """Daily target and PM2.5 lags rebuilt with a different flat-line rule (D028 sensitivity)."""
+def qc_dataset(flat_hours: int) -> pd.DataFrame:
+    """The whole dataset rebuilt with a different flat-line rule (D028 sensitivity). Rebuilt, not
+    patched onto the main rows: the main dataset lacks the days that only this rule keeps."""
     qc = load_config("qc") | {"flat_run_hours": flat_hours}
     h = apply_qc(pd.read_parquet(HOURLY_PATH, columns=["station_id", "timestamp_utc", "pm25"]), qc)
     log.info("QC flat_run >= %d h: %d hours flagged", flat_hours, int((h["qc_flag"] != "ok").sum()))
-    t = build_targets(h, load_config("alignment"))[["station_id", "date_ist", "pm25_daily"]]
-    return add_lags(t, ["pm25_daily"], load_config("alignment")["lags_days"])
+    return assemble(build_targets(h, load_config("alignment")))
 
 
 def variant_data(base: pd.DataFrame, spec: dict) -> tuple[pd.DataFrame, str, str]:
@@ -76,10 +77,7 @@ def variant_data(base: pd.DataFrame, spec: dict) -> tuple[pd.DataFrame, str, str
         df = mask_satellite(df, g, df[f"aod_clear_n_{g}"] < s * B10_PIXELS["aod_clear"], ["aod_clear"])
         df = mask_satellite(df, g, df[f"no2_trop_n_{g}"] < s * B10_PIXELS["no2_trop"], ["no2_trop"])
     if "flat_run_hours" in spec:
-        new = qc_targets(spec["flat_run_hours"])
-        cols = ["pm25_daily", "pm25_daily_lag1", "pm25_daily_lag2", "pm25_daily_lag3"]
-        df = df.drop(columns=cols).merge(new[["station_id", "date_ist", *cols]], on=["station_id", "date_ist"],
-                                         how="left")
+        df = qc_dataset(spec["flat_run_hours"])
     return df, target, g
 
 

@@ -93,7 +93,8 @@ def reconciliation(final: pd.DataFrame, targets: pd.DataFrame, period: dict) -> 
     return pd.DataFrame(rows, columns=["step", "count"])
 
 
-def main(version: int = 2) -> Path:
+def assemble(targets: pd.DataFrame) -> pd.DataFrame:
+    """Final dataset rows for a target table (also used by the QC sensitivity run, D042)."""
     area = load_config("study_area")
     align = load_config("alignment")
     seasons = load_config("audit")["seasons"]
@@ -103,7 +104,6 @@ def main(version: int = 2) -> Path:
     days = pd.date_range(window["start"], window["end"], freq="D").strftime("%Y-%m-%d")
     df = pd.MultiIndex.from_product([stations["station_id"], days], names=["station_id", "date_ist"]).to_frame(index=False)
 
-    targets = pd.read_parquet(TARGETS_PATH)
     df = df.merge(targets, on=["station_id", "date_ist"], how="left")
     for product in ["tropomi", "maiac"]:
         df = df.merge(daily_satellite(product), on=["station_id", "date_ist"], how="left")
@@ -123,8 +123,15 @@ def main(version: int = 2) -> Path:
                                     default=df[years[min(years)]])
     df = df.drop(columns=pop_cols).merge(stations[["station_id", "state"]], on="station_id", how="left")
 
-    final = df[df["date_ist"].between(period["start"], period["end"])
-               & (df["pm25_daily"].notna() | df["pm25_overpass"].notna())].reset_index(drop=True)
+    return df[df["date_ist"].between(period["start"], period["end"])
+              & (df["pm25_daily"].notna() | df["pm25_overpass"].notna())].reset_index(drop=True)
+
+
+def main(version: int = 2) -> Path:
+    area, align = load_config("study_area"), load_config("alignment")
+    period = area["study_period"]
+    targets = pd.read_parquet(TARGETS_PATH)
+    final = assemble(targets)
     DATA_PROCESSED.mkdir(parents=True, exist_ok=True)
     out = DATA_PROCESSED / f"pm25_dataset_v{version}.parquet"
     final.to_parquet(out, index=False)

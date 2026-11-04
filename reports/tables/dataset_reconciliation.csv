@@ -1,9 +1,9 @@
 step,count
 "hourly rows, all sources (2020-12..2025-12)",2995590
-hourly rows passing QC,2982623
-"station-days with >= 1 QC-passed hour, study period",136965
-  of which valid daily target,113727
-  of which valid overpass target,124342
-  of which at least one valid target,127043
+hourly rows passing QC,2975272
+"station-days with >= 1 QC-passed hour, study period",136885
+  of which valid daily target,113295
+  of which valid overpass target,124149
+  of which at least one valid target,126830
   dropped: station without coordinates,0
-final dataset rows,127043
+final dataset rows,126830

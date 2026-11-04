@@ -6,16 +6,17 @@ Every number comes from a file in `reports/tables/` or the dataset's data card.
 
 ## 1. Deliverable
 
-`data/processed/pm25_dataset_v1.parquet` with data card `pm25_dataset_v1.json`
-(rows, columns, SHA-256 `f107804bd13055b6…`, git commit, config hash, reconciliation).
-127,043 station-days, 113 stations (Kerala 9, Karnataka 40, Tamil Nadu 37, Andhra Pradesh 12,
+`data/processed/pm25_dataset_v2.parquet` with data card `pm25_dataset_v2.json`
+(rows, columns, SHA-256 `101debbed06b6c05…`, git commit, config hash, reconciliation).
+126,830 station-days, 113 stations (Kerala 9, Karnataka 40, Tamil Nadu 37, Andhra Pradesh 12,
 Telangana 15), 2021-01-01 to 2025-12-31, 123 columns. One row per station and IST day with
 at least one valid target. Tier A has 43 features, Tier B 31 (`configs/features.yaml`,
 resolved by `src/features/feature_sets.py`).
 
 ## 2. Cleaning (tasks 1–2)
 
-PM2.5 QC rules S3a (D028), applied by `src/clean/pm25_qc.py` from `configs/qc.yaml`.
+PM2.5 QC rules S3a-12h (D028, revised in the Stage 5 review: flat runs ≥ 12 h instead of 24 h;
+the 24 h rule S3a built dataset v1 and is now a sensitivity run), applied by `src/clean/pm25_qc.py` from `configs/qc.yaml`.
 No row is deleted; each hour carries `qc_flag`. `reports/tables/cleaning_log.csv`:
 
 | Rule | Rows before | Removed | Rows after |
@@ -23,12 +24,14 @@ No row is deleted; each hour carries `qc_flag`. `reports/tables/cleaning_log.csv
 | invalid_negative | 2,995,590 | 17 | 2,995,573 |
 | invalid_zero | 2,995,573 | 58 | 2,995,515 |
 | invalid_exact (1000) | 2,995,515 | 2 | 2,995,513 |
-| flat_run (≥ 24 h) | 2,995,513 | 8,964 | 2,986,549 |
-| spike_isolated | 2,986,549 | 3,926 | 2,982,623 |
+| flat_run (≥ 12 h) | 2,995,513 | 16,334 | 2,979,179 |
+| spike_isolated | 2,979,179 | 3,907 | 2,975,272 |
 
 Per-station counts: `cleaning_log_by_station.csv`. Option retention that informed the choice:
 `qc_pm25_scenarios.csv`, `qc_satellite_options.csv` (D028–D031).
-High values that survive QC are multi-hour episodes: 10 station-days have a daily mean above 500 µg/m³ (5 stations).
+High values that survive QC are multi-hour episodes: 1 station-day has a daily mean above 500 µg/m³
+(cpcb_062, 2025-11-30). Under the 24 h rule there were 10 such days at 5 stations; the 12 h rule
+drops the daily target on 8 of them (too few valid hours left) and lowers one to 469 µg/m³.
 
 Satellite (D029–D031): MAIAC "clear" AOD; no extra TROPOMI cloud filter (the Earth Engine L3
 pre-filter is fixed, D027); no minimum valid-pixel count. Cloud fraction and valid-pixel
@@ -43,10 +46,10 @@ TROPOMI 12:09–14:11 IST, MAIAC Aqua 13:15–15:00 IST, Terra 10:15–11:15 IST
 
 | Subset | Valid daily | Valid overpass | Both | Spearman ρ | Median overpass/daily |
 |---|---|---|---|---|---|
-| All | 113,727 | 124,342 | 111,026 | 0.884 | 0.962 |
-| Winter | 18,668 | 20,070 | 18,264 | 0.838 | 0.903 |
-| SW monsoon | 36,967 | 40,947 | 36,037 | 0.869 | 0.998 |
-| Kerala Jun–Sep | 3,306 | 3,760 | 3,256 | 0.891 | 0.997 |
+| All | 113,295 | 124,149 | 110,614 | 0.885 | 0.961 |
+| Winter | 18,608 | 20,039 | 18,209 | 0.839 | 0.903 |
+| SW monsoon | 36,785 | 40,884 | 35,857 | 0.868 | 0.998 |
+| Kerala Jun–Sep | 3,230 | 3,752 | 3,180 | 0.895 | 0.997 |
 
 ![Targets](../reports/figures/target_daily_vs_overpass.png)
 
@@ -92,13 +95,13 @@ Missing satellite values stay NaN with flags; no imputation (task 7).
 | Step | Count |
 |---|---|
 | Hourly rows, all sources (2020-12..2025-12) | 2,995,590 |
-| Hourly rows passing QC | 2,982,623 |
-| Station-days with ≥ 1 QC-passed hour, study period | 136,965 |
-| … with a valid daily target | 113,727 |
-| … with a valid overpass target | 124,342 |
-| … with at least one valid target | 127,043 |
+| Hourly rows passing QC | 2,975,272 |
+| Station-days with ≥ 1 QC-passed hour, study period | 136,885 |
+| … with a valid daily target | 113,295 |
+| … with a valid overpass target | 124,149 |
+| … with at least one valid target | 126,830 |
 | Dropped: station without coordinates | 0 |
-| **Final dataset rows** | **127,043** |
+| **Final dataset rows** | **126,830** |
 
 ## 6. Problems found and fixed in this stage
 

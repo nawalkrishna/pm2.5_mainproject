@@ -25,3 +25,8 @@ run_utc,step,git_commit,git_dirty,config_hash,metrics_json,notes
 2026-11-04T13:44:12+00:00,run_experiments,976ca79,True,f5a885522345,"{""prediction_rows"": 226994}",temporal
 2026-11-04T15:01:56+00:00,run_experiments,976ca79,True,f5a885522345,"{""prediction_rows"": 2629177}","temporal,blocked,loso,combined,ablation"
 2026-11-04T15:23:38+00:00,sensitivity,4b28259,True,d4ff8a2f046e,"{""prediction_rows"": 1640438}","aod_best,geometry_pt,geometry_b5,cloud_le_0.3,min_pixels_10,min_pixels_25,overpass,qc_s2b"
+2026-11-04T15:27:21+00:00,pm25_qc,5ee8d3a,True,f3bd9539d1d4,"{""flat_run"": 16334, ""invalid_exact"": 2, ""invalid_negative"": 17, ""invalid_zero"": 58, ""spike_isolated"": 3907}",
+2026-11-04T15:27:57+00:00,build_dataset,5ee8d3a,True,98309e8aa637,"{""rows"": 126830, ""stations"": 113}",
+2026-11-04T16:46:47+00:00,run_experiments,5ee8d3a,True,b200223ac6c0,"{""prediction_rows"": 2619698}","temporal,blocked,loso,combined,ablation"
+2026-11-04T16:57:39+00:00,sensitivity,5ee8d3a,True,b200223ac6c0,"{""prediction_rows"": 1638402}","aod_best,geometry_pt,geometry_b5,cloud_le_0.3,min_pixels_10,min_pixels_25,overpass,qc_flat24"
+2026-11-04T17:02:36+00:00,sensitivity,5ee8d3a,True,b200223ac6c0,"{""prediction_rows"": 1639024}",qc_flat24
