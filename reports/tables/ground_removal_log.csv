@@ -633,4 +633,6 @@ cpcb_ccr_1h,Raw_Data_2025_site_6084_rajendra_nagar_north_guntur_appcb_1Hr.csv,0,
 cpcb_ccr_1h,Raw_Data_2025_site_6085_srinivas_nagar_colony_machilipatnam_appcb_1Hr.csv,8760,8760,0,0
 cpcb_ccr_1h,Raw_Data_2025_site_6086_district_court_eluru_appcb_1Hr.csv,8760,8760,0,0
 openaq_hours,sensor_24857,63508,6994,0,56514
+openaq_hours,sensor_24857 half-hour duplicate (D044),0,0,0,-21758
 openaq_hours,sensor_5077812,28933,6101,0,22832
+openaq_hours,sensor_5077812 half-hour duplicate (D044),0,0,0,-8353

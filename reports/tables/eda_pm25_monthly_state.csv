@@ -1,16 +1,16 @@
 state,month,median,p25,p75,n
-Andhra Pradesh,1,46.4,34.5,70.4,937
-Andhra Pradesh,2,41.9,34.8,53.1,945
-Andhra Pradesh,3,35.4,26.9,44.7,1055
-Andhra Pradesh,4,29.8,21.9,39.8,938
-Andhra Pradesh,5,29.7,20.9,38.6,998
-Andhra Pradesh,6,27.2,17.3,35.1,965
-Andhra Pradesh,7,20.0,12.0,31.3,983
-Andhra Pradesh,8,22.1,13.7,32.0,994
-Andhra Pradesh,9,21.6,13.5,34.4,907
-Andhra Pradesh,10,35.4,24.2,48.5,1002
-Andhra Pradesh,11,37.8,27.9,58.9,1036
-Andhra Pradesh,12,46.9,32.3,73.7,1085
+Andhra Pradesh,1,44.8,32.6,69.3,1018
+Andhra Pradesh,2,41.3,33.6,52.6,1001
+Andhra Pradesh,3,35.6,27.2,45.0,1111
+Andhra Pradesh,4,30.5,22.6,40.9,979
+Andhra Pradesh,5,30.1,21.3,38.8,1048
+Andhra Pradesh,6,27.7,17.5,35.1,998
+Andhra Pradesh,7,21.1,12.1,31.9,1024
+Andhra Pradesh,8,22.7,14.0,32.3,1063
+Andhra Pradesh,9,21.8,13.8,34.5,960
+Andhra Pradesh,10,35.9,24.7,48.8,1069
+Andhra Pradesh,11,37.5,27.3,58.2,1106
+Andhra Pradesh,12,45.9,31.5,71.7,1200
 Karnataka,1,33.4,22.4,47.2,4063
 Karnataka,2,34.0,23.9,46.3,3635
 Karnataka,3,33.0,23.7,44.0,3950
@@ -35,27 +35,27 @@ Kerala,9,22.6,16.0,30.6,859
 Kerala,10,27.4,18.0,32.6,802
 Kerala,11,27.2,21.1,34.6,811
 Kerala,12,32.0,25.7,44.9,920
-Tamil Nadu,1,38.9,26.7,54.9,2228
-Tamil Nadu,2,34.8,24.6,46.2,1961
-Tamil Nadu,3,27.9,18.1,39.2,2171
-Tamil Nadu,4,21.7,14.4,30.1,2017
-Tamil Nadu,5,20.8,13.9,28.9,1969
-Tamil Nadu,6,18.7,13.6,26.4,1940
-Tamil Nadu,7,17.0,12.7,23.1,2000
-Tamil Nadu,8,18.0,12.9,25.1,2154
-Tamil Nadu,9,18.6,13.6,25.1,2368
-Tamil Nadu,10,22.8,15.3,35.2,2538
-Tamil Nadu,11,29.6,17.5,49.1,2332
-Tamil Nadu,12,35.3,21.8,56.5,2134
-Telangana,1,48.0,34.5,65.9,1423
-Telangana,2,43.9,32.0,59.5,1350
-Telangana,3,40.4,31.3,54.8,1473
-Telangana,4,38.2,30.2,47.9,1370
-Telangana,5,31.0,24.0,38.7,1340
-Telangana,6,25.0,15.5,34.0,1506
-Telangana,7,19.8,12.6,28.7,1600
-Telangana,8,24.1,15.6,30.1,1584
-Telangana,9,23.9,15.8,30.6,1533
-Telangana,10,31.9,23.8,50.1,1706
-Telangana,11,42.1,29.4,69.4,1654
-Telangana,12,43.3,31.1,66.4,1692
+Tamil Nadu,1,39.0,26.8,54.7,2362
+Tamil Nadu,2,35.0,24.5,46.3,2066
+Tamil Nadu,3,28.2,18.2,39.4,2273
+Tamil Nadu,4,21.7,14.5,30.0,2101
+Tamil Nadu,5,21.0,13.9,29.0,2085
+Tamil Nadu,6,18.9,13.6,26.4,2039
+Tamil Nadu,7,17.0,12.8,23.2,2081
+Tamil Nadu,8,18.4,13.2,25.4,2244
+Tamil Nadu,9,18.9,13.8,25.8,2483
+Tamil Nadu,10,23.1,15.5,35.9,2651
+Tamil Nadu,11,30.0,17.6,49.3,2452
+Tamil Nadu,12,35.7,22.1,57.2,2266
+Telangana,1,47.8,34.5,65.8,1417
+Telangana,2,43.9,32.0,59.5,1347
+Telangana,3,40.4,31.3,54.8,1472
+Telangana,4,38.0,30.2,47.8,1365
+Telangana,5,31.0,23.9,38.6,1329
+Telangana,6,25.0,15.6,34.0,1499
+Telangana,7,19.9,12.7,28.7,1590
+Telangana,8,24.1,15.6,30.1,1577
+Telangana,9,23.9,15.9,30.6,1524
+Telangana,10,32.0,23.8,50.2,1702
+Telangana,11,42.0,29.4,69.3,1652
+Telangana,12,43.3,31.1,66.4,1691

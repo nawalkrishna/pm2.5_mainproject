@@ -31,11 +31,17 @@ matches `data/raw` exactly.
 unit, source, qc_flag`. Timestamps are the start of the hour. Row reconciliation
 (`reports/tables/ground_removal_log.csv`):
 
-| Source | Hours in window | Empty (no value) | Non-numeric | Kept |
-|---|---|---|---|---|
-| CPCB CCR 1 h | 4,697,112 | 1,780,868 | 0 | 2,916,244 |
-| OpenAQ (US Consulates) | 92,441 | 13,095 | 0 | 79,346 |
-| **Total** | | | | **2,995,590** (113 stations) |
+| Source | Hours in window | Empty (no value) | Non-numeric | Duplicate hour (D044) | Kept |
+|---|---|---|---|---|---|
+| CPCB CCR 1 h | 4,697,112 | 1,780,868 | 0 | 0 | 2,916,244 |
+| OpenAQ (US Consulates) | 92,441 | 13,095 | 0 | 30,111 | 49,235 |
+| **Total** | | | | | **2,965,479** (113 stations) |
+
+**Duplicate consulate hours (D044, found in the Phase 1 verification).** Until October 2024
+OpenAQ returns most US Consulate hours twice, as one-hour bins starting at :00 and at :30 IST
+(Hyderabad 21,758, Chennai 8,353). One record per IST hour is kept: the :00 bin, or the :30
+bin relabelled to its hour start when it is the only one (`one_per_ist_hour`, unit test).
+Datasets v1 and v2 were built before this fix and kept 79,346 consulate hours.
 
 **CPCB timestamp convention (D024):** labels are IST hour-start. For 5 stations (one per
 state) and two weeks of 2025, aligning CPCB with OpenAQ's explicit UTC times gives the best

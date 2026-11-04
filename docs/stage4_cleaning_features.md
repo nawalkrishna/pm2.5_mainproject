@@ -1,14 +1,16 @@
 # Stage 4: cleaning, alignment, features
 
-**Status: COMPLETE, signed off 2026-11-04** (D034–D037 decided; QC revised to S3a-12h in the D028 review). Regenerate with
+**Status: COMPLETE, signed off 2026-11-04** (D034–D037 decided; QC revised to S3a-12h in the D028 review).
+**Dataset v3 (2026-11-05, D044):** rebuilt after removing 30,111 duplicated US Consulate hours;
+all numbers below are for v3. CPCB data are unchanged. Regenerate with
 `python -m src.run stage4` (after `python -m src.run stage2` for raw data).
 Every number comes from a file in `reports/tables/` or the dataset's data card.
 
 ## 1. Deliverable
 
-`data/processed/pm25_dataset_v2.parquet` with data card `pm25_dataset_v2.json`
-(rows, columns, SHA-256 `101debbed06b6c05…`, git commit, config hash, reconciliation).
-126,830 station-days, 113 stations (Kerala 9, Karnataka 40, Tamil Nadu 37, Andhra Pradesh 12,
+`data/processed/pm25_dataset_v3.parquet` with data card `pm25_dataset_v3.json`
+(rows, columns, SHA-256 `0ef958480d54d91f…`, git commit, config hash, reconciliation).
+126,805 station-days, 113 stations (Kerala 9, Karnataka 40, Tamil Nadu 37, Andhra Pradesh 12,
 Telangana 15), 2021-01-01 to 2025-12-31, 123 columns. One row per station and IST day with
 at least one valid target. Tier A has 43 features, Tier B 31 (`configs/features.yaml`,
 resolved by `src/features/feature_sets.py`).
@@ -21,11 +23,11 @@ No row is deleted; each hour carries `qc_flag`. `reports/tables/cleaning_log.csv
 
 | Rule | Rows before | Removed | Rows after |
 |---|---|---|---|
-| invalid_negative | 2,995,590 | 17 | 2,995,573 |
-| invalid_zero | 2,995,573 | 58 | 2,995,515 |
-| invalid_exact (1000) | 2,995,515 | 2 | 2,995,513 |
-| flat_run (≥ 12 h) | 2,995,513 | 16,334 | 2,979,179 |
-| spike_isolated | 2,979,179 | 3,907 | 2,975,272 |
+| invalid_negative | 2,965,479 | 17 | 2,965,462 |
+| invalid_zero | 2,965,462 | 39 | 2,965,423 |
+| invalid_exact (1000) | 2,965,423 | 2 | 2,965,421 |
+| flat_run (≥ 12 h) | 2,965,421 | 16,334 | 2,949,087 |
+| spike_isolated | 2,949,087 | 3,880 | 2,945,207 |
 
 Per-station counts: `cleaning_log_by_station.csv`. Option retention that informed the choice:
 `qc_pm25_scenarios.csv`, `qc_satellite_options.csv` (D028–D031).
@@ -46,9 +48,9 @@ TROPOMI 12:09–14:11 IST, MAIAC Aqua 13:15–15:00 IST, Terra 10:15–11:15 IST
 
 | Subset | Valid daily | Valid overpass | Both | Spearman ρ | Median overpass/daily |
 |---|---|---|---|---|---|
-| All | 113,295 | 124,149 | 110,614 | 0.885 | 0.961 |
-| Winter | 18,608 | 20,039 | 18,209 | 0.839 | 0.903 |
-| SW monsoon | 36,785 | 40,884 | 35,857 | 0.868 | 0.998 |
+| All | 113,228 | 124,102 | 110,525 | 0.885 | 0.961 |
+| Winter | 18,599 | 20,037 | 18,200 | 0.838 | 0.903 |
+| SW monsoon | 36,753 | 40,859 | 35,807 | 0.868 | 0.998 |
 | Kerala Jun–Sep | 3,230 | 3,752 | 3,180 | 0.895 | 0.997 |
 
 ![Targets](../reports/figures/target_daily_vs_overpass.png)
@@ -94,14 +96,14 @@ Missing satellite values stay NaN with flags; no imputation (task 7).
 
 | Step | Count |
 |---|---|
-| Hourly rows, all sources (2020-12..2025-12) | 2,995,590 |
-| Hourly rows passing QC | 2,975,272 |
+| Hourly rows, all sources (2020-12..2025-12) | 2,965,479 |
+| Hourly rows passing QC | 2,945,207 |
 | Station-days with ≥ 1 QC-passed hour, study period | 136,885 |
-| … with a valid daily target | 113,295 |
-| … with a valid overpass target | 124,149 |
-| … with at least one valid target | 126,830 |
+| … with a valid daily target | 113,228 |
+| … with a valid overpass target | 124,102 |
+| … with at least one valid target | 126,805 |
 | Dropped: station without coordinates | 0 |
-| **Final dataset rows** | **126,830** |
+| **Final dataset rows** | **126,805** |
 
 ## 6. Problems found and fixed in this stage
 
@@ -122,7 +124,8 @@ Missing satellite values stay NaN with flags; no imputation (task 7).
 ## 7. Notes for Stage 5
 
 - Stage 3 tables were computed for 117 stations; they are not regenerated here so that the
-  approved Stage 3 report stays consistent with its tables.
+  approved Stage 3 report stays consistent with its tables. (They were regenerated for 120
+  stations in the dataset v3 rerun, and the Stage 3 report updated, D044.)
 - **Temporal split:** 2025 as the test year; several Tamil Nadu / Andhra Pradesh stations start
   in 2024, so they have little or no training data.
 - **PM2.5 lags** need a lag-free variant for spatial evaluation (D037).
