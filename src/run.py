@@ -15,7 +15,7 @@ Steps:
     stage2       tscheck, ground, gee
     stage3       exploratory table, missingness, PM2.5 patterns, data-quality candidates
     qcoptions    retention of candidate QC rules and satellite thresholds (Stage 4 proposal)
-    stage4       PM2.5 QC, targets, reanalysis daily, dataset v1, target/buffer comparison
+    stage4       PM2.5 QC, targets, reanalysis daily, dataset (v3), target/buffer comparison
     stage5       baselines under all splits + ablation, sensitivity runs, then results tables and figures
 """
 

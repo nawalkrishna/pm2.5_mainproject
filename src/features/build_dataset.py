@@ -22,7 +22,7 @@ Outputs:
     reports/tables/dataset_reconciliation.csv       hours -> QC -> days -> final rows
 
 Usage:
-    python -m src.features.build_dataset [--version 2]
+    python -m src.features.build_dataset [--version 3]
 """
 
 import argparse
@@ -127,7 +127,7 @@ def assemble(targets: pd.DataFrame) -> pd.DataFrame:
               & (df["pm25_daily"].notna() | df["pm25_overpass"].notna())].reset_index(drop=True)
 
 
-def main(version: int = 2) -> Path:
+def main(version: int = 3) -> Path:
     area, align = load_config("study_area"), load_config("alignment")
     period = area["study_period"]
     targets = pd.read_parquet(TARGETS_PATH)
@@ -153,5 +153,5 @@ def main(version: int = 2) -> Path:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--version", type=int, default=2)
+    parser.add_argument("--version", type=int, default=3)
     main(parser.parse_args().version)

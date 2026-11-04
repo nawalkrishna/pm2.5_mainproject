@@ -109,6 +109,22 @@ def openaq_sensor_rows(client, sensor_id: int, months: list[str], raw_dir: Path,
     return df[(df["timestamp_utc"] >= start_utc) & (df["timestamp_utc"] < end_utc)]
 
 
+def one_per_ist_hour(df: pd.DataFrame) -> pd.DataFrame:
+    """One row per IST clock hour (decision D044).
+
+    Until October 2024 OpenAQ returns many US Consulate hours twice, as one-hour bins starting
+    at :00 and at :30 IST (89 % with the same value). Keep the :00 IST bin; an hour with only
+    the :30 bin keeps that value, relabelled to its IST hour start (the :30 bin repeats the
+    :00 bin of the same hour). Call after rows without a value are dropped.
+    """
+    ist = df["timestamp_utc"].dt.tz_convert(IST)
+    hour = ist.dt.floor("h")
+    df = df.assign(_hour=hour, _offset=ist != hour).sort_values(["_hour", "_offset"], kind="stable")
+    df = df.drop_duplicates("_hour", keep="first")
+    df["timestamp_utc"] = df["_hour"].dt.tz_convert("UTC")
+    return df.drop(columns=["_hour", "_offset"]).reset_index(drop=True)
+
+
 def finalise(df: pd.DataFrame, source: str) -> pd.DataFrame:
     """Add the shared columns in schema order."""
     df = df.copy()
@@ -157,8 +173,12 @@ def main() -> Path:
         log_rows.append({"source": "openaq_hours", "file": f"sensor_{sensor_id}",
                          "rows_in_window": len(df), "missing_value": int(df["pm25"].isna().sum()),
                          "non_numeric_value": 0, "rows_kept": int(df["pm25"].notna().sum())})
-        df = df[df["pm25"].notna()].assign(station_id=f"openaq_{int(sensors.loc[sensor_id, 'location_id'])}")
-        oa_frames.append(df)
+        df = df[df["pm25"].notna()]
+        hourly_df = one_per_ist_hour(df)
+        log_rows.append({"source": "openaq_hours", "file": f"sensor_{sensor_id} half-hour duplicate (D044)",
+                         "rows_in_window": 0, "missing_value": 0, "non_numeric_value": 0,
+                         "rows_kept": -(len(df) - len(hourly_df))})
+        oa_frames.append(hourly_df.assign(station_id=f"openaq_{int(sensors.loc[sensor_id, 'location_id'])}"))
     openaq = finalise(pd.concat(oa_frames, ignore_index=True), "openaq_hours")
 
     hourly = pd.concat([cpcb, openaq], ignore_index=True)

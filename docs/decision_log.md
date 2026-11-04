@@ -225,3 +225,8 @@ Configured in `configs/experiments.yaml`. The brief fixes the split types, metri
 
 ## Stage 5 / Phase 1 sign-off · 2026-11-04 · DECIDED (student: "Approve all")
 - D038–D043 approved; Phase 1 (Stages 1–5) closed on dataset v2. D026 (1 km grid) stays open for Phase 2.
+
+## D044 — Duplicated US Consulate hours · 2026-11-04 · DECIDED (student: "Yes, fix and rerun")
+- **Finding (Phase 1 verification):** until October 2024 OpenAQ `/sensors/{id}/hours` returns 30,111 Hyderabad and Chennai consulate hours twice, as one-hour bins starting at :00 and at :30 IST (each with `observedCount` 1; 89 % of pairs have the same value, the rest differ by a median 2 µg/m³). The 18-hour valid-day rule counted both copies (67 of 113,295 daily targets wrongly valid in v2), the 30-minute spacing hid runs from the flat-line rule (none ≥ 12 h after deduplication), and Stage 3 (problem 14) noted the :30 offset but not the duplication. CPCB data are not affected.
+- **Timing check:** the :00 IST bins against 12 CPCB monitors within 15 km peak at lag 0 for 8 of them (±1 h for the rest), so the :00 IST labels agree with CPCB's hour-start convention (D024); no shift is applied.
+- **Decision:** one row per IST clock hour (`ground_pm25.one_per_ist_hour`): keep the :00 IST bin; an hour with only the :30 bin keeps that value relabelled to its hour start. Removed rows are logged in `ground_removal_log.csv`. Stages 3–5 rerun; dataset v3.

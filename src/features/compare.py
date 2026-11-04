@@ -97,7 +97,7 @@ def plot_buffers(bc: pd.DataFrame, path) -> None:
     style.save(fig, path)
 
 
-def main(version: int = 2) -> None:
+def main(version: int = 3) -> None:
     style.apply()
     df = pd.read_parquet(DATA_PROCESSED / f"pm25_dataset_v{version}.parquet")
     tc = target_comparison(df)
@@ -111,5 +111,5 @@ def main(version: int = 2) -> None:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--version", type=int, default=2)
+    parser.add_argument("--version", type=int, default=3)
     main(parser.parse_args().version)

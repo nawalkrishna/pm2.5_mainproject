@@ -2,7 +2,7 @@
 # proposed in docs/decision_log.md and confirmed at the end of Stage 5.
 
 seed: 42
-dataset_version: 2              # v2: QC S3a-12h (D028 review); v1 used S3a (flat-line 24 h)
+dataset_version: 3              # v3: v2 + one record per hour at the US Consulates (D044); v2: QC S3a-12h (D028 review); v1: S3a
 target: pm25_daily              # D036 (overpass target: secondary, not run in Phase 1 baselines)
 
 splits:
