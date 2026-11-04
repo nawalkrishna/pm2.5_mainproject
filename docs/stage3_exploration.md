@@ -1,6 +1,6 @@
 # Stage 3: exploratory analysis
 
-**Status: COMPLETE, awaiting sign-off.** Period: study period 2021-01-01 to 2025-12-31 (D011).
+**Status: COMPLETE, signed off.** Period: study period 2021-01-01 to 2025-12-31 (D011).
 Unit of analysis: station-day (IST calendar day). No QC has been applied: the data are
 described as received. Every number comes from a table in `reports/tables/`.
 Regenerate: `python -m src.run stage3`.

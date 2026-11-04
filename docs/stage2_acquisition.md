@@ -1,6 +1,6 @@
 # Stage 2: data acquisition
 
-**Status: COMPLETE, awaiting sign-off.** Station-point extraction only (task 3a); the grid (3b)
+**Status: COMPLETE, signed off.** Station-point extraction only (task 3a); the grid (3b)
 waits for approval (D026). Every number below comes from a file in `reports/tables/`.
 Regenerate with `python -m src.run stage2`, then `python -m src.audit.gee_inventory` and
 `python -m src.audit.manifest_check`.

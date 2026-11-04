@@ -188,29 +188,30 @@ Numbers: `reports/tables/target_comparison.csv`, `reports/tables/buffer_coverage
 
 ## Stage 4 sign-off · 2026-11-04 · DECIDED (student: "Approve all")
 
-## Stage 5 method choices · 2026-11-04 · PROPOSED (confirmed at the end of Stage 5)
+## Stage 5 method choices · 2026-11-04 · DECIDED (student: "Approve all", Stage 5 approved)
 Configured in `configs/experiments.yaml`. The brief fixes the split types, metrics and baselines; these are the remaining choices.
 
 ## D038 — Spatial blocks
-- **Proposal:** Stations linked within 50 km (single linkage) form a block, so each city's cluster of monitors is held out together; 46 blocks, assigned to 5 folds balancing rows (`reports/tables/spatial_blocks.csv`). Reason: nearby stations share local sources (Stage 3: median ρ 0.49 within 10 km); holding them out together avoids leakage through a neighbouring monitor.
+- **Decision:** Stations linked within 50 km (single linkage) form a block, so each city's cluster of monitors is held out together; 46 blocks, assigned to 5 folds balancing rows (`reports/tables/spatial_blocks.csv`). Reason: nearby stations share local sources (Stage 3: median ρ 0.49 within 10 km); holding them out together avoids leakage through a neighbouring monitor.
 - **Alternatives:** 25 km or 100 km linkage; k-means clusters.
 
 ## D039 — Where Tier A applies
-- **Proposal:** Tier A is trained and evaluated on rows where MAIAC AOD (10 km) exists; Tier B on all rows; the two-tier system uses A where available, else B. Tier B is also scored on exactly Tier A's rows, so A and B are compared on the same days.
+- **Decision:** Tier A is trained and evaluated on rows where MAIAC AOD (10 km) exists; Tier B on all rows; the two-tier system uses A where available, else B. Tier B is also scored on exactly Tier A's rows, so A and B are compared on the same days.
 - **Alternative:** require NO2 instead (more rows, but AOD is the main satellite aerosol proxy).
 
 ## D040 — Random Forest settings
-- **Proposal:** Fixed, untuned baseline: 200 trees, min_samples_leaf 5, max_features 0.5, max_samples 0.5, seed 42. Tuning belongs to Phase 2 and would need a nested validation split.
+- **Decision:** Fixed, untuned baseline: 200 trees, min_samples_leaf 5, max_features 0.5, max_samples 0.5, seed 42. Tuning belongs to Phase 2 and would need a nested validation split.
 
 ## D041 — Reporting bins
-- **Proposal:** Cloud-fraction bins 0–0.2, 0.2–0.5, 0.5–0.8, 0.8–1.0 (TROPOMI, 10 km mean) plus "missing".
+- **Decision:** Cloud-fraction bins 0–0.2, 0.2–0.5, 0.5–0.8, 0.8–1.0 (TROPOMI, 10 km mean) plus "missing".
 
-## D042 — Sensitivity runs for the Stage 4 choices · 2026-11-04 · PROPOSED
-- **Proposal:** Random Forest, temporal and blocked splits (as the ablation), `src/eval/sensitivity.py`, configured in `configs/experiments.yaml` (`sensitivity`). Satellite variants (MAIAC "best" QA, D029; station pixel and 5 km buffer, D035; no satellite input when the 10 km cloud fraction > 0.3, D030; ≥ 10 % / ≥ 25 % valid pixels for AOD and NO2, D031) refit Tier A on the variant's rows and reuse Tier B from the main run (same rows, folds, seed and features). Target variants (overpass target, D036; QC flat-line rule, D028: after the D028 review the variant is the old 24 h rule, `qc_flat24`, with the dataset rebuilt under that rule) refit all four tiers. LOSO and linear regression are not rerun (cost; the main run shows blocked and LOSO agree).
+## D042 — Sensitivity runs for the Stage 4 choices · 2026-11-04 · DECIDED (student: "Approve all")
+- **Decision:** Random Forest, temporal and blocked splits (as the ablation), `src/eval/sensitivity.py`, configured in `configs/experiments.yaml` (`sensitivity`). Satellite variants (MAIAC "best" QA, D029; station pixel and 5 km buffer, D035; no satellite input when the 10 km cloud fraction > 0.3, D030; ≥ 10 % / ≥ 25 % valid pixels for AOD and NO2, D031) refit Tier A on the variant's rows and reuse Tier B from the main run (same rows, folds, seed and features). Target variants (overpass target, D036; QC flat-line rule, D028: after the D028 review the variant is the old 24 h rule, `qc_flat24`, with the dataset rebuilt under that rule) refit all four tiers. LOSO and linear regression are not rerun (cost; in the main run blocked and LOSO agree on overall skill).
+- **Caveat (v2 results):** blocked and LOSO do not agree on the satellite gain under v2 (blocked +0.011 [−0.014, +0.030], LOSO +0.024 [+0.006, +0.041]), so sensitivity results for that gain cover the blocked split only.
 - **Alternatives:** all splits and models (about 8 h); or the temporal split only.
 
-## D043 — Confidence intervals · 2026-11-04 · PROPOSED
-- **Proposal:** Percentile 95 % intervals from 1,000 bootstrap resamples of the 46 spatial blocks (D038), keeping every row of a drawn block (`src/eval/bootstrap.py`). Differences between models are bootstrapped on the same rows (paired). Reason: errors are correlated within a city and across days, so resampling rows would give intervals far too narrow.
+## D043 — Confidence intervals · 2026-11-04 · DECIDED (student: "Approve all")
+- **Decision:** Percentile 95 % intervals from 1,000 bootstrap resamples of the 46 spatial blocks (D038), keeping every row of a drawn block (`src/eval/bootstrap.py`). Differences between models are bootstrapped on the same rows (paired). Reason: errors are correlated within a city and across days, so resampling rows would give intervals far too narrow.
 - **Alternatives:** station bootstrap (113 clusters, narrower); block-by-month bootstrap (also accounts for time correlation in the temporal split; more complex).
 
 ## D028 review — QC flat-line rule, 24 h (S3a) or 12 h · 2026-11-04 · DECIDED (student: "Adopt S2b, rerun")
@@ -221,3 +222,6 @@ Configured in `configs/experiments.yaml`. The brief fixes the split types, metri
 - **Disclosure for the thesis:** the change was made after seeing its effect on model skill; the justification is instrument plausibility (12–23 h runs of identical hourly values), and S3a results are reported alongside.
 - **Effect on files:** dataset v2 (`pm25_dataset_v2.parquet`), predictions v2; v1 files stay on disk and in git history (configs at commit a013019).
 - **Fix found in the rerun (2026-11-04):** the first v2 `qc_flat24` run swapped 24 h targets onto the v2 rows, but v2 has no row for 160 of the 432 days that only the 24 h rule keeps (no other valid target), so it understated the 24 h rule's error. The variant now rebuilds the whole dataset under its own rule (`build_dataset.assemble`); the rebuilt 24 h dataset is identical to `pm25_dataset_v1.parquet` (127,043 × 123, checked with `assert_frame_equal`). The earlier v1 → 12 h run was not affected: 12 h only removes days, so v1 already had every row it needed.
+
+## Stage 5 / Phase 1 sign-off · 2026-11-04 · DECIDED (student: "Approve all")
+- D038–D043 approved; Phase 1 (Stages 1–5) closed on dataset v2. D026 (1 km grid) stays open for Phase 2.

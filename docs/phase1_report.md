@@ -1,6 +1,6 @@
 # Phase 1 report: satellite-based ground-level PM2.5 in South India
 
-**Status: Stages 1–5 complete; Stage 5 awaiting sign-off (D038–D043 proposed). QC rule S3a-12h adopted
+**Status: Phase 1 COMPLETE, signed off 2026-11-04 (D038–D043 decided). QC rule S3a-12h adopted
 (D028 review); all results are from dataset v2.**
 Every number below comes from a file in `reports/tables/` or the dataset's data card, and can be
 regenerated with `python -m src.run stage5` (after `stage2` and `stage4`). Stage details are in

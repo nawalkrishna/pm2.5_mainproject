@@ -1,6 +1,6 @@
 # Stage 4: cleaning, alignment, features
 
-**Status: COMPLETE, awaiting sign-off** (D034–D037 proposed). Regenerate with
+**Status: COMPLETE, signed off 2026-11-04** (D034–D037 decided; QC revised to S3a-12h in the D028 review). Regenerate with
 `python -m src.run stage4` (after `python -m src.run stage2` for raw data).
 Every number comes from a file in `reports/tables/` or the dataset's data card.
 
