@@ -17,6 +17,8 @@ Steps:
     qcoptions    retention of candidate QC rules and satellite thresholds (Stage 4 proposal)
     stage4       PM2.5 QC, targets, reanalysis daily, dataset (v3), target/buffer comparison
     stage5       baselines under all splits + ablation, sensitivity runs, then results tables and figures
+    stage6       hourly forecasting add-on: hourly table, tabular models, LSTM / graph network, report
+                 (the network runs take about 2 h on a GPU; both model runs are resumable)
 """
 
 import sys
@@ -42,6 +44,15 @@ def run_cpcb() -> None:
     cpcb_hourly.main()
 
 
+def run_stage6() -> None:
+    # imported here so the earlier stages do not need PyTorch
+    from src.forecast import hourly_data, report as forecast_report, run_nets, run_tabular
+    hourly_data.build()
+    run_tabular.main()
+    run_nets.main()
+    forecast_report.main()
+
+
 def run_audit() -> None:
     station_audit.main()
     cpcb_audit.main()
@@ -61,6 +72,7 @@ STEPS = {
     "qcoptions": qc_options.main,
     "stage4": lambda: (pm25_qc.main(), targets.main(), reanalysis.main(), build_dataset.main(), compare.main()),
     "stage5": lambda: (run_experiments.main(), sensitivity.main(), report.main()),
+    "stage6": lambda: run_stage6(),
 }
 
 if __name__ == "__main__":

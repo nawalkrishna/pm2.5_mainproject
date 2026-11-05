@@ -35,3 +35,7 @@ run_utc,step,git_commit,git_dirty,config_hash,metrics_json,notes
 2026-11-04T18:06:39+00:00,build_dataset,32a058f,True,98309e8aa637,"{""rows"": 126805, ""stations"": 113}",
 2026-11-04T19:23:22+00:00,run_experiments,32a058f,True,771bb1da4e94,"{""prediction_rows"": 2618488}","temporal,blocked,loso,combined,ablation"
 2026-11-04T19:34:08+00:00,sensitivity,32a058f,True,771bb1da4e94,"{""prediction_rows"": 1638346}","aod_best,geometry_pt,geometry_b5,cloud_le_0.3,min_pixels_10,min_pixels_25,overpass,qc_flat24"
+2026-11-05T02:09:40+00:00,forecast_tabular,629bef5,True,d657736d20b4,"{""horizons"": [1], ""rows"": 706788}",
+2026-11-05T02:21:13+00:00,forecast_nets,629bef5,True,ba15ee26cfc9,"{""models"": [""lstm""], ""seeds"": [42]}",
+2026-11-05T10:23:29+00:00,forecast_tabular,629bef5,True,8ffafdb376c0,"{""horizons"": [1, 3, 6, 12, 24, 48, 72], ""rows"": 4935056}",
+2026-11-05T11:08:27+00:00,forecast_nets,629bef5,True,8ffafdb376c0,"{""models"": [""lstm"", ""gcn""], ""seeds"": [42, 1, 2]}",
