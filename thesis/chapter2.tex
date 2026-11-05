@@ -1,39 +1,76 @@
 \chapter{Literature Review}
 
-[Write 1 opening paragraph: the two families of work reviewed below.]
+Two lines of work are relevant to this study. The first estimates ground-level \pmtf{} from
+satellite and auxiliary data, so that concentrations can be mapped where no monitor exists. The
+second forecasts \pmtf{} hours to days ahead at monitored sites, usually with deep spatiotemporal
+networks. The two answer different questions, and the difference matters when their reported
+accuracies are compared.
 
 \section{Satellite-based estimation of ground-level PM2.5}
-% GAP IN THE READING LIST: none of the six papers in "Research papers" is an AOD-to-PM2.5
-% estimation study. Add 3-5 such papers (India or China, Random Forest / XGBoost / mixed
-% models, with spatial cross-validation) before writing this section; they are the closest
-% comparison for our leave-one-station-out results. Do not cite papers you have not read.
-% Papers added to bib.bib for this section (read each before citing it):
-%  - \cite{kawano2025india}: India daily 10 km, AOD gap-filling + XGBoost; spatial CV R^2 0.67;
-%    a related dataset record reports random CV R^2 0.85 (check this in the paper before using it).
-%  - \cite{dey2020india}: India 1 km PM2.5 2000-2019, MAIAC AOD with MERRA-2 scaling; daily R^2 0.8 vs CPCB.
-%  - \cite{maheshwarkar2021central}: central India (Madhya Pradesh), MAIAC gaps filled from MERRA-2,
-%    three-stage statistical model.
-%  - \cite{wei2020stet}: China 1 km, space-time extremely randomized trees; CV R^2 0.89.
-%  - \cite{son2023tropomi}: Thailand, TROPOMI gases only (no AOD), TabNet; relevant to Tier B / cloudy days.
-% - Ahmad et al. \cite{ahmad2025lahore}: estimation at unmonitored sensors (Lahore, 30 IQAir
-%   sensors, 12 days, MAIAC AOD + ERA5 + roads + population; GNN; 2 sensors held out per run;
-%   reports MAE/RMSE, no R^2). Closest to our task, but very small test.
-[Write this section after adding the estimation papers.]
+
+The most direct use of AOD is to scale it to surface concentration. Dey et al.\ \cite{dey2020india}
+built a 1\,km daily \pmtf{} record for India from 2000 to 2019 by converting MAIAC AOD with a
+time-varying scaling factor taken from MERRA-2. Against CPCB monitors the daily estimates reached
+\rsq{} 0.8 (RMSE 25.7\ugm{}), and annual means 0.97. The method depends on AOD being available, so
+days without a retrieval have to be filled in some other way.
+
+Gap filling is a recurring theme. Maheshwarkar and Sunder Raman \cite{maheshwarkar2021central}
+estimated daily \pmtf{} over Madhya Pradesh for 2018--2019. They first filled missing MAIAC AOD with
+values derived from MERRA-2 and then applied a three-stage statistical model combining a linear
+mixed-effects model with geographically weighted regression. Cross-validated $r^2$ ranged from
+0.36 to 0.69, a reminder that accuracy varies strongly between places and periods even within one
+state.
+
+Machine-learning models are now the most common choice. Wei et al.\ \cite{wei2020stet} proposed a
+space--time extremely randomized trees model that combines 1\,km MAIAC AOD with meteorology, land
+use, topography and population, and reported an out-of-sample cross-validated \rsq{} of 0.89
+(RMSE 10.3\ugm{}) over China. Kawano et al.\ \cite{kawano2025india} produced daily 10\,km estimates
+for India from 2005 to 2023 with two stages: AOD gaps were first imputed with machine learning,
+and an extreme gradient boosting model then predicted \pmtf{}. They validated with spatial
+cross-validation, holding out groups of monitors rather than random days, and obtained \rsq{} 0.67.
+The use of spatial validation is important: random splits let a model see the same station on
+neighbouring days during training, which inflates the score for unmonitored locations.
+
+Two studies point to alternatives to AOD. Son et al.\ \cite{son2023tropomi} estimated surface
+\pmtf{} over Thailand from five TROPOMI gas products (NO\textsubscript{2}, SO\textsubscript{2},
+O\textsubscript{3}, CO and HCHO) without any aerosol optical input, using the TabNet deep-learning
+model; carbon monoxide was the most influential input, reflecting seasonal biomass burning.
+Ahmad et al.\ \cite{ahmad2025lahore} estimated air quality at unmonitored sensor locations in Lahore
+with a graph neural network that combines MAIAC AOD, ERA5 meteorology, road networks, points of
+interest, population and green space. Their test used 30 low-cost sensors over twelve days in
+December 2024, with two sensors held out per run, and reported only MAE and RMSE; population was the
+most useful spatial feature.
 
 \section{Spatiotemporal forecasting of PM2.5}
-% - Qi et al. \cite{qi2019gclstm}: GC-LSTM, 76 stations, Beijing-Tianjin-Hebei, hourly
-%   2015-2016; R^2 0.72 at 72 h; random 60/20/20 split of time blocks.
-% - Chen et al. \cite{chen2025hybrid}: directed graph network + LSTM, 29 cities, North China
-%   Plain, 2019-2023; chronological split (test 2023); MAE 7.6-14.0 ug/m3 for 3-48 h.
-% - Ni et al. \cite{ni2023asgcn}: ASGCN, KnowAir (184 cities, 3-hourly) and UrbanAir; 4:1 split.
-% - Shi et al. \cite{shi2026astgt}: graph transformer; Beijing and an India Kaggle dataset.
-% - Shaban \cite{shaban2026cnnlstm}: CNN-LSTM with MAIAC AOD gap-filled by an autoencoder;
-%   R^2 0.86 at 24 h; cities and dataset sizes not clearly reported.
-% Common thread: all use the stations' own past PM2.5; satellite data minor or absent.
-[Write this section.]
+
+A second body of work forecasts \pmtf{} at existing monitoring stations. Qi et al.\
+\cite{qi2019gclstm} combined a graph convolutional network, which passes information between
+stations within 200\,km, with an LSTM for the temporal dynamics (GC-LSTM). With hourly data from 76
+stations in the Beijing--Tianjin--Hebei region (January 2015 to April 2016) they reached \rsq{} 0.72
+for 72-hour forecasts. Their training, validation and test sets were random 60/20/20 splits of
+blocks of time.
+
+Chen et al.\ \cite{chen2025hybrid} built a directed graph whose edges follow wind direction and
+distance between 29 cities on the North China Plain, again combined with an LSTM, and trained it on
+2019--2021 data with 2023 held out for testing. Their mean absolute error rose from 7.6 to
+14.0\ugm{} between 3- and 48-hour forecasts. Ni et al.\ \cite{ni2023asgcn} proposed an adaptive
+spatio-temporal graph convolutional network with static and dynamic graphs and tested it on the
+KnowAir dataset of 184 Chinese cities and on the UrbanAir dataset. Shi et al.\ \cite{shi2026astgt}
+used a graph transformer with adaptive normalisation for non-stationary data, evaluated on a
+multi-site Beijing dataset and on an Indian multi-city dataset. Shaban \cite{shaban2026cnnlstm}
+combined MAIAC AOD, OpenAQ/WAQI ground data and ERA5 meteorology in a CNN-LSTM model, filling AOD
+gaps with an autoencoder, and reported \rsq{} 0.86 for 24-hour forecasts against 0.71 for a plain
+LSTM; the cities and dataset sizes used are not described in detail.
+
+All five forecasting studies feed the model the stations' own recent \pmtf{} history. Their high
+scores therefore measure how well the near future can be predicted from the recent past at the
+same place. They do not measure how well \pmtf{} can be estimated where there is no monitor, and
+satellite data play at most a minor role in them.
 
 \section{Comparative analysis of related studies}
-% Table: one row per paper. Fill the empty cells from the papers; keep cells short.
+
+Table~\ref{tab:related} summarises the studies reviewed above.
+
 \begin{table}[h]
     \centering
     \small
@@ -48,25 +85,40 @@
         Maheshwarkar and Sunder Raman \cite{maheshwarkar2021central} & Madhya Pradesh, 2018--2019 & MAIAC AOD, MERRA-2 gap-filling, three-stage statistical model & Estimation & CV $r^2$ 0.36--0.69 \\
         Kawano et al. \cite{kawano2025india} & India, CPCB, 2005--2023, 10 km & AOD gap-filling + XGBoost (two stages) & Estimation & Spatial CV $R^2$ 0.67 \\
         Wei et al. \cite{wei2020stet} & China, 1 km & Space--time extremely randomized trees & Estimation & CV $R^2$ 0.89, RMSE 10.3 $\mu$g/m$^3$ \\
-        Son et al. \cite{son2023tropomi} & Thailand & TROPOMI gases only (no AOD), TabNet & Estimation & [fill] \\
+        Son et al. \cite{son2023tropomi} & Thailand & TROPOMI gases only (no AOD), TabNet & Estimation & Not compared here \\
         Ahmad et al. \cite{ahmad2025lahore} & Lahore, 30 sensors & GNN + CNN & Estimation, unmonitored & MAE / RMSE only \\
         \hline
         \multicolumn{5}{l}{\textit{Spatiotemporal forecasting}} \\
         \hline
         Qi et al. \cite{qi2019gclstm} & BTH, 76 stations & GC-LSTM & Forecast 1--72 h & $R^2$ 0.72 at 72 h \\
         Chen et al. \cite{chen2025hybrid} & N. China Plain, 29 cities & Directed GNN + LSTM & Forecast 3--48 h & MAE 7.6--14.0 $\mu$g/m$^3$ \\
-        Ni et al. \cite{ni2023asgcn} & China, 184 cities & ASGCN & Forecast & [fill] \\
-        Shi et al. \cite{shi2026astgt} & Beijing; India & AST-GT & Forecast, multi-step & [fill] \\
+        Ni et al. \cite{ni2023asgcn} & China, 184 cities & ASGCN & Forecast & Not compared here \\
+        Shi et al. \cite{shi2026astgt} & Beijing; India & AST-GT & Forecast, multi-step & Not compared here \\
         Shaban \cite{shaban2026cnnlstm} & Several cities & CNN-LSTM & Forecast 24 h & $R^2$ 0.86 \\
         \hline
     \end{tabular}
-    \caption{Summary of the related studies.}
+    \caption{Summary of the related studies. ``Not compared here'' marks studies whose headline numbers use a different metric or set-up from this report.}
     \label{tab:related}
 \end{table}
 
 \section{Research gap}
-% - None estimates PM2.5 across a large network of unmonitored places with spatial CV.
-% - None measures how much cloud and the monsoon reduce the value of satellite inputs.
-% - None covers South India.
-% - Validation is often weak (random splits; no uncertainty intervals).
-[Write the research gap.]
+
+Four gaps follow from this review.
+
+\begin{enumerate}
+  \item Estimation studies report how accurate their models are, but not how much accuracy is
+        lost when cloud removes the satellite input, nor how often that happens. For a region with
+        two monsoons this is the first question to answer.
+  \item Few studies evaluate at stations the model has never seen, and those that do (for
+        example Kawano et al.\ \cite{kawano2025india}) show that spatial validation gives much lower
+        scores than random validation.
+  \item No study reviewed here covers South India specifically, or reports Kerala's monsoon, where
+        concentrations stay moderate while satellite coverage almost disappears.
+  \item The forecasting studies rely on random or single chronological splits and rarely give
+        uncertainty intervals, and none isolates how much satellite inputs add to forecasting
+        skill by comparing the same model with and without them.
+\end{enumerate}
+
+This study addresses these gaps with a two-tier design evaluated under temporal and spatial
+validation, block-bootstrap confidence intervals, and an explicit breakdown by cloud fraction,
+season and state.

@@ -1,45 +1,211 @@
 \chapter{Study Area and Data}
 
-[Write 1 opening paragraph.]
+This chapter describes the study area, the four groups of data (ground \pmtf{}, satellite,
+reanalysis and static features) and what an exploratory analysis of them shows. All data were
+retrieved programmatically except the CPCB hourly files, which had to be downloaded through the
+portal's web interface. Every raw file is listed with its source, date range, size and SHA-256
+hash in a data manifest of 3,081 files, which is checked against the disk before each run.
 
 \section{Study area and period}
-% - Five states (D010), Kerala as monsoon focus; 2020-12-01 to 2025-12-31 IST extraction
-%   window, study period 2021-2025 (D011, D023).
-% - Seasons used throughout: winter, pre-monsoon, SW monsoon (Jun-Sep), NE monsoon (Oct-Dec)
-%   (configs/audit.yaml).
-[Write.]
+
+The study area comprises Kerala, Karnataka, Tamil Nadu, Andhra Pradesh and Telangana
+(Figure~\ref{fig:study_area}). Data were extracted for 1 December 2020 to 31 December 2025 (IST);
+the analysis period is 2021--2025, and the extra month supplies lagged features for early January
+2021. Seasons follow the India Meteorological Department convention: winter (January--February),
+pre-monsoon (March--May), south-west monsoon (June--September) and north-east monsoon
+(October--December).
 
 \section{Ground-level PM2.5}
-% Source: docs/stage2_acquisition.md, section 2.
-% - CPCB CCR hourly data, 833 station-year files, browser download (D008).
-% - US Consulate Hyderabad and Chennai via OpenAQ (D015).
-% - Rows: CPCB 2,916,244 kept; OpenAQ 49,235 (30,111 duplicate half-hour records removed, D044);
-%   total 2,965,479 hourly values at 113 stations.
-% - Timestamps: IST hour start, verified against OpenAQ (median r 0.986 at offset 0, D024).
-% Put the removal table here (Table: hours in window / empty / duplicate / kept).
-[Write.]
+
+Hourly \pmtf{} came from two sources (Table~\ref{tab:ground}). The main source is the CPCB CCR
+repository \cite{cpcbccr}: 833 station-year files, downloaded by hand because the portal requires a
+CAPTCHA. The US Consulate monitors in Hyderabad and Chennai are not part of the CPCB network and
+were taken from OpenAQ \cite{openaq}. Low-cost sensors were excluded. A CPCB station and an OpenAQ
+location were treated as the same site if their names matched or they were within 500\,m of each
+other, in which case the CPCB record was kept.
+
+\begin{table}[h]
+    \centering
+    \small
+    \setlength{\tabcolsep}{4pt}
+    \begin{tabular}{l|r|r|r|r}
+        \hline
+        Source & Hours & Empty & Duplicate & Kept \\
+        \hline
+        CPCB CCR, 1-hour & 4,697,112 & 1,780,868 & 0 & 2,916,244 \\
+        OpenAQ (US Consulates) & 92,441 & 13,095 & 30,111 & 49,235 \\
+        \hline
+        Total & & & & 2,965,479 \\
+        \hline
+    \end{tabular}
+    \caption{Hourly ground \pmtf{} records, December 2020 to December 2025: hours in the window, empty hours, duplicated hours removed and hours kept.}
+    \label{tab:ground}
+\end{table}
+
+Two problems in the raw data needed attention before any analysis. First, the time convention of
+the CPCB labels is not documented. Aligning CPCB with OpenAQ's explicit UTC timestamps at five
+stations over two weeks of 2025 gave the best match when CPCB labels are read as the start of the
+hour in IST (median correlation 0.986, against 0.944 for hour-end labels), so that convention is
+used throughout. Second, until October 2024 OpenAQ returned most US Consulate hours twice, as
+one-hour bins starting at :00 and at :30 IST. One record per IST hour is kept, which removed 30,111
+duplicates (Table~\ref{tab:ground}).
 
 \section{Satellite data}
-% - TROPOMI (Sentinel-5P) L3: NO2, CO, SO2, HCHO, UV aerosol index, cloud fraction \cite{veefkind2012tropomi}.
-% - MODIS MAIAC AOD 550 nm, QA "clear" (D029) \cite{lyapustin2018maiac}.
-% - Extracted with Google Earth Engine \cite{gorelick2017gee} at the station pixel and 5 / 10 km
-%   buffers; 10 km used (D035).
-% - Availability table (stage2_acquisition.md section 3): e.g. MAIAC clear 0.31 / 0.48 / 0.54
-%   (pt / 5 km / 10 km), Kerala Jun-Sep 0.11 / 0.28 / 0.36.
-[Write.]
+
+Two satellite products were used, both extracted with Google Earth Engine \cite{gorelick2017gee}:
+
+\begin{itemize}
+  \item \textbf{TROPOMI} (Sentinel-5P, offline L3): tropospheric NO\textsubscript{2}, CO,
+        SO\textsubscript{2}, HCHO, the UV aerosol index and cloud fraction
+        \cite{veefkind2012tropomi}. The Earth Engine L3 product is already filtered on each
+        retrieval's quality value.
+  \item \textbf{MAIAC} (MODIS, 1\,km daily): AOD at 550\,nm \cite{lyapustin2018maiac}, using
+        retrievals flagged as clear.
+\end{itemize}
+
+Each variable was averaged over each IST day at the station pixel and within 5\,km and 10\,km of
+the station, together with the number of valid pixels. The 10\,km buffer is used in the models
+because it keeps far more monsoon days (Table~\ref{tab:sat_avail}).
+
+\begin{table}[h]
+    \centering
+    \small
+    \begin{tabular}{l|c|c|c|c|c|c}
+        \hline
+        & \multicolumn{3}{c|}{All stations} & \multicolumn{3}{c}{Kerala, June--September} \\
+        Layer & Pixel & 5 km & 10 km & Pixel & 5 km & 10 km \\
+        \hline
+        NO\textsubscript{2} (tropospheric) & 0.53 & 0.63 & 0.69 & 0.37 & 0.47 & 0.54 \\
+        CO & 0.60 & 0.72 & 0.78 & 0.42 & 0.52 & 0.58 \\
+        SO\textsubscript{2} & 0.52 & 0.61 & 0.67 & 0.40 & 0.49 & 0.55 \\
+        HCHO & 0.62 & 0.71 & 0.76 & 0.51 & 0.60 & 0.66 \\
+        UV aerosol index & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 & 1.00 \\
+        MAIAC AOD, clear & 0.31 & 0.48 & 0.54 & 0.11 & 0.28 & 0.36 \\
+        MAIAC AOD, best quality & 0.25 & 0.41 & 0.47 & 0.06 & 0.19 & 0.24 \\
+        \hline
+    \end{tabular}
+    \caption{Share of station-days (2021--2025) with a satellite value.}
+    \label{tab:sat_avail}
+\end{table}
 
 \section{Reanalysis and static data}
-% - ERA5-Land and ERA5 hourly meteorology \cite{munozsabater2021era5land,hersbach2020era5};
-%   9 of 120 coastal points use ERA5 (data dictionary).
-% - MERRA-2 aerosol, reconstructed surface PM2.5 \cite{gelaro2017merra2}.
-% - SRTM elevation \cite{farr2007srtm}, ESA WorldCover 2021 \cite{zanaga2022worldcover},
-%   WorldPop population, distance to coast.
-[Write.]
+
+Hourly 2\,m temperature, dew point, 10\,m wind and precipitation come from ERA5-Land
+\cite{munozsabater2021era5land}. ERA5-Land has no land cell at nine coastal stations, where ERA5
+\cite{hersbach2020era5} is used instead; ERA5 also supplies boundary-layer height. Relative humidity
+is computed from temperature and dew point. MERRA-2 \cite{gelaro2017merra2} supplies hourly aerosol
+species, from which a surface \pmtf{} estimate is reconstructed (Section~\ref{sec:align}), and total
+AOD; six days of September 2025 are missing in the Earth Engine copy.
+
+Static features describe each station's surroundings: elevation from SRTM \cite{farr2007srtm},
+land-cover shares (tree, crop, built-up, water, grass and shrub) within 5\,km from ESA WorldCover
+2021 \cite{zanaga2022worldcover}, population within 5\,km from WorldPop \cite{worldpop} for the
+year of each observation, and distance to the coast.
 
 \section{Exploratory analysis}
-% Source: docs/stage3_exploration.md, docs/feasibility_summary.md. Suggested figures:
-% eda_pm25_monthly_by_state.png, eda_sat_availability_by_month.png, eda_aod_vs_cloud.png,
-% eda_station_corr_vs_distance.png.
-% Key numbers: 114,191 valid station-days; AOD at the pixel 32.4 %; seasonal means (TN, AP...);
-% correlations CO 0.46, precipitation -0.42; station pairs median r 0.50 within 10 km.
-[Write.]
+
+\subsection{Satellite availability and cloud}
+
+Satellite availability follows the monsoon (Figure~\ref{fig:sat_month}). It is high from January
+to April, falls to a deep minimum in July and recovers partly from October. In July MAIAC AOD at
+the station pixel exists on 0--5\,\% of station-days in every state except Tamil Nadu (13\,\%),
+whose east coast receives less south-west monsoon rain; Tamil Nadu has its own dip in November,
+during the north-east monsoon.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\linewidth]{eda_sat_availability_by_month}
+\caption{Share of station-days with a satellite value by calendar month and state, 2021--2025, for NO\textsubscript{2} and MAIAC AOD at the station pixel and within 10\,km. Shading marks the south-west monsoon.}
+\label{fig:sat_month}
+\end{figure}
+
+The mechanism is cloud (Figure~\ref{fig:aod_cloud}). AOD at the station pixel is available on
+70\,\% of clear days (TROPOMI cloud fraction below 0.1) and on 1\,\% of overcast days (0.9 and
+above). TROPOMI NO\textsubscript{2} at the pixel falls from 99\,\% to 0\,\%. The UV aerosol index is
+retrieved under cloud and is always present.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\linewidth]{eda_aod_vs_cloud}
+\caption{Satellite availability against TROPOMI cloud fraction (10\,km mean), 2021--2025.}
+\label{fig:aod_cloud}
+\end{figure}
+
+Table~\ref{tab:feasibility} shows the consequence for the \pmtf{} record. Of the 114,191 valid
+station-days (before quality control), only a third have AOD at the station pixel, and in the Kerala
+south-west monsoon about one in nine. The 10\,km buffer roughly triples the monsoon coverage but
+still leaves most monsoon days without AOD. The gap is even larger in Karnataka (3.0\,\% at the
+pixel, 15.9\,\% within 10\,km) and Telangana (6.5\,\%, 21.0\,\%) during the south-west monsoon.
+
+\begin{table}[h]
+    \centering
+    \small
+    \begin{tabular}{l|c|c|c}
+        \hline
+        Valid \pmtf{} days that also have\ldots & All states & Kerala & Kerala, Jun--Sep \\
+        \hline
+        MAIAC AOD at the station pixel & 32.4\,\% & 30.9\,\% & 11.8\,\% \\
+        MAIAC AOD within 10 km & 55.0\,\% & 57.9\,\% & 36.9\,\% \\
+        NO\textsubscript{2} within 10 km & 68.9\,\% & 72.6\,\% & 56.1\,\% \\
+        Both NO\textsubscript{2} and AOD within 10 km & 50.6\,\% & 53.7\,\% & 32.4\,\% \\
+        \hline
+    \end{tabular}
+    \caption{Satellite coverage of the valid \pmtf{} station-days, 2021--2025.}
+    \label{tab:feasibility}
+\end{table}
+
+\subsection{PM2.5 patterns}
+
+\pmtf{} is lowest in the south-west monsoon in every state (Table~\ref{tab:season},
+Figure~\ref{fig:pm_month}), when rain washes particles out of the air. Kerala has the flattest
+seasonal cycle: its monsoon median stays near 24\ugm{}, while Karnataka's falls to 16\ugm{}. The
+months with the fewest satellite observations are therefore also the months with the smallest
+\pmtf{} signal, except in Kerala. Station medians range from 15.0 to 48.9\ugm{}, with a median of
+26.3\ugm{}.
+
+\begin{table}[h]
+    \centering
+    \small
+    \begin{tabular}{l|c|c|c|c}
+        \hline
+        State & Winter & Pre-monsoon & SW monsoon & NE monsoon \\
+        \hline
+        Kerala & 37.9 & 30.0 & 24.0 & 29.1 \\
+        Karnataka & 33.7 & 26.5 & 15.6 & 26.0 \\
+        Tamil Nadu & 36.7 & 23.2 & 18.3 & 28.4 \\
+        Andhra Pradesh & 42.5 & 32.2 & 23.6 & 39.1 \\
+        Telangana & 45.9 & 36.3 & 23.2 & 38.7 \\
+        \hline
+    \end{tabular}
+    \caption{Median daily \pmtf{} (\ugm{}) by state and season, 2021--2025.}
+    \label{tab:season}
+\end{table}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.95\linewidth]{eda_pm25_monthly_by_state}
+\caption{Median daily \pmtf{} by calendar month and state, 2021--2025. Shading marks the south-west monsoon.}
+\label{fig:pm_month}
+\end{figure}
+
+\subsection{Correlations}
+
+Across all days, the strongest single predictors of daily \pmtf{} (Spearman $\rho$) are MERRA-2
+\pmtf{} (0.53), TROPOMI CO (0.46), precipitation ($-0.42$), MERRA-2 AOD (0.37), NO\textsubscript{2}
+(0.35) and relative humidity ($-0.35$). MAIAC AOD is weaker (0.22 at the pixel, 0.25 within 10\,km).
+Much of this is the shared seasonal cycle: correlations within a season are lower. In Kerala from
+June to September no satellite or reanalysis aerosol variable correlates with daily \pmtf{} at
+$|\rho| > 0.10$.
+
+Neighbouring stations agree only moderately (Figure~\ref{fig:station_corr}). For 5,594 station
+pairs with at least 180 shared days, the median correlation of daily \pmtf{} is 0.50 within 10\,km,
+0.45--0.47 up to 200\,km and 0.35 beyond 400\,km. Strong local variation of this kind means that
+estimates for a station the model has not seen will be much less accurate than estimates for
+known stations.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.9\linewidth]{eda_station_corr_vs_distance}
+\caption{Spearman correlation of daily \pmtf{} between station pairs against distance (pairs with at least 180 shared days). The line shows the median per distance bin.}
+\label{fig:station_corr}
+\end{figure}

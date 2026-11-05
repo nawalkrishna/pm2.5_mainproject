@@ -1,57 +1,115 @@
 \chapter{Introduction}
-% HOW TO USE THESE FILES: each section lists, as comments, the points to cover and where the
-% facts come from (repo docs). Write the text yourself under each heading, in your own words,
-% and delete the [Write ...] placeholders and these comments as you go.
 
-[Write 1--2 opening paragraphs: what PM2.5 is and why ground-level estimates matter.]
+Fine particulate matter (\pmtf{}), the mass of airborne particles with an aerodynamic diameter of
+2.5\,$\mu$m or less, is the air pollutant most consistently linked with premature death and
+disease. Exposure assessment, policy evaluation and early warning all need to know how much \pmtf{}
+people breathe, day by day and place by place. In India that knowledge rests on a ground network
+that covers only a small part of the country. This report examines how far satellite and
+reanalysis data can fill the gaps in South India, and in particular how much the region's long
+cloudy monsoon limits that approach.
 
 \section{Background}
-% - PM2.5: particles <= 2.5 um; health effects (cite a WHO / health source you choose).
-% - India's ground network: CPCB continuous stations; sparse outside cities.
-%   Study area has 113 stations with valid data for 5 states (docs/stage2_acquisition.md).
-% - Satellites see everywhere: aerosol optical depth (AOD, MAIAC) and trace gases (TROPOMI)
-%   \cite{lyapustin2018maiac,veefkind2012tropomi}; reanalysis \cite{hersbach2020era5,gelaro2017merra2}.
-[Write the background.]
+
+The World Health Organization guideline for \pmtf{} is 15\ugm{} as a 24-hour mean and 5\ugm{} as an
+annual mean \cite{who2021aqg}. The Indian National Ambient Air Quality Standards are less strict,
+at 60\ugm{} (24-hour) and 40\ugm{} (annual) \cite{cpcb2009naaqs}. Compliance with either is judged
+from continuous ambient air quality monitoring stations (CAAQMS) operated by the Central and State
+Pollution Control Boards, whose hourly records are published through the Central Control Room
+(CCR) portal \cite{cpcbccr}.
+
+These stations are expensive to install and maintain, so they cluster in large cities. In the five
+southern states studied here (Kerala, Karnataka, Tamil Nadu, Andhra Pradesh and Telangana), 113
+stations provided at least one valid day of \pmtf{} between 2021 and 2025, and many of them started
+reporting only in 2022--2024. Large rural and peri-urban areas have no monitor at all
+(Figure~\ref{fig:study_area}).
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=11cm, height=8cm]{station_map}
-\caption{Ground PM2.5 monitoring stations used in this study (CPCB and US Consulate monitors) over the five South Indian states.}
-\label{fig:station_map}
+\includegraphics[width=11cm, height=12cm]{thesis_study_area}
+\caption{Study area: the five South Indian states and the 113 ground stations with at least one valid daily \pmtf{} value in 2021--2025 (CPCB stations and the two US Consulate monitors).}
+\label{fig:study_area}
 \end{figure}
-% Refer to it in the text as Figure~\ref{fig:station_map}.
+
+Satellites observe the whole region. The MODIS instruments on the Terra and Aqua satellites,
+processed with the MAIAC algorithm, give aerosol optical depth (AOD) at 1\,km resolution
+\cite{lyapustin2018maiac}. AOD measures how much the whole atmospheric column scatters and absorbs
+sunlight, and is the satellite quantity most often used to estimate surface \pmtf{}. The TROPOMI
+instrument on Sentinel-5P measures trace gases such as nitrogen dioxide, carbon monoxide and
+formaldehyde, which share sources with \pmtf{} \cite{veefkind2012tropomi}. Reanalysis products add
+meteorology (ERA5 and ERA5-Land \cite{hersbach2020era5,munozsabater2021era5land}) and modelled
+aerosol (MERRA-2 \cite{gelaro2017merra2}) everywhere and at every hour. Statistical and
+machine-learning models trained on station data can turn these inputs into \pmtf{} estimates for
+places without a monitor \cite{dey2020india,kawano2025india}.
 
 \section{Motivation}
-% - Satellites cannot see through cloud; South India has two monsoons.
-% - Key fact: MAIAC AOD exists at the station pixel on 32.4 % of valid station-days, and in the
-%   Kerala SW monsoon on about 1 day in 9 (docs/feasibility_summary.md, stage2_acquisition.md).
-% - So any satellite-based model must work when the satellite is missing.
-[Write the motivation.]
+
+Optical satellites cannot see the surface through cloud. MAIAC retrieves AOD only for clear
+pixels, and TROPOMI's gas retrievals are filtered for cloud as well. South India has two monsoons:
+the south-west monsoon from June to September, and the north-east monsoon from October to
+December, which affects Tamil Nadu and the south-east coast most. During these seasons cloud
+removes most satellite observations.
+
+The data assembled for this study show how large the gap is. Over all states and years, MAIAC AOD
+exists at the station pixel on only 32.4\,\% of the days with a valid ground measurement. In
+Kerala during the south-west monsoon the share falls to 11.8\,\%, about one day in nine. A model
+that needs AOD therefore cannot be applied on most monsoon days, which is exactly when a
+satellite-based product is supposed to fill gaps in the ground record. Any practical system must
+also work when the satellite is missing, and its accuracy on those days needs to be measured, not
+assumed.
 
 \section{Problem statement}
-% One paragraph: how much do cloud and the monsoon degrade satellite-based PM2.5 estimation in
-% South India, and how much does a two-tier model (with / without satellite inputs) recover?
-[Write the problem statement.]
+
+This study asks how much cloud cover and the monsoon degrade satellite-based estimation of daily
+ground-level \pmtf{} in South India, and how much of that loss a two-tier model can recover. Tier A
+uses satellite observations together with reanalysis aerosol, meteorology, static and temporal
+features. Tier B uses the same inputs without the satellite, so it can be applied on every day.
+The two-tier system uses Tier A where satellite AOD is available and Tier B elsewhere. The central
+test is estimation at stations the model has never seen, because that is what a satellite-based
+map is for.
 
 \section{Objectives}
-% Suggested list (edit to your words):
-% 1. Build a reproducible multi-source dataset (ground, satellite, reanalysis, static), 2021-2025.
-% 2. Quantify satellite availability under cloud and by season.
-% 3. Estimate daily PM2.5 with a two-tier model (Tier A with satellite, Tier B without) and
-%    evaluate it at unmonitored stations (spatial cross-validation).
-% 4. Measure the satellite gain overall, by cloud fraction and in the SW monsoon.
-% 5. (Add-on) Forecast hourly PM2.5 1-72 h ahead at existing stations and compare with the literature.
+
 \begin{enumerate}
-  \item [Objective 1]
+  \item Build a reproducible multi-source dataset for 2021--2025 that combines quality-controlled
+        hourly ground \pmtf{}, TROPOMI and MAIAC satellite data, ERA5/ERA5-Land and MERRA-2
+        reanalysis, and static land-surface features at every station.
+  \item Quantify how satellite availability depends on cloud fraction, season and state.
+  \item Estimate daily \pmtf{} with the two-tier model and evaluate it under temporal and spatial
+        cross-validation, including leave-one-station-out.
+  \item Measure the value added by the satellite inputs overall, by cloud fraction and in the
+        south-west monsoon, with confidence intervals.
+  \item As an extension, forecast hourly \pmtf{} 1--72\,h ahead at existing stations and compare the
+        result with published forecasting studies.
 \end{enumerate}
 
 \section{Scope}
-% - Five states: Kerala, Karnataka, Tamil Nadu, Andhra Pradesh, Telangana (D010).
-% - Period 2021-2025 (D011, D023); daily target, valid day >= 18 h (D012).
-% - Station-level estimation in Phase 1; the 1 km grid map is Phase 2 (D026).
-% - Out of scope: low-cost sensors (D015), road density (D033).
-[Write the scope.]
+
+The study covers the five states listed above, with Kerala reported separately as the region where
+the monsoon is longest. The analysis period is 1 January 2021 to 31 December 2025; data from
+December 2020 are used only for lagged features. The primary target is the daily mean in Indian
+Standard Time (IST), counted as valid when at least 18 of the 24 hourly values are present.
+
+Estimates are made at station locations. Producing gridded 1\,km maps is left for the next phase
+of the project. Low-cost sensors are excluded from the target data because their calibration is
+uncertain, and road density was not used because it could not be obtained in time. Every
+methodological choice is recorded, with its alternatives, in the project's decision log.
+
+\section{Contributions}
+
+\begin{itemize}
+  \item A station-level dataset of 126,805 station-days at 113 stations, with every raw file
+        hashed in a manifest and every cleaning step logged and reconciled.
+  \item A measurement of satellite availability against cloud fraction and season for South India.
+  \item An evaluation of the two-tier design under four validation schemes, with block-bootstrap
+        confidence intervals for every model comparison.
+  \item An hourly forecasting benchmark at existing stations that compares tree-based models,
+        an LSTM and a graph neural network, and tests whether satellite data help forecasting.
+\end{itemize}
 
 \section{Organisation of the report}
-% One short paragraph: what each chapter contains.
-[Write the organisation.]
+
+Chapter~2 reviews satellite-based \pmtf{} estimation and spatiotemporal forecasting, and identifies
+the research gap. Chapter~3 describes the study area and the data, and presents the exploratory
+analysis. Chapter~4 explains the quality control, alignment, features, models and validation
+design, including the forecasting extension. Chapter~5 presents and discusses the results.
+Chapter~6 concludes and outlines future work.

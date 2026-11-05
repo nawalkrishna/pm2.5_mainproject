@@ -1,12 +1,44 @@
 \chapter{Conclusion and Future Work}
 
 \section{Conclusion}
-% 1 paragraph per finding: satellite availability collapses under cloud; satellite gain is small
-% and mainly at unmonitored stations (LOSO +0.02, SW monsoon +0.05); Tier B carries cloudy days;
-% forecasting at existing stations: Random Forest best, satellite adds nothing.
-[Write the conclusion.]
+
+This study measured how cloud cover and the monsoon limit satellite-based estimation of daily
+ground-level \pmtf{} in South India, using quality-controlled data from 113 stations over 2021--2025
+together with TROPOMI, MAIAC, ERA5/ERA5-Land, MERRA-2 and static land-surface data.
+
+Cloud and the monsoon act mainly by removing satellite coverage. MAIAC AOD is available on only 9\,\%
+of station-days with a cloud fraction above 0.8, and on 37\,\% of Kerala's south-west monsoon days
+even within 10\,km of the station. Where AOD is available, the satellite's advantage does not shrink
+with cloud; there is simply much less of it.
+
+Where satellite data exist, and MERRA-2 and meteorology are already in the model, they add only a
+small amount of skill at unmonitored locations: $+0.020$ \rsq{} $[+0.009, +0.031]$ in
+leave-one-station-out validation, and $+0.049$ $[+0.018, +0.096]$ in the south-west monsoon. In the
+spatially blocked split the gain is $+0.004$ to $+0.023$ across processing variants, often with an
+interval that includes zero. The satellite inputs add nothing for gap filling at a monitored
+station. Tier B, which uses no satellite data, therefore recovers essentially all of the two-tier
+skill. For an unmonitored location that skill is modest (LOSO \rsq{} 0.32), and in Kerala's monsoon
+no model beats a monthly climatology without the station's own measurements.
+
+For hourly forecasting at existing stations, a Random Forest on issue-time features is the best
+model at every horizon from 1 to 72 hours (\rsq{} 0.813 at 1 hour, 0.430 at 24 hours and 0.321 at
+72 hours). An LSTM and a graph network are significantly below it in every seed, and satellite
+inputs again add nothing.
+
+Together these results answer the research question: in South India the monsoon makes the
+satellite-free tier the core of any daily \pmtf{} system, and the value of satellite data lies in
+small, location-specific gains rather than in the bulk of the skill.
 
 \section{Future work}
-% Phase 2: 1 km grid maps (D026); stronger models and several seeds; real-time weather
-% forecasts for the forecasting task; more satellite-PM2.5 estimation literature.
-[Write the future work.]
+
+\begin{enumerate}
+  \item Test whether the small spatial satellite gain survives stronger models, such as tuned
+        gradient boosting with nested validation, fitted with several random seeds.
+  \item Add spatial predictors for unmonitored sites, such as distance-weighted \pmtf{} from other
+        stations on the same day, with care to avoid leakage in leave-one-station-out validation.
+  \item Extract the inputs on a regular 1\,km grid and produce daily \pmtf{} maps for the region.
+  \item Treat the Kerala monsoon separately, for example with long-range transport and rainfall
+        washout features or a coarser target scale.
+  \item For forecasting, replace reanalysis with archived real-time weather forecasts, so that the
+        evaluation matches operational conditions.
+\end{enumerate}

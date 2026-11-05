@@ -10,7 +10,11 @@
 \usepackage{subcaption}   % side-by-side figures (instruction 6)
 \usepackage{algorithm}    % algorithm float (instruction 8)
 \usepackage{algorithmic}  % \STATE, \IF, \FOR ... (instruction 8)
+\usepackage{url}          % web addresses in the bibliography
 \graphicspath{{figures/}}
+\newcommand{\pmtf}{PM\textsubscript{2.5}}                 % PM2.5
+\newcommand{\ugm}{\ensuremath{\,\mu\mathrm{g\,m^{-3}}}}   % micrograms per cubic metre
+\newcommand{\rsq}{\ensuremath{R^2}}
 %\usepackage[grey,times]{quotchap}
 \usepackage[nottoc]{tocbibind}
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
@@ -36,6 +40,7 @@
 \newtheorem{remark}[theorem]{Remark}
 
 \renewcommand{\baselinestretch}{1.5}
+\setlength{\emergencystretch}{2em}  % lets LaTeX stretch spacing slightly instead of running into the margin
 \begin{document}
 
 %\pagenumbering{arabic} \setcounter{page}{1}
@@ -147,8 +152,22 @@ award of any degree.
 {\large{\bf{ACKNOWLEDGEMENT}}}
 \end{center}
 
-% Write this page yourself, in your own words.
-[Your acknowledgement.]
+% Draft: personalise this page in your own words.
+I thank my project supervisor, Dr. Ansith S, for his guidance and feedback throughout this work. I
+also thank the Department of Computer Science and Engineering at IIIT Kottayam for the facilities
+and support provided.
+
+The ground data come from the Central Pollution Control Board and, for the US Consulate monitors,
+from OpenAQ. The satellite, reanalysis and land-surface data were accessed through Google Earth
+Engine.
+
+% AI-use disclosure: check the institute's policy and remove the % below if it applies.
+% I used an AI assistant (Claude, Anthropic) to help write the analysis code, prepare figures and
+% tables, and draft parts of this report; I reviewed and revised all of it and take responsibility
+% for its content.
+
+\vspace{1cm}
+\noindent \hfill Nawal Krishna S
 
 \clearpage
 
@@ -163,7 +182,27 @@ award of any degree.
 \end{center}
 
 
-The main aim of the project ........
+Ground monitors measure fine particulate matter (\pmtf{}) accurately but cover only a small part
+of South India, and satellites, which see the whole region, cannot see through the cloud of its two
+monsoons. This report measures how much cloud and the monsoon degrade satellite-based estimation of
+daily ground-level \pmtf{} over Kerala, Karnataka, Tamil Nadu, Andhra Pradesh and Telangana, and how
+much a two-tier model recovers. Quality-controlled hourly data from 113 stations for 2021--2025 were
+combined with TROPOMI trace gases, MAIAC aerosol optical depth (AOD), ERA5/ERA5-Land meteorology,
+MERRA-2 aerosol and static land-surface features. Tier A uses the satellite inputs; Tier B uses
+everything else and can be applied on every day. Random Forest models were evaluated under temporal,
+spatially blocked, leave-one-station-out and combined validation, with block-bootstrap confidence
+intervals.
+
+Cloud acts mainly by removing satellite coverage: MAIAC AOD exists on 32.4\,\% of valid station-days
+at the station pixel, on 11.8\,\% in Kerala's south-west monsoon, and on 9\,\% of days with a cloud
+fraction above 0.8. Where it exists, the satellite adds little once reanalysis aerosol and meteorology
+are in the model: $+0.020$ in \rsq{} at unseen stations, and $+0.049$ in the south-west monsoon. Tier B
+therefore carries almost all of the skill, which at an unseen station is modest (\rsq{} 0.32), and no
+model beats a monthly climatology in Kerala's monsoon. In an extension that forecasts hourly \pmtf{}
+1--72 hours ahead at existing stations, a Random Forest outperforms an LSTM and a graph neural network
+at every horizon (\rsq{} 0.81 at 1 hour, 0.43 at 24 hours), and satellite inputs again add nothing.
+The results show that in a monsoon region the satellite-free model is the core of a daily \pmtf{}
+system rather than a fallback.
 
 \clearpage
 
