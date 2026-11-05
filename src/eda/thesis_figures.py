@@ -1,4 +1,5 @@
-"""Two figures made for the thesis: the study-area station map and the pipeline diagram.
+"""Figures for the thesis: the study-area station map, the pipeline diagram, and the export of
+every figure the thesis uses into thesis/figures (as RGB PNGs, which compile faster).
 
     thesis_study_area.png   the 113 stations with valid daily PM2.5 in dataset v3, by state
     thesis_pipeline.png     data sources -> QC -> alignment -> features -> models -> evaluation
@@ -7,10 +8,13 @@ Usage:
     python -m src.eda.thesis_figures
 """
 
+import re
+
 import geopandas as gpd
 import matplotlib.pyplot as plt
 import pandas as pd
 from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
+from PIL import Image
 
 from src.eda import style
 from src.ingest.boundaries import GEOJSON_NAME, OUT_DIR as BOUNDARY_DIR
@@ -80,10 +84,35 @@ def pipeline() -> None:
     style.save(fig, REPORTS_FIGURES / "thesis_pipeline.png")
 
 
+def export_for_thesis() -> None:
+    """Copy the figures the thesis uses into thesis/figures as RGB PNGs (no alpha channel).
+
+    pdfTeX has to split and recompress the alpha channel of RGBA PNGs on every compile, which
+    doubled the build time and pushed it past Overleaf's free compile limit; RGB PNGs are
+    embedded as they are. Figures the thesis does not use are removed from thesis/figures.
+    """
+    thesis = REPORTS_FIGURES.parents[1] / "thesis"
+    out = thesis / "figures"
+    used = set()
+    for tex in thesis.glob("chapter*.tex"):
+        used |= set(re.findall(r"\\includegraphics(?:\[[^\]]*\])?\{([^}]+)\}", tex.read_text(encoding="utf-8")))
+    used = {u.removesuffix(".png") for u in used}
+    for old in out.glob("*.png"):
+        if old.stem not in used:
+            old.unlink()
+    for name in sorted(used):
+        im = Image.open(REPORTS_FIGURES / f"{name}.png").convert("RGBA")
+        rgb = Image.new("RGB", im.size, (255, 255, 255))
+        rgb.paste(im, mask=im.split()[3])
+        rgb.save(out / f"{name}.png", optimize=True)
+    print(f"{len(used)} figures exported to {out}")
+
+
 def main() -> None:
     style.apply()
     study_area()
     pipeline()
+    export_for_thesis()
 
 
 if __name__ == "__main__":
