@@ -1,4 +1,4 @@
-% Bibliography (BibTeX). Cite with \cite{key}.
+% Bibliography for biblatex (style=ieee, backend=biber; see report.tex). Cite with 	te{key}.
 % The six papers of the literature review were taken from the PDFs in "Research papers".
 % Every DOI below was checked against Crossref (or Zenodo / doi.org) on 2026-11-05.
 
@@ -18,7 +18,7 @@
   title   = {Regional {PM2.5} prediction with hybrid directed graph neural networks and spatio-temporal fusion of meteorological factors},
   journal = {Environmental Pollution},
   volume  = {366},
-  pages   = {125404},
+  eid     = {125404},
   year    = {2025},
   doi     = {10.1016/j.envpol.2024.125404}
 }
@@ -28,7 +28,7 @@
   title   = {Adaptive scalable spatio-temporal graph convolutional network for {PM2.5} prediction},
   journal = {Engineering Applications of Artificial Intelligence},
   volume  = {126},
-  pages   = {107080},
+  eid     = {107080},
   year    = {2023},
   doi     = {10.1016/j.engappai.2023.107080}
 }
@@ -38,19 +38,17 @@
   title   = {An adaptive spatiotemporal graph transformer for multi-site {PM2.5} multi-step forecasting with non-stationary and sparse-aware method},
   journal = {Journal of Environmental Management},
   volume  = {414},
-  pages   = {130515},
+  eid     = {130515},
   year    = {2026},
   doi     = {10.1016/j.jenvman.2026.130515}
 }
 
-@misc{ahmad2025lahore,
+@article{ahmad2025lahore,
   author        = {Ahmad, Osama and Khalid, Zubair and Tahir, Muhammad and Uppal, Momin},
   title         = {Spatiotemporal air quality mapping in urban areas using sparse sensor data, satellite imagery, meteorological factors, and spatial features},
+  journal       = {arXiv preprint arXiv:2501.11270},
   year          = {2025},
-  eprint        = {2501.11270},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.LG},
-  note          = {arXiv:2501.11270}
+  doi           = {10.48550/arXiv.2501.11270}
 }
 
 @article{shaban2026cnnlstm,
@@ -71,7 +69,7 @@
   journal = {Science Advances},
   volume  = {11},
   number  = {4},
-  pages   = {eadq1071},
+  eid     = {eadq1071},
   year    = {2025},
   doi     = {10.1126/sciadv.adq1071}
 }
@@ -82,7 +80,7 @@
   journal = {Remote Sensing},
   volume  = {12},
   number  = {23},
-  pages   = {3872},
+  eid     = {3872},
   year    = {2020},
   doi     = {10.3390/rs12233872}
 }
@@ -93,7 +91,7 @@
   journal = {Scientific Reports},
   volume  = {11},
   number  = {1},
-  pages   = {544},
+  eid     = {544},
   year    = {2021},
   doi     = {10.1038/s41598-020-79229-7}
 }
@@ -115,7 +113,7 @@
   journal = {Atmospheric Pollution Research},
   volume  = {14},
   number  = {10},
-  pages   = {101875},
+  eid     = {101875},
   year    = {2023},
   doi     = {10.1016/j.apr.2023.101875}
 }
@@ -127,43 +125,48 @@
   publisher = {World Health Organization},
   address   = {Geneva},
   year      = {2021},
-  isbn      = {978-92-4-003422-8}
+  isbn      = {978-92-4-003422-8},
+  url       = {https://iris.who.int/handle/10665/345329}
 }
 
 @misc{cpcb2009naaqs,
   author       = {{Central Pollution Control Board}},
   title        = {National Ambient Air Quality Standards},
-  howpublished = {Gazette of India, Extraordinary, Notification of 18 November 2009},
-  year         = {2009}
+  howpublished = {Gazette of India, Extraordinary},
+  date         = {2009-11-18}
 }
 
-@misc{cpcbccr,
-  author       = {{Central Pollution Control Board}},
-  title        = {Central Control Room for Air Quality Management -- {CAAQMS} data repository},
-  howpublished = {\url{https://airquality.cpcb.gov.in/ccr}},
-  note         = {Hourly data for 2020--2025 downloaded in November 2026},
-  year         = {2026}
+@online{cpcbccr,
+  author  = {{Central Pollution Control Board}},
+  title   = {Central Control Room for Air Quality Management -- {CAAQMS} data repository},
+  url     = {https://airquality.cpcb.gov.in/ccr},
+  urldate = {2026-11-03},
+  note    = {Hourly data for 2020--2025},
+  year    = {2026}
 }
 
-@misc{openaq,
-  author       = {{OpenAQ}},
-  title        = {{OpenAQ} {API} version 3},
-  howpublished = {\url{https://openaq.org}},
-  note         = {US Consulate Hyderabad and Chennai monitors, accessed November 2026},
-  year         = {2026}
+@online{openaq,
+  author  = {{OpenAQ}},
+  title   = {{OpenAQ} {API} version 3},
+  url     = {https://openaq.org},
+  urldate = {2026-11-03},
+  note    = {US Consulate Hyderabad and Chennai monitors},
+  year    = {2026}
 }
 
-@misc{worldpop,
+@online{worldpop,
   author       = {{WorldPop}},
   title        = {Global high resolution population denominators},
-  howpublished = {School of Geography and Environmental Science, University of Southampton, \url{https://www.worldpop.org}},
-  note         = {Accessed through Google Earth Engine, November 2026},
+  organization = {School of Geography and Environmental Science, University of Southampton},
+  url          = {https://www.worldpop.org},
+  urldate      = {2026-11-03},
+  note         = {Accessed through Google Earth Engine},
   year         = {2026}
 }
 
 % ---------------- Data sources ----------------
 @article{veefkind2012tropomi,
-  author  = {Veefkind, J. P. and Aben, I. and McMullan, K. and others},
+  author    = {Veefkind, J. P. and others},
   title   = {{TROPOMI} on the {ESA} {Sentinel-5 Precursor}: A {GMES} mission for global observations of the atmospheric composition for climate, air quality and ozone layer applications},
   journal = {Remote Sensing of Environment},
   volume  = {120},
@@ -183,7 +186,7 @@
 }
 
 @article{hersbach2020era5,
-  author  = {Hersbach, Hans and Bell, Bill and Berrisford, Paul and others},
+  author    = {Hersbach, Hans and others},
   title   = {The {ERA5} global reanalysis},
   journal = {Quarterly Journal of the Royal Meteorological Society},
   volume  = {146},
@@ -194,7 +197,7 @@
 }
 
 @article{munozsabater2021era5land,
-  author  = {Mu{\~n}oz-Sabater, Joaqu{\'i}n and Dutra, Emanuel and Agust{\'i}-Panareda, Anna and others},
+  author    = {Mu{\~n}oz-Sabater, Joaqu{\'i}n and others},
   title   = {{ERA5-Land}: a state-of-the-art global reanalysis dataset for land applications},
   journal = {Earth System Science Data},
   volume  = {13},
@@ -204,7 +207,7 @@
 }
 
 @article{gelaro2017merra2,
-  author  = {Gelaro, Ronald and McCarty, Will and Su{\'a}rez, Max J. and others},
+  author    = {Gelaro, Ronald and others},
   title   = {The {Modern-Era Retrospective Analysis for Research and Applications, Version 2 (MERRA-2)}},
   journal = {Journal of Climate},
   volume  = {30},
@@ -225,18 +228,18 @@
 }
 
 @article{farr2007srtm,
-  author  = {Farr, Tom G. and Rosen, Paul A. and Caro, Edward and others},
+  author    = {Farr, Tom G. and others},
   title   = {The {Shuttle Radar Topography Mission}},
   journal = {Reviews of Geophysics},
   volume  = {45},
   number  = {2},
-  pages   = {RG2004},
+  eid     = {RG2004},
   year    = {2007},
   doi     = {10.1029/2005RG000183}
 }
 
-@misc{zanaga2022worldcover,
-  author    = {Zanaga, Daniele and Van De Kerchove, Ruben and Daems, Dirk and others},
+@dataset{zanaga2022worldcover,
+  author    = {Zanaga, Daniele and others},
   title     = {{ESA WorldCover} 10 m 2021 v200},
   publisher = {Zenodo},
   year      = {2022},
@@ -270,29 +273,33 @@
   author    = {Kipf, Thomas N. and Welling, Max},
   title     = {Semi-supervised classification with graph convolutional networks},
   booktitle = {International Conference on Learning Representations (ICLR)},
-  year      = {2017}
+  year      = {2017},
+  doi       = {10.48550/arXiv.1609.02907}
 }
 
 @book{efron1993bootstrap,
   author    = {Efron, Bradley and Tibshirani, Robert J.},
   title     = {An Introduction to the Bootstrap},
   publisher = {Chapman and Hall/CRC},
-  year      = {1993}
+  year      = {1993},
+  doi       = {10.1201/9780429246593}
 }
 
 @article{pedregosa2011sklearn,
-  author  = {Pedregosa, F. and Varoquaux, G. and Gramfort, A. and others},
+  author    = {Pedregosa, F. and others},
   title   = {Scikit-learn: Machine learning in {Python}},
   journal = {Journal of Machine Learning Research},
   volume  = {12},
   pages   = {2825--2830},
-  year    = {2011}
+  year    = {2011},
+  url     = {https://jmlr.org/papers/v12/pedregosa11a.html}
 }
 
 @inproceedings{paszke2019pytorch,
-  author    = {Paszke, Adam and Gross, Sam and Massa, Francisco and others},
+  author    = {Paszke, Adam and others},
   title     = {{PyTorch}: An imperative style, high-performance deep learning library},
   booktitle = {Advances in Neural Information Processing Systems 32 (NeurIPS)},
   pages     = {8024--8035},
-  year      = {2019}
+  year      = {2019},
+  doi       = {10.48550/arXiv.1912.01703}
 }

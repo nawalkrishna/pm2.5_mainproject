@@ -10,7 +10,8 @@
 \usepackage{subcaption}   % side-by-side figures (instruction 6)
 \usepackage{algorithm}    % algorithm float (instruction 8)
 \usepackage{algorithmic}  % \STATE, \IF, \FOR ... (instruction 8)
-\usepackage{url}          % web addresses in the bibliography
+\usepackage[style=ieee, backend=biber, doi=true, url=true, isbn=false]{biblatex}   % IEEE references with DOI
+\addbibresource{bib.bib}
 \usepackage{array}        % ragged-right table columns
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}   % left-aligned wrapped column
 \graphicspath{{figures/}}
@@ -246,7 +247,7 @@ In a monsoon region, the satellite-free model is the core of a daily \pmtf{} sys
 \input chapter6.tex
 
 
-\bibliographystyle{plain}
-\bibliography{bib}
+% IEEE reference style with DOIs (biblatex-ieee; Overleaf runs biber automatically)
+\printbibliography[heading=bibintoc, title={Bibliography}]
 
 \end{document}
