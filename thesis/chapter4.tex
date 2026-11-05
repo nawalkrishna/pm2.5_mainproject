@@ -1,0 +1,61 @@
+\chapter{Methodology}
+
+[Write 1 opening paragraph and refer to a pipeline figure (to be drawn: data -> QC -> alignment -> features -> models -> evaluation).]
+
+\section{Overall pipeline}
+% Stages 1-6; reproducibility: YAML configs, pinned requirements, raw-data manifest with SHA-256,
+% seeds, decision log (docs/decision_log.md).
+[Write.]
+
+\section{Quality control and cleaning}
+% Source: docs/stage4_cleaning_features.md, D028 review. Rule S3a-12h:
+% invalid values (negative, zero, exact 1000), flat-line runs >= 12 h, isolated spikes.
+% Removed 20,272 of 2,965,479 hours (0.68 %). Present the rule as an algorithm:
+\begin{algorithm}[h]
+	\caption{Hourly PM2.5 quality control (rule S3a-12h)}
+	\label{alg:qc}
+	\begin{algorithmic}[1]
+		\STATE \textbf{Input}: hourly series $x_t$ of one station
+		\STATE [Fill in the steps from src/clean/pm25_qc.py: invalid values, flat runs, spikes]
+		\STATE \textbf{Output}: QC flag for every hour
+	\end{algorithmic}
+\end{algorithm}
+[Write; refer to Algorithm~\ref{alg:qc}.]
+
+\section{Targets and temporal alignment}
+% - Daily target: mean of valid hours, day valid if >= 18 h (D012).
+% - Overpass window 12-15 IST (D034, D036).
+% - UTC -> IST rules; ERA5 instants at :30 IST.
+% - Relative humidity (Magnus) and MERRA-2 PM2.5 reconstruction as equations:
+\begin{equation}\label{eq:merra2}
+\mathrm{PM}_{2.5}^{\mathrm{M2}} = \mathrm{DU}_{2.5} + \mathrm{OC} + \mathrm{BC} + \mathrm{SS}_{2.5} + 1.375\,\mathrm{SO_4}
+\end{equation}
+[Write.]
+
+\section{Features and the two-tier model}
+% - Feature groups (configs/features.yaml): satellite, reanalysis aerosol, meteorology,
+%   temporal, lags, static.
+% - Tier A where 10 km AOD exists, Tier B everywhere; two-tier = A where available (D039).
+[Write.]
+
+\section{Validation design}
+% - Splits: temporal (2025 held out), spatial blocks (50 km single linkage, 46 blocks, 5 folds, D038),
+%   leave-one-station-out, combined (D038).
+% - Models: persistence, climatology, linear, Random Forest \cite{breiman2001rf} (D040).
+% - Metrics: RMSE, MAE, R^2 (equation below); block bootstrap 1,000 draws \cite{efron1993bootstrap} (D043).
+\begin{equation}\label{eq:r2}
+R^2 = 1 - \frac{\sum_i (y_i - \hat{y}_i)^2}{\sum_i (y_i - \bar{y})^2}, \qquad
+\mathrm{RMSE} = \sqrt{\frac{1}{n}\sum_i (y_i - \hat{y}_i)^2}
+\end{equation}
+[Write.]
+
+\section{Hourly forecasting (add-on)}
+% Source: docs/stage6_forecasting.md.
+% - Issue-time rules (table of inputs for settings a and b), splits 2021-23 / 2024 / 2025, purge 72 h.
+% - LSTM \cite{hochreiter1997lstm} and GC-LSTM \cite{qi2019gclstm,kipf2017gcn}: graph
+%   normalisation equation, residual head; PyTorch \cite{paszke2019pytorch}.
+\begin{equation}\label{eq:gcn}
+\hat{A} = D^{-1/2}(W + I)D^{-1/2}, \qquad
+w_{ij} = \exp\!\left(-\left(\frac{d_{ij}}{100\,\mathrm{km}}\right)^{2}\right)\ \text{for}\ d_{ij} \le 200\,\mathrm{km}
+\end{equation}
+[Write.]

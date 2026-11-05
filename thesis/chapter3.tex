@@ -1,0 +1,45 @@
+\chapter{Study Area and Data}
+
+[Write 1 opening paragraph.]
+
+\section{Study area and period}
+% - Five states (D010), Kerala as monsoon focus; 2020-12-01 to 2025-12-31 IST extraction
+%   window, study period 2021-2025 (D011, D023).
+% - Seasons used throughout: winter, pre-monsoon, SW monsoon (Jun-Sep), NE monsoon (Oct-Dec)
+%   (configs/audit.yaml).
+[Write.]
+
+\section{Ground-level PM2.5}
+% Source: docs/stage2_acquisition.md, section 2.
+% - CPCB CCR hourly data, 833 station-year files, browser download (D008).
+% - US Consulate Hyderabad and Chennai via OpenAQ (D015).
+% - Rows: CPCB 2,916,244 kept; OpenAQ 49,235 (30,111 duplicate half-hour records removed, D044);
+%   total 2,965,479 hourly values at 113 stations.
+% - Timestamps: IST hour start, verified against OpenAQ (median r 0.986 at offset 0, D024).
+% Put the removal table here (Table: hours in window / empty / duplicate / kept).
+[Write.]
+
+\section{Satellite data}
+% - TROPOMI (Sentinel-5P) L3: NO2, CO, SO2, HCHO, UV aerosol index, cloud fraction \cite{veefkind2012tropomi}.
+% - MODIS MAIAC AOD 550 nm, QA "clear" (D029) \cite{lyapustin2018maiac}.
+% - Extracted with Google Earth Engine \cite{gorelick2017gee} at the station pixel and 5 / 10 km
+%   buffers; 10 km used (D035).
+% - Availability table (stage2_acquisition.md section 3): e.g. MAIAC clear 0.31 / 0.48 / 0.54
+%   (pt / 5 km / 10 km), Kerala Jun-Sep 0.11 / 0.28 / 0.36.
+[Write.]
+
+\section{Reanalysis and static data}
+% - ERA5-Land and ERA5 hourly meteorology \cite{munozsabater2021era5land,hersbach2020era5};
+%   9 of 120 coastal points use ERA5 (data dictionary).
+% - MERRA-2 aerosol, reconstructed surface PM2.5 \cite{gelaro2017merra2}.
+% - SRTM elevation \cite{farr2007srtm}, ESA WorldCover 2021 \cite{zanaga2022worldcover},
+%   WorldPop population, distance to coast.
+[Write.]
+
+\section{Exploratory analysis}
+% Source: docs/stage3_exploration.md, docs/feasibility_summary.md. Suggested figures:
+% eda_pm25_monthly_by_state.png, eda_sat_availability_by_month.png, eda_aod_vs_cloud.png,
+% eda_station_corr_vs_distance.png.
+% Key numbers: 114,191 valid station-days; AOD at the pixel 32.4 %; seasonal means (TN, AP...);
+% correlations CO 0.46, precipitation -0.42; station pairs median r 0.50 within 10 km.
+[Write.]

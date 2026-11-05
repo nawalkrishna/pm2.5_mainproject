@@ -1,0 +1,53 @@
+\chapter{Literature Review}
+
+[Write 1 opening paragraph: the two families of work reviewed below.]
+
+\section{Satellite-based estimation of ground-level PM2.5}
+% GAP IN THE READING LIST: none of the six papers in "Research papers" is an AOD-to-PM2.5
+% estimation study. Add 3-5 such papers (India or China, Random Forest / XGBoost / mixed
+% models, with spatial cross-validation) before writing this section; they are the closest
+% comparison for our leave-one-station-out results. Do not cite papers you have not read.
+% - Ahmad et al. \cite{ahmad2025lahore}: estimation at unmonitored sensors (Lahore, 30 IQAir
+%   sensors, 12 days, MAIAC AOD + ERA5 + roads + population; GNN; 2 sensors held out per run;
+%   reports MAE/RMSE, no R^2). Closest to our task, but very small test.
+[Write this section after adding the estimation papers.]
+
+\section{Spatiotemporal forecasting of PM2.5}
+% - Qi et al. \cite{qi2019gclstm}: GC-LSTM, 76 stations, Beijing-Tianjin-Hebei, hourly
+%   2015-2016; R^2 0.72 at 72 h; random 60/20/20 split of time blocks.
+% - Chen et al. \cite{chen2025hybrid}: directed graph network + LSTM, 29 cities, North China
+%   Plain, 2019-2023; chronological split (test 2023); MAE 7.6-14.0 ug/m3 for 3-48 h.
+% - Ni et al. \cite{ni2023asgcn}: ASGCN, KnowAir (184 cities, 3-hourly) and UrbanAir; 4:1 split.
+% - Shi et al. \cite{shi2026astgt}: graph transformer; Beijing and an India Kaggle dataset.
+% - Shaban \cite{shaban2026cnnlstm}: CNN-LSTM with MAIAC AOD gap-filled by an autoencoder;
+%   R^2 0.86 at 24 h; cities and dataset sizes not clearly reported.
+% Common thread: all use the stations' own past PM2.5; satellite data minor or absent.
+[Write this section.]
+
+\section{Comparative analysis of related studies}
+% Table: one row per paper. Fill the empty cells from the papers; keep cells short.
+\begin{table}[h]
+    \centering
+    \small
+    \begin{tabular}{p{2.6cm}|p{2.4cm}|p{2.6cm}|p{2.2cm}|p{3.2cm}}
+        \hline
+        Study & Region, data & Model & Task & Reported skill \\
+        \hline
+        Qi et al. \cite{qi2019gclstm} & BTH, 76 stations & GC-LSTM & Forecast 1--72 h & $R^2$ 0.72 at 72 h \\
+        Chen et al. \cite{chen2025hybrid} & N. China Plain, 29 cities & Directed GNN + LSTM & Forecast 3--48 h & MAE 7.6--14.0 $\mu$g/m$^3$ \\
+        Ni et al. \cite{ni2023asgcn} & China, 184 cities & ASGCN & Forecast & [fill] \\
+        Shi et al. \cite{shi2026astgt} & Beijing; India & AST-GT & Forecast, multi-step & [fill] \\
+        Ahmad et al. \cite{ahmad2025lahore} & Lahore, 30 sensors & GNN + CNN & Estimation, unmonitored & MAE / RMSE only \\
+        Shaban \cite{shaban2026cnnlstm} & Several cities & CNN-LSTM & Forecast 24 h & $R^2$ 0.86 \\
+        \hline
+    \end{tabular}
+    \caption{Summary of the related studies.}
+    \label{tab:related}
+\end{table}
+
+\section{Research gap}
+% - None estimates PM2.5 across a large network of unmonitored places with spatial CV.
+% - None measures how much cloud and the monsoon reduce the value of satellite inputs.
+% - None covers South India.
+% - Validation is often weak (random splits; no uncertainty intervals).
+[Write the research gap.]

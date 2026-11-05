@@ -17,3 +17,17 @@ __pycache__/
 # Run logs (the run summary CSV in reports/ is committed)
 logs/*
 !logs/.gitkeep
+
+# Original LaTeX template from the guide (kept locally, not committed)
+thesis_template_src/
+# LaTeX build files
+thesis/*.aux
+thesis/*.log
+thesis/*.out
+thesis/*.toc
+thesis/*.lof
+thesis/*.lot
+thesis/*.bbl
+thesis/*.blg
+thesis/*.synctex.gz
+thesis_overleaf.zip

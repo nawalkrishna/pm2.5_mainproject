@@ -1,0 +1,201 @@
+\documentclass[12pt,a4wide]{report}
+
+\usepackage{amsthm,amssymb,mathrsfs,setspace,pstcol}%amsmath, latexsym,footmisc
+
+%\usepackage{play}
+\usepackage{epsfig}
+\usepackage{amsmath}      % \text, aligned equations (instruction 8)
+\usepackage{graphicx}
+\usepackage{subcaption}   % side-by-side figures (instruction 6)
+\usepackage{algorithm}    % algorithm float (instruction 8)
+\usepackage{algorithmic}  % \STATE, \IF, \FOR ... (instruction 8)
+\graphicspath{{figures/}}
+%\usepackage[grey,times]{quotchap}
+\usepackage[nottoc]{tocbibind}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+%
+
+\input xy
+\xyoption{all}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{notation}[theorem]{Notation}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\renewcommand{\baselinestretch}{1.5}
+\begin{document}
+
+%\pagenumbering{arabic} \setcounter{page}{1}
+
+% --------------- Title page -----------------------
+\begin{titlepage}
+\enlargethispage{2cm}
+
+\begin{center}
+
+\vspace*{-1cm}
+
+\textbf{\Large SATELLITE-BASED GROUND-LEVEL PM2.5 ESTIMATION USING MULTI-SOURCE DATA OVER SOUTH INDIA}\\[10pt]
+
+\vspace*{2.5cm}
+
+
+                         A Project Report Submitted \\
+                     in Partial Fulfilment of the Requirements  \\
+                     for the Degree of  \\
+                          \vspace{4.5mm}
+                   {\Large \bf Master of Technology } \\
+                   in \\
+                   {\large \bf Cyber Security } \\
+
+                      \vspace{9mm}
+                   {\em  by} \\ \vspace{2.5mm}
+             {\large \bf [Type your full name]} \\
+{\large \bf (Roll No. [Type your roll no.])}\\[.35in]
+
+\vfill
+%\includegraphics[width=12cm, height=12cm]{iiserlogo}
+
+\begin{figure}[h]
+% \includegraphics[width=15mm,height=10mm]{time_arma_gs.jpg}
+  \begin{center}
+  \includegraphics[width=6cm, height=3cm]{logo2.jpg}
+  \end{center}
+\end{figure}
+\vspace*{0.22cm}
+
+{\em\large to }\\%[8pt]
+{\bf\large \mbox{INDIAN INSTITUTE OF INFORMATION TECHNOLOGY }}\\%[4pt]
+{\bf\large KOTTAYAM-686635, INDIA}\\%[8pt]
+{\it\large November 2026}
+\end{center}
+
+\end{titlepage}
+
+\clearpage
+% --------------- Declaration  page -----------------------
+\pagenumbering{roman} \setcounter{page}{2}
+\begin{center}
+{\large{\bf{DECLARATION}}}
+\end{center}
+%\thispagestyle{empty}
+
+
+\noindent I, \textbf{[Your Name]} (\textbf{Roll No: [Your roll
+number]}), hereby declare that, this report entitled
+\textbf{``Satellite-Based Ground-Level PM2.5 Estimation Using Multi-Source Data over South India''} submitted to Indian
+Institute of Information Technology Kottayam towards partial
+requirement of {\bf Master of Technology} in \textbf{Cyber Security}
+is an original work carried out by me under the supervision of
+\textbf{[Faculty Name]} and has not formed the basis for the award
+of any degree or diploma, in this or any other institution or
+university. I have sincerely tried to uphold the academic ethics
+and honesty. Whenever an external information or statement or
+result is used then, that have been duly acknowledged and cited.
+
+\vspace{4cm}
+
+\noindent Kottayam-686635 \hfill \textbf{[Your Name]}
+
+\noindent November 2026
+
+\clearpage
+
+
+% --------------- Certificate page -----------------------
+\pagenumbering{roman} \setcounter{page}{3}
+\begin{center}
+{\large{\bf{CERTIFICATE}}}
+\end{center}
+%\thispagestyle{empty}
+
+
+\noindent This is to certify that the work contained in this
+project report entitled \textbf{``Satellite-Based Ground-Level PM2.5 Estimation Using Multi-Source Data over South India''}
+submitted by \textbf{[Your Name]} (\textbf{Roll No: [Your roll
+number]}) to Indian Institute of Information Technology Kottayam
+towards partial requirement of {\bf Master of Technology} in
+\textbf{Cyber Security} has been carried out by [him/her] under my
+supervision and that it has not been submitted elsewhere for the
+award of any degree.
+
+
+\vspace{4cm}
+
+\noindent Kottayam-686635  \hfill (Dr. XYZ)
+
+\noindent November 2026 \hfill Project Supervisor
+
+\clearpage
+
+
+% --------------- Acknowledgement page (not in the template; remove if your guide does not want it) ---
+\begin{center}
+{\large{\bf{ACKNOWLEDGEMENT}}}
+\end{center}
+
+% Write this page yourself, in your own words.
+[Your acknowledgement.]
+
+\clearpage
+
+
+
+
+
+
+% --------------- Abstract page -----------------------
+\begin{center}
+{\Large{\bf{ABSTRACT}}}
+\end{center}
+
+
+The main aim of the project ........
+
+\clearpage
+
+
+
+\tableofcontents
+\clearpage
+\listoffigures
+\listoftables
+
+
+\newpage
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+% =========== Main chapters starts here. Type in seperate files and include the filename here. ==
+% ============================
+
+\input chapter1.tex
+
+\input chapter2.tex
+
+\input chapter3.tex
+
+\input chapter4.tex
+
+\input chapter5.tex
+
+\input chapter6.tex
+
+
+\bibliographystyle{plain}
+\bibliography{bib}
+
+\end{document}
