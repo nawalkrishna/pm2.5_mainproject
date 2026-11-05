@@ -8,8 +8,8 @@
 % models, with spatial cross-validation) before writing this section; they are the closest
 % comparison for our leave-one-station-out results. Do not cite papers you have not read.
 % Papers added to bib.bib for this section (read each before citing it):
-%  - \cite{kawano2025india}: India daily 10 km, AOD gap-filling + XGBoost; spatial CV R^2 0.67
-%    against 0.85 for random CV (the same over-optimism our LOSO results show).
+%  - \cite{kawano2025india}: India daily 10 km, AOD gap-filling + XGBoost; spatial CV R^2 0.67;
+%    a related dataset record reports random CV R^2 0.85 (check this in the paper before using it).
 %  - \cite{dey2020india}: India 1 km PM2.5 2000-2019, MAIAC AOD with MERRA-2 scaling; daily R^2 0.8 vs CPCB.
 %  - \cite{maheshwarkar2021central}: central India (Madhya Pradesh), MAIAC gaps filled from MERRA-2,
 %    three-stage statistical model.
@@ -37,15 +37,26 @@
 \begin{table}[h]
     \centering
     \small
-    \begin{tabular}{p{2.6cm}|p{2.4cm}|p{2.6cm}|p{2.2cm}|p{3.2cm}}
+    \setlength{\tabcolsep}{4pt}
+    \begin{tabular}{p{2.5cm}|p{2.3cm}|p{2.6cm}|p{1.8cm}|p{2.8cm}}
         \hline
         Study & Region, data & Model & Task & Reported skill \\
+        \hline
+        \multicolumn{5}{l}{\textit{Satellite-based estimation}} \\
+        \hline
+        Dey et al. \cite{dey2020india} & India, CPCB, 2000--2019, 1 km & MAIAC AOD with MERRA-2 scaling & Estimation & Daily $R^2$ 0.8, RMSE 25.7 $\mu$g/m$^3$ \\
+        Maheshwarkar and Sunder Raman \cite{maheshwarkar2021central} & Madhya Pradesh, 2018--2019 & MAIAC AOD, MERRA-2 gap-filling, three-stage statistical model & Estimation & CV $r^2$ 0.36--0.69 \\
+        Kawano et al. \cite{kawano2025india} & India, CPCB, 2005--2023, 10 km & AOD gap-filling + XGBoost (two stages) & Estimation & Spatial CV $R^2$ 0.67 \\
+        Wei et al. \cite{wei2020stet} & China, 1 km & Space--time extremely randomized trees & Estimation & CV $R^2$ 0.89, RMSE 10.3 $\mu$g/m$^3$ \\
+        Son et al. \cite{son2023tropomi} & Thailand & TROPOMI gases only (no AOD), TabNet & Estimation & [fill] \\
+        Ahmad et al. \cite{ahmad2025lahore} & Lahore, 30 sensors & GNN + CNN & Estimation, unmonitored & MAE / RMSE only \\
+        \hline
+        \multicolumn{5}{l}{\textit{Spatiotemporal forecasting}} \\
         \hline
         Qi et al. \cite{qi2019gclstm} & BTH, 76 stations & GC-LSTM & Forecast 1--72 h & $R^2$ 0.72 at 72 h \\
         Chen et al. \cite{chen2025hybrid} & N. China Plain, 29 cities & Directed GNN + LSTM & Forecast 3--48 h & MAE 7.6--14.0 $\mu$g/m$^3$ \\
         Ni et al. \cite{ni2023asgcn} & China, 184 cities & ASGCN & Forecast & [fill] \\
         Shi et al. \cite{shi2026astgt} & Beijing; India & AST-GT & Forecast, multi-step & [fill] \\
-        Ahmad et al. \cite{ahmad2025lahore} & Lahore, 30 sensors & GNN + CNN & Estimation, unmonitored & MAE / RMSE only \\
         Shaban \cite{shaban2026cnnlstm} & Several cities & CNN-LSTM & Forecast 24 h & $R^2$ 0.86 \\
         \hline
     \end{tabular}
