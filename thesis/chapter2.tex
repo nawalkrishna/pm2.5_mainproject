@@ -7,6 +7,16 @@
 % estimation study. Add 3-5 such papers (India or China, Random Forest / XGBoost / mixed
 % models, with spatial cross-validation) before writing this section; they are the closest
 % comparison for our leave-one-station-out results. Do not cite papers you have not read.
+% Candidates found on 2026-11-05 (read first, then add to bib.bib):
+%  - Dey et al. 2020, Remote Sensing 12(23) 3872: India 1 km PM2.5 2000-2019, MAIAC + MERRA-2 scaling.
+%  - Kawano et al. 2025, Science Advances 11(4) eadq1071: India daily 10 km, AOD gap-filling + XGBoost,
+%    spatial CV R^2 0.67 (random CV much higher).
+%  - Maheshwarkar & Raman 2021, Scientific Reports: Madhya Pradesh, MAIAC gaps filled from MERRA-2.
+%  - Wei et al. 2020, ACP 20, 3273 and Wei et al. 2021, RSE 252, 112136: China 1 km, space-time extra-trees.
+%  - Zheng et al. 2023, JAMES 15, e2022MS003099: India, trace-gas columns improve PM2.5 (AutoML).
+%  - Son et al. 2023, Atmospheric Pollution Research 14, 101875: TROPOMI gases only, no AOD (Thailand).
+%  - Meyer et al. 2018, Environmental Modelling & Software: random vs target-oriented (spatial) CV.
+%  - CSTEP 2022 report: satellite PM2.5 for Delhi, Kanpur, Bengaluru; cloud gaps as a limitation.
 % - Ahmad et al. \cite{ahmad2025lahore}: estimation at unmonitored sensors (Lahore, 30 IQAir
 %   sensors, 12 days, MAIAC AOD + ERA5 + roads + population; GNN; 2 sensors held out per run;
 %   reports MAE/RMSE, no R^2). Closest to our task, but very small test.
