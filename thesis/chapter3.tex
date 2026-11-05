@@ -15,7 +15,7 @@ the analysis period is 2021--2025, and the extra month supplies lagged features 
 pre-monsoon (March--May), south-west monsoon (June--September) and north-east monsoon
 (October--December).
 
-\section{Ground-level PM2.5}
+\section{Ground-level \texorpdfstring{\pmtf{}}{PM2.5}}
 
 Hourly \pmtf{} came from two sources (Table~\ref{tab:ground}). The main source is the CPCB CCR
 repository \cite{cpcbccr}: 833 station-year files, downloaded by hand because the portal requires a
@@ -44,7 +44,7 @@ other, in which case the CPCB record was kept.
 
 Two problems in the raw data needed attention before any analysis. First, the time convention of
 the CPCB labels is not documented. Aligning CPCB with OpenAQ's explicit UTC timestamps at five
-stations over two weeks of 2025 gave the best match when CPCB labels are read as the start of the
+CPCB stations whose records are also mirrored on OpenAQ (one per state), over two weeks of 2025, gave the best match when CPCB labels are read as the start of the
 hour in IST (median correlation 0.986, against 0.944 for hour-end labels), so that convention is
 used throughout. Second, until October 2024 OpenAQ returned most US Consulate hours twice, as
 one-hour bins starting at :00 and at :30 IST. One record per IST hour is kept, which removed 30,111
@@ -121,7 +121,7 @@ during the north-east monsoon.
 
 The mechanism is cloud (Figure~\ref{fig:aod_cloud}). AOD at the station pixel is available on
 70\,\% of clear days (TROPOMI cloud fraction below 0.1) and on 1\,\% of overcast days (0.9 and
-above). TROPOMI NO\textsubscript{2} at the pixel falls from 99\,\% to 0\,\%. The UV aerosol index is
+above). TROPOMI NO\textsubscript{2} within 10\,km falls from 99\,\% to about 2\,\%. The UV aerosol index is
 retrieved under cloud and is always present.
 
 \begin{figure}[!htbp]
@@ -133,7 +133,7 @@ retrieved under cloud and is always present.
 
 Table~\ref{tab:feasibility} shows the consequence for the \pmtf{} record. Of the 114,191 valid
 station-days (before quality control), only a third have AOD at the station pixel, and in the Kerala
-south-west monsoon about one in nine. The 10\,km buffer roughly triples the monsoon coverage but
+south-west monsoon roughly one in eight. The 10\,km buffer roughly triples the monsoon coverage but
 still leaves most monsoon days without AOD. The gap is even larger in Karnataka (3.0\,\% at the
 pixel, 15.9\,\% within 10\,km) and Telangana (6.5\,\%, 21.0\,\%) during the south-west monsoon.
 
@@ -154,7 +154,7 @@ pixel, 15.9\,\% within 10\,km) and Telangana (6.5\,\%, 21.0\,\%) during the sout
     \label{tab:feasibility}
 \end{table}
 
-\subsection{PM2.5 patterns}
+\subsection{\texorpdfstring{\pmtf{}}{PM2.5} patterns}
 
 \pmtf{} is lowest in the south-west monsoon in every state (Table~\ref{tab:season},
 Figure~\ref{fig:pm_month}), when rain washes particles out of the air. Kerala has the flattest
@@ -199,7 +199,7 @@ $|\rho| > 0.10$.
 
 Neighbouring stations agree only moderately (Figure~\ref{fig:station_corr}). For 5,594 station
 pairs with at least 180 shared days, the median correlation of daily \pmtf{} is 0.50 within 10\,km,
-0.45--0.47 up to 200\,km and 0.35 beyond 400\,km. Strong local variation of this kind means that
+0.42--0.48 between 10 and 200\,km, 0.41 at 200--400\,km and 0.35--0.38 beyond 400\,km. Strong local variation of this kind means that
 estimates for a station the model has not seen will be much less accurate than estimates for
 known stations.
 

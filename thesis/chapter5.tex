@@ -5,7 +5,7 @@ the forecasting extension shows (Section~5.6), and finally compares both with th
 states the limitations. Unless stated otherwise, the model is the Random Forest, the dataset covers
 all 113 stations, and intervals are 95\,\% block-bootstrap intervals.
 
-\section{Estimation of daily PM2.5}
+\section{Estimation of daily \texorpdfstring{\pmtf{}}{PM2.5}}
 
 Table~\ref{tab:overall} gives the held-out skill of each model under the four validation schemes.
 
@@ -33,7 +33,9 @@ against 0.23 for climatology, a gain of $+0.091$ $[+0.002, +0.169]$. This is con
 moderate agreement between neighbouring stations seen in Chapter~3. Third, in the spatial splits
 without lags the Random Forest is no better than linear regression (difference $-0.031$
 $[-0.108, +0.041]$), whereas in the temporal split it is clearly better ($+0.168$
-$[+0.094, +0.250]$).
+$[+0.094, +0.250]$). The best estimate at an unseen station without lags therefore comes from the
+linear model (LOSO \rsq{} 0.35); the Random Forest is kept as the main model because it is clearly
+better in the temporal split.
 
 Figure~\ref{fig:pred_obs} illustrates the difference between the two tasks. With lags, predictions
 follow the observations closely. Without lags at an unseen station, predictions are compressed
@@ -86,17 +88,24 @@ Once MERRA-2 and meteorology are in the model, the satellite inputs add little. 
 station without lags, Tier A beats Tier B by $+0.020$ $[+0.009, +0.031]$, and by $+0.049$
 $[+0.018, +0.096]$ in the south-west monsoon. In the blocked split the gain is smaller and not
 significant ($+0.004$ $[-0.021, +0.027]$). There is no gain in the temporal split ($-0.007$
-$[-0.015, +0.001]$) or when the \pmtf{} lags are included (absolute differences of at most 0.008).
+$[-0.015, +0.001]$) or when the \pmtf{} lags are included (absolute differences of at most 0.003
+overall, and of 0.006--0.008 in the south-west monsoon in the spatial splits, where Tier A is slightly
+worse).
 
-The ablation in Figure~\ref{fig:ablation} explains why. On the rows with AOD in the blocked split,
+The ablation in Figure~\ref{fig:ablation} adds feature groups one at a time. The first model
+(``met only'') uses meteorology, the meteorology lags, and the temporal and static features; the
+TROPOMI gases, MAIAC AOD and MERRA-2 are then added in turn. Unlike Tier A, the ablation models are
+trained on all station-days, with missing satellite values left missing, so their final bars do not
+equal the Tier A values in Table~\ref{tab:sat_gain}. On the rows with AOD in the blocked split,
 \rsq{} rises from 0.15 with meteorology alone to 0.19 with the TROPOMI gases, 0.22 with AOD and 0.26
-with MERRA-2. The satellite inputs do carry information, about $+0.07$ over meteorology alone, but
-MERRA-2 overlaps with most of it.
+with MERRA-2. The satellite inputs do carry information, about $+0.07$ over meteorology alone.
+Comparing Tier A with Tier B on the same rows (Table~\ref{tab:sat_gain}) shows that once MERRA-2 is
+present, the satellite inputs add little.
 
 \begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.92\linewidth]{results_ablation}
-\caption{Random Forest ablation without lags: \rsq{} as feature groups are added, for all rows and for rows with AOD, in the temporal (left) and blocked (right) splits.}
+\caption{Random Forest ablation without lags: \rsq{} as feature groups are added to ``met only'' (meteorology, meteorology lags, temporal and static features), for all rows and for rows with AOD, in the temporal (left) and blocked (right) splits. The models are trained on all station-days.}
 \label{fig:ablation}
 \end{figure}
 
@@ -119,16 +128,23 @@ Table~\ref{tab:cloud} breaks the LOSO results down by TROPOMI cloud fraction.
         0.8--1.0 & 23,932 & 14.6 & 2,092 & 14.2 & 14.5 \\
         \hline
     \end{tabular}
-    \caption{Leave-one-station-out RMSE (\ugm{}) without lags by cloud fraction.}
+    \caption{Leave-one-station-out RMSE (\ugm{}) without lags by cloud fraction. Station-days without a TROPOMI cloud fraction (4,359 of 113,228) are not shown.}
     \label{tab:cloud}
 \end{table}
 
 AOD almost disappears under cloud: above a cloud fraction of 0.8, Tier A covers only 2,092 of
 23,932 station-days (9\,\%), so the two-tier system is almost entirely Tier B on cloudy days. Where
 Tier A does apply, its advantage over Tier B stays at 0.2--0.3\ugm{} RMSE in every cloud bin
-(Figure~\ref{fig:cloud}). Cloud therefore removes the satellite's coverage more than it degrades
-the satellite's skill. Absolute RMSE is lower on cloudy days because they are mostly monsoon days
-with low concentrations.
+(Table~\ref{tab:cloud}; Figure~\ref{fig:skill_cloud}, right). In the temporal split
+(Figure~\ref{fig:skill_cloud}, left) Tier A is slightly worse than Tier B, by 0.1--0.4\ugm{}, at every
+cloud fraction above 0.2, and equal below it. Cloud therefore removes the satellite's coverage more
+than it degrades the satellite's skill. In leave-one-station-out, absolute RMSE is lower on cloudy
+days because they are mostly monsoon days with low concentrations. In the 2025 temporal split,
+by contrast, Tier B on all rows has its highest RMSE (17.4\ugm{}) at cloud fractions of 0.8--1.0. A
+few extreme days cause this: Tamil Nadu's north-east monsoon days carry 62\,\% of the squared error
+in that bin, and the 1\,\% of station-days with the largest errors carry 64\,\% of it. They include
+20--21 October 2025, around Diwali, at several Tamil Nadu stations, and one daily mean of
+957\ugm{} at a single station.
 
 \begin{figure}[!htbp]
     \centering
@@ -183,8 +199,12 @@ differences. Against the baselines, the Random Forest beats climatology without 
 $[+0.002, +0.169]$) and persistence with lags (temporal $+0.136$ $[+0.050, +0.263]$). In the
 south-west monsoon, however, the model without lags is no better than climatology (blocked $-0.002$
 $[-0.147, +0.076]$, LOSO $+0.008$ $[-0.072, +0.084]$). Refitting the Random Forest with five other
-seeds moved the satellite gain without lags by up to 0.01 in the blocked and combined splits, which
-is as large as the blocked-split gain itself.
+seeds moved the satellite gain without lags by up to 0.01 in the blocked and combined splits, more
+than twice the blocked-split gain itself. The seed check did not cover leave-one-station-out, so the
+seed-to-seed range of the LOSO gain ($+0.020$) is not known.
+% VERIFY: the seed check (decision log D044) refitted seeds 1-5 for the temporal, blocked and
+% combined splits only. Refit LOSO with seeds 1-5 to give the range of the +0.020 LOSO gain.
+\textbf{[VERIFY]}
 
 \section{Sensitivity to processing choices}\label{sec:sensitivity}
 
@@ -215,11 +235,14 @@ Table~\ref{tab:sens} repeats the satellite comparison under alternative processi
 
 The spatial satellite gain is positive in every variant but small and fragile: it ranges from
 $+0.004$ to $+0.023$ in the blocked split, and its interval excludes zero only for the station pixel,
-the 5\,km buffer, the overpass target and the 24-hour flat-line rule. No variant shows a temporal
-gain. The quality-control rule changes absolute skill more than any satellite choice: under the
+the 5\,km buffer, the overpass target and the 24-hour flat-line rule. No variant shows a significant
+temporal gain, and two (the 5\,km buffer and the 24-hour flat-line rule) show a small significant
+loss. The quality-control rule changes absolute skill more than any satellite choice: under the
 24-hour rule the temporal \rsq{} is 0.34 instead of 0.41 without lags, and 0.58 instead of 0.65 with
 lags. The 12-hour rule removes 432 of 113,660 daily targets (0.4\,\%), but those days carry
-11--30\,\% of the squared error. The overpass target is harder to predict than the daily mean
+11--30\,\% of the squared error. The 12-hour rule, which was chosen after its effect on skill had been
+seen, lowers the spatial satellite gain ($+0.004$ instead of a significant $+0.017$ under the 24-hour
+rule), so this post-hoc choice works against, not for, the satellite. The overpass target is harder to predict than the daily mean
 (two-tier \rsq{} 0.21--0.25 without lags), because a three-hour mean is noisier.
 
 \section{Hourly forecasting at existing stations}
@@ -258,9 +281,12 @@ Tier B on all test rows (about 705,000 per horizon).
 \end{figure}
 
 The linear, Random Forest and neural-network models all beat persistence beyond one hour by a wide
-margin, and persistence falls below
-climatology from 12 hours onwards (Figure~\ref{fig:forecast}). The Random Forest is the best model
-at every horizon. It beats persistence by $+0.033$ $[+0.017, +0.048]$ at 1 hour, $+0.371$
+margin, and persistence falls below climatology from 12 hours onwards (Figure~\ref{fig:forecast}).
+At 1 hour, however, both neural networks remain below persistence (\rsq{} 0.744 and 0.750 against
+0.780 with seed 42), even after the change to predicting the difference from the latest value
+(Section~\ref{sec:method_forecast}); this holds for all three LSTM seeds and two of the three graph
+network seeds. The Random Forest is the best model at every horizon, tied with linear regression at
+3 hours. It beats persistence by $+0.033$ $[+0.017, +0.048]$ at 1 hour, $+0.371$
 $[+0.270, +0.477]$ at 24 hours and $+0.553$ $[+0.406, +0.722]$ at 72 hours. Its RMSE is 10.8\ugm{} at
 1 hour, 18.8\ugm{} at 24 hours and 20.5\ugm{} at 72 hours.
 
@@ -268,7 +294,9 @@ Both neural networks are significantly below the Random Forest at every horizon:
 $-0.069$ $[-0.101, -0.033]$ at 1 hour and $-0.022$ $[-0.036, -0.009]$ at 72 hours, and the graph network
 by $-0.063$ $[-0.094, -0.030]$ and $-0.022$ $[-0.035, -0.011]$. This holds for all three seeds; for
 example, the LSTM's 24-hour \rsq{} ranges from 0.413 to 0.421 across seeds, against 0.430 for the
-Random Forest. The graph network beats the LSTM only at 3 and 6 hours ($+0.015$ and $+0.011$). With
+Random Forest. The graph network beats the LSTM significantly only at 3 and 6 hours ($+0.015$ and
+$+0.011$, computed from unrounded values; the rounded entries in Table~\ref{tab:forecast} differ by
+0.015 and 0.012). With
 stations as sparse and loosely correlated as in South India, linking neighbours adds little.
 
 A perfect weather forecast (setting b) helps most at long horizons: $+0.024$ $[+0.014, +0.036]$ for
@@ -278,14 +306,15 @@ Satellite data add nothing to forecasting. On the test rows whose latest satelli
 (about 395,000 per horizon), Tier A minus Tier B for the Random Forest lies between $-0.007$ and
 $+0.001$ at every horizon, for example $-0.004$ $[-0.007, -0.002]$ at 24 hours. For the networks the
 difference stays within the variation between seeds. Once the station's own recent \pmtf{} is known,
-a once-a-day column measurement carries no extra information. The difference stays between $-0.003$
-and $-0.013$ in every cloud bin and season, so this result does not depend on cloud.
+a once-a-day column measurement carries no extra information. At 24 hours, the difference stays
+between $-0.003$ and $-0.013$ in every cloud bin and season, so this result does not depend on cloud.
 
 \section{Comparison with the literature}
 
 The estimation results agree with the main lesson of Kawano et al.\ \cite{kawano2025india}: scores at
 held-out locations are much lower than random-split scores suggest. Their spatial cross-validation
-gives \rsq{} 0.67 for India at 10\,km, higher than the LOSO \rsq{} of 0.32 here, but the tasks differ:
+gives \rsq{} 0.67 for India at 10\,km (0.85 under random cross-validation), higher than the LOSO
+\rsq{} of 0.32 here, but the tasks differ:
 their evaluation spans the whole country, with its large contrasts between regions, which a model
 can learn from coarse inputs, whereas South Indian concentrations are lower and vary less between
 stations.
@@ -296,7 +325,9 @@ The daily models with lags (Tier A: \rsq{} 0.70--0.76 across the four splits) ar
 the forecasting literature, because they use the same information: the station's own recent past. For
 hourly forecasting, the 72-hour \rsq{} of 0.32 is well below the 0.72 reported by Qi et al.\
 \cite{qi2019gclstm} for Beijing--Tianjin--Hebei. Pollution episodes there last for days, so the
-recent past stays informative for longer; South Indian \pmtf{} is lower and changes faster. The
+recent past stays informative for longer; South Indian \pmtf{} is lower and changes faster. Their
+test set was also a random selection of time blocks rather than a later year, which favours higher
+scores. The
 finding that a Random Forest beats both deep networks is also worth noting, because the
 forecasting studies compare their models mainly with other neural networks.
 
@@ -309,7 +340,8 @@ forecasting studies compare their models mainly with other neural networks.
   \item The 12-hour flat-line rule was adopted after its effect on skill had been seen; the 24-hour
         results are reported alongside it.
   \item Kerala has only nine stations, and several Tamil Nadu and Andhra Pradesh stations start in
-        2024, so they have little training data in the temporal split.
+        2024, so they have little training data in the temporal split and none in the forecasting
+        task (11 of the 110 forecast test stations).
   \item In the forecasting task, reanalysis stands in for real-time weather data, so even the
         past-only setting is somewhat optimistic, and satellite values are treated as available at
         the end of the overpass window, earlier than real products arrive.

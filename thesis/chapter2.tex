@@ -6,7 +6,7 @@ second forecasts \pmtf{} hours to days ahead at monitored sites, usually with de
 networks. The two answer different questions, and the difference matters when their reported
 accuracies are compared.
 
-\section{Satellite-based estimation of ground-level PM2.5}
+\section{Satellite-based estimation of ground-level \texorpdfstring{\pmtf{}}{PM2.5}}
 
 The most direct use of AOD is to scale it to surface concentration. Dey et al.\ \cite{dey2020india}
 built a 1\,km daily \pmtf{} record for India from 2000 to 2019 by converting MAIAC AOD with a
@@ -25,9 +25,13 @@ Machine-learning models are now the most common choice. Wei et al.\ \cite{wei202
 space--time extremely randomized trees model that combines 1\,km MAIAC AOD with meteorology, land
 use, topography and population, and reported an out-of-sample cross-validated \rsq{} of 0.89
 (RMSE 10.3\ugm{}) over China. Kawano et al.\ \cite{kawano2025india} produced daily 10\,km estimates
-for India from 2005 to 2023 with two stages: AOD gaps were first imputed with machine learning,
-and an extreme gradient boosting model then predicted \pmtf{}. They validated with spatial
-cross-validation, holding out groups of monitors rather than random days, and obtained \rsq{} 0.67.
+for India with two stages: gaps in MODIS AOD and in TROPOMI NO\textsubscript{2} and CO were first
+imputed with machine learning, and an extreme gradient boosting model then predicted \pmtf{}. They
+validated with spatial cross-validation, holding out groups of monitors rather than random days.
+Their full model, which uses TROPOMI and covers July 2018 to September 2023, reached \rsq{} 0.67
+(0.85 under random cross-validation), and an AOD-only model covering 2005--2023 reached 0.64.
+% Checked 2026-11-05: periods and R2 values in the Zenodo dataset record 10807119; LightGBM imputation
+% of TROPOMI NO2 and CO and XGBoost imputation of AOD in the paper's Methods.
 The use of spatial validation is important: random splits let a model see the same station on
 neighbouring days during training, which inflates the score for unmonitored locations.
 
@@ -41,7 +45,7 @@ interest, population and green space. Their test used 30 low-cost sensors over t
 December 2024, with two sensors held out per run, and reported only MAE and RMSE; population was the
 most useful spatial feature.
 
-\section{Spatiotemporal forecasting of PM2.5}
+\section{Spatiotemporal forecasting of \texorpdfstring{\pmtf{}}{PM2.5}}
 
 A second body of work forecasts \pmtf{} at existing monitoring stations. Qi et al.\
 \cite{qi2019gclstm} combined a graph convolutional network, which passes information between
@@ -57,12 +61,9 @@ distance between 29 cities on the North China Plain, again combined with an LSTM
 spatio-temporal graph convolutional network with static and dynamic graphs and tested it on the
 KnowAir dataset of 184 Chinese cities and on the UrbanAir dataset. Shi et al.\ \cite{shi2026astgt}
 used a graph transformer with adaptive normalisation for non-stationary data, evaluated on a
-multi-site Beijing dataset and on an Indian multi-city dataset. Shaban \cite{shaban2026cnnlstm}
-combined MAIAC AOD, OpenAQ/WAQI ground data and ERA5 meteorology in a CNN-LSTM model, filling AOD
-gaps with an autoencoder, and reported \rsq{} 0.86 for 24-hour forecasts against 0.71 for a plain
-LSTM; the cities and dataset sizes used are not described in detail.
+multi-site Beijing dataset and on an Indian multi-city dataset.
 
-All five forecasting studies feed the model the stations' own recent \pmtf{} history. Their high
+All four forecasting studies feed the model the stations' own recent \pmtf{} history. Their high
 scores therefore measure how well the near future can be predicted from the recent past at the
 same place. They do not measure how well \pmtf{} can be estimated where there is no monitor, and
 satellite data play at most a minor role in them.
@@ -83,7 +84,7 @@ Table~\ref{tab:related} summarises the studies reviewed above.
         \hline
         Dey et al. \cite{dey2020india} & India, CPCB, 2000--2019, 1 km & MAIAC AOD with MERRA-2 scaling & Estimation & Daily $R^2$ 0.8, RMSE 25.7 $\mu$g/m$^3$ \\
         Maheshwarkar and Sunder Raman \cite{maheshwarkar2021central} & Madhya Pradesh, 2018--2019 & MAIAC AOD, MERRA-2 gap-filling, three-stage statistical model & Estimation & CV $r^2$ 0.36--0.69 \\
-        Kawano et al. \cite{kawano2025india} & India, CPCB, 2005--2023, 10 km & AOD gap-filling + XGBoost (two stages) & Estimation & Spatial CV $R^2$ 0.67 \\
+        Kawano et al. \cite{kawano2025india} & India, CPCB, 2018--2023 (full model), 10 km & Gap-filling of AOD, NO\textsubscript{2}, CO + XGBoost & Estimation & Spatial CV $R^2$ 0.67 (random CV 0.85) \\
         Wei et al. \cite{wei2020stet} & China, 1 km & Space--time extremely randomized trees & Estimation & CV $R^2$ 0.89, RMSE 10.3 $\mu$g/m$^3$ \\
         Son et al. \cite{son2023tropomi} & Thailand & TROPOMI gases only (no AOD), TabNet & Estimation & Not compared here \\
         Ahmad et al. \cite{ahmad2025lahore} & Lahore, 30 sensors & GNN + CNN & Estimation, unmonitored & MAE / RMSE only \\
@@ -94,7 +95,6 @@ Table~\ref{tab:related} summarises the studies reviewed above.
         Chen et al. \cite{chen2025hybrid} & N. China Plain, 29 cities & Directed GNN + LSTM & Forecast 3--48 h & MAE 7.6--14.0 $\mu$g/m$^3$ \\
         Ni et al. \cite{ni2023asgcn} & China, 184 cities & ASGCN & Forecast & Not compared here \\
         Shi et al. \cite{shi2026astgt} & Beijing; India & AST-GT & Forecast, multi-step & Not compared here \\
-        Shaban \cite{shaban2026cnnlstm} & Several cities & CNN-LSTM & Forecast 24 h & $R^2$ 0.86 \\
         \hline
     \end{tabular}
     \caption{Summary of the related studies. ``Not compared here'' marks studies whose headline numbers use a different metric or set-up from this report.}

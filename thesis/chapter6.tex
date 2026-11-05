@@ -6,9 +6,9 @@ This study measured how cloud cover and the monsoon limit satellite-based estima
 ground-level \pmtf{} in South India, using quality-controlled data from 113 stations over 2021--2025
 together with TROPOMI, MAIAC, ERA5/ERA5-Land, MERRA-2 and static land-surface data.
 
-Cloud and the monsoon act mainly by removing satellite coverage. MAIAC AOD is available on only 9\,\%
-of station-days with a cloud fraction above 0.8, and on 37\,\% of Kerala's south-west monsoon days
-even within 10\,km of the station. Where AOD is available, the satellite's advantage does not shrink
+Cloud and the monsoon act mainly by removing satellite coverage. Even within 10\,km of the station,
+MAIAC AOD is available on only 9\,\% of station-days with a cloud fraction above 0.8 and on 37\,\% of
+Kerala's south-west monsoon days. Where AOD is available, the satellite's advantage does not shrink
 with cloud; there is simply much less of it.
 
 Where satellite data exist, and MERRA-2 and meteorology are already in the model, they add only a
@@ -17,11 +17,12 @@ leave-one-station-out validation, and $+0.049$ $[+0.018, +0.096]$ in the south-w
 spatially blocked split the gain is $+0.004$ to $+0.023$ across processing variants, often with an
 interval that includes zero. The satellite inputs add nothing for gap filling at a monitored
 station. Tier B, which uses no satellite data, therefore recovers essentially all of the two-tier
-skill. For an unmonitored location that skill is modest (LOSO \rsq{} 0.32), and in Kerala's monsoon
+skill. For an unmonitored location that skill is modest (LOSO \rsq{} 0.32; 0.35 with linear
+regression), and in Kerala's monsoon
 no model beats a monthly climatology without the station's own measurements.
 
 For hourly forecasting at existing stations, a Random Forest on issue-time features is the best
-model at every horizon from 1 to 72 hours (\rsq{} 0.813 at 1 hour, 0.430 at 24 hours and 0.321 at
+model, or tied for best, at every horizon from 1 to 72 hours (\rsq{} 0.813 at 1 hour, 0.430 at 24 hours and 0.321 at
 72 hours). An LSTM and a graph network are significantly below it in every seed, and satellite
 inputs again add nothing.
 

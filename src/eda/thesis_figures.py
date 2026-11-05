@@ -54,7 +54,7 @@ def pipeline() -> None:
            "qc": (0.1, 2.35, "Quality control\n(rule S3a-12h)"),
            "align": (2.3, 1.15, "Alignment\n(IST days, overpass\nwindow, lags)"),
            "feat": (0.1, -0.05, "Feature sets\nTier A / Tier B"),
-           "model": (2.3, -0.05, "Models\nclimatology, linear, RF,\nLSTM, GC-LSTM"),
+           "model": (2.3, -0.05, "Models\npersistence, climatology,\nlinear, RF, LSTM, GC-LSTM"),
            "eval": (4.5, -0.05, "Evaluation\ntemporal, blocked, LOSO,\ncombined; bootstrap")}
     w, h = 2.0, 0.85
     fig, ax = plt.subplots(figsize=(6.7, 4.6))

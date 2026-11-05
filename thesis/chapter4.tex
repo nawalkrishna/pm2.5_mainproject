@@ -74,18 +74,20 @@ skill had been seen, the results under the 24-hour rule are reported alongside t
 \section{Targets and temporal alignment}\label{sec:align}
 
 The primary target is the daily mean \pmtf{} of an IST calendar day, valid when at least 18 of the
-24 hourly values pass quality control. A secondary target, the mean of the three hours starting at
-12:00--14:00 IST (valid with at least two of the three), matches the TROPOMI and MODIS Aqua overpass
+24 hourly values pass quality control. A secondary target, the mean of the three hours from 12:00
+to 15:00 IST (valid with at least two of the three), matches the TROPOMI and MODIS Aqua overpass
 times and is used in a sensitivity test.
 
 All raw timestamps are converted from UTC to IST before aggregation. Hourly meteorology is averaged
 over each IST day (precipitation is summed). Relative humidity is computed from 2\,m temperature $T$
-and dew point $T_d$ (both in \textdegree C) with the Magnus formula:
+and dew point $T_d$ (both in \textdegree C) with the Magnus formula, using the constants of
+Alduchov and Eskridge \cite{alduchov1996magnus}:
 \begin{equation}\label{eq:rh}
 \mathrm{RH} = 100\,\frac{\exp\!\left(\frac{17.625\,T_d}{243.04 + T_d}\right)}{\exp\!\left(\frac{17.625\,T}{243.04 + T}\right)}.
 \end{equation}
 MERRA-2 surface \pmtf{} is reconstructed from the dust, organic carbon, black carbon, sea salt and
-sulphate surface mass concentrations, with sulphate converted to ammonium sulphate:
+sulphate surface mass concentrations, with sulphate converted to ammonium sulphate, following the
+MERRA-2 documentation \cite{gmao2026merra2faq}:
 \begin{equation}\label{eq:merra2}
 \mathrm{PM}_{2.5}^{\mathrm{M2}} = \mathrm{DU}_{2.5} + \mathrm{OC} + \mathrm{BC} + \mathrm{SS}_{2.5} + \frac{132.14}{96.06}\,\mathrm{SO_4}.
 \end{equation}
@@ -115,7 +117,7 @@ model replaces them with medians computed on the training rows.
         Static & Elevation, distance to coast, land-cover shares, population & A, B \\
         \hline
     \end{tabular}
-    \caption{Feature groups. Tier A has 43 features and Tier B 31.}
+    \caption{Feature groups. Tier A has 43 features and Tier B 31, including the three \pmtf{} lags (40 and 28 without them).}
     \label{tab:features}
 \end{table}
 
@@ -174,7 +176,8 @@ June--September.
 Errors are correlated within a city and across neighbouring days, so resampling individual rows
 would give intervals that are far too narrow. Confidence intervals are therefore percentile
 intervals from 1,000 bootstrap resamples of the 46 spatial blocks \cite{efron1993bootstrap}, each
-drawn block contributing all of its rows. Differences between two models are bootstrapped on the
+drawn block contributing all of its rows; resampling whole blocks rather than single observations
+follows the block bootstrap for dependent data \cite{kunsch1989bootstrap}. Differences between two models are bootstrapped on the
 same rows (a paired bootstrap).
 
 \section{Hourly forecasting at existing stations}\label{sec:method_forecast}
@@ -210,12 +213,18 @@ after the MODIS Aqua granules over the region end. Setting (b) adds reanalysis w
 target hours and is an upper bound: it assumes a perfect weather forecast. Training uses issue
 hours in 2021--2023, the validation year 2024 is used only for early stopping and tuning of the
 neural networks, and 2025 is the test year. The last 72 hours of the training and validation
-periods are dropped so that no target falls in the next period.
+periods are dropped so that no target falls in the next period. The linear and Random Forest models
+are also trained on 2021--2023 only, so that all models see the same training data. Eleven of the
+110 stations with test-year data (ten in Tamil Nadu, one in Andhra Pradesh) have no measurements in
+2021--2023; they account for 9.4\,\% of the test rows. They are forecast with the same inputs as the
+other stations, including their own recent values, but the models have seen no training data from
+them.
 
 \subsection{Tabular models}
 
 Persistence uses the last valid value within 24 hours. Climatology uses the training mean for the
-station, month and hour of day. Linear regression and the Random Forest (settings as above, trained
+station, month and hour of day; for a station without training data it falls back to the mean for
+the state, month and hour, and then to the mean for the month and hour. Linear regression and the Random Forest (settings as above, trained
 on a random third of the training rows to limit cost) are fitted separately for each horizon on
 issue-time features: \pmtf{} at lags of 0, 1, 2, 3, 6, 12, 23, 24 and 48 hours, means and valid
 counts over the last 6, 24 and 72 hours, the last valid value and its age, current meteorology and
@@ -239,9 +248,10 @@ calendar of each target hour, a learned embedding of the horizon and, in setting
 at the target hour, and outputs all 72 horizons at once. The head predicts the change from the
 station's latest \pmtf{} value rather than the value itself.
 
-The graph network follows the GC-LSTM of Qi et al.\ \cite{qi2019gclstm}. At every time step a graph
-convolution \cite{kipf2017gcn} mixes each station's inputs with those of its neighbours before the
-LSTM. Stations within 200\,km are linked (median 19 neighbours), with weights that decrease with
+The graph network is adapted from the GC-LSTM of Qi et al.\ \cite{qi2019gclstm}, with a first-order
+graph convolution \cite{kipf2017gcn} in place of their spectral (Chebyshev) convolution. At every
+time step the graph convolution mixes each station's inputs with those of its neighbours before the
+LSTM, and the same head as in the LSTM predicts the change from the station's latest \pmtf{} value. Stations within 200\,km are linked (median 19 neighbours), with weights that decrease with
 distance $d_{ij}$, and the adjacency matrix is normalised symmetrically:
 \begin{equation}\label{eq:gcn}
 w_{ij} = \exp\!\left[-\left(\frac{d_{ij}}{100\,\mathrm{km}}\right)^{2}\right] \ \text{for}\ d_{ij} \le 200\,\mathrm{km}, \qquad
@@ -267,5 +277,5 @@ year.
 
 As in the estimation task, Tier A adds the latest satellite day's features and is evaluated where
 that day has MAIAC AOD; Tier B uses no satellite input. Confidence intervals come from a paired
-bootstrap over spatial block $\times$ calendar month of the test year (about 500 clusters), because
-forecast errors are strongly correlated in time.
+bootstrap over spatial block $\times$ month (about 500 clusters), as forecast errors are correlated
+in time.
