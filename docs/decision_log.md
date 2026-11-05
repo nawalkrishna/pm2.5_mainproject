@@ -246,25 +246,28 @@ Requested by the student after the literature comparison ("can we do an add on t
 - **Caveat:** reanalysis is not available in real time, so even (a) uses reanalysis in place of real-time weather analyses.
 - **Alternatives:** past only; archived weather forecasts (new download).
 
-## D047 — Forecast splits · 2026-11-05 · PROPOSED
+## D047 — Forecast splits · 2026-11-05 · DECIDED (student: "Approve all")
 - **Decision:** train issue hours 2021–2023, validation 2024 (neural-network early stopping only), test 2025; the last 72 h of the training and validation periods purged.
 - **Alternatives:** train 2021–2024 with no validation year (the Phase 1 temporal split; no early stopping); rolling-origin evaluation.
 
 ## D048 — Forecast models · 2026-11-05 · DECIDED (student: "Add a graph network too")
 - **Decision:** persistence, climatology (station × month × hour), linear, Random Forest (D040 settings, one model per reported horizon, trained on a random third of training rows, seed 42), LSTM and GC-LSTM graph network (PyTorch 2.7.1 + CUDA 12.6; stations within 200 km linked, as Qi et al. 2019).
 - **Alternatives:** baselines + Random Forest + LSTM; baselines + Random Forest.
+- **Addendum (2026-11-05, neural networks):** the first LSTM run (setting a, Tier B, seed 42) scored 1 h R² 0.63 on the test year against persistence's 0.78, pulling short-horizon forecasts towards the mean. The head was changed to predict the change from the latest (filled) PM2.5 value (residual on persistence); 1 h test R² rose to 0.74. **Disclosure:** this change was prompted by a test-year comparison; no other choice used the test year. Five candidate settings were then compared on the validation year only (`src/forecast/tune_nets.py`, `forecast_nets_tuning.csv`): mean validation R² over the reported horizons 0.495–0.499 for all of them (base, lower learning rate, weight decay + dropout 0.2, 128 hidden units, 24 h input). The base settings are kept for both networks: no candidate beats them by more than 0.002 (this threshold was set after seeing the scores; with all five within 0.004, any choice would be equivalent). On the validation year the base LSTM beats persistence at every reported horizon (1 h 0.768 vs 0.762; 24 h 0.459 vs 0.081).
+- **Cost changes:** each epoch uses a random third of the training issue hours (`epoch_fraction`), max 60 epochs, patience 8; evaluation batches of 16 issue hours (GPU memory).
 
-## D049 — Tiers in forecasting · 2026-11-05 · PROPOSED
+## D049 — Tiers in forecasting · 2026-11-05 · DECIDED (student: "Approve all")
 - **Decision:** as D039. Tier A adds the latest satellite day's features and is trained and evaluated where that day has MAIAC AOD (10 km); Tier B everywhere; two-tier = A where available.
 - **Alternative:** Tier A on all rows with missing satellite values left missing.
 
-## D050 — Forecast uncertainty · 2026-11-05 · PROPOSED
+## D050 — Forecast uncertainty · 2026-11-05 · DECIDED (student: "Approve all")
 - **Decision:** paired cluster bootstrap over spatial block (D038) × calendar month of 2025, 1,000 draws (time correlation matters more than in Phase 1, so the D043 alternative is used); neural networks with seeds 42, 1 and 2.
 - **Alternative:** block bootstrap as D043.
 
-## D051 — Missing inputs for the neural networks · 2026-11-05 · PROPOSED
+## D051 — Missing inputs for the neural networks · 2026-11-05 · DECIDED (student: "Approve all")
 - **Decision:** PM2.5 inputs carried forward up to 24 h, else the station's training median, plus a 0/1 observed mask; other inputs standardised with training statistics, missing → 0 with a mask; loss only on observed targets.
 - **Alternatives:** drop windows with gaps (loses most monsoon windows); learned imputation.
-- **Addendum (2026-11-05, neural networks):** the first LSTM run (setting a, Tier B, seed 42) scored 1 h R² 0.63 on the test year against persistence's 0.78, pulling short-horizon forecasts towards the mean. The head was changed to predict the change from the latest (filled) PM2.5 value (residual on persistence); 1 h test R² rose to 0.74. **Disclosure:** this change was prompted by a test-year comparison; no other choice used the test year. Five candidate settings were then compared on the validation year only (`src/forecast/tune_nets.py`, `forecast_nets_tuning.csv`): mean validation R² over the reported horizons 0.495–0.499 for all of them (base, lower learning rate, weight decay + dropout 0.2, 128 hidden units, 24 h input). The base settings are kept for both networks: no candidate beats them by more than 0.002 (this threshold was set after seeing the scores; with all five within 0.004, any choice would be equivalent). On the validation year the base LSTM beats persistence at every reported horizon (1 h 0.768 vs 0.762; 24 h 0.459 vs 0.081).
-- **Cost changes:** each epoch uses a random third of the training issue hours (`epoch_fraction`), max 60 epochs, patience 8; evaluation batches of 16 issue hours (GPU memory).
+
+## Stage 6 sign-off · 2026-11-05 · DECIDED (student: "Approve all")
 - **Stage 6 result (2026-11-05):** 24 network runs (3 seeds × 8 configurations) and the tabular models at 7 horizons completed after a session crash and a resumable rerun (Stage 6 doc, problem 4). Random Forest best at every horizon; the networks are 0.01–0.07 R² below it in every seed; satellite inputs add nothing to forecasting (Tier A − Tier B −0.007 to +0.001 for the Random Forest). Details in `docs/stage6_forecasting.md`.
+- D047, D049–D051 approved; Stage 6 (hourly forecasting add-on) closed at commit 8635e7b. Phase 1 results unchanged (tag `phase1-final`).

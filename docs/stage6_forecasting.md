@@ -1,7 +1,7 @@
 # Stage 6 (Phase 1 add-on): hourly forecasting at existing stations
 
-**Status: COMPLETE, awaiting sign-off.** Decisions D045–D051 in `docs/decision_log.md`
-(D045, D046, D048 decided by the student; D047, D049–D051 proposed). Phase 1 (Stages 1–5) is
+**Status: COMPLETE, signed off (2026-11-05).** Decisions D045–D051 in `docs/decision_log.md`
+(all decided by the student). Phase 1 (Stages 1–5) is
 unchanged and stays at tag `phase1-final`. Every number below comes from a file in
 `reports/tables/` (`forecast_*.csv`). Regenerate with `python -m src.run stage6`.
 
