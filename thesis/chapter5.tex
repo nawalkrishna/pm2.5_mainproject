@@ -200,11 +200,10 @@ $[+0.002, +0.169]$) and persistence with lags (temporal $+0.136$ $[+0.050, +0.26
 south-west monsoon, however, the model without lags is no better than climatology (blocked $-0.002$
 $[-0.147, +0.076]$, LOSO $+0.008$ $[-0.072, +0.084]$). Refitting the Random Forest with five other
 seeds moved the satellite gain without lags by up to 0.01 in the blocked and combined splits, more
-than twice the blocked-split gain itself. The seed check did not cover leave-one-station-out, so the
-seed-to-seed range of the LOSO gain ($+0.020$) is not known.
-% VERIFY: the seed check (decision log D044) refitted seeds 1-5 for the temporal, blocked and
-% combined splits only. Refit LOSO with seeds 1-5 to give the range of the +0.020 LOSO gain.
-\textbf{[VERIFY]}
+than twice the blocked-split gain itself. In leave-one-station-out the gain ranges from $+0.020$ to
+$+0.029$ across the six seeds (seed 42, the main run, gives the lowest), so it is positive in every
+seed; the two-tier \rsq{} moves only between 0.316 and 0.318.
+% Source: reports/tables/seed_check_loso.csv (src/eval/seed_check.py, seeds 42 and 1-5).
 
 \section{Sensitivity to processing choices}\label{sec:sensitivity}
 
