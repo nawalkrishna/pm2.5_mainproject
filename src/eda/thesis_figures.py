@@ -43,38 +43,40 @@ def study_area() -> None:
 
 
 def pipeline() -> None:
-    steps = [
-        ("Ground PM2.5\nCPCB + US Consulates\n(hourly)", "Satellite\nTROPOMI, MAIAC\n(daily, 10 km)",
-         "Reanalysis + static\nERA5(-Land), MERRA-2,\nSRTM, WorldCover, WorldPop"),
-        ("Quality control\n(rule S3a-12h)",),
-        ("Alignment (IST days,\noverpass window, lags)",),
-        ("Feature sets\nTier A / Tier B",),
-        ("Models\nclimatology, linear,\nRandom Forest,\nLSTM, GC-LSTM",),
-        ("Evaluation\ntemporal, blocked,\nLOSO, combined;\nblock bootstrap",),
-    ]
-    fig, ax = plt.subplots(figsize=(11, 3.4))
+    """Compact layout that stays readable at text width: sources on top, processing below."""
+    box = {"ground": (0.1, 3.55, "Ground PM2.5\nCPCB + US Consulates\n(hourly)"),
+           "sat": (2.3, 3.55, "Satellite\nTROPOMI, MAIAC\n(daily, 10 km)"),
+           "rea": (4.5, 3.55, "Reanalysis + static\nERA5(-Land), MERRA-2,\nSRTM, WorldCover, WorldPop"),
+           "qc": (0.1, 2.35, "Quality control\n(rule S3a-12h)"),
+           "align": (2.3, 1.15, "Alignment\n(IST days, overpass\nwindow, lags)"),
+           "feat": (0.1, -0.05, "Feature sets\nTier A / Tier B"),
+           "model": (2.3, -0.05, "Models\nclimatology, linear, RF,\nLSTM, GC-LSTM"),
+           "eval": (4.5, -0.05, "Evaluation\ntemporal, blocked, LOSO,\ncombined; bootstrap")}
+    w, h = 2.0, 0.85
+    fig, ax = plt.subplots(figsize=(6.7, 4.6))
     ax.set_axis_off()
-    ax.set_xlim(0, 11)
-    ax.set_ylim(0, 3.4)
-    w, h = 1.55, 0.85
-    xs = [0.15, 2.25, 4.0, 5.75, 7.5, 9.3]
-    centres = []
-    for i, (x, group) in enumerate(zip(xs, steps)):
-        ys = [2.45, 1.3, 0.15] if len(group) == 3 else [2.45] if i == 1 else [1.3]   # QC beside ground data
-        for y, text in zip(ys, group):
-            ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.03", facecolor="#eef4fc",
-                                        edgecolor="#2a78d6", linewidth=1))
-            ax.text(x + w / 2, y + h / 2, text, ha="center", va="center", fontsize=7.5, color=style.TEXT)
-        centres.append((x, [y + h / 2 for y in ys]))
-    def arrow(p0, p1):
-        ax.add_patch(FancyArrowPatch(p0, p1, arrowstyle="-|>", mutation_scale=10, color="#52514e", linewidth=0.9))
+    ax.set_xlim(0, 6.6)
+    ax.set_ylim(-0.15, 4.5)
+    for x, y, text in box.values():
+        ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.03", facecolor="#eef4fc",
+                                    edgecolor="#2a78d6", linewidth=1))
+        ax.text(x + w / 2, y + h / 2, text, ha="center", va="center", fontsize=8.5, color=style.TEXT)
 
-    (x_src, y_src), (x_qc, y_qc), (x_al, y_al) = centres[0], centres[1], centres[2]
-    arrow((x_src + w + 0.03, y_src[0]), (x_qc - 0.03, y_qc[0]))            # ground PM2.5 -> QC
-    for y0 in y_src[1:]:                                                    # satellite, reanalysis -> alignment
-        arrow((x_src + w + 0.03, y0), (x_al - 0.03, y_al[0]))
-    for (x0, y0s), (x1, y1s) in zip(centres[1:-1], centres[2:]):
-        arrow((x0 + w + 0.03, y0s[0]), (x1 - 0.03, y1s[0]))
+    def edge(name, side):
+        x, y, _ = box[name]
+        return {"top": (x + w / 2, y + h + 0.03), "bottom": (x + w / 2, y - 0.03),
+                "left": (x - 0.03, y + h / 2), "right": (x + w + 0.03, y + h / 2)}[side]
+
+    def arrow(a, b):
+        ax.add_patch(FancyArrowPatch(a, b, arrowstyle="-|>", mutation_scale=11, color="#52514e", linewidth=1))
+
+    arrow(edge("ground", "bottom"), edge("qc", "top"))
+    arrow(edge("qc", "bottom"), edge("align", "left"))
+    arrow(edge("sat", "bottom"), edge("align", "top"))
+    arrow(edge("rea", "bottom"), edge("align", "right"))
+    arrow(edge("align", "bottom"), edge("feat", "top"))
+    arrow(edge("feat", "right"), edge("model", "left"))
+    arrow(edge("model", "right"), edge("eval", "left"))
     style.save(fig, REPORTS_FIGURES / "thesis_pipeline.png")
 
 

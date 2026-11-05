@@ -16,3 +16,4 @@ earthengine-api
 cdsapi
 pytest
 torch          # Stage 6 (D048): install with --extra-index-url https://download.pytorch.org/whl/cu126
+pymupdf        # thesis layout checks (rendering PDF pages)

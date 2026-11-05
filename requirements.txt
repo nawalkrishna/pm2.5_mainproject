@@ -51,6 +51,7 @@ pyasn1==0.6.5
 pyasn1_modules==0.4.2
 pycparser==3.12
 Pygments==2.21.0
+PyMuPDF==1.26.3
 pyogrio==0.13.0
 pyparsing==3.3.3
 pyproj==3.8.0

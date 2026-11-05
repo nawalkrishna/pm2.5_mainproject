@@ -24,7 +24,7 @@ were taken from OpenAQ \cite{openaq}. Low-cost sensors were excluded. A CPCB sta
 location were treated as the same site if their names matched or they were within 500\,m of each
 other, in which case the CPCB record was kept.
 
-\begin{table}[h]
+\begin{table}[!htbp]
     \centering
     \small
     \setlength{\tabcolsep}{4pt}
@@ -67,7 +67,7 @@ Each variable was averaged over each IST day at the station pixel and within 5\,
 the station, together with the number of valid pixels. The 10\,km buffer is used in the models
 because it keeps far more monsoon days (Table~\ref{tab:sat_avail}).
 
-\begin{table}[h]
+\begin{table}[!htbp]
     \centering
     \small
     \begin{tabular}{l|c|c|c|c|c|c}
@@ -112,7 +112,7 @@ the station pixel exists on 0--5\,\% of station-days in every state except Tamil
 whose east coast receives less south-west monsoon rain; Tamil Nadu has its own dip in November,
 during the north-east monsoon.
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=\linewidth]{eda_sat_availability_by_month}
 \caption{Share of station-days with a satellite value by calendar month and state, 2021--2025, for NO\textsubscript{2} and MAIAC AOD at the station pixel and within 10\,km. Shading marks the south-west monsoon.}
@@ -124,7 +124,7 @@ The mechanism is cloud (Figure~\ref{fig:aod_cloud}). AOD at the station pixel is
 above). TROPOMI NO\textsubscript{2} at the pixel falls from 99\,\% to 0\,\%. The UV aerosol index is
 retrieved under cloud and is always present.
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.85\linewidth]{eda_aod_vs_cloud}
 \caption{Satellite availability against TROPOMI cloud fraction (10\,km mean), 2021--2025.}
@@ -137,7 +137,7 @@ south-west monsoon about one in nine. The 10\,km buffer roughly triples the mons
 still leaves most monsoon days without AOD. The gap is even larger in Karnataka (3.0\,\% at the
 pixel, 15.9\,\% within 10\,km) and Telangana (6.5\,\%, 21.0\,\%) during the south-west monsoon.
 
-\begin{table}[h]
+\begin{table}[!htbp]
     \centering
     \small
     \begin{tabular}{l|c|c|c}
@@ -163,7 +163,7 @@ months with the fewest satellite observations are therefore also the months with
 \pmtf{} signal, except in Kerala. Station medians range from 15.0 to 48.9\ugm{}, with a median of
 26.3\ugm{}.
 
-\begin{table}[h]
+\begin{table}[!htbp]
     \centering
     \small
     \begin{tabular}{l|c|c|c|c}
@@ -181,9 +181,9 @@ months with the fewest satellite observations are therefore also the months with
     \label{tab:season}
 \end{table}
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.95\linewidth]{eda_pm25_monthly_by_state}
+\includegraphics[width=0.82\linewidth]{eda_pm25_monthly_by_state}
 \caption{Median daily \pmtf{} by calendar month and state, 2021--2025. Shading marks the south-west monsoon.}
 \label{fig:pm_month}
 \end{figure}
@@ -203,9 +203,9 @@ pairs with at least 180 shared days, the median correlation of daily \pmtf{} is 
 estimates for a station the model has not seen will be much less accurate than estimates for
 known stations.
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
 \centering
-\includegraphics[width=0.9\linewidth]{eda_station_corr_vs_distance}
+\includegraphics[width=0.78\linewidth]{eda_station_corr_vs_distance}
 \caption{Spearman correlation of daily \pmtf{} between station pairs against distance (pairs with at least 180 shared days). The line shows the median per distance bin.}
 \label{fig:station_corr}
 \end{figure}

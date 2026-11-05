@@ -9,7 +9,7 @@ all 113 stations, and intervals are 95\,\% block-bootstrap intervals.
 
 Table~\ref{tab:overall} gives the held-out skill of each model under the four validation schemes.
 
-\begin{table}[h]
+\begin{table}[!htbp]
     \centering
     \small
     \begin{tabular}{l|c|c|c|c}
@@ -39,7 +39,7 @@ Figure~\ref{fig:pred_obs} illustrates the difference between the two tasks. With
 follow the observations closely. Without lags at an unseen station, predictions are compressed
 towards the middle of the range: high days are underestimated and clean days overestimated.
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=\linewidth]{results_pred_vs_obs}
 \caption{Predicted against observed daily \pmtf{}: two-tier Random Forest with lags in the temporal split (left) and without lags in leave-one-station-out (right).}
@@ -52,7 +52,7 @@ By state the median is 0.37 in Tamil Nadu, 0.32 in Karnataka, 0.11 in Andhra Pra
 and $-0.22$ in Telangana. A negative \rsq{} means that the model is worse at that station than simply
 predicting the station's own mean, which the model does not know for an unseen station.
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=0.9\linewidth]{results_station_spread}
 \caption{Per-station \rsq{} in leave-one-station-out without lags, for Tier B and the two-tier model. Bars mark the median.}
@@ -64,7 +64,7 @@ predicting the station's own mean, which the model does not know for an unseen s
 Table~\ref{tab:sat_gain} compares Tier A with Tier B on the same 62,308 station-days, those with
 MAIAC AOD within 10\,km.
 
-\begin{table}[h]
+\begin{table}[!htbp]
     \centering
     \small
     \begin{tabular}{l|c|c|c|c}
@@ -93,9 +93,9 @@ The ablation in Figure~\ref{fig:ablation} explains why. On the rows with AOD in 
 with MERRA-2. The satellite inputs do carry information, about $+0.07$ over meteorology alone, but
 MERRA-2 overlaps with most of it.
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
 \centering
-\includegraphics[width=\linewidth]{results_ablation}
+\includegraphics[width=0.92\linewidth]{results_ablation}
 \caption{Random Forest ablation without lags: \rsq{} as feature groups are added, for all rows and for rows with AOD, in the temporal (left) and blocked (right) splits.}
 \label{fig:ablation}
 \end{figure}
@@ -104,7 +104,7 @@ MERRA-2 overlaps with most of it.
 
 Table~\ref{tab:cloud} breaks the LOSO results down by TROPOMI cloud fraction.
 
-\begin{table}[h]
+\begin{table}[!htbp]
     \centering
     \small
     \setlength{\tabcolsep}{3pt}
@@ -130,14 +130,16 @@ Tier A does apply, its advantage over Tier B stays at 0.2--0.3\ugm{} RMSE in eve
 the satellite's skill. Absolute RMSE is lower on cloudy days because they are mostly monsoon days
 with low concentrations.
 
-\begin{figure}[h]
-    \begin{subfigure}[t]{0.48\textwidth}
+\begin{figure}[!htbp]
+    \centering
+    \begin{subfigure}[t]{0.92\textwidth}
         \includegraphics[width=\linewidth]{results_skill_by_cloud}
         \caption{RMSE by cloud fraction for Tier A, Tier B on the same rows and Tier B on all rows.}
         \label{fig:skill_cloud}
     \end{subfigure}
-\hfill
-    \begin{subfigure}[t]{0.48\textwidth}
+
+    \vspace{4mm}
+    \begin{subfigure}[t]{0.92\textwidth}
         \includegraphics[width=\linewidth]{results_residuals_by_season}
         \caption{Residuals by season (temporal split with lags, left; LOSO without lags, right).}
         \label{fig:resid_season}
@@ -155,7 +157,7 @@ Kerala in June--September is the hardest case (Table~\ref{tab:kerala}). Without 
 recent measurements no model beats a monthly mean there, which matches the absence of any
 correlated predictor in the exploratory analysis.
 
-\begin{table}[h]
+\begin{table}[!htbp]
     \centering
     \small
     \begin{tabular}{l|c|c}
@@ -188,11 +190,11 @@ is as large as the blocked-split gain itself.
 
 Table~\ref{tab:sens} repeats the satellite comparison under alternative processing choices.
 
-\begin{table}[h]
+\begin{table}[!htbp]
     \centering
     \footnotesize
     \setlength{\tabcolsep}{3pt}
-    \begin{tabular}{p{3.6cm}|r|c|c}
+    \begin{tabular}{L{3.4cm}|r|c|c}
         \hline
         Variant & Tier A rows & $\Delta R^2$, blocked & $\Delta R^2$, temporal \\
         \hline
@@ -200,10 +202,10 @@ Table~\ref{tab:sens} repeats the satellite comparison under alternative processi
         MAIAC ``best'' quality & 54,219 & $+0.008$ $[-0.022, +0.031]$ & $-0.009$ $[-0.021, +0.003]$ \\
         Station pixel & 36,734 & $+0.023$ $[+0.002, +0.040]$ & $-0.013$ $[-0.034, +0.005]$ \\
         5 km buffer & 54,980 & $+0.022$ $[+0.008, +0.034]$ & $-0.015$ $[-0.032, -0.000]$ \\
-        No satellite when cloud $> 0.3$ & 47,541 & $+0.004$ $[-0.032, +0.032]$ & $-0.007$ $[-0.023, +0.006]$ \\
-        At least 10\,\% valid pixels & 51,101 & $+0.007$ $[-0.021, +0.032]$ & $-0.012$ $[-0.027, +0.002]$ \\
-        At least 25\,\% valid pixels & 45,135 & $+0.014$ $[-0.022, +0.042]$ & $-0.009$ $[-0.027, +0.008]$ \\
-        Overpass target (12--15 IST) & 67,730 & $+0.022$ $[+0.012, +0.032]$ & $+0.009$ $[-0.002, +0.019]$ \\
+        Cloud $> 0.3$: no satellite & 47,541 & $+0.004$ $[-0.032, +0.032]$ & $-0.007$ $[-0.023, +0.006]$ \\
+        $\ge$ 10\,\% valid pixels & 51,101 & $+0.007$ $[-0.021, +0.032]$ & $-0.012$ $[-0.027, +0.002]$ \\
+        $\ge$ 25\,\% valid pixels & 45,135 & $+0.014$ $[-0.022, +0.042]$ & $-0.009$ $[-0.027, +0.008]$ \\
+        Overpass target & 67,730 & $+0.022$ $[+0.012, +0.032]$ & $+0.009$ $[-0.002, +0.019]$ \\
         24-hour flat-line rule & 62,510 & $+0.017$ $[+0.006, +0.028]$ & $-0.006$ $[-0.014, -0.002]$ \\
         \hline
     \end{tabular}
@@ -225,7 +227,7 @@ lags. The 12-hour rule removes 432 of 113,660 daily targets (0.4\,\%), but those
 Table~\ref{tab:forecast} gives the skill of the forecasting models on the 2025 test year, using
 Tier B on all test rows (about 705,000 per horizon).
 
-\begin{table}[h]
+\begin{table}[!htbp]
     \centering
     \small
     \setlength{\tabcolsep}{3.5pt}
@@ -248,7 +250,7 @@ Tier B on all test rows (about 705,000 per horizon).
     \label{tab:forecast}
 \end{table}
 
-\begin{figure}[h]
+\begin{figure}[!htbp]
 \centering
 \includegraphics[width=\linewidth]{forecast_r2_by_horizon}
 \caption{Forecast \rsq{} against horizon for setting (a), past inputs only (left), and setting (b), with reanalysis weather for the target hours (right).}

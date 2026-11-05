@@ -11,6 +11,8 @@
 \usepackage{algorithm}    % algorithm float (instruction 8)
 \usepackage{algorithmic}  % \STATE, \IF, \FOR ... (instruction 8)
 \usepackage{url}          % web addresses in the bibliography
+\usepackage{array}        % ragged-right table columns
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}   % left-aligned wrapped column
 \graphicspath{{figures/}}
 \newcommand{\pmtf}{PM\textsubscript{2.5}}                 % PM2.5
 \newcommand{\ugm}{\ensuremath{\,\mu\mathrm{g\,m^{-3}}}}   % micrograms per cubic metre
@@ -40,7 +42,18 @@
 \newtheorem{remark}[theorem]{Remark}
 
 \renewcommand{\baselinestretch}{1.5}
-\setlength{\emergencystretch}{2em}  % lets LaTeX stretch spacing slightly instead of running into the margin
+\setlength{\emergencystretch}{2em}
+% Float placement: allow more floats per text page, and start float-only pages at the top
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.6}
+\renewcommand{\textfraction}{0.12}
+\renewcommand{\floatpagefraction}{0.75}
+\setcounter{topnumber}{3}
+\setcounter{totalnumber}{4}
+\makeatletter
+\setlength{\@fptop}{0pt}
+\setlength{\@fpsep}{14pt plus 1fil}
+\makeatother  % lets LaTeX stretch spacing slightly instead of running into the margin
 \begin{document}
 
 %\pagenumbering{arabic} \setcounter{page}{1}
@@ -189,9 +202,8 @@ daily ground-level \pmtf{} over Kerala, Karnataka, Tamil Nadu, Andhra Pradesh an
 much a two-tier model recovers. Quality-controlled hourly data from 113 stations for 2021--2025 were
 combined with TROPOMI trace gases, MAIAC aerosol optical depth (AOD), ERA5/ERA5-Land meteorology,
 MERRA-2 aerosol and static land-surface features. Tier A uses the satellite inputs; Tier B uses
-everything else and can be applied on every day. Random Forest models were evaluated under temporal,
-spatially blocked, leave-one-station-out and combined validation, with block-bootstrap confidence
-intervals.
+everything else and can be applied on every day. Random Forest models were evaluated under temporal
+and spatial validation with block-bootstrap confidence intervals.
 
 Cloud acts mainly by removing satellite coverage: MAIAC AOD exists on 32.4\,\% of valid station-days
 at the station pixel, on 11.8\,\% in Kerala's south-west monsoon, and on 9\,\% of days with a cloud
@@ -201,8 +213,7 @@ therefore carries almost all of the skill, which at an unseen station is modest 
 model beats a monthly climatology in Kerala's monsoon. In an extension that forecasts hourly \pmtf{}
 1--72 hours ahead at existing stations, a Random Forest outperforms an LSTM and a graph neural network
 at every horizon (\rsq{} 0.81 at 1 hour, 0.43 at 24 hours), and satellite inputs again add nothing.
-The results show that in a monsoon region the satellite-free model is the core of a daily \pmtf{}
-system rather than a fallback.
+In a monsoon region, the satellite-free model is the core of a daily \pmtf{} system.
 
 \clearpage
 
